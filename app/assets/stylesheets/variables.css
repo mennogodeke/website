@@ -1,0 +1,57 @@
+/* === Color tokens === */
+:root {
+  /* Blue — primary accent */
+  --blue-50:  #EFF6FF;
+  --blue-200: #BFDBFE;
+  --blue-400: #60A5FA;
+  --blue-600: #2563EB;
+  --blue-700: #1D4ED8;
+  --blue-900: #1E3A8A;
+
+  /* Red — secondary accent (use sparingly) */
+  --red-100: #FEE2E2;
+  --red-500: #EF4444;
+  --red-700: #B91C1C;
+
+  /* Orange — CTA */
+  --orange-500: #F97316;
+
+  /* Neutrals — light mode */
+  --neutral-bg:      #FFFFFF;
+  --neutral-surface: #F8FAFC;
+  --neutral-text:    #1E293B;
+
+  /* Semantic aliases */
+  --color-bg:            var(--neutral-bg);
+  --color-surface:       var(--neutral-surface);
+  --color-text:          var(--neutral-text);
+  --color-heading:       var(--blue-900);
+  --color-primary:       var(--blue-600);
+  --color-primary-hover: var(--blue-700);
+  --color-cta:           var(--orange-500);
+  --color-border:        var(--blue-200);
+
+  /* Bulma overrides */
+  --bulma-body-family:           'DM Sans', sans-serif;
+  --bulma-body-background-color: var(--color-bg);
+  --bulma-body-color:            var(--color-text);
+  --bulma-background:            var(--color-surface);
+  --bulma-border:                var(--color-border);
+  --bulma-link-text:             var(--color-primary);
+  --bulma-link-text-hover:       var(--color-primary-hover);
+}
+
+/* === Dark mode === */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --neutral-bg:      #0F172A;
+    --neutral-surface: #1E293B;
+    --neutral-text:    #F1F5F9;
+
+    --color-bg:      var(--neutral-bg);
+    --color-surface: var(--neutral-surface);
+    --color-text:    var(--neutral-text);
+    --color-heading: var(--blue-400);
+    --color-border:  #2D3F5E;
+  }
+}
