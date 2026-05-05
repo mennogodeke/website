@@ -2,27 +2,23 @@
   font-family: 'Monaspace Neon', monospace;
   font-weight: 700;
   font-size: 1.25rem;
-  color: var(--color-primary);
   letter-spacing: 0.05em;
 }
 
 .navbar-logo:hover,
 .navbar-logo:focus {
   background-color: transparent;
-  color: var(--color-primary-hover);
 }
 
 .navbar {
-  background-color: var(--color-surface);
-  border-bottom: 1px solid var(--color-border);
   position: sticky;
   top: 0;
   z-index: 100;
+  border-bottom: 1px solid var(--bulma-border);
 }
 
 .navbar-item {
   font-family: 'DM Sans', sans-serif;
-  color: var(--color-text);
   font-weight: 500;
   transition: color 0.15s ease;
 }
@@ -30,21 +26,12 @@
 .navbar-item:hover,
 .navbar-item:focus {
   background-color: transparent;
-  color: var(--color-primary);
 }
 
 .navbar-item.is-active {
-  color: var(--color-primary);
   font-weight: 700;
 }
 
 .navbar-item.is-cta {
-  color: var(--color-cta);
   font-weight: 700;
-}
-
-.navbar-item.is-cta:hover,
-.navbar-item.is-cta:focus {
-  color: var(--color-cta);
-  opacity: 0.8;
 }
