@@ -100,16 +100,117 @@ Details TBD (exact flow and user journey to be determined).
 
 ---
 
-## Layout and Design
-TBD
-
 ## Models
-TBD
+- Expertise
+- Skill
+- Job
+
+## Controllers and Routes
+- Static Pages
+- Experience
+- Jobs
+- Projects
 
 ## Data and Storage
-TBD
+- Database
+- Seeding Data
+- Generating Data
 
-## Development Envirionment and/or CI&CD and/or Release Pipeline and/or Deployments
+## Development Environment
 TBD
 
 ## Deployments and/or CI&CD
+TBD
+
+## Design Direction
+Websites for inspiration:
+- https://github.com 
+- https://docs.digitalocean.com/
+- https://lucid.co/
+- https://vapor.codes/
+- https://signal.org/
+- https://thoughtbot.com/
+
+
+## Layout
+
+### Top Navigation
+
+### Footer
+
+### Home
+Sites for inspiration:
+- https://docs.digitalocean.com/
+- https://lucid.co/enterprise
+
+Notes:
+- Big title/hero (e.g. "Freelance Software Engineer" or "Web & App Development") might include something with my name
+- Professional headshot / placeholder image
+- Short personal introduction / bio
+- CTAs and hints pointing visitors to other sections of the site
+
+### Experience
+- https://www.ea.com/games/the-sims/the-sims-4/store/categories/stuff-packs Could be used as insipiration for "Expertises" With below it a collection of related Skills OR perhaps: https://www.ea.com/games/the-sims/the-sims-4/store simply having a card for every expertise
+
+Idea: I have this idea of putting all the skills together into one big grid. This would be it's own section below the Expertises (Or perhaps a dedicated page). The size of the tiles would be determined by the "level/amount of experience" eg xs, s, m, l or xl. and the position would be determined by skills that are "related" to each other. Eg the Skills: Ruby, Ruby on Rails and Rspec should all be close together. Any thoughts/feedback on this?
+
+### Career
+Should be some sort of vertical stack/list with the most recent job listed on top.
+
+### Projects
+A standard collection/gallery kind of page.
+
+### Contact
+- Should include a simple contact for
+- links to socials: GitHub, LinkedIn, Slack, Discord, Email
+
+## Colors
+Custom color palette (not Bulma defaults). Dark mode is a must-have.
+
+### Blue — primary accent
+| Token | Hex | Usage |
+|---|---|---|
+| blue-50 | #EFF6FF | Background tint |
+| blue-200 | #BFDBFE | Subtle borders |
+| blue-400 | #60A5FA | Light actions |
+| blue-600 | #2563EB | Primary action |
+| blue-700 | #1D4ED8 | Hover / active state |
+| blue-900 | #1E3A8A | Heading text |
+
+### Red — secondary accent (sparingly)
+| Token | Hex | Usage |
+|---|---|---|
+| red-100 | #FEE2E2 | Background tint |
+| red-500 | #EF4444 | Accent |
+| red-700 | #B91C1C | Hover |
+
+Use red for highlights and badges only — not buttons or large fills.
+
+### Orange — CTA
+| Token | Hex | Usage |
+|---|---|---|
+| orange-500 | #F97316 | CTA buttons and standout interactions |
+
+### Neutrals
+| Token | Hex | Light mode | Dark mode |
+|---|---|---|---|
+| neutral-bg | #FFFFFF / #0F172A | Background | Background |
+| neutral-surface | #F8FAFC / #1E293B | Cards / surfaces | Cards / surfaces |
+| neutral-text | #1E293B / #F1F5F9 | Body text | Body text |
+
+## Typography
+- **Headings / accent text: Monaspace** (https://monaspace.githubnext.com/) — available via GitHub Next CDN
+- **Body text: DM Sans** — available via Google Fonts
+- Inspiration: RubyGems, https://docs.digitalocean.com/
+
+
+
+## Content
+### Audience
+Mainly Recruiters and other freelancers, perhaps compant HR looking for freelancers.
+
+### Tone
+- Should be more personal and creative rather then minimal and professional. 
+- More leaning towards informal communication vs formal.
+- Laid-back with an occasional cheeky joke
+
