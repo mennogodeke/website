@@ -46,18 +46,18 @@ Examples:
 Note: Exact data on experience to be provided later.
 
 #### Skills
-A grid/collection of specific technologies with an indication of proficiency level (e.g. 1–5 scale).
+A grid/collection of specific technologies with an indication of proficiency level (e.g. 1-3 scale).
 
 Examples:
-- Ruby (on Rails): 5/5
-- JavaScript/TypeScript: 2/5
-- Swift: 4/5
-- Go: 3/5
-- Docker: 5/5
-- Kubernetes: 3/5
-- Terraform: 3/5
-- GitHub Actions: 4/5
-- Lua: 2/5
+- Ruby (on Rails): 3/
+- JavaScript/TypeScript: 2/3
+- Swift: 3/3
+- Go: 2/3
+- Docker: 3/3
+- Kubernetes: 2/3
+- Terraform: 1/3
+- GitHub Actions: 2/3
+- Lua: 1/3
 
 Note: Complete list to be provided later.
 
