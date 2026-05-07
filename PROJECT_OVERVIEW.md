@@ -89,8 +89,7 @@ A contact page with links to socials (GitHub, LinkedIn, Slack, Discord, email) a
 
 Note: Page label may change (e.g. "Get in touch", "Let's work together").
 
-### Download CV
-Functionality to download my current CV.
+### Download CV Functionality to download my current CV.
 
 Details TBD (exact flow and user journey to be determined).
 
@@ -120,10 +119,14 @@ Planned (not yet implemented):
 
 ---
 
-## Data and Storage
-- Database: not yet added
-- Seeding: TBD
-- Data generation: TBD
+## Models, Data and Storage
+Planned (not yet implemented):
+### Expertise
+### Skill
+### Job
+### Database: not yet added
+### Seeding: TBD
+### Data generation: TBD
 
 ---
 
@@ -134,7 +137,6 @@ TBD
 
 ## Deployments and/or CI&CD
 TBD
-
 ---
 
 ## Design Direction
@@ -188,10 +190,11 @@ Previous direction (reverted, may serve as a starting point):
 ---
 
 ## Typography
-Both fonts are implemented in `app/assets/stylesheets/typography.css`.
+TBD — to be revisited alongside colours.
 
-- **Headings / accent text:** Monaspace Neon (Regular + Bold) — loaded via jsDelivr CDN
-- **Body text:** DM Sans — loaded via Google Fonts
+Previous direction (reverted, may serve as a starting point):
+- **Headings / accent text:** Monaspace Neon — https://monaspace.githubnext.com/
+- **Body text:** DM Sans — Google Fonts
 
 ---
 
