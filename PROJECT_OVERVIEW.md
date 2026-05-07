@@ -4,8 +4,10 @@ My personal portfolio / CV website to showcase the skills and knowledge i've gai
 ## Stack
 - Ruby on Rails 8.1.3
 - Ruby 3.4.7
+- Hotwire (Turbo + Stimulus) · Importmap · Propshaft
 - Bulma CSS (vendored as `bulma.min.css`)
-- Database: not yet added
+- PostgreSQL (via `pg` gem)
+- Docker · Kamal (deployment)
 
 ---
 
@@ -96,47 +98,50 @@ Details TBD (exact flow and user journey to be determined).
 ---
 
 ## Controllers and Routes
-All pages are served by a single `PagesController` with one action per page.
 
 ```
 GET /          → pages#home
 GET /home      → pages#home
 GET /experience → pages#experience
-GET /career    → pages#career
+GET /jobs      → jobs#index      ← Career page (database-driven)
 GET /projects  → pages#projects
 GET /contact   → pages#contact
 ```
+
+Static pages are served by `PagesController`. The Career page is served by `JobsController`.
 
 Download CV route: TBD.
 
 ---
 
 ## Models
-Planned (not yet implemented):
-- Expertise
-- Skill
-- Job
 
----
+### Job ✓
+Fields: `title` (string), `company` (string), `description` (text), `start_date` (date), `end_date` (date, nullable).
+Validations: `title`, `company`, `start_date` are required.
+Seeded with 5 real entries via `db/seeds.rb`.
 
-## Models, Data and Storage
-Planned (not yet implemented):
 ### Expertise
+Planned (not yet implemented).
+
 ### Skill
-### Job
-### Database: not yet added
-### Seeding: TBD
-### Data generation: TBD
+Planned (not yet implemented).
 
 ---
 
 ## Development Environment
-TBD
+- PostgreSQL runs in Docker via `docker compose up`
+- Rails app runs locally via `bin/dev`
+- `docker-compose.yml` is for local dev only — Kamal handles production
+- Default local DB credentials: user `website`, password `password`, host `localhost`
 
 ---
 
 ## Deployments and/or CI&CD
-TBD
+- **CI:** GitHub Actions — 4 jobs: `scan_ruby` (Brakeman + bundler-audit), `scan_js` (importmap audit), `lint` (RuboCop), `test` (Minitest with PostgreSQL service container)
+- **Deployment:** Kamal — builds a production Docker image and deploys to the target server
+- **Production DB:** PostgreSQL as a Kamal accessory; connection via `DATABASE_URL` secret
+- System test job exists in CI but is disabled (`if: false`) until system tests are implemented
 ---
 
 ## Design Direction
