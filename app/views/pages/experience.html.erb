@@ -5,83 +5,18 @@
   <h1 class="experience-title">Experience</h1>
 
   <div class="expertise-grid">
-    <div class="expertise-card is-featured">
-      <span class="expertise-card-years">8+</span>
-      <h2 class="expertise-card-name">Back-end Development</h2>
-      <p class="expertise-card-description">
-        Building APIs, payment integrations, and data-heavy Rails applications.
-        Strong focus on TDD and CI/CD pipelines.
-      </p>
-      <div class="expertise-card-tags">
-        <span class="tag">Ruby on Rails</span>
-        <span class="tag">Stripe</span>
-        <span class="tag">ChargeBee</span>
-        <span class="tag">Adyen</span>
-        <span class="tag">TDD</span>
-        <span class="tag">CI/CD</span>
+    <% @expertises.each_with_index do |expertise, index| %>
+      <div class="expertise-card <%= 'is-featured' if index.zero? %>">
+        <span class="expertise-card-years"><%= expertise.years_of_experience %>+</span>
+        <h2 class="expertise-card-name"><%= expertise.name %></h2>
+        <p class="expertise-card-description"><%= expertise.description %></p>
+        <div class="expertise-card-tags">
+          <% expertise.skills.each do |skill| %>
+            <span class="tag"><%= skill.name %></span>
+          <% end %>
+        </div>
       </div>
-    </div>
-
-    <div class="expertise-card">
-      <span class="expertise-card-years">6+</span>
-      <h2 class="expertise-card-name">Cloud Engineering</h2>
-      <p class="expertise-card-description">
-        Designing and managing cloud infrastructure across AWS and DigitalOcean,
-        with a focus on infrastructure-as-code and reliability.
-      </p>
-      <div class="expertise-card-tags">
-        <span class="tag">AWS</span>
-        <span class="tag">DigitalOcean</span>
-        <span class="tag">Terraform</span>
-        <span class="tag">Ansible</span>
-      </div>
-    </div>
-
-    <div class="expertise-card">
-      <span class="expertise-card-years">6+</span>
-      <h2 class="expertise-card-name">DevOps</h2>
-      <p class="expertise-card-description">
-        Automating everything from local dev environments to production deployments.
-        If I have to do it twice, I automate it.
-      </p>
-      <div class="expertise-card-tags">
-        <span class="tag">CI pipelines</span>
-        <span class="tag">Docker</span>
-        <span class="tag">Kubernetes</span>
-        <span class="tag">Devcontainers</span>
-      </div>
-    </div>
-
-    <div class="expertise-card">
-      <span class="expertise-card-years">4+</span>
-      <h2 class="expertise-card-name">iOS & macOS Development</h2>
-      <p class="expertise-card-description">
-        Native app development for Apple platforms — from side projects
-        to production apps on the App Store.
-      </p>
-      <div class="expertise-card-tags">
-        <span class="tag">Swift</span>
-        <span class="tag">Xcode</span>
-        <span class="tag">iOS</span>
-        <span class="tag">macOS</span>
-      </div>
-    </div>
-
-    <div class="expertise-card">
-      <span class="expertise-card-years">3+</span>
-      <h2 class="expertise-card-name">Front-end Development</h2>
-      <p class="expertise-card-description">
-        Building interfaces that don't make users want to close the tab.
-        Mostly component-based work alongside back-end projects.
-      </p>
-      <div class="expertise-card-tags">
-        <span class="tag">JavaScript</span>
-        <span class="tag">TypeScript</span>
-        <span class="tag">Vue.js</span>
-        <span class="tag">HTML5</span>
-        <span class="tag">CSS3</span>
-      </div>
-    </div>
+    <% end %>
   </div>
 </section>
 
@@ -90,15 +25,5 @@
 <%# ============================================================ %>
 <section class="experience-section skills-section">
   <h2 class="experience-subtitle">Skills</h2>
-
-  <%# Skills data (layout TBD):
-    Ruby on Rails 5, Ruby 5, RSpec 4, REST APIs 5
-    Docker 5, GitHub Actions 4, Kubernetes 3, Terraform 3, AWS 3, Ansible 2, DigitalOcean 3
-    Swift 4, Xcode 4, iOS Development 4, SwiftUI 3
-    JavaScript 2, TypeScript 2, Vue.js 2, HTML5 3, CSS3 3
-    PostgreSQL 3, Redis 3, SQLite 2
-    Go 3, Python 2, Lua 2
-    Git 5, Linux 4, Kamal 3
-  %>
   <p>Coming soon.</p>
 </section>
