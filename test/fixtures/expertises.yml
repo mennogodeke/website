@@ -1,0 +1,24 @@
+backend:
+  name: Back-end Development
+  description: Building APIs, payment integrations, and data-heavy Rails applications. Strong focus on TDD and CI/CD pipelines.
+  years_of_experience: 8
+
+cloud:
+  name: Cloud Engineering
+  description: Designing and managing cloud infrastructure across AWS and DigitalOcean, with a focus on infrastructure-as-code and reliability.
+  years_of_experience: 6
+
+devops:
+  name: DevOps
+  description: Automating everything from local dev environments to production deployments.
+  years_of_experience: 6
+
+ios:
+  name: iOS & macOS Development
+  description: Native app development for Apple platforms — from side projects to production apps on the App Store.
+  years_of_experience: 4
+
+frontend:
+  name: Front-end Development
+  description: Building interfaces that don't make users want to close the tab. Mostly component-based work alongside back-end projects.
+  years_of_experience: 3
