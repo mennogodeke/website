@@ -102,6 +102,9 @@ jobs:
         run: bin/rails db:test:prepare test
 
   system-test:
+    # Disabled until we have actual system tests — no test/system directory exists yet.
+    # Re-enable by removing the `if: false` line below once system tests are added.
+    if: false
     runs-on: ubuntu-latest
 
     services:
