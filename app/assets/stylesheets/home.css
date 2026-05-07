@@ -1,0 +1,163 @@
+/* Shared container width */
+.home-hero,
+.home-section,
+.home-cta {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 5rem 2rem;
+}
+
+/* Divider between sections */
+.home-section {
+  border-top: 1px solid var(--bulma-border);
+}
+
+/* ============================================================
+   1. Hero
+   ============================================================ */
+.home-eyebrow {
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.home-title {
+  font-size: 3rem;
+  line-height: 1.15;
+  margin-bottom: 1.25rem;
+}
+
+.home-tagline {
+  font-size: 1.2rem;
+  line-height: 1.75;
+  max-width: 52ch;
+  margin-bottom: 2rem;
+}
+
+.home-hero-ctas {
+  display: flex;
+  gap: 1rem;
+}
+
+/* ============================================================
+   2. Sections — shared two-column layout
+   ============================================================ */
+.home-section {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.home-section-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding-top: 0.25rem;
+}
+
+.home-section-intro {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  margin-bottom: 2rem;
+}
+
+.home-section-link {
+  display: inline-block;
+  margin-top: 1.5rem;
+  font-weight: 600;
+}
+
+/* ============================================================
+   What I do
+   ============================================================ */
+.home-what-i-do {
+  display: block;
+}
+
+/* ============================================================
+   Career teaser
+   ============================================================ */
+.career-teaser-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.career-teaser-list li {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 1rem;
+  align-items: baseline;
+}
+
+.career-role {
+  font-weight: 600;
+}
+
+.career-dates {
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+/* ============================================================
+   Projects placeholder
+   ============================================================ */
+.projects-placeholder {
+  padding: 3rem;
+  border: 2px dashed var(--bulma-border);
+  border-radius: 0.5rem;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+/* ============================================================
+   5. Bottom CTA
+   ============================================================ */
+.home-cta {
+  border-top: 1px solid var(--bulma-border);
+  text-align: center;
+}
+
+.home-cta h2 {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.home-cta p {
+  font-size: 1.05rem;
+  margin-bottom: 2rem;
+}
+
+.home-cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media (max-width: 640px) {
+  .home-title {
+    font-size: 2.25rem;
+  }
+
+  .home-section {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .expertise-list li {
+    grid-template-columns: 1fr;
+    gap: 0.15rem;
+  }
+
+  .career-teaser-list li {
+    grid-template-columns: 1fr;
+    gap: 0.15rem;
+  }
+}

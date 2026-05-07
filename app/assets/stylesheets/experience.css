@@ -1,0 +1,75 @@
+.experience-section {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 5rem 2rem;
+}
+
+.experience-title {
+  font-size: 3rem;
+  margin-bottom: 3rem;
+}
+
+.experience-subtitle {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* ============================================================
+   Expertise cards
+   ============================================================ */
+.expertise-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.expertise-card {
+  border: 1px solid var(--bulma-border);
+  border-radius: 0.75rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.expertise-card.is-featured {
+  grid-column: 1 / -1;
+}
+
+.expertise-card-years {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.expertise-card-name {
+  font-size: 1.2rem;
+}
+
+.expertise-card-description {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  flex: 1;
+}
+
+.expertise-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+}
+
+/* Skills section */
+.skills-section {
+  border-top: 1px solid var(--bulma-border);
+}
+
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media (max-width: 640px) {
+  .expertise-grid {
+    grid-template-columns: 1fr;
+  }
+}

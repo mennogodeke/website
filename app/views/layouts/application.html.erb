@@ -21,19 +21,27 @@
     <%# Includes all stylesheet files in app/assets/stylesheets %>
     <%= stylesheet_link_tag "bulma.min", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
     <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <%= link_to root_path, class: "navbar-item navbar-logo" do %>
+          <span>MENNO.CODES</span>
+        <% end %>
+      </div>
       <div class="navbar-menu">
         <div class="navbar-start">
           <%= link_to "Home", root_path, class: "navbar-item" %>
-          <a href="#" class="navbar-item">Experience</a>
-          <a href="#" class="navbar-item">Career</a>
-          <a href="#" class="navbar-item">Projects</a>
-          <a href="#" class="navbar-item">Contact</a>
-          <a href="#" class="navbar-item">Download CV</a>
+          <%= link_to "Experience", experience_path, class: "navbar-item" %>
+          <%= link_to "Career", career_path, class: "navbar-item" %>
+          <%= link_to "Projects", projects_path, class: "navbar-item" %>
+        </div>
+        <div class="navbar-end">
+          <%= link_to "Contact", contact_path, class: "navbar-item" %>
+          <a href="#" class="navbar-item is-cta">Download CV</a>
         </div>
       </div>
     </nav>

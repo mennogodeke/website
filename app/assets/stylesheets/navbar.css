@@ -1,0 +1,35 @@
+.navbar-logo {
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: 0.05em;
+}
+
+.navbar-logo:hover,
+.navbar-logo:focus {
+  background-color: transparent;
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid var(--bulma-border);
+}
+
+.navbar-item {
+  font-weight: 500;
+  transition: color 0.15s ease;
+}
+
+.navbar-item:hover,
+.navbar-item:focus {
+  background-color: transparent;
+}
+
+.navbar-item.is-active {
+  font-weight: 700;
+}
+
+.navbar-item.is-cta {
+  font-weight: 700;
+}

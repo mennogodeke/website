@@ -1,0 +1,42 @@
+.career-section {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 5rem 2rem;
+}
+
+.career-title {
+  font-size: 3rem;
+  margin-bottom: 2.5rem;
+}
+
+.career-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.company-logo-placeholder {
+  width: 48px;
+  height: 48px;
+  border-radius: 0.5rem;
+  background-color: var(--bulma-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.75rem;
+}
+
+.job-title {
+  font-size: 1.1rem;
+  margin-bottom: 0.2rem;
+}
+
+.job-company {
+  font-size: 0.9rem;
+}
+
+.job-dates {
+  font-size: 0.85rem;
+  white-space: nowrap;
+}

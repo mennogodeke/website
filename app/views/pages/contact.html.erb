@@ -1,0 +1,49 @@
+<section class="contact-section">
+  <h1 class="contact-title">Get in touch</h1>
+  <p class="contact-intro">
+    Have a project in mind, or just want to say hi? Either way, my inbox is open.
+  </p>
+
+  <div class="contact-layout">
+
+    <div class="contact-form-wrapper">
+      <%= form_with url: "#", method: :post, class: "contact-form" do |f| %>
+        <div class="field">
+          <%= f.label :name, "Name", class: "label" %>
+          <div class="control">
+            <%= f.text_field :name, class: "input", placeholder: "Your name" %>
+          </div>
+        </div>
+
+        <div class="field">
+          <%= f.label :email, "Email", class: "label" %>
+          <div class="control">
+            <%= f.email_field :email, class: "input", placeholder: "your@email.com" %>
+          </div>
+        </div>
+
+        <div class="field">
+          <%= f.label :message, "Message", class: "label" %>
+          <div class="control">
+            <%= f.text_area :message, class: "textarea", placeholder: "What's on your mind?", rows: 6 %>
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="control">
+            <%= f.submit "Send message", class: "button is-fullwidth" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="social-icons">
+      <a href="#" class="social-icon" title="GitHub"><i class="fa-brands fa-github"></i></a>
+      <a href="#" class="social-icon" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+      <a href="#" class="social-icon" title="Discord"><i class="fa-brands fa-discord"></i></a>
+      <a href="#" class="social-icon" title="Slack"><i class="fa-brands fa-slack"></i></a>
+      <a href="mailto:#" class="social-icon" title="Email"><i class="fa-solid fa-envelope"></i></a>
+    </div>
+
+  </div>
+</section>
