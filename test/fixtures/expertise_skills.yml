@@ -1,0 +1,47 @@
+backend_rails:
+  expertise: backend
+  skill: ruby_on_rails
+
+backend_ruby:
+  expertise: backend
+  skill: ruby
+
+backend_postgresql:
+  expertise: backend
+  skill: postgresql
+
+backend_docker:
+  expertise: backend
+  skill: docker
+
+cloud_aws:
+  expertise: cloud
+  skill: aws
+
+cloud_terraform:
+  expertise: cloud
+  skill: terraform
+
+cloud_docker:
+  expertise: cloud
+  skill: docker
+
+devops_kubernetes:
+  expertise: devops
+  skill: kubernetes
+
+devops_docker:
+  expertise: devops
+  skill: docker
+
+devops_github_actions:
+  expertise: devops
+  skill: github_actions
+
+ios_swift:
+  expertise: ios
+  skill: swift
+
+frontend_javascript:
+  expertise: frontend
+  skill: javascript

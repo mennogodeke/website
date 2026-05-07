@@ -10,9 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_05_07_144328) do
+ActiveRecord::Schema[8.1].define(version: 2026_05_07_161048) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
+
+  create_table "expertise_skills", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.bigint "expertise_id", null: false
+    t.bigint "skill_id", null: false
+    t.datetime "updated_at", null: false
+    t.index ["expertise_id"], name: "index_expertise_skills_on_expertise_id"
+    t.index ["skill_id"], name: "index_expertise_skills_on_skill_id"
+  end
+
+  create_table "expertises", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.text "description"
+    t.string "name"
+    t.datetime "updated_at", null: false
+    t.integer "years_of_experience"
+  end
 
   create_table "jobs", force: :cascade do |t|
     t.string "company"
@@ -31,4 +48,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_05_07_144328) do
     t.string "name"
     t.datetime "updated_at", null: false
   end
+
+  add_foreign_key "expertise_skills", "expertises"
+  add_foreign_key "expertise_skills", "skills"
 end
