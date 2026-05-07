@@ -1,0 +1,29 @@
+ruby_on_rails:
+  name: Ruby on Rails
+  description: Primary back-end framework — APIs, payment integrations, full-stack apps.
+  level: expert
+
+docker:
+  name: Docker
+  description: Containerising apps for local dev and production deployments.
+  level: expert
+
+swift:
+  name: Swift
+  description: Native app development for iOS and macOS.
+  level: expert
+
+javascript:
+  name: JavaScript
+  description: Front-end scripting, component-based work alongside back-end projects.
+  level: proficient
+
+kubernetes:
+  name: Kubernetes
+  description: Container orchestration for production workloads.
+  level: proficient
+
+terraform:
+  name: Terraform
+  description: Infrastructure-as-code for cloud provisioning.
+  level: familiar
