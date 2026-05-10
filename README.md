@@ -1,24 +1,29 @@
-# README
+# Personal Website
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+My personal portfolio / CV website to showcase the skills and knowledge i've gained over the years, the jobs i've had and the projects i've built. Additionally there should be the option to download my CV.
 
-Things you may want to cover:
+See [PROJECT_OVERVIEW.md](PROJECT_OVERVIEW.md) for the full product spec.
 
-* Ruby version
+## Stack
+- Ruby on Rails 8.1.3
+- Ruby 3.4.7
+- Hotwire (Turbo + Stimulus) · Importmap · Propshaft
+- Bulma CSS (vendored as `bulma.min.css`)
+- PostgreSQL (via `pg` gem)
+- Docker · Kamal (deployment)
 
-* System dependencies
+---
 
-* Configuration
+## Development Environment
+- PostgreSQL runs in Docker via `docker compose up`
+- Rails app runs locally via `bin/dev`
+- `docker-compose.yml` is for local dev only — Kamal handles production
+- Default local DB credentials: user `website`, password `password`, host `localhost`
 
-* Database creation
+---
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Deployments and CI/CD
+- **CI:** GitHub Actions — 4 jobs: `scan_ruby` (Brakeman + bundler-audit), `scan_js` (importmap audit), `lint` (RuboCop), `test` (Minitest with PostgreSQL service container)
+- **Deployment:** Kamal — builds a production Docker image and deploys to the target server
+- **Production DB:** PostgreSQL as a Kamal accessory; connection via `DATABASE_URL` secret
+- System test job exists in CI but is disabled (`if: false`) until system tests are implemented
