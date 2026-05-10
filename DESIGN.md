@@ -1,41 +1,12 @@
 # Design
 
 ## Direction
-Websites for inspiration:
-- https://github.com
-- https://docs.digitalocean.com/
-- https://lucid.co/
-- https://vapor.codes/
-- https://signal.org/
-- https://thoughtbot.com/
+TBD — previous inspiration sites may serve as a starting point: GitHub, DigitalOcean docs.
 
 ---
 
 ## Layout
-
-### Top Navigation
-
-### Footer
-
-### Home
-Sites for inspiration:
-- https://docs.digitalocean.com/
-- https://lucid.co/enterprise
-
-### Experience
-Sites for inspiration:
-- https://www.ea.com/games/the-sims/the-sims-4/store/categories/stuff-packs (expertise cards)
-- https://www.ea.com/games/the-sims/the-sims-4/store (card-per-expertise alternative)
-
-### Career
-Vertical stack/timeline, most recent job on top.
-
-### Projects
-Standard collection/gallery layout.
-
-### Contact
-- Simple contact form
-- Links to socials: GitHub, LinkedIn, Slack, Discord, Email
+TBD
 
 ---
 
