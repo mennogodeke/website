@@ -1,0 +1,15 @@
+menno_codes:
+  name: menno.codes
+  description: Personal portfolio and CV website built with Rails.
+  url:
+  repo_url: https://github.com/mennogodeke/website
+  year: 2026
+  position: 1
+
+placeholder:
+  name: Project Placeholder
+  description: A placeholder project.
+  url:
+  repo_url:
+  year:
+  position: 2

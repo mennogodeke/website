@@ -1,0 +1,35 @@
+<section class="projects-section">
+  <div class="project-show">
+    <div class="project-show-header">
+      <h1 class="projects-title"><%= @project.name %></h1>
+      <% if @project.year.present? %>
+        <span class="project-year"><%= @project.year %></span>
+      <% end %>
+    </div>
+
+    <% if @project.description.present? %>
+      <p class="project-description"><%= @project.description %></p>
+    <% end %>
+
+    <% if @project.skills.any? %>
+      <div class="project-skills tags">
+        <% @project.skills.each do |skill| %>
+          <span class="tag"><%= skill.name %></span>
+        <% end %>
+      </div>
+    <% end %>
+
+    <div class="project-links">
+      <% if @project.url.present? %>
+        <%= link_to "View live", @project.url, class: "button", target: "_blank", rel: "noopener" %>
+      <% end %>
+      <% if @project.repo_url.present? %>
+        <%= link_to "View repo", @project.repo_url, class: "button", target: "_blank", rel: "noopener" %>
+      <% end %>
+    </div>
+
+    <div class="project-show-back">
+      <%= link_to "← Back to projects", projects_path %>
+    </div>
+  </div>
+</section>
