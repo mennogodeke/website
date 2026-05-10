@@ -1,0 +1,86 @@
+<div class="cv">
+
+  <%# Header %>
+  <div class="cv-header">
+    <div class="cv-header-text">
+      <h1 class="cv-name">Menno Godeke</h1>
+      <p class="cv-tagline">Freelance Software Engineer</p>
+    </div>
+    <div class="cv-headshot-placeholder">MG</div>
+  </div>
+
+  <%# Two-column body %>
+  <div class="cv-body">
+
+    <%# Left column: About + Skills %>
+    <aside class="cv-sidebar">
+
+      <section class="cv-section">
+        <h2 class="cv-section-title">About</h2>
+        <p class="cv-about">Placeholder — short personal bio goes here.</p>
+      </section>
+
+      <section class="cv-section">
+        <h2 class="cv-section-title">Skills</h2>
+        <div class="cv-skills">
+          <% @skills.group_by(&:level).sort_by { |level, _| -Skill.levels[level] }.each do |level, skills| %>
+            <div class="cv-skill-group">
+              <span class="cv-skill-level"><%= level.capitalize %></span>
+              <div class="cv-skill-tags">
+                <% skills.each do |skill| %>
+                  <span class="tag"><%= skill.name %></span>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </section>
+
+      <section class="cv-section">
+        <h2 class="cv-section-title">Languages</h2>
+        <ul class="cv-languages">
+          <li><span class="cv-language-name">Dutch</span><span class="cv-language-level">Native</span></li>
+          <li><span class="cv-language-name">English</span><span class="cv-language-level">Fluent</span></li>
+          <li><span class="cv-language-name">German</span><span class="cv-language-level">Fluent</span></li>
+        </ul>
+      </section>
+
+    </aside>
+
+    <%# Right column: Experience %>
+    <main class="cv-main">
+
+      <section class="cv-section">
+        <h2 class="cv-section-title">Experience</h2>
+
+        <% @jobs.each do |job| %>
+          <div class="cv-entry">
+            <div class="cv-entry-header">
+              <div>
+                <span class="cv-entry-title"><%= job.title %></span>
+                <span class="cv-entry-company"><%= job.company %></span>
+              </div>
+              <span class="cv-entry-dates">
+                <%= job.start_date.strftime("%b %Y") %> – <%= job.end_date ? job.end_date.strftime("%b %Y") : "Present" %>
+              </span>
+            </div>
+            <% if job.description.present? %>
+              <p class="cv-entry-description"><%= job.description %></p>
+            <% end %>
+            <% if job.skills.any? %>
+              <div class="cv-entry-tags">
+                <% job.skills.each do |skill| %>
+                  <span class="tag"><%= skill.name %></span>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+
+      </section>
+
+    </main>
+
+  </div>
+
+</div>
