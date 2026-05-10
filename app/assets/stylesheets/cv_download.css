@@ -1,0 +1,22 @@
+.cv-download-section {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 5rem 2rem;
+}
+
+.cv-download-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.cv-download-intro {
+  opacity: 0.7;
+  margin-bottom: 2rem;
+}
+
+.cv-download-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}

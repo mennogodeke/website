@@ -10,9 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_05_10_051652) do
+ActiveRecord::Schema[8.1].define(version: 2026_05_10_063554) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
+
+  create_table "cv_downloads", force: :cascade do |t|
+    t.datetime "approved_at"
+    t.datetime "created_at", null: false
+    t.integer "download_count"
+    t.string "email"
+    t.datetime "last_download_at"
+    t.datetime "requested_at"
+    t.string "token"
+    t.datetime "updated_at", null: false
+    t.index ["token"], name: "index_cv_downloads_on_token", unique: true
+  end
 
   create_table "expertise_skills", force: :cascade do |t|
     t.datetime "created_at", null: false
