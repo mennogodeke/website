@@ -2,11 +2,6 @@ class PagesController < ApplicationController
   def home
   end
 
-  def experience
-    @expertises = Expertise.includes(:skills).all
-    @skills = Skill.all
-  end
-
   def contact
   end
 

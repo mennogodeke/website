@@ -26,14 +26,14 @@ Visitors request the CV via an email confirmation flow through `CvDownloadsContr
 ```
 GET /             → pages#home
 GET /home         → pages#home
-GET /experience   → pages#experience
+GET /experience   → experience#show
 GET /jobs         → jobs#index          ← Career page
 GET /projects     → projects#index
 GET /projects/:id → projects#show
 GET /contact      → pages#contact
 ```
 
-`PagesController#experience` loads `@expertises` (with skills eager-loaded) and `@skills`.
+`PagesController` serves static pages (home, contact). `ExperienceController#show` loads `@expertises` (with skills eager-loaded) and `@skills`.
 
 ```
 GET  /cv                 → pages#cv             ← HTML CV view
