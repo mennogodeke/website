@@ -4,23 +4,6 @@ See also: [DESIGN.md](DESIGN.md) · [CONTENT.md](CONTENT.md)
 
 ---
 
-## CV
-
-### Generation
-`PagesController#cv` renders the CV as an HTML page using Job, Skill, and Expertise data. `PagesController#cv_preview` renders the same view with the dedicated CV layout (intended for development/print preview).
-
-The Rake task `bin/rails cv:generate` generates the PDF: it boots a temporary local Rails server on port 3099, hits `/cv/preview` via Grover (Puppeteer/Chrome), and writes the output to `storage/cv/cv.pdf`. Requires Chrome in the Docker image.
-
-### Download flow
-Visitors request the CV via an email confirmation flow through `CvDownloadsController`:
-1. Visitor submits their email on `CvDownloads#new`
-2. A `CvDownload` record is created (auto-approved for now) and a confirmation email is sent with a signed link that expires after 24h
-3. Visitor clicks the link → `CvDownloads#show` validates the token, triggers the PDF download, and increments `download_count`
-
-**Future:** Add admin approval/denial flow alongside the `/admin` backend once User authentication is implemented.
-
----
-
 ## Controllers and Routes
 
 ```
@@ -86,3 +69,20 @@ Fields: `email` (string), `token` (string, unique), `requested_at` (datetime), `
 Token is generated via `has_secure_token` and expires after 24 hours. `approved_at` is auto-set on creation (no manual approval yet). `download_count` is incremented and `last_download_at` is updated on each download.
 
 **Future:** Add `denied_at` and admin approval/denial flow once User authentication is implemented.
+
+---
+
+## CV
+
+### Generation
+`PagesController#cv` renders the CV as an HTML page using Job, Skill, and Expertise data. `PagesController#cv_preview` renders the same view with the dedicated CV layout (intended for development/print preview).
+
+The Rake task `bin/rails cv:generate` generates the PDF: it boots a temporary local Rails server on port 3099, hits `/cv/preview` via Grover (Puppeteer/Chrome), and writes the output to `storage/cv/cv.pdf`. Requires Chrome in the Docker image.
+
+### Download flow
+Visitors request the CV via an email confirmation flow through `CvDownloadsController`:
+1. Visitor submits their email on `CvDownloads#new`
+2. A `CvDownload` record is created (auto-approved for now) and a confirmation email is sent with a signed link that expires after 24h
+3. Visitor clicks the link → `CvDownloads#show` validates the token, triggers the PDF download, and increments `download_count`
+
+**Future:** Add admin approval/denial flow alongside the `/admin` backend once User authentication is implemented.
