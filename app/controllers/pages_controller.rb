@@ -15,4 +15,10 @@ class PagesController < ApplicationController
 
   def contact
   end
+
+  def cv
+    @jobs = Job.includes(:skills).order(start_date: :desc)
+    @expertises = Expertise.includes(:skills).all
+    @skills = Skill.all
+  end
 end
