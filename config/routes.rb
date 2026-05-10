@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   get  "cv/download/:token", to: "cv_downloads#show",  as: :cv_download
 
   get "home", to: "pages#home"
-  get "experience", to: "pages#experience"
+  get "experience", to: "experience#show"
   get "contact", to: "pages#contact"
   root "pages#home"
 end
