@@ -24,7 +24,16 @@ class CvDownloadsController < ApplicationController
 
     @cv_download.record_download!
 
-    # TODO: replace with send_file once PDF generation is implemented
-    redirect_to cv_path, notice: "PDF download coming soon — enjoy the HTML version for now!"
+    pdf_path = Rails.root.join("storage", "cv", "cv.pdf")
+
+    unless File.exist?(pdf_path)
+      redirect_to cv_path, alert: "The CV PDF isn't available yet — check back soon."
+      return
+    end
+
+    send_file pdf_path,
+              filename: "menno-godeke-cv.pdf",
+              type: "application/pdf",
+              disposition: "attachment"
   end
 end
