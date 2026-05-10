@@ -69,9 +69,20 @@ A contact page with links to socials (GitHub, LinkedIn, Slack, Discord, email) a
 
 Note: Page label may change (e.g. "Get in touch", "Let's work together").
 
-### Download CV Functionality to download my current CV.
+### CV
 
-Details TBD (exact flow and user journey to be determined).
+Two parts:
+
+#### Part 1: CV Generation
+A `CvController` with a `show` action renders the CV as an HTML page (using Job, Skill, and Expertise data). A custom Rake task `rails cv:generate` uses this HTML view to generate a PDF via the **Grover** gem (Puppeteer/Chrome). This requires Chrome in the Docker image.
+
+#### Part 2: CV Download flow
+Visitors can request the CV through an email confirmation flow via `CvDownloadsController`:
+1. Visitor fills in their email on `CvDownloads#new` and clicks "Request"
+2. A `CvDownload` record is created and a confirmation email is sent with a signed, expiring link (24h)
+3. Visitor clicks the link → `CvDownloads#show` validates the token, triggers the PDF download, and records `downloaded_at`
+
+**Future:** An admin dashboard (requiring User authentication) will allow approving/denying CV download requests. To be tackled later alongside the `/admin` backend.
 
 ---
 
@@ -89,7 +100,12 @@ GET /contact   → pages#contact
 Static pages are served by `PagesController`. The Career page is served by `JobsController`.
 `PagesController#experience` loads `@expertises` (with skills eager-loaded) and `@skills`.
 
-Download CV route: TBD.
+```
+GET  /cv                → cv#show               ← HTML CV view
+GET  /cv/download       → cv_downloads#new      ← Request form
+POST /cv/download       → cv_downloads#create   ← Submit email
+GET  /cv/download/:token → cv_downloads#show    ← Confirm & trigger download
+```
 
 ---
 
@@ -119,6 +135,12 @@ Join table between `Expertise` and `Skill`. No extra fields.
 
 ### JobSkill ✓
 Join table between `Job` and `Skill`. No extra fields.
+
+### CvDownload (planned)
+Fields: `email` (string), `token` (string, unique), `requested_at` (datetime), `downloaded_at` (datetime, nullable).
+The token is generated on creation and expires after 24 hours. `downloaded_at` is set when the visitor clicks the download link.
+
+**Future:** Add `approved_at` / `denied_at` and admin approval flow once User authentication is implemented.
 
 ---
 
