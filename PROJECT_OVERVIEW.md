@@ -37,33 +37,11 @@ The landing page, also serving as the traditional "About" page.
 ### Experience
 A combination of two sub-resources: **Expertise** and **Skills**.
 
-#### Expertise
-Showcases broad areas of knowledge and experience in software engineering, each with a short summary of the type of work and technologies involved.
-
-Examples:
-- Front-end, 3+ Years — JavaScript, TypeScript, Vue.js, HTML5, CSS3
-- Back-end, 8+ Years — Ruby on Rails, payment systems (Stripe, ChargeBee, Adyen), TDD, CI/CD
-- (Native) App Development, 4+ Years — Swift, Xcode, iOS & macOS
-- Cloud Engineering, 6+ Years — AWS, Digital Ocean, Terraform, Ansible
-- DevOps, 6+ Years — CI pipelines, devcontainers, Kubernetes
-
-Note: Exact data to be provided later.
+#### Expertise ✓
+Showcases broad areas of knowledge and experience in software engineering, each with a short summary of the type of work and technologies involved. Rendered dynamically from the `Expertise` model on the experience page, ordered by `years_of_experience DESC`. Associated skills are shown as tags.
 
 #### Skills
-A grid/collection of specific technologies with an indication of proficiency level (1–3 scale).
-
-Examples:
-- Ruby (on Rails): 3/3
-- JavaScript/TypeScript: 2/3
-- Swift: 3/3
-- Go: 2/3
-- Docker: 3/3
-- Kubernetes: 2/3
-- Terraform: 1/3
-- GitHub Actions: 2/3
-- Lua: 1/3
-
-Note: Complete list to be provided later.
+A grid/collection of specific technologies with an indication of proficiency level (1–3 scale: familiar/proficient/expert). `Skill` model is implemented and seeded; the view renders "Coming soon." Layout TBD.
 
 Open question: Should non-engineering skills also be listed here? (e.g. spoken languages, SCRUM/Agile, JIRA)
 
@@ -79,7 +57,7 @@ Examples:
 4. Software Engineering Intern @ ZenGuard [Feb 2017 – Jul 2017]
 5. Software Engineering Intern @ Shopboostr [Jun 2016 – Dec 2016]
 
-Note: Exact descriptions and details to be provided later.
+Each job entry displays role, company, dates, description, and associated skills. Seeded with 5 real entries.
 
 ### Projects
 A portfolio page listing the projects I've worked on. Each project will have a dedicated detail/show page with more information.
@@ -109,6 +87,7 @@ GET /contact   → pages#contact
 ```
 
 Static pages are served by `PagesController`. The Career page is served by `JobsController`.
+`PagesController#experience` loads `@expertises` (with skills eager-loaded) and `@skills`.
 
 Download CV route: TBD.
 
@@ -119,13 +98,27 @@ Download CV route: TBD.
 ### Job ✓
 Fields: `title` (string), `company` (string), `description` (text), `start_date` (date), `end_date` (date, nullable).
 Validations: `title`, `company`, `start_date` are required.
+Associations: `has_many :skills, through: :job_skills`.
 Seeded with 5 real entries via `db/seeds.rb`.
 
-### Expertise
-Planned (not yet implemented).
+### Expertise ✓
+Fields: `name` (string), `description` (text), `years_of_experience` (integer).
+Validations: `name`, `years_of_experience` are required.
+Ordering: `default_scope` orders by `years_of_experience DESC`.
+Associations: `has_many :skills, through: :expertise_skills`.
+Seeded with 5 entries via `db/seeds.rb`.
 
-### Skill
-Planned (not yet implemented).
+### Skill ✓
+Fields: `name` (string), `description` (text), `level` (integer enum: `familiar: 1`, `proficient: 2`, `expert: 3`).
+Validations: `name`, `level` are required.
+Associations: `has_many :expertises, through: :expertise_skills` and `has_many :jobs, through: :job_skills`.
+Seeded with 15 entries via `db/seeds.rb`.
+
+### ExpertiseSkill ✓
+Join table between `Expertise` and `Skill`. No extra fields.
+
+### JobSkill ✓
+Join table between `Job` and `Skill`. No extra fields.
 
 ---
 
