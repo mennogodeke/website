@@ -1,13 +1,8 @@
-# Personal Website
+# Project Overview
+
 My personal portfolio / CV website to showcase the skills and knowledge i've gained over the years, the jobs i've had and the projects i've built. Additionally there should be the option to download my CV.
 
-## Stack
-- Ruby on Rails 8.1.3
-- Ruby 3.4.7
-- Hotwire (Turbo + Stimulus) · Importmap · Propshaft
-- Bulma CSS (vendored as `bulma.min.css`)
-- PostgreSQL (via `pg` gem)
-- Docker · Kamal (deployment)
+See also: [DESIGN.md](DESIGN.md) · [CONTENT.md](CONTENT.md)
 
 ---
 
@@ -47,22 +42,18 @@ Open question: Should non-engineering skills also be listed here? (e.g. spoken l
 
 Idea: Skills displayed as a grid where tile size reflects proficiency level (xs–xl) and related skills are clustered together.
 
-### Career
-A chronological list of jobs and positions, ordered from most recent to oldest. Each entry includes the role, company, dates, and a short summary of responsibilities and technologies used.
+### Career ✓
+A chronological list of jobs and positions, ordered from most recent to oldest. Rendered dynamically from the `Job` model via `JobsController`. Each entry displays role, company, dates, and description. Seeded with 5 real entries.
 
-Examples:
+Entries:
 1. Senior Software Engineer @ Kape Technologies [Feb 2022 – Jan 2026]
 2. Software Engineer @ Kape Technologies [Feb 2019 – Jan 2022]
 3. Junior Software Engineer @ ZenGuard [Aug 2017 – Jan 2019]
 4. Software Engineering Intern @ ZenGuard [Feb 2017 – Jul 2017]
 5. Software Engineering Intern @ Shopboostr [Jun 2016 – Dec 2016]
 
-Each job entry displays role, company, dates, description, and associated skills. Seeded with 5 real entries.
-
-### Projects
-A portfolio page listing the projects I've worked on. Each project will have a dedicated detail/show page with more information.
-
-Details TBD.
+### Projects ✓
+A portfolio page listing the projects I've worked on. Each project has a dedicated detail/show page. Rendered dynamically from the `Project` model via `ProjectsController`.
 
 ### Contact
 A contact page with links to socials (GitHub, LinkedIn, Slack, Discord, email) and a contact form.
@@ -74,13 +65,13 @@ Note: Page label may change (e.g. "Get in touch", "Let's work together").
 Two parts:
 
 #### Part 1: CV Generation
-A `CvController` with a `show` action renders the CV as an HTML page (using Job, Skill, and Expertise data). A custom Rake task `rails cv:generate` uses this HTML view to generate a PDF via the **Grover** gem (Puppeteer/Chrome). This requires Chrome in the Docker image.
+`PagesController#cv` renders the CV as an HTML page (using Job, Skill, and Expertise data). `PagesController#cv_preview` renders the same view with the dedicated CV layout (used for development/print preview). A custom Rake task `rails cv:generate` uses this HTML view to generate a PDF via the **Grover** gem (Puppeteer/Chrome). This requires Chrome in the Docker image.
 
 #### Part 2: CV Download flow
 Visitors can request the CV through an email confirmation flow via `CvDownloadsController`:
 1. Visitor fills in their email on `CvDownloads#new` and clicks "Request"
-2. A `CvDownload` record is created and a confirmation email is sent with a signed, expiring link (24h)
-3. Visitor clicks the link → `CvDownloads#show` validates the token, triggers the PDF download, and records `downloaded_at`
+2. A `CvDownload` record is created (auto-approved for now) and a confirmation email is sent with a signed, expiring link (24h)
+3. Visitor clicks the link → `CvDownloads#show` validates the token, triggers the PDF download, and increments `download_count`
 
 **Future:** An admin dashboard (requiring User authentication) will allow approving/denying CV download requests. To be tackled later alongside the `/admin` backend.
 
@@ -89,21 +80,22 @@ Visitors can request the CV through an email confirmation flow via `CvDownloadsC
 ## Controllers and Routes
 
 ```
-GET /          → pages#home
-GET /home      → pages#home
-GET /experience → pages#experience
-GET /jobs      → jobs#index      ← Career page (database-driven)
-GET /projects  → pages#projects
-GET /contact   → pages#contact
+GET /             → pages#home
+GET /home         → pages#home
+GET /experience   → pages#experience
+GET /jobs         → jobs#index          ← Career page
+GET /projects     → projects#index
+GET /projects/:id → projects#show
+GET /contact      → pages#contact
 ```
 
-Static pages are served by `PagesController`. The Career page is served by `JobsController`.
 `PagesController#experience` loads `@expertises` (with skills eager-loaded) and `@skills`.
 
 ```
-GET  /cv                → cv#show               ← HTML CV view
-GET  /cv/download       → cv_downloads#new      ← Request form
-POST /cv/download       → cv_downloads#create   ← Submit email
+GET  /cv                 → pages#cv             ← HTML CV view
+GET  /cv/preview         → pages#cv_preview     ← CV layout preview
+GET  /cv/download        → cv_downloads#new     ← Request form
+POST /cv/download        → cv_downloads#create  ← Submit email
 GET  /cv/download/:token → cv_downloads#show    ← Confirm & trigger download
 ```
 
@@ -127,7 +119,7 @@ Seeded with 5 entries via `db/seeds.rb`.
 ### Skill ✓
 Fields: `name` (string), `description` (text), `level` (integer enum: `familiar: 1`, `proficient: 2`, `expert: 3`).
 Validations: `name`, `level` are required.
-Associations: `has_many :expertises, through: :expertise_skills` and `has_many :jobs, through: :job_skills`.
+Associations: `has_many :expertises, through: :expertise_skills`, `has_many :jobs, through: :job_skills`, `has_many :projects, through: :project_skills`.
 Seeded with 15 entries via `db/seeds.rb`.
 
 ### ExpertiseSkill ✓
@@ -136,94 +128,17 @@ Join table between `Expertise` and `Skill`. No extra fields.
 ### JobSkill ✓
 Join table between `Job` and `Skill`. No extra fields.
 
-### CvDownload (planned)
-Fields: `email` (string), `token` (string, unique), `requested_at` (datetime), `downloaded_at` (datetime, nullable).
-The token is generated on creation and expires after 24 hours. `downloaded_at` is set when the visitor clicks the download link.
+### Project ✓
+Fields: `name` (string), `description` (text), `url` (string, optional), `repo_url` (string, optional), `position` (integer), `year` (integer).
+Validations: `name` is required. `url` and `repo_url` must be valid HTTP/HTTPS URLs if present.
+Ordering: `default_scope` orders by `position ASC`.
+Associations: `has_many :skills, through: :project_skills`.
 
-**Future:** Add `approved_at` / `denied_at` and admin approval flow once User authentication is implemented.
+### ProjectSkill ✓
+Join table between `Project` and `Skill`. No extra fields.
 
----
+### CvDownload ✓
+Fields: `email` (string), `token` (string, unique), `requested_at` (datetime), `approved_at` (datetime), `download_count` (integer), `last_download_at` (datetime, nullable).
+Token is generated via `has_secure_token` and expires after 24 hours. `approved_at` is auto-set on creation (no manual approval yet). `download_count` is incremented and `last_download_at` is updated on each download.
 
-## Development Environment
-- PostgreSQL runs in Docker via `docker compose up`
-- Rails app runs locally via `bin/dev`
-- `docker-compose.yml` is for local dev only — Kamal handles production
-- Default local DB credentials: user `website`, password `password`, host `localhost`
-
----
-
-## Deployments and/or CI&CD
-- **CI:** GitHub Actions — 4 jobs: `scan_ruby` (Brakeman + bundler-audit), `scan_js` (importmap audit), `lint` (RuboCop), `test` (Minitest with PostgreSQL service container)
-- **Deployment:** Kamal — builds a production Docker image and deploys to the target server
-- **Production DB:** PostgreSQL as a Kamal accessory; connection via `DATABASE_URL` secret
-- System test job exists in CI but is disabled (`if: false`) until system tests are implemented
----
-
-## Design Direction
-Websites for inspiration:
-- https://github.com
-- https://docs.digitalocean.com/
-- https://lucid.co/
-- https://vapor.codes/
-- https://signal.org/
-- https://thoughtbot.com/
-
----
-
-## Layout
-
-### Top Navigation
-
-### Footer
-
-### Home
-Sites for inspiration:
-- https://docs.digitalocean.com/
-- https://lucid.co/enterprise
-
-### Experience
-Sites for inspiration:
-- https://www.ea.com/games/the-sims/the-sims-4/store/categories/stuff-packs (expertise cards)
-- https://www.ea.com/games/the-sims/the-sims-4/store (card-per-expertise alternative)
-
-### Career
-Vertical stack/timeline, most recent job on top.
-
-### Projects
-Standard collection/gallery layout.
-
-### Contact
-- Simple contact form
-- Links to socials: GitHub, LinkedIn, Slack, Discord, Email
-
----
-
-## Colors
-TBD — to be revisited. Custom palette (not Bulma defaults), dark mode is a must-have.
-
-Previous direction (reverted, may serve as a starting point):
-- Blue as primary accent
-- Red as secondary accent (sparingly)
-- Orange (#F97316) for CTAs
-- Light base (white / near-white) for light mode, dark blue-gray for dark mode
-
----
-
-## Typography
-TBD — to be revisited alongside colours.
-
-Previous direction (reverted, may serve as a starting point):
-- **Headings / accent text:** Monaspace Neon — https://monaspace.githubnext.com/
-- **Body text:** DM Sans — Google Fonts
-
----
-
-## Content
-
-### Audience
-Mainly recruiters and freelancers, perhaps company HR looking for freelancers.
-
-### Tone
-- Personal and creative rather than minimal and professional
-- Informal over formal
-- Laid-back with an occasional cheeky joke
+**Future:** Add `denied_at` and admin approval/denial flow once User authentication is implemented.
