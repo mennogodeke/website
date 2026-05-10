@@ -20,11 +20,11 @@
     <% end %>
 
     <div class="project-links">
-      <% if @project.url.present? %>
-        <%= link_to "View live", @project.url, class: "button", target: "_blank", rel: "noopener" %>
+      <% if safe_url(@project.url) %>
+        <%= link_to "View live", safe_url(@project.url), class: "button", target: "_blank", rel: "noopener" %>
       <% end %>
-      <% if @project.repo_url.present? %>
-        <%= link_to "View repo", @project.repo_url, class: "button", target: "_blank", rel: "noopener" %>
+      <% if safe_url(@project.repo_url) %>
+        <%= link_to "View repo", safe_url(@project.repo_url), class: "button", target: "_blank", rel: "noopener" %>
       <% end %>
     </div>
 
