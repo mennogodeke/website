@@ -22,11 +22,11 @@
             </div>
           <% end %>
           <div class="project-links">
-            <% if project.url.present? %>
-              <%= link_to "Live", project.url, class: "button is-small", target: "_blank", rel: "noopener" %>
+            <% if safe_url(project.url) %>
+              <%= link_to "Live", safe_url(project.url), class: "button is-small", target: "_blank", rel: "noopener" %>
             <% end %>
-            <% if project.repo_url.present? %>
-              <%= link_to "Repo", project.repo_url, class: "button is-small", target: "_blank", rel: "noopener" %>
+            <% if safe_url(project.repo_url) %>
+              <%= link_to "Repo", safe_url(project.repo_url), class: "button is-small", target: "_blank", rel: "noopener" %>
             <% end %>
           </div>
         </div>
