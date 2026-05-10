@@ -25,4 +25,9 @@ class JobTest < ActiveSupport::TestCase
     job = Job.new(title: "Engineer", company: "Acme", start_date: Date.today, end_date: nil)
     assert job.valid?
   end
+
+  test "has many skills through job_skills" do
+    job = jobs(:senior_engineer)
+    assert_includes job.skills, skills(:ruby_on_rails)
+  end
 end
