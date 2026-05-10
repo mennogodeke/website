@@ -1,0 +1,16 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  email: visitor@example.com
+  token: abc123uniquetoken000001
+  requested_at: 2026-05-10 10:00:00
+  approved_at: 2026-05-10 10:00:00
+  download_count: 0
+
+two:
+  email: another@example.com
+  token: xyz789uniquetoken000002
+  requested_at: 2026-05-09 10:00:00
+  approved_at: 2026-05-09 10:00:00
+  download_count: 2
+  last_download_at: 2026-05-09 11:00:00

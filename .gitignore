@@ -35,3 +35,6 @@
 
 # Claude
 /CLAUDE.local.md
+# Node (Puppeteer/Grover)
+node_modules/
+package-lock.json
