@@ -7,7 +7,7 @@ namespace :cv do
     FileUtils.mkdir_p(output_path.dirname)
 
     port = 3099
-    url  = "http://localhost:#{port}/cv"
+    url  = "http://localhost:#{port}/cv/preview"
     server_pid = nil
 
     begin
