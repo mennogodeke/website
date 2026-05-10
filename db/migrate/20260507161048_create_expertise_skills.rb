@@ -1,0 +1,10 @@
+class CreateExpertiseSkills < ActiveRecord::Migration[8.1]
+  def change
+    create_table :expertise_skills do |t|
+      t.references :expertise, null: false, foreign_key: true
+      t.references :skill, null: false, foreign_key: true
+
+      t.timestamps
+    end
+  end
+end

@@ -22,6 +22,45 @@
   end
 end
 
+# Expertises
+[
+  {
+    name: "Back-end Development", years_of_experience: 8,
+    description: "Building APIs, payment integrations, and data-heavy Rails applications. Strong focus on TDD and CI/CD pipelines.",
+    skills: [ "Ruby on Rails", "Ruby", "PostgreSQL", "Docker" ]
+  },
+  {
+    name: "Cloud Engineering", years_of_experience: 6,
+    description: "Designing and managing cloud infrastructure across AWS and DigitalOcean, with a focus on infrastructure-as-code and reliability.",
+    skills: [ "AWS", "Terraform", "Ansible", "Docker" ]
+  },
+  {
+    name: "DevOps", years_of_experience: 6,
+    description: "Automating everything from local dev environments to production deployments. If I have to do it twice, I automate it.",
+    skills: [ "Docker", "GitHub Actions", "Kubernetes" ]
+  },
+  {
+    name: "iOS & macOS Development", years_of_experience: 4,
+    description: "Native app development for Apple platforms — from side projects to production apps on the App Store.",
+    skills: [ "Swift" ]
+  },
+  {
+    name: "Front-end Development", years_of_experience: 3,
+    description: "Building interfaces that don't make users want to close the tab. Mostly component-based work alongside back-end projects.",
+    skills: [ "JavaScript" ]
+  }
+].each do |attrs|
+  expertise = Expertise.find_or_create_by!(name: attrs[:name]) do |e|
+    e.years_of_experience = attrs[:years_of_experience]
+    e.description         = attrs[:description]
+  end
+
+  attrs[:skills].each do |skill_name|
+    skill = Skill.find_by!(name: skill_name)
+    ExpertiseSkill.find_or_create_by!(expertise: expertise, skill: skill)
+  end
+end
+
 # Jobs
 Job.find_or_create_by!(title: "Senior Software Engineer", company: "Kape Technologies") do |job|
   job.start_date = "2022-02-01"

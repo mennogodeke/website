@@ -27,3 +27,23 @@ terraform:
   name: Terraform
   description: Infrastructure-as-code for cloud provisioning.
   level: familiar
+
+ruby:
+  name: Ruby
+  description:
+  level: expert
+
+postgresql:
+  name: PostgreSQL
+  description:
+  level: proficient
+
+aws:
+  name: AWS
+  description:
+  level: proficient
+
+github_actions:
+  name: GitHub Actions
+  description: CI/CD pipelines for automated testing and deployment.
+  level: proficient

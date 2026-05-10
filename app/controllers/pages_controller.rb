@@ -3,6 +3,8 @@ class PagesController < ApplicationController
   end
 
   def experience
+    @expertises = Expertise.includes(:skills).all
+    @skills = Skill.all
   end
 
   def career
