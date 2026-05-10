@@ -7,9 +7,6 @@ class PagesController < ApplicationController
     @skills = Skill.all
   end
 
-  def projects
-  end
-
   def contact
   end
 
