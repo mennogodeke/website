@@ -1,3 +1,6 @@
 class Job < ApplicationRecord
+  has_many :job_skills, dependent: :destroy
+  has_many :skills, through: :job_skills
+
   validates :title, :company, :start_date, presence: true
 end

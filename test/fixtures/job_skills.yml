@@ -1,0 +1,23 @@
+senior_engineer_rails:
+  job: senior_engineer
+  skill: ruby_on_rails
+
+senior_engineer_ruby:
+  job: senior_engineer
+  skill: ruby
+
+senior_engineer_postgresql:
+  job: senior_engineer
+  skill: postgresql
+
+senior_engineer_docker:
+  job: senior_engineer
+  skill: docker
+
+junior_engineer_rails:
+  job: junior_engineer
+  skill: ruby_on_rails
+
+junior_engineer_ruby:
+  job: junior_engineer
+  skill: ruby

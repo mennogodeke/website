@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_05_07_161048) do
+ActiveRecord::Schema[8.1].define(version: 2026_05_10_051652) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -29,6 +29,15 @@ ActiveRecord::Schema[8.1].define(version: 2026_05_07_161048) do
     t.string "name"
     t.datetime "updated_at", null: false
     t.integer "years_of_experience"
+  end
+
+  create_table "job_skills", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.bigint "job_id", null: false
+    t.bigint "skill_id", null: false
+    t.datetime "updated_at", null: false
+    t.index ["job_id"], name: "index_job_skills_on_job_id"
+    t.index ["skill_id"], name: "index_job_skills_on_skill_id"
   end
 
   create_table "jobs", force: :cascade do |t|
@@ -51,4 +60,6 @@ ActiveRecord::Schema[8.1].define(version: 2026_05_07_161048) do
 
   add_foreign_key "expertise_skills", "expertises"
   add_foreign_key "expertise_skills", "skills"
+  add_foreign_key "job_skills", "jobs"
+  add_foreign_key "job_skills", "skills"
 end

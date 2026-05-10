@@ -62,29 +62,46 @@ end
 end
 
 # Jobs
-Job.find_or_create_by!(title: "Senior Software Engineer", company: "Kape Technologies") do |job|
-  job.start_date = "2022-02-01"
-  job.end_date   = "2026-01-01"
-  job.description = "Led development of payment integrations and data-heavy Rails applications. Focused on TDD and CI/CD pipelines."
-end
+[
+  {
+    title: "Senior Software Engineer", company: "Kape Technologies",
+    start_date: "2022-02-01", end_date: "2026-01-01",
+    description: "Led development of payment integrations and data-heavy Rails applications. Focused on TDD and CI/CD pipelines.",
+    skills: [ "Ruby on Rails", "Ruby", "PostgreSQL", "Docker", "AWS", "GitHub Actions" ]
+  },
+  {
+    title: "Software Engineer", company: "Kape Technologies",
+    start_date: "2019-02-01", end_date: "2022-01-01",
+    description: "Built and maintained APIs and back-end services for a suite of privacy-focused products.",
+    skills: [ "Ruby on Rails", "Ruby", "PostgreSQL", "Docker" ]
+  },
+  {
+    title: "Junior Software Engineer", company: "ZenGuard",
+    start_date: "2017-08-01", end_date: "2019-01-01",
+    description: nil,
+    skills: [ "Ruby on Rails", "Ruby" ]
+  },
+  {
+    title: "Software Engineering Intern", company: "ZenGuard",
+    start_date: "2017-02-01", end_date: "2017-07-01",
+    description: nil,
+    skills: [ "Ruby on Rails", "Ruby" ]
+  },
+  {
+    title: "Software Engineering Intern", company: "Shopboostr",
+    start_date: "2016-06-01", end_date: "2016-12-01",
+    description: nil,
+    skills: [ "Ruby on Rails", "JavaScript" ]
+  }
+].each do |attrs|
+  job = Job.find_or_create_by!(title: attrs[:title], company: attrs[:company]) do |j|
+    j.start_date  = attrs[:start_date]
+    j.end_date    = attrs[:end_date]
+    j.description = attrs[:description]
+  end
 
-Job.find_or_create_by!(title: "Software Engineer", company: "Kape Technologies") do |job|
-  job.start_date = "2019-02-01"
-  job.end_date   = "2022-01-01"
-  job.description = "Built and maintained APIs and back-end services for a suite of privacy-focused products."
-end
-
-Job.find_or_create_by!(title: "Junior Software Engineer", company: "ZenGuard") do |job|
-  job.start_date = "2017-08-01"
-  job.end_date   = "2019-01-01"
-end
-
-Job.find_or_create_by!(title: "Software Engineering Intern", company: "ZenGuard") do |job|
-  job.start_date = "2017-02-01"
-  job.end_date   = "2017-07-01"
-end
-
-Job.find_or_create_by!(title: "Software Engineering Intern", company: "Shopboostr") do |job|
-  job.start_date = "2016-06-01"
-  job.end_date   = "2016-12-01"
+  attrs[:skills].each do |skill_name|
+    skill = Skill.find_by!(name: skill_name)
+    JobSkill.find_or_create_by!(job: job, skill: skill)
+  end
 end
