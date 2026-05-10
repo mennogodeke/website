@@ -5,7 +5,7 @@ class CvDownloadMailerTest < ActionMailer::TestCase
     cv_download = cv_downloads(:one)
     mail = CvDownloadMailer.confirmation(cv_download)
 
-    assert_equal [cv_download.email], mail.to
+    assert_equal [ cv_download.email ], mail.to
     assert_equal "Your CV download link", mail.subject
   end
 
