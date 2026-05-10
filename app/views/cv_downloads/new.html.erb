@@ -20,8 +20,10 @@
       <% end %>
     </div>
 
-    <div class="field">
+    <div class="cv-download-actions">
       <%= f.submit "Send download link", class: "button is-dark" %>
+      <span class="cv-download-or">or</span>
+      <%= link_to "See in browser", cv_path, class: "button" %>
     </div>
   <% end %>
 </section>
