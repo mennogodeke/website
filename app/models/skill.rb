@@ -3,6 +3,8 @@ class Skill < ApplicationRecord
   has_many :expertises, through: :expertise_skills
   has_many :job_skills, dependent: :destroy
   has_many :jobs, through: :job_skills
+  has_many :project_skills, dependent: :destroy
+  has_many :projects, through: :project_skills
 
   enum :level, { familiar: 1, proficient: 2, expert: 3 }
 

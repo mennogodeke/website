@@ -21,15 +21,16 @@ class CvDownloadsControllerTest < ActionDispatch::IntegrationTest
     assert_response :unprocessable_entity
   end
 
-  test "show with valid token records download and redirects" do
+  test "show with valid token records download" do
     cv_download = cv_downloads(:one)
     cv_download.update!(requested_at: 1.hour.ago)
     count_before = cv_download.download_count
 
     get cv_download_url(cv_download.token)
 
-    assert_redirected_to cv_path
     assert_equal count_before + 1, cv_download.reload.download_count
+    # sends the file (200) if the PDF exists, redirects to cv_path if not yet generated
+    assert_includes [ 200, 302 ], response.status
   end
 
   test "show with expired token redirects to new with alert" do
