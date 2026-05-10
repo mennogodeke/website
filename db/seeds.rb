@@ -105,3 +105,47 @@ end
     JobSkill.find_or_create_by!(job: job, skill: skill)
   end
 end
+
+# Projects
+[
+  {
+    name: "menno.codes",
+    description: "This very website — a personal portfolio and CV built with Rails 8. Features a CV download flow with email-gated token links and PDF generation via Grover.",
+    url: nil,
+    repo_url: "https://github.com/mennogodeke/website",
+    year: 2026,
+    position: 1,
+    skills: [ "Ruby on Rails", "Ruby", "PostgreSQL", "Docker" ]
+  },
+  {
+    name: "Project Placeholder",
+    description: "A placeholder project. Replace this with something real once you have more projects to show.",
+    url: nil,
+    repo_url: nil,
+    year: nil,
+    position: 2,
+    skills: []
+  },
+  {
+    name: "Another Placeholder",
+    description: "Another placeholder project. Replace this with something real once you have more projects to show.",
+    url: nil,
+    repo_url: nil,
+    year: nil,
+    position: 3,
+    skills: []
+  }
+].each do |attrs|
+  project = Project.find_or_create_by!(name: attrs[:name]) do |p|
+    p.description = attrs[:description]
+    p.url         = attrs[:url]
+    p.repo_url    = attrs[:repo_url]
+    p.year        = attrs[:year]
+    p.position    = attrs[:position]
+  end
+
+  attrs[:skills].each do |skill_name|
+    skill = Skill.find_by!(name: skill_name)
+    ProjectSkill.find_or_create_by!(project: project, skill: skill)
+  end
+end
