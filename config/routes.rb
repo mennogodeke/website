@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :jobs, only: [ :index ]
 
   get "cv", to: "pages#cv"
+  get "cv/preview", to: "pages#cv_preview"
 
   get "home", to: "pages#home"
   get "experience", to: "pages#experience"
