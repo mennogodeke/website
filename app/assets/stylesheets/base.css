@@ -1,0 +1,38 @@
+/* ============================================================
+   Design tokens
+   ============================================================ */
+:root {
+  --app-bg:           #0b1729;
+  --app-bg-card:      #0e2044;
+  --app-accent:       #c8ff00;
+  --app-accent-rgb:   200, 255, 0;
+  --app-yellow:       #ffd700;
+  --app-text:         #ffffff;
+  --app-text-muted:   rgba(255, 255, 255, 0.6);
+  --app-border:       rgba(255, 255, 255, 0.1);
+  --app-green:        #00e676;
+  --app-font-display: 'Barlow Condensed', sans-serif;
+  --app-font-body:    'Barlow', -apple-system, sans-serif;
+}
+
+/* ============================================================
+   Global reset / dark base
+   ============================================================ */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--app-bg);
+  color: var(--app-text);
+  font-family: var(--app-font-body);
+  margin: 0;
+  /* Override Bulma's light-mode scheme variables */
+  --bulma-body-background-color: var(--app-bg);
+  --bulma-body-color: var(--app-text);
+  --bulma-text: var(--app-text);
+  --bulma-border: var(--app-border);
+  --bulma-scheme-main-l: 11%;
+  --bulma-scheme-h: 221;
+  --bulma-scheme-s: 50%;
+}
