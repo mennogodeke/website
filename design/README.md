@@ -2,11 +2,6 @@
 - Uses Bulma CSS
 - Keeps Javascript to a minimum
 
-## Pages
-
-- Home
-
-
 ---
 
 ## Data Models and Resources
@@ -47,20 +42,3 @@ Fields: `email` (string), `token` (string, unique), `requested_at` (datetime), `
 Token is generated via `has_secure_token` and expires after 24 hours. `approved_at` is auto-set on creation (no manual approval yet). `download_count` is incremented and `last_download_at` is updated on each download.
 
 **Future:** Add `denied_at` and admin approval/denial flow once User authentication is implemented.
-
----
-
-## Style
-- Style similair too Fortnite
-- Shiny and Bold
-- Blue with Yellow accents
-- Background: ![background](/design/option-b-background-1.jpg)
-- Elements: ![option-b-elements-1](/design/option-b-ui-elements-1.png)
-- Elements: ![option-b-elements-2](/design/option-b-ui-elements-2.png)
-- Vector Example: ![option-b-vector](/design/option-b-vector-1.png)
-- Title Examples: ![title-1](/design/title-1.png)
-- Title Examples: ![title-1](/design/title-2.png)
-
----
-
-## Inspiration
