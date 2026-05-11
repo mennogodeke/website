@@ -1,35 +1,115 @@
+/* ============================================================
+   Navbar — Bulma overrides via CSS variables + custom styling
+   ============================================================ */
+.navbar {
+  /* Override Bulma's light-scheme navbar vars */
+  --bulma-navbar-background-color: transparent;
+  --bulma-navbar-item-color: rgba(255, 255, 255, 0.65);
+  --bulma-navbar-item-hover-color: #ffffff;
+  --bulma-navbar-item-hover-background-color: transparent;
+  --bulma-navbar-item-active-color: #ffffff;
+  --bulma-navbar-item-active-background-color: transparent;
+  --bulma-navbar-burger-color: var(--app-text);
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  border-bottom: none;
+}
+
+/* ── Logo ── */
 .navbar-logo {
-  font-weight: 700;
-  font-size: 1.25rem;
-  letter-spacing: 0.05em;
+  font-family: var(--app-font-display);
+  font-weight: 800;
+  font-size: 1.35rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--app-text) !important;
 }
 
 .navbar-logo:hover,
 .navbar-logo:focus {
-  background-color: transparent;
+  color: var(--app-text) !important;
+  background-color: transparent !important;
 }
 
-.navbar {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  border-bottom: 1px solid var(--bulma-border);
-}
-
+/* ── Nav links ── */
 .navbar-item {
-  font-weight: 500;
-  transition: color 0.15s ease;
+  font-family: var(--app-font-display);
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  position: relative;
 }
 
 .navbar-item:hover,
-.navbar-item:focus {
-  background-color: transparent;
+.navbar-item:focus,
+.navbar-item.is-active {
+  background-color: transparent !important;
 }
 
 .navbar-item.is-active {
-  font-weight: 700;
+  color: #ffffff !important;
 }
 
-.navbar-item.is-cta {
-  font-weight: 700;
+.navbar-item::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0.75rem;
+  right: 0.75rem;
+  height: 2px;
+  background: var(--app-accent);
+  transform: scaleX(0);
+  transition: transform 0.2s ease;
+}
+
+.navbar-item:not(.navbar-logo):hover::after,
+.navbar-item.is-active::after {
+  transform: scaleX(1);
+}
+
+/* ── CTA button ── */
+.navbar-cta {
+  font-family: var(--app-font-display);
+  font-weight: 800;
+  font-size: 1rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--app-accent);
+  text-decoration: none;
+  border: 1.5px solid var(--app-accent);
+  padding: 0.45rem 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background 0.15s ease, color 0.15s ease;
+  white-space: nowrap;
+}
+
+.navbar-cta:hover {
+  background: var(--app-accent);
+  color: #0b1729;
+}
+
+/* ── Mobile: keep Bulma's burger/menu behaviour, re-skin ── */
+@media (max-width: 1023px) {
+  .navbar-menu.is-active {
+    background: rgba(11, 23, 41, 0.98);
+    border-top: 1px solid var(--app-border);
+    box-shadow: none;
+    backdrop-filter: blur(10px);
+    padding: 1rem 0 1.5rem;
+  }
+
+  .navbar-item::after {
+    display: none;
+  }
+
+  .navbar-item {
+    padding: 0.75rem 1.5rem;
+  }
 }

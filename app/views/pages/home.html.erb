@@ -1,103 +1,72 @@
 <%# ============================================================ %>
-<%# 1. HERO — who I am %>
+<%# HERO %>
 <%# ============================================================ %>
 <section class="home-hero">
-  <p class="home-eyebrow">Hey, I'm Menno 👋</p>
-  <h1 class="home-title">Freelance Software Engineer</h1>
-  <p class="home-tagline">
-    I build web apps, cloud infrastructure, and the occasional iOS app.
-    Eight years in, still having fun.
-  </p>
-  <div class="home-hero-ctas">
-    <a href="#" class="button">Download CV</a>
-    <a href="#" class="button">Get in touch</a>
+  <div class="hero-inner">
+
+    <div class="hero-left">
+      <div class="hero-badge">LVL 30 &middot; ENGINEER</div>
+
+      <h1 class="hero-name">MENNO<br>GODEKE</h1>
+
+      <p class="hero-bio">
+        Senior backend engineer who builds <strong>Ruby on Rails</strong>
+        systems that don't fall over. 10 years of XP, 30+ shipped
+        projects, and a soft spot for well-named variables.
+      </p>
+
+      <div class="hero-ctas">
+        <%= link_to projects_path, class: "btn-primary" do %>
+          VIEW WORK <i class="fa-solid fa-arrow-right"></i>
+        <% end %>
+        <%= link_to new_cv_download_path, class: "btn-outline" do %>
+          DOWNLOAD CV
+        <% end %>
+      </div>
+
+      <div class="hero-status">
+        <span class="status-dot"></span>
+        <span class="status-label">OPEN FOR COLLABS &middot; AMSTERDAM, NL</span>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="hex-glow">
+        <div class="hex-border">
+          <div class="hex-inner">
+            <i class="fa-solid fa-user"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
 <%# ============================================================ %>
-<%# 2. WHAT I DO — expertise stat level %>
+<%# STATS %>
 <%# ============================================================ %>
-<section class="home-section home-what-i-do">
-  <nav class="level">
-    <div class="level-item has-text-centered">
-      <div>
-        <p class="title">8+</p>
-        <p class="heading">Years back-end</p>
-      </div>
+<section class="home-stats">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <span class="stat-number">10+</span>
+      <span class="stat-label">Years back-end</span>
     </div>
-    <div class="level-item has-text-centered">
-      <div>
-        <p class="title">6+</p>
-        <p class="heading">Years cloud & DevOps</p>
-      </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <span class="stat-number">6+</span>
+      <span class="stat-label">Years cloud & DevOps</span>
     </div>
-    <div class="level-item has-text-centered">
-      <div>
-        <p class="title">4+</p>
-        <p class="heading">Years iOS & macOS</p>
-      </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <span class="stat-number">30+</span>
+      <span class="stat-label">Projects shipped</span>
     </div>
-    <div class="level-item has-text-centered">
-      <div>
-        <p class="title">3+</p>
-        <p class="heading">Years front-end</p>
-      </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <span class="stat-number">4+</span>
+      <span class="stat-label">Years iOS & macOS</span>
     </div>
-  </nav>
-</section>
-
-<%# ============================================================ %>
-<%# 3. WHAT I'VE BUILT — projects teaser %>
-<%# ============================================================ %>
-<section class="home-section home-projects">
-  <div class="home-section-label">What I've built</div>
-  <div class="home-section-body">
-    <p class="home-section-intro">
-      A selection of things I've shipped, broken, and fixed again.
-    </p>
-    <div class="projects-placeholder">Projects coming soon.</div>
-    <a href="#" class="home-section-link">See all projects →</a>
   </div>
 </section>
 
-<%# ============================================================ %>
-<%# 4. WHERE I'VE WORKED — career teaser %>
-<%# ============================================================ %>
-<section class="home-section home-career">
-  <div class="home-section-label">Where I've worked</div>
-  <div class="home-section-body">
-    <p class="home-section-intro">
-      From intern to senior engineer — a few of the places I've called home.
-    </p>
-    <ol class="career-teaser-list">
-      <li>
-        <span class="career-role">Senior Software Engineer</span>
-        <span class="career-company">Kape Technologies</span>
-        <span class="career-dates">Feb 2022 – Jan 2026</span>
-      </li>
-      <li>
-        <span class="career-role">Software Engineer</span>
-        <span class="career-company">Kape Technologies</span>
-        <span class="career-dates">Feb 2019 – Jan 2022</span>
-      </li>
-      <li>
-        <span class="career-role">Junior Software Engineer</span>
-        <span class="career-company">ZenGuard</span>
-        <span class="career-dates">Aug 2017 – Jan 2019</span>
-      </li>
-    </ol>
-    <a href="#" class="home-section-link">See full timeline →</a>
-  </div>
-</section>
-
-<%# ============================================================ %>
-<%# 5. CTA — let's work together %>
-<%# ============================================================ %>
-<section class="home-cta">
-  <h2>Want to work together?</h2>
-  <p>I'm available for freelance work. Let's talk.</p>
-  <div class="home-cta-buttons">
-    <a href="#" class="button">Get in touch</a>
-    <a href="#" class="button">Download CV</a>
-  </div>
-</section>

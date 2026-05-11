@@ -1,163 +1,268 @@
-/* Shared container width */
-.home-hero,
-.home-section,
-.home-cta {
-  max-width: 860px;
-  margin: 0 auto;
-  padding: 5rem 2rem;
-}
-
-/* Divider between sections */
-.home-section {
-  border-top: 1px solid var(--bulma-border);
-}
-
 /* ============================================================
-   1. Hero
+   Hero
    ============================================================ */
-.home-eyebrow {
-  font-size: 1rem;
-  margin-bottom: 0.75rem;
+.home-hero {
+  min-height: 100vh;
+  padding-top: 70px; /* fixed navbar height */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
 }
 
-.home-title {
-  font-size: 3rem;
-  line-height: 1.15;
+.hero-inner {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+/* ── Badge ── */
+.hero-badge {
+  display: inline-block;
+  background: var(--app-accent);
+  color: #1a1200;
+  font-family: var(--app-font-display);
+  font-weight: 800;
+  font-size: 1rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.85rem;
   margin-bottom: 1.25rem;
 }
 
-.home-tagline {
-  font-size: 1.2rem;
-  line-height: 1.75;
-  max-width: 52ch;
-  margin-bottom: 2rem;
-}
-
-.home-hero-ctas {
-  display: flex;
-  gap: 1rem;
-}
-
-/* ============================================================
-   2. Sections — shared two-column layout
-   ============================================================ */
-.home-section {
-  display: grid;
-  grid-template-columns: 200px 1fr;
-  gap: 3rem;
-  align-items: start;
-}
-
-.home-section-label {
-  font-size: 0.8rem;
-  font-weight: 700;
+/* ── Name ── */
+.hero-name {
+  font-family: var(--app-font-display);
+  font-weight: 900;
+  font-size: clamp(4.5rem, 9vw, 7.5rem);
+  line-height: 0.9;
+  color: #ffffff;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  padding-top: 0.25rem;
+  letter-spacing: -0.01em;
+  margin: 0 0 1.5rem;
 }
 
-.home-section-intro {
-  font-size: 1.05rem;
+/* ── Bio ── */
+.hero-bio {
+  font-size: 1rem;
   line-height: 1.75;
-  margin-bottom: 2rem;
+  color: rgba(255, 255, 255, 0.75);
+  max-width: 44ch;
+  margin-bottom: 2.25rem;
 }
 
-.home-section-link {
-  display: inline-block;
-  margin-top: 1.5rem;
-  font-weight: 600;
+.hero-bio strong {
+  color: #ffffff;
+  font-weight: 700;
 }
 
-/* ============================================================
-   What I do
-   ============================================================ */
-.home-what-i-do {
-  display: block;
-}
-
-/* ============================================================
-   Career teaser
-   ============================================================ */
-.career-teaser-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+/* ── CTAs ── */
+.hero-ctas {
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.25rem;
 }
 
-.career-teaser-list li {
-  display: grid;
-  grid-template-columns: 1fr 1fr auto;
-  gap: 1rem;
-  align-items: baseline;
-}
-
-.career-role {
-  font-weight: 600;
-}
-
-.career-dates {
-  font-size: 0.85rem;
-  white-space: nowrap;
-}
-
-/* ============================================================
-   Projects placeholder
-   ============================================================ */
-.projects-placeholder {
-  padding: 3rem;
-  border: 2px dashed var(--bulma-border);
-  border-radius: 0.5rem;
-  text-align: center;
-  font-size: 0.95rem;
-}
-
-/* ============================================================
-   5. Bottom CTA
-   ============================================================ */
-.home-cta {
-  border-top: 1px solid var(--bulma-border);
-  text-align: center;
-}
-
-.home-cta h2 {
-  font-size: 2rem;
-  margin-bottom: 0.75rem;
-}
-
-.home-cta p {
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--app-accent);
+  color: #0b1729;
+  font-family: var(--app-font-display);
+  font-weight: 800;
   font-size: 1.05rem;
-  margin-bottom: 2rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.7rem 1.5rem;
+  border: 2px solid var(--app-accent);
+  text-decoration: none;
+  transition: background 0.15s ease, color 0.15s ease;
 }
 
-.home-cta-buttons {
+.btn-primary:hover {
+  background: transparent;
+  color: var(--app-accent);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.8);
+  font-family: var(--app-font-display);
+  font-weight: 800;
+  font-size: 1.05rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.7rem 1.5rem;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  text-decoration: none;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.btn-outline:hover {
+  border-color: var(--app-accent);
+  color: var(--app-accent);
+}
+
+/* ── Status indicator ── */
+.hero-status {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--app-green);
+  border-radius: 50%;
+  flex-shrink: 0;
+  animation: status-pulse 2.5s ease infinite;
+}
+
+@keyframes status-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(0, 230, 118, 0.4); }
+  50%       { box-shadow: 0 0 0 5px rgba(0, 230, 118, 0); }
+}
+
+.status-label {
+  font-family: var(--app-font-display);
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+/* ── Hexagon avatar ── */
+.hero-right {
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  align-items: center;
+}
+
+.hex-glow {
+  filter: drop-shadow(0 0 28px rgba(var(--app-accent-rgb), 0.35));
+}
+
+.hex-border {
+  width: 220px;
+  height: 254px;
+  background: var(--app-accent);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hex-inner {
+  width: 208px;
+  height: 240px;
+  background: #0d1f3e;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(var(--app-accent-rgb), 0.4);
+  font-size: 4.5rem;
+}
+
+/* ============================================================
+   Stats bar
+   ============================================================ */
+.home-stats {
+  background: #ffffff;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.stats-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: stretch;
+}
+
+.stat-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  padding: 2.5rem 1rem;
+  text-align: center;
+}
+
+.stat-number {
+  font-family: var(--app-font-display);
+  font-weight: 900;
+  font-size: 2.75rem;
+  line-height: 1;
+  color: #0b1729;
+  letter-spacing: -0.02em;
+}
+
+.stat-label {
+  font-family: var(--app-font-body);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.45);
+}
+
+.stat-divider {
+  width: 1px;
+  background: rgba(0, 0, 0, 0.1);
+  align-self: stretch;
+  margin: 1.5rem 0;
 }
 
 /* ============================================================
    Responsive
    ============================================================ */
-@media (max-width: 640px) {
-  .home-title {
-    font-size: 2.25rem;
+@media (max-width: 860px) {
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    padding: 3rem 1.5rem;
   }
 
-  .home-section {
-    grid-template-columns: 1fr;
-    gap: 1rem;
+  .hero-right {
+    display: none;
   }
 
-  .expertise-list li {
-    grid-template-columns: 1fr;
-    gap: 0.15rem;
+  .stats-inner {
+    flex-wrap: wrap;
   }
 
-  .career-teaser-list li {
-    grid-template-columns: 1fr;
-    gap: 0.15rem;
+  .stat-item {
+    flex: 1 1 45%;
+    padding: 2rem 1rem;
+  }
+
+  .stat-divider {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-name {
+    font-size: 4rem;
+  }
+
+  .stat-item {
+    flex: 1 1 100%;
   }
 }

@@ -26,29 +26,31 @@
   </head>
 
   <body>
-    <nav class="site-nav" role="navigation" aria-label="main navigation">
-      <div class="site-nav-inner">
-        <div class="site-nav-brand">
-          <%= link_to root_path, class: "site-nav-logo" do %>
-            MENNO<span class="logo-dot">.</span>CODES
-          <% end %>
-        </div>
+    <nav class="navbar" role="navigation" aria-label="main navigation"
+         data-controller="navbar">
+      <div class="navbar-brand">
+        <%= link_to root_path, class: "navbar-item navbar-logo" do %>
+          MENNO.CODES
+        <% end %>
 
-        <input type="checkbox" id="nav-toggle" class="nav-toggle-input" aria-hidden="true">
-        <label for="nav-toggle" class="nav-burger" aria-label="Toggle navigation">
-          <span></span><span></span><span></span>
-        </label>
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+           data-navbar-target="burger"
+           data-action="click->navbar#toggle">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
 
-        <div class="site-nav-menu">
-          <div class="site-nav-links">
-            <%= link_to "Home",       root_path,       class: "site-nav-link #{'is-active' if current_page?(root_path)}" %>
-            <%= link_to "Career",     jobs_path,       class: "site-nav-link #{'is-active' if current_page?(jobs_path)}" %>
-            <%= link_to "Experience", experience_path, class: "site-nav-link #{'is-active' if current_page?(experience_path)}" %>
-            <%= link_to "Projects",   projects_path,   class: "site-nav-link #{'is-active' if current_page?(projects_path)}" %>
-            <%= link_to "Contact",    contact_path,    class: "site-nav-link #{'is-active' if current_page?(contact_path)}" %>
-          </div>
-          <div class="site-nav-cta">
-            <%= link_to new_cv_download_path, class: "nav-cta-btn" do %>
+      <div class="navbar-menu" data-navbar-target="menu">
+        <div class="navbar-end">
+          <%= link_to "Home",       root_path,       class: "navbar-item #{'is-active' if current_page?(root_path)}" %>
+          <%= link_to "Career",     jobs_path,       class: "navbar-item #{'is-active' if current_page?(jobs_path)}" %>
+          <%= link_to "Experience", experience_path, class: "navbar-item #{'is-active' if current_page?(experience_path)}" %>
+          <%= link_to "Projects",   projects_path,   class: "navbar-item #{'is-active' if current_page?(projects_path)}" %>
+          <%= link_to "Contact",    contact_path,    class: "navbar-item #{'is-active' if current_page?(contact_path)}" %>
+          <div class="navbar-item">
+            <%= link_to new_cv_download_path, class: "navbar-cta" do %>
               GET MY CV <i class="fa-solid fa-arrow-right"></i>
             <% end %>
           </div>

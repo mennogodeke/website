@@ -4,9 +4,8 @@
 :root {
   --app-bg:           #0b1729;
   --app-bg-card:      #0e2044;
-  --app-accent:       #c8ff00;
-  --app-accent-rgb:   200, 255, 0;
-  --app-yellow:       #ffd700;
+  --app-accent:       #f5e90c;
+  --app-accent-rgb:   245, 233, 12;
   --app-text:         #ffffff;
   --app-text-muted:   rgba(255, 255, 255, 0.6);
   --app-border:       rgba(255, 255, 255, 0.1);
@@ -24,6 +23,11 @@ html {
 
 body {
   background-color: var(--app-bg);
+  background-image: url("hero-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   color: var(--app-text);
   font-family: var(--app-font-body);
   margin: 0;
