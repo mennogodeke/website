@@ -38,3 +38,6 @@
 # Node (Puppeteer/Grover)
 node_modules/
 package-lock.json
+
+# Ignore DESIGN.md untill we've settled on a direction
+/DESIGN.md
