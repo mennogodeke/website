@@ -34,20 +34,17 @@ GET  /cv/download/:token → cv_downloads#show    ← Confirm & trigger download
 Fields: `title` (string), `company` (string), `description` (text), `start_date` (date), `end_date` (date, nullable).
 Validations: `title`, `company`, `start_date` are required.
 Associations: `has_many :skills, through: :job_skills`.
-Seeded with 5 real entries via `db/seeds.rb`.
 
 ### Expertise ✓
 Fields: `name` (string), `description` (text), `years_of_experience` (integer).
 Validations: `name`, `years_of_experience` are required.
 Ordering: `default_scope` orders by `years_of_experience DESC`.
 Associations: `has_many :skills, through: :expertise_skills`.
-Seeded with 5 entries via `db/seeds.rb`.
 
 ### Skill ✓
 Fields: `name` (string), `description` (text), `level` (integer enum: `familiar: 1`, `proficient: 2`, `expert: 3`).
 Validations: `name`, `level` are required.
 Associations: `has_many :expertises, through: :expertise_skills`, `has_many :jobs, through: :job_skills`, `has_many :projects, through: :project_skills`.
-Seeded with 15 entries via `db/seeds.rb`.
 
 ### ExpertiseSkill ✓
 Join table between `Expertise` and `Skill`. No extra fields.
