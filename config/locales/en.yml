@@ -28,4 +28,10 @@
 #       enabled: "ON"
 
 en:
-  hello: "Hello world"
+  pages:
+    home:
+      hello: "Hi, I'm Menno 👋"
+      title: "Chia tumeric direct"
+      subtitle: "Japanese breakfast 3 wolf moon distillery stereolab, direct trade girl dinner caviar bump lockwood bruh mixtape open studio. Vape JOMO church-key jean shorts imposter syndrome keffiyeh."
+      cv_cta: "Get my CV!"
+      contact_cta: "Get in touch"

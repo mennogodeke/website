@@ -2,15 +2,14 @@
 <%# 1. HERO — who I am %>
 <%# ============================================================ %>
 <section class="home-hero">
-  <p class="home-eyebrow">Hey, I'm Menno 👋</p>
-  <h1 class="home-title">Freelance Software Engineer</h1>
+  <p class="home-eyebrow"><%= t '.hello' %></p>
+  <h1 class="home-title"><%= t '.title' %></h1>
   <p class="home-tagline">
-    I build web apps, cloud infrastructure, and the occasional iOS app.
-    Eight years in, still having fun.
+    <%= t '.subtitle' %>
   </p>
   <div class="home-hero-ctas">
-    <a href="#" class="button">Download CV</a>
-    <a href="#" class="button">Get in touch</a>
+    <a href="#" class="button"><%= t '.cv_cta' %></a>
+    <a href="#" class="button"><%= t '.contact_cta' %></a>
   </div>
 </section>
 
