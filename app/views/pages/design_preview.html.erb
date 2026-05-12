@@ -2,26 +2,6 @@
 <%# DESIGN PREVIEW — component showcase for the design system   %>
 <%# ============================================================ %>
 
-<%# ── Preview helper styles ── %>
-<style>
-  .preview-section { border-top: 1px solid rgba(255,255,255,0.08); }
-  .preview-label {
-    font-family: var(--app-font-body);
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.25);
-    margin-bottom: 1.5rem;
-  }
-  .preview-row {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-end;
-    gap: 2rem;
-    margin-bottom: 2.5rem;
-  }
-</style>
 
 <%# ============================================================ %>
 <%# 1. TITLES                                                    %>
@@ -41,7 +21,7 @@
   <h2 class="title is-6">Is-6 — Label Heading</h2>
 
   <div class="preview-label">Subtitle sizes (is-1 → is-6)</div>
-  <div class="preview-row" style="align-items: center; flex-wrap: wrap;">
+  <div class="preview-row is-centered">
     <div class="subtitle is-1">Is-1</div>
     <div class="subtitle is-2">Is-2</div>
     <div class="subtitle is-3">Is-3 (default)</div>
@@ -146,7 +126,7 @@
   %>
 
   <div class="preview-label">Variant A — Number dominant (hover)</div>
-  <div class="expertise-grid is-stat" style="margin-bottom: 3rem">
+  <div class="expertise-grid is-stat preview-spaced">
     <% expertise_sample.each do |e| %>
       <div class="expertise-card <%= e[:css] %>">
         <span class="expertise-card-years"><%= e[:years] %></span>
@@ -160,7 +140,7 @@
   </div>
 
   <div class="preview-label">Variant B — Image + centered years, rounded (hover)</div>
-  <div class="expertise-grid is-band" style="margin-bottom: 3rem">
+  <div class="expertise-grid is-band preview-spaced">
     <% expertise_sample.each do |e| %>
       <div class="expertise-card <%= e[:css] %>">
         <div class="expertise-card-image-wrap">
@@ -179,7 +159,7 @@
   </div>
 
   <div class="preview-label">Variant C — Image + years badge top-right, top border (hover)</div>
-  <div class="expertise-grid is-top" style="margin-bottom: 3rem">
+  <div class="expertise-grid is-top preview-spaced">
     <% expertise_sample.each do |e| %>
       <div class="expertise-card <%= e[:css] %>">
         <div class="expertise-card-image-wrap">
@@ -200,7 +180,7 @@
   </div>
 
   <div class="preview-label">Variant D — Horizontal rows (hover)</div>
-  <div class="expertise-grid is-list" style="margin-bottom: 3rem">
+  <div class="expertise-grid is-list preview-spaced">
     <% expertise_sample.each do |e| %>
       <div class="expertise-card <%= e[:css] %>">
         <span class="expertise-card-years"><%= e[:years] %></span>
