@@ -1,0 +1,277 @@
+<%# ============================================================ %>
+<%# DESIGN PREVIEW — component showcase for the design system   %>
+<%# ============================================================ %>
+
+<%# ── Preview helper styles ── %>
+<style>
+  .preview-section { border-top: 1px solid rgba(255,255,255,0.08); }
+  .preview-label {
+    font-family: var(--app-font-body);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.25);
+    margin-bottom: 1.5rem;
+  }
+  .preview-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+  }
+</style>
+
+<%# ============================================================ %>
+<%# 1. TITLES                                                    %>
+<%# ============================================================ %>
+<section class="section is-medium preview-section">
+  <div class="title-row">
+    <h1 class="title is-1">Titles</h1>
+    <div class="subtitle">Typography</div>
+  </div>
+
+  <div class="preview-label">Title sizes</div>
+  <div class="preview-row">
+    <h2 class="title is-1">Is-1 Heading</h2>
+  </div>
+  <div class="preview-row">
+    <h2 class="title is-2">Is-2 Heading</h2>
+  </div>
+  <div class="preview-row">
+    <h2 class="title is-3">Is-3 Heading</h2>
+  </div>
+
+  <div class="preview-label">Title + subtitle inline</div>
+  <div class="preview-row">
+    <div class="title-row" style="width:100%">
+      <h2 class="title is-1">Page Title</h2>
+      <div class="subtitle">Section label</div>
+    </div>
+    <div class="title-row" style="width:100%">
+      <h2 class="title is-2">Section Title</h2>
+      <div class="subtitle">Label</div>
+    </div>
+  </div>
+
+  <div class="preview-label">Subtitle standalone</div>
+  <div class="preview-row">
+    <div class="subtitle">Where I've been</div>
+    <div class="subtitle">What I'm working with</div>
+    <div class="subtitle">Get a download link</div>
+  </div>
+</section>
+
+<%# ============================================================ %>
+<%# 2. BUTTONS                                                   %>
+<%# ============================================================ %>
+<section class="section preview-section">
+  <div class="title-row">
+    <h2 class="title is-2">Buttons</h2>
+    <div class="subtitle">Actions</div>
+  </div>
+
+  <div class="preview-label">Variants</div>
+  <div class="preview-row">
+    <a class="button is-primary">Primary</a>
+    <a class="button is-primary">
+      View Work <i class="fa-solid fa-arrow-right"></i>
+    </a>
+    <a class="button is-outlined">Outlined</a>
+    <a class="button is-outlined">Download CV</a>
+  </div>
+
+  <div class="preview-label">Sizes</div>
+  <div class="preview-row">
+    <a class="button is-primary is-small">Small</a>
+    <a class="button is-primary">Default</a>
+    <a class="button is-primary is-medium">Medium</a>
+    <a class="button is-primary is-large">Large</a>
+  </div>
+</section>
+
+<%# ============================================================ %>
+<%# 3. JOBS                                                      %>
+<%# ============================================================ %>
+<section class="section preview-section">
+  <div class="title-row">
+    <h2 class="title is-2">Jobs</h2>
+    <div class="subtitle">Career entries</div>
+  </div>
+
+  <div class="preview-label">Single entry</div>
+  <div class="career-list" style="margin-bottom: 2.5rem">
+    <div class="box job-box">
+      <article class="media">
+        <div class="media-left">
+          <div class="company-logo-placeholder">AC</div>
+        </div>
+        <div class="media-content">
+          <h2 class="job-title">Senior Backend Engineer</h2>
+          <p class="job-company">Acme Corporation</p>
+        </div>
+        <div class="media-right">
+          <span class="job-dates">Jan 2022 – Present</span>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <div class="preview-label">Multiple entries</div>
+  <div class="career-list">
+    <div class="box job-box">
+      <article class="media">
+        <div class="media-left">
+          <div class="company-logo-placeholder">AC</div>
+        </div>
+        <div class="media-content">
+          <h2 class="job-title">Senior Backend Engineer</h2>
+          <p class="job-company">Acme Corporation</p>
+        </div>
+        <div class="media-right">
+          <span class="job-dates">Jan 2022 – Present</span>
+        </div>
+      </article>
+    </div>
+    <div class="box job-box">
+      <article class="media">
+        <div class="media-left">
+          <div class="company-logo-placeholder">GL</div>
+        </div>
+        <div class="media-content">
+          <h2 class="job-title">Backend Engineer</h2>
+          <p class="job-company">Globex Industries</p>
+          <p class="job-description">Built and maintained distributed services handling millions of events per day.</p>
+        </div>
+        <div class="media-right">
+          <span class="job-dates">Mar 2019 – Dec 2021</span>
+        </div>
+      </article>
+    </div>
+    <div class="box job-box">
+      <article class="media">
+        <div class="media-left">
+          <div class="company-logo-placeholder">IB</div>
+        </div>
+        <div class="media-content">
+          <h2 class="job-title">Junior Developer</h2>
+          <p class="job-company">Initech Bureau</p>
+        </div>
+        <div class="media-right">
+          <span class="job-dates">Jun 2016 – Feb 2019</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<%# ============================================================ %>
+<%# 4. EXPERTISES                                                %>
+<%# ============================================================ %>
+<section class="section preview-section">
+  <div class="title-row">
+    <h2 class="title is-2">Expertises</h2>
+    <div class="subtitle">Skill areas</div>
+  </div>
+
+  <div class="preview-label">Full grid (hover to see effects)</div>
+  <div class="expertise-grid">
+    <div class="expertise-card is-featured is-backend">
+      <span class="expertise-card-years">10+</span>
+      <h3 class="expertise-card-name">Back-end Development</h3>
+      <p class="expertise-card-description">Building robust, scalable server-side systems. API design, background jobs, and database architecture.</p>
+      <div class="expertise-card-tags">
+        <span class="tag skill-tag">Ruby on Rails</span>
+        <span class="tag skill-tag">PostgreSQL</span>
+        <span class="tag skill-tag">Redis</span>
+        <span class="tag skill-tag">Sidekiq</span>
+      </div>
+    </div>
+    <div class="expertise-card is-cloud">
+      <span class="expertise-card-years">6+</span>
+      <h3 class="expertise-card-name">Cloud & DevOps</h3>
+      <p class="expertise-card-description">Infrastructure as code, container orchestration, and CI/CD pipelines.</p>
+      <div class="expertise-card-tags">
+        <span class="tag skill-tag">AWS</span>
+        <span class="tag skill-tag">Docker</span>
+        <span class="tag skill-tag">Terraform</span>
+      </div>
+    </div>
+    <div class="expertise-card is-ios">
+      <span class="expertise-card-years">4+</span>
+      <h3 class="expertise-card-name">iOS & macOS Development</h3>
+      <p class="expertise-card-description">Native Apple platform apps with Swift and modern frameworks.</p>
+      <div class="expertise-card-tags">
+        <span class="tag skill-tag">Swift</span>
+        <span class="tag skill-tag">SwiftUI</span>
+        <span class="tag skill-tag">Xcode</span>
+      </div>
+    </div>
+    <div class="expertise-card is-frontend">
+      <span class="expertise-card-years">5+</span>
+      <h3 class="expertise-card-name">Front-end Development</h3>
+      <p class="expertise-card-description">Interactive UIs with modern JavaScript and Hotwire.</p>
+      <div class="expertise-card-tags">
+        <span class="tag skill-tag">Hotwire</span>
+        <span class="tag skill-tag">React</span>
+        <span class="tag skill-tag">TypeScript</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%# ============================================================ %>
+<%# 5. SKILLS                                                    %>
+<%# ============================================================ %>
+<section class="section preview-section">
+  <div class="title-row">
+    <h2 class="title is-2">Skills</h2>
+    <div class="subtitle">Individual tools</div>
+  </div>
+
+  <div class="preview-label">Grid (hover to reveal level)</div>
+  <%
+    preview_skills = [
+      { name: "Ruby on Rails", level: "expert"     },
+      { name: "PostgreSQL",    level: "expert"     },
+      { name: "Sidekiq",       level: "expert"     },
+      { name: "RSpec",         level: "expert"     },
+      { name: "Docker",        level: "proficient" },
+      { name: "AWS",           level: "proficient" },
+      { name: "Redis",         level: "proficient" },
+      { name: "GraphQL",       level: "proficient" },
+      { name: "React",         level: "familiar"   },
+      { name: "Swift",         level: "familiar"   },
+      { name: "Kubernetes",    level: "familiar"   },
+      { name: "Terraform",     level: "familiar"   },
+    ]
+  %>
+  <div class="skills-grid">
+    <% preview_skills.each do |skill| %>
+      <div class="card skill-card">
+        <div class="card-content skill-card-footer">
+          <p class="skill-card-name"><%= skill[:name] %></p>
+        </div>
+        <div class="skill-card-image-wrap">
+          <figure class="image is-square">
+            <img src="https://placehold.co/256x256" alt="<%= skill[:name] %>">
+          </figure>
+          <div class="skill-card-level is-<%= skill[:level] %>">
+            <span class="skill-level-badge is-<%= skill[:level] %>"><%= skill[:level].upcase %></span>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</section>
+
+<%# ============================================================ %>
+<%# 6. PROJECTS                                                  %>
+<%# ============================================================ %>
+<section class="section preview-section">
+  <div class="title-row">
+    <h2 class="title is-2">Projects</h2>
+    <div class="subtitle">Work</div>
+  </div>
+</section>
