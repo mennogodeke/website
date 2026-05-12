@@ -2,10 +2,8 @@
 <%# 1. EXPERTISE — feature cards grid %>
 <%# ============================================================ %>
 <section class="section is-medium container is-max-widescreen">
-  <div class="title-row">
-    <h1 class="title is-1">Experience</h1>
-    <div class="subtitle">What I've been doing</div>
-  </div>
+  <h1 class="title is-1">Experience</h1>
+  <h2 class="title is-2">What I've been doing</h2>
 
   <div class="expertise-grid">
     <% @expertises.each_with_index do |expertise, index| %>
@@ -34,10 +32,7 @@
 <%# 2. SKILLS — 6-column card grid %>
 <%# ============================================================ %>
 <section class="section container is-max-widescreen">
-  <div class="title-row">
-    <h1 class="title is-1">Skills</h1>
-    <div class="subtitle">What I'm working with</div>
-  </div>
+  <h2 class="title is-2">What I'm working with</h2>
 
   <div class="skills-grid">
     <% skills_to_show = [

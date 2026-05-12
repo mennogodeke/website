@@ -150,3 +150,14 @@ The inline CV view (`/cv`) is intentionally excluded from the design system for 
 ## Emails
 
 Not yet implemented.
+
+---
+
+## TODO:
+- Add footer
+- Revisit navigation
+- Add 3rd Font
+- Add new accent colors
+- Style Job Resources
+- Style Experience Resources
+- Style Skill Resources
