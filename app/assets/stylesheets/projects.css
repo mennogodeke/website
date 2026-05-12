@@ -22,23 +22,27 @@
   flex-direction: column;
   justify-content: center;
   padding: 3rem;
-  border: 1px solid var(--bulma-border);
+  border: 1px solid var(--app-border);
 }
 
 .project-image {
   flex: 1;
-  border: 1px solid var(--bulma-border);
+  border: 1px solid var(--app-border);
 }
 
 .project-image-placeholder {
   width: 100%;
   height: 100%;
-  background-color: var(--bulma-background);
+  background-color: var(--app-bg-card);
   min-height: 300px;
 }
 
 .project-name {
+  font-family: var(--app-font-display);
+  font-weight: 700;
   font-size: 1.75rem;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
   margin-bottom: 1rem;
 }
 
@@ -49,7 +53,7 @@
 
 .project-year {
   font-size: 0.875rem;
-  color: var(--bulma-text-weak);
+  color: var(--app-text-muted);
   margin-bottom: 0.75rem;
 }
 
