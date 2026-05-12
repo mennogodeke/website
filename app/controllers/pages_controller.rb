@@ -5,6 +5,9 @@ class PagesController < ApplicationController
   def contact
   end
 
+  def design_preview
+  end
+
   def cv
     load_cv_data
   end

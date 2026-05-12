@@ -1,35 +1,163 @@
-.navbar-logo {
-  font-weight: 700;
-  font-size: 1.25rem;
-  letter-spacing: 0.05em;
-}
-
-.navbar-logo:hover,
-.navbar-logo:focus {
-  background-color: transparent;
-}
-
+/* ============================================================
+   Navbar — Bulma overrides via CSS variables + custom styling
+   ============================================================ */
 .navbar {
-  position: sticky;
+  /* Override Bulma's light-scheme navbar vars */
+  --bulma-navbar-background-color: transparent;
+  --bulma-navbar-item-color: rgba(255, 255, 255, 0.65);
+  --bulma-navbar-item-hover-color: #ffffff;
+  --bulma-navbar-item-hover-background-color: transparent;
+  --bulma-navbar-item-active-color: #ffffff;
+  --bulma-navbar-item-active-background-color: transparent;
+  --bulma-navbar-burger-color: var(--app-text);
+
+  position: fixed;
   top: 0;
-  z-index: 100;
-  border-bottom: 1px solid var(--bulma-border);
+  left: 0;
+  right: 0;
+  z-index: 200;
+  border-bottom: none;
+  background: transparent;
+  transition: background 0.4s ease, box-shadow 0.4s ease, backdrop-filter 0.4s ease;
 }
 
-.navbar-item {
-  font-weight: 500;
-  transition: color 0.15s ease;
+.navbar.is-scrolled {
+  background: rgba(11, 23, 41, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06), 0 4px 24px rgba(0, 0, 0, 0.4);
 }
 
-.navbar-item:hover,
-.navbar-item:focus {
+/* ── Logo ── */
+.navbar .navbar-logo {
+  font-family: var(--app-font-display);
+  font-weight: 800;
+  font-size: 1.35rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--app-text);
+}
+
+.navbar .navbar-logo:hover,
+.navbar .navbar-logo:focus {
+  color: var(--app-text);
   background-color: transparent;
 }
 
-.navbar-item.is-active {
-  font-weight: 700;
+/* ── Center nav links ── */
+.navbar .navbar-start {
+  flex: 1;
+  justify-content: center;
+  margin-right: 0;
+  gap: 1.25rem;
 }
 
-.navbar-item.is-cta {
+/* ── Nav links ── */
+.navbar-item {
+  font-family: var(--app-font-display);
   font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  position: relative;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  padding-left: 0.6rem;
+  padding-right: 0.6rem;
+}
+
+.navbar .navbar-item:hover,
+.navbar .navbar-item:focus,
+.navbar .navbar-item.is-active {
+  background-color: transparent;
+}
+
+.navbar .navbar-item.is-active {
+  color: #ffffff;
+}
+
+.navbar-start .navbar-item {
+  position: relative;
+}
+
+.navbar-start .navbar-item::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--app-accent);
+  transform: scaleX(0);
+  transition: transform 0.2s ease;
+}
+
+.navbar-start .navbar-item:hover::after,
+.navbar-start .navbar-item.is-active::after {
+  transform: scaleX(1);
+}
+
+/* ── CTA button ── */
+.navbar-cta {
+  font-family: var(--app-font-display);
+  font-weight: 800;
+  font-size: 1.15rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--app-accent);
+  text-decoration: none;
+  border: 1.5px solid var(--app-accent);
+  padding: 0.45rem 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background 0.15s ease, color 0.15s ease;
+  white-space: nowrap;
+}
+
+.navbar-cta:hover {
+  background: var(--app-accent);
+  color: #0b1729;
+}
+
+.navbar .navbar-cta-secondary {
+  color: rgba(255, 255, 255, 0.7);
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.navbar .navbar-cta-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+.navbar-cta-divider {
+  display: flex;
+  align-items: center;
+  font-family: var(--app-font-display);
+  font-weight: 700;
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  color: rgba(255, 255, 255, 0.25);
+  padding: 0 0.25rem;
+  user-select: none;
+}
+
+/* ── Mobile: keep Bulma's burger/menu behaviour, re-skin ── */
+@media (max-width: 1023px) {
+  .navbar-menu.is-active {
+    background: rgba(11, 23, 41, 0.98);
+    border-top: 1px solid var(--app-border);
+    box-shadow: none;
+    backdrop-filter: blur(10px);
+    padding: 1rem 0 1.5rem;
+  }
+
+  .navbar-item::after {
+    display: none;
+  }
+
+  .navbar-item {
+    padding: 0.75rem 1.5rem;
+  }
 }

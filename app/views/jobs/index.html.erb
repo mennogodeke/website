@@ -1,28 +1,19 @@
-<section class="career-section">
-  <h1 class="career-title">Career</h1>
+<section class="section is-medium container is-max-desktop">
+  <div class="title-row">
+    <h1 class="title is-1">Career</h1>
+    <div class="subtitle">Where I've been</div>
+  </div>
 
   <div class="career-list">
     <% @jobs.each do |job| %>
       <div class="box">
-        <article class="media">
-          <div class="media-left">
-            <div class="company-logo-placeholder">
-              <%= job.company.split.map(&:first).first(2).join.upcase %>
-            </div>
-          </div>
-          <div class="media-content">
-            <h2 class="job-title"><%= job.title %></h2>
-            <p class="job-company"><%= job.company %></p>
-            <% if job.description.present? %>
-              <p class="job-description"><%= job.description %></p>
-            <% end %>
-          </div>
-          <div class="media-right">
-            <span class="job-dates">
-              <%= job.start_date.strftime("%b %Y") %> – <%= job.end_date ? job.end_date.strftime("%b %Y") : "Present" %>
-            </span>
-          </div>
-        </article>
+        <div>
+          <p class="job-title"><%= job.title %></p>
+          <span class="job-company"><%= job.company %></span>
+        </div>
+        <span class="job-dates">
+          <%= job.start_date.strftime("%b %Y") %> – <%= job.end_date ? job.end_date.strftime("%b %Y") : "Present" %>
+        </span>
       </div>
     <% end %>
   </div>

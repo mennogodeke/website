@@ -1,51 +1,90 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= content_for(:title) || "Website" %></title>
+    <title><%= content_for(:title) || "Menno Godeke" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="application-name" content="Website">
+    <meta name="application-name" content="Menno Godeke">
     <meta name="mobile-web-app-capable" content="yes">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= yield :head %>
 
-    <%# Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!) %>
-    <%#= tag.link rel: "manifest", href: pwa_manifest_path(format: :json) %>
-
     <link rel="icon" href="/icon.png" type="image/png">
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/icon.png">
 
-    <%# Includes all stylesheet files in app/assets/stylesheets %>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <%= stylesheet_link_tag "bulma.min", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css">
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
-    <nav class="navbar" role="navigation" aria-label="main navigation">
+    <nav class="navbar" role="navigation" aria-label="main navigation"
+         data-controller="navbar">
       <div class="navbar-brand">
         <%= link_to root_path, class: "navbar-item navbar-logo" do %>
-          <span>MENNO.CODES</span>
+          MENNO.CODES
         <% end %>
+
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+           data-navbar-target="burger"
+           data-action="click->navbar#toggle">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
       </div>
-      <div class="navbar-menu">
+
+      <div class="navbar-menu" data-navbar-target="menu">
         <div class="navbar-start">
-          <%= link_to "Home", root_path, class: "navbar-item" %>
-          <%= link_to "Experience", experience_path, class: "navbar-item" %>
-          <%= link_to "Career", jobs_path, class: "navbar-item" %>
-          <%= link_to "Projects", projects_path, class: "navbar-item" %>
+          <%= link_to "Home",       root_path,       class: "navbar-item #{'is-active' if current_page?(root_path)}" %>
+          <%= link_to "Career",     jobs_path,       class: "navbar-item #{'is-active' if current_page?(jobs_path)}" %>
+          <%= link_to "Experience", experience_path, class: "navbar-item #{'is-active' if current_page?(experience_path)}" %>
+          <%= link_to "Projects",   projects_path,   class: "navbar-item #{'is-active' if current_page?(projects_path)}" %>
         </div>
         <div class="navbar-end">
-          <%= link_to "Contact", contact_path, class: "navbar-item" %>
-          <%= link_to "Download CV", new_cv_download_path, class: "navbar-item is-cta" %>
+          <div class="navbar-item">
+            <%= link_to contact_path, class: "navbar-cta navbar-cta-secondary #{'is-active' if current_page?(contact_path)}" do %>
+              GET IN TOUCH
+            <% end %>
+          </div>
+          <div class="navbar-cta-divider">OR</div>
+          <div class="navbar-item">
+            <%= link_to new_cv_download_path, class: "navbar-cta" do %>
+              GET MY CV <i class="fa-solid fa-arrow-right"></i>
+            <% end %>
+          </div>
         </div>
       </div>
     </nav>
 
     <%= yield %>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-built-with">
+          <span class="footer-built-label">Built with:</span>
+          <div class="footer-tech-icons">
+            <i class="devicon-ruby-plain colored" title="Ruby"></i>
+            <i class="devicon-bulma-plain colored" title="Bulma CSS"></i>
+            <i class="devicon-github-original" title="GitHub"></i>
+            <i class="devicon-docker-plain colored" title="Docker"></i>
+            <i class="fa-solid fa-robot footer-claude-icon" title="Claude"></i>
+          </div>
+        </div>
+        <div class="footer-brand">
+          <span class="footer-logo">MENNO.CODES</span>
+          <span class="footer-copy">&copy; <%= Time.current.year %> Menno Godeke</span>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

@@ -1,21 +1,15 @@
-.contact-section {
-  max-width: 860px;
-  margin: 0 auto;
-  padding: 5rem 2rem;
-}
-
-.contact-title {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+.contact-section .title.is-1 {
+  margin-bottom: 1.25rem;
 }
 
 .contact-intro {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   line-height: 1.75;
+  color: var(--app-text-muted);
   margin-bottom: 3rem;
 }
 
-/* Two-column layout: narrow icons left, form right */
+/* Two-column layout: form left, icons right */
 .contact-layout {
   display: grid;
   grid-template-columns: 1fr 44px;
@@ -34,16 +28,18 @@
   width: 44px;
   height: 44px;
   border-radius: 0.5rem;
-  border: 1px solid var(--bulma-border);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--app-text-muted);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.1rem;
-  transition: opacity 0.15s ease;
+  transition: border-color 0.15s ease, color 0.15s ease;
 }
 
 .social-icon:hover {
-  opacity: 0.7;
+  border-color: var(--app-accent);
+  color: var(--app-accent);
 }
 
 /* Form */

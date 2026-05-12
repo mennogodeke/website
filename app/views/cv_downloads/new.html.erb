@@ -1,6 +1,5 @@
-<section class="cv-download-section">
-  <h1 class="cv-download-title">Download CV</h1>
-  <p class="cv-download-intro">Enter your email address and I'll send you a download link.</p>
+<section class="section is-medium container is-max-widescreen">
+  <h1 class="title is-1">Curriculum Vitae</h1>
 
   <% if notice %>
     <div class="notification is-success"><%= notice %></div>
@@ -9,21 +8,38 @@
     <div class="notification is-danger"><%= alert %></div>
   <% end %>
 
-  <%= form_with model: @cv_download, url: cv_downloads_path, class: "cv-download-form" do |f| %>
-    <div class="field">
-      <%= f.label :email, class: "label" %>
-      <div class="control">
-        <%= f.email_field :email, class: "input #{'is-danger' if @cv_download.errors[:email].any?}", placeholder: "you@example.com", autofocus: true %>
-      </div>
-      <% @cv_download.errors[:email].each do |message| %>
-        <p class="help is-danger"><%= message %></p>
+  <div class="cv-download-grid">
+
+    <%# Column 1 — email form %>
+    <div class="cv-col-form">
+      <div class="subtitle">Get a download link</div>
+
+      <%= form_with model: @cv_download, url: cv_downloads_path, class: "cv-download-form" do |f| %>
+        <div class="field">
+          <div class="control">
+            <%= f.email_field :email, class: "input #{'is-danger' if @cv_download.errors[:email].any?}", placeholder: "you@example.com", autofocus: true %>
+          </div>
+          <% @cv_download.errors[:email].each do |message| %>
+            <p class="help is-danger"><%= message %></p>
+          <% end %>
+        </div>
+        <%= f.submit "SEND", class: "button is-primary" %>
       <% end %>
     </div>
 
-    <div class="cv-download-actions">
-      <%= f.submit "Send download link", class: "button is-dark" %>
-      <span class="cv-download-or">or</span>
-      <%= link_to "See in browser", cv_path, class: "button" %>
+    <%# Column 2 — divider %>
+    <div class="cv-col-divider">
+      <div class="cv-divider-line"></div>
+      <span class="cv-divider-or">OR</span>
+      <div class="cv-divider-line"></div>
     </div>
-  <% end %>
+
+    <%# Column 3 — open in browser %>
+    <div class="cv-col-browser">
+      <%= link_to cv_path, class: "cv-browser-btn" do %>
+        OPEN IN BROWSER
+      <% end %>
+    </div>
+
+  </div>
 </section>
