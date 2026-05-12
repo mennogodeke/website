@@ -44,12 +44,19 @@
       </div>
 
       <div class="navbar-menu" data-navbar-target="menu">
-        <div class="navbar-end">
+        <div class="navbar-start">
           <%= link_to "Home",       root_path,       class: "navbar-item #{'is-active' if current_page?(root_path)}" %>
           <%= link_to "Career",     jobs_path,       class: "navbar-item #{'is-active' if current_page?(jobs_path)}" %>
           <%= link_to "Experience", experience_path, class: "navbar-item #{'is-active' if current_page?(experience_path)}" %>
           <%= link_to "Projects",   projects_path,   class: "navbar-item #{'is-active' if current_page?(projects_path)}" %>
-          <%= link_to "Contact",    contact_path,    class: "navbar-item #{'is-active' if current_page?(contact_path)}" %>
+        </div>
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <%= link_to contact_path, class: "navbar-cta navbar-cta-secondary #{'is-active' if current_page?(contact_path)}" do %>
+              GET IN TOUCH
+            <% end %>
+          </div>
+          <div class="navbar-cta-divider">OR</div>
           <div class="navbar-item">
             <%= link_to new_cv_download_path, class: "navbar-cta" do %>
               GET MY CV <i class="fa-solid fa-arrow-right"></i>

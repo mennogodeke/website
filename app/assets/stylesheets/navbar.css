@@ -17,6 +17,15 @@
   right: 0;
   z-index: 200;
   border-bottom: none;
+  background: transparent;
+  transition: background 0.4s ease, box-shadow 0.4s ease, backdrop-filter 0.4s ease;
+}
+
+.navbar.is-scrolled {
+  background: rgba(11, 23, 41, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06), 0 4px 24px rgba(0, 0, 0, 0.4);
 }
 
 /* ── Logo ── */
@@ -35,14 +44,26 @@
   background-color: transparent !important;
 }
 
+/* ── Center nav links ── */
+.navbar-start {
+  flex: 1;
+  justify-content: center !important;
+  margin-right: 0 !important;
+  gap: 1.25rem;
+}
+
 /* ── Nav links ── */
 .navbar-item {
   font-family: var(--app-font-display);
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 1.15rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   position: relative;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  padding-left: 0.6rem;
+  padding-right: 0.6rem;
 }
 
 .navbar-item:hover,
@@ -55,20 +76,24 @@
   color: #ffffff !important;
 }
 
-.navbar-item::after {
+.navbar-start .navbar-item {
+  position: relative;
+}
+
+.navbar-start .navbar-item::after {
   content: '';
   position: absolute;
   bottom: 0;
-  left: 0.75rem;
-  right: 0.75rem;
+  left: 0;
+  right: 0;
   height: 2px;
   background: var(--app-accent);
   transform: scaleX(0);
   transition: transform 0.2s ease;
 }
 
-.navbar-item:not(.navbar-logo):hover::after,
-.navbar-item.is-active::after {
+.navbar-start .navbar-item:hover::after,
+.navbar-start .navbar-item.is-active::after {
   transform: scaleX(1);
 }
 
@@ -76,7 +101,7 @@
 .navbar-cta {
   font-family: var(--app-font-display);
   font-weight: 800;
-  font-size: 1rem;
+  font-size: 1.15rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--app-accent);
@@ -93,6 +118,29 @@
 .navbar-cta:hover {
   background: var(--app-accent);
   color: #0b1729;
+}
+
+.navbar-cta-secondary {
+  color: rgba(255, 255, 255, 0.7) !important;
+  border-color: rgba(255, 255, 255, 0.35) !important;
+}
+
+.navbar-cta-secondary:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.navbar-cta-divider {
+  display: flex;
+  align-items: center;
+  font-family: var(--app-font-display);
+  font-weight: 700;
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  color: rgba(255, 255, 255, 0.25);
+  padding: 0 0.25rem;
+  user-select: none;
 }
 
 /* ── Mobile: keep Bulma's burger/menu behaviour, re-skin ── */
