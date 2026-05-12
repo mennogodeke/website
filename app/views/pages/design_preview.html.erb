@@ -102,68 +102,27 @@
     <div class="subtitle">Career entries</div>
   </div>
 
-  <div class="preview-label">Single entry</div>
-  <div class="career-list" style="margin-bottom: 2.5rem">
-    <div class="box job-box">
-      <article class="media">
-        <div class="media-left">
-          <div class="company-logo-placeholder">AC</div>
-        </div>
-        <div class="media-content">
-          <h2 class="job-title">Senior Backend Engineer</h2>
-          <p class="job-company">Acme Corporation</p>
-        </div>
-        <div class="media-right">
-          <span class="job-dates">Jan 2022 – Present</span>
-        </div>
-      </article>
-    </div>
-  </div>
-
-  <div class="preview-label">Multiple entries</div>
   <div class="career-list">
     <div class="box job-box">
-      <article class="media">
-        <div class="media-left">
-          <div class="company-logo-placeholder">AC</div>
-        </div>
-        <div class="media-content">
-          <h2 class="job-title">Senior Backend Engineer</h2>
-          <p class="job-company">Acme Corporation</p>
-        </div>
-        <div class="media-right">
-          <span class="job-dates">Jan 2022 – Present</span>
-        </div>
-      </article>
+      <div>
+        <p class="job-title">Senior Backend Engineer</p>
+        <span class="job-company">Acme Corporation</span>
+      </div>
+      <span class="job-dates">Jan 2022 – Present</span>
     </div>
     <div class="box job-box">
-      <article class="media">
-        <div class="media-left">
-          <div class="company-logo-placeholder">GL</div>
-        </div>
-        <div class="media-content">
-          <h2 class="job-title">Backend Engineer</h2>
-          <p class="job-company">Globex Industries</p>
-          <p class="job-description">Built and maintained distributed services handling millions of events per day.</p>
-        </div>
-        <div class="media-right">
-          <span class="job-dates">Mar 2019 – Dec 2021</span>
-        </div>
-      </article>
+      <div>
+        <p class="job-title">Backend Engineer</p>
+        <span class="job-company">Globex Industries</span>
+      </div>
+      <span class="job-dates">Mar 2019 – Dec 2021</span>
     </div>
     <div class="box job-box">
-      <article class="media">
-        <div class="media-left">
-          <div class="company-logo-placeholder">IB</div>
-        </div>
-        <div class="media-content">
-          <h2 class="job-title">Junior Developer</h2>
-          <p class="job-company">Initech Bureau</p>
-        </div>
-        <div class="media-right">
-          <span class="job-dates">Jun 2016 – Feb 2019</span>
-        </div>
-      </article>
+      <div>
+        <p class="job-title">Junior Developer</p>
+        <span class="job-company">Initech Bureau</span>
+      </div>
+      <span class="job-dates">Jun 2016 – Feb 2019</span>
     </div>
   </div>
 </section>
@@ -177,7 +136,84 @@
     <div class="subtitle">Skill areas</div>
   </div>
 
-  <div class="preview-label">Full grid (hover to see effects)</div>
+  <%
+    expertise_sample = [
+      { years: "10+", name: "Back-end Development",  desc: "Building robust, scalable server-side systems with a focus on reliability and developer experience. API design, background job processing, database architecture, and performance tuning at scale.", tags: ["Ruby on Rails","PostgreSQL","Redis","Sidekiq"], css: "" },
+      { years: "6+",  name: "Cloud & DevOps",        desc: "Infrastructure as code, container orchestration, and CI/CD pipelines. Designing cloud-native systems that scale without surprises, with a strong emphasis on observability and cost efficiency.", tags: ["AWS","Docker","Terraform","GitHub Actions"], css: "" },
+      { years: "4+",  name: "iOS & macOS",            desc: "Native Apple platform applications built with Swift and modern frameworks. From App Store shipping to enterprise tooling, with attention to platform conventions and smooth animations.", tags: ["Swift","SwiftUI","Xcode","Combine"], css: "" },
+      { years: "5+",  name: "Front-end Development", desc: "Interactive, fast user interfaces built with modern JavaScript and Hotwire. Bridging the gap between server-rendered views and reactive experiences without a full SPA overhead.", tags: ["Hotwire","React","TypeScript","CSS"], css: "" },
+    ]
+  %>
+
+  <div class="preview-label">Variant A — Number dominant (hover)</div>
+  <div class="expertise-grid is-stat" style="margin-bottom: 3rem">
+    <% expertise_sample.each do |e| %>
+      <div class="expertise-card <%= e[:css] %>">
+        <span class="expertise-card-years"><%= e[:years] %></span>
+        <h3 class="expertise-card-name"><%= e[:name] %></h3>
+        <p class="expertise-card-description"><%= e[:desc] %></p>
+        <div class="expertise-card-tags">
+          <% e[:tags].each do |t| %><span class="tag skill-tag"><%= t %></span><% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="preview-label">Variant B — Image + centered years, rounded (hover)</div>
+  <div class="expertise-grid is-band" style="margin-bottom: 3rem">
+    <% expertise_sample.each do |e| %>
+      <div class="expertise-card <%= e[:css] %>">
+        <div class="expertise-card-image-wrap">
+          <img src="https://placehold.co/600x338/ffffff/cccccc" alt="">
+          <span class="expertise-card-years"><%= e[:years] %></span>
+        </div>
+        <div class="expertise-card-body">
+          <h3 class="expertise-card-name"><%= e[:name] %></h3>
+          <p class="expertise-card-description"><%= e[:desc] %></p>
+          <div class="expertise-card-tags">
+            <% e[:tags].each do |t| %><span class="tag skill-tag"><%= t %></span><% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="preview-label">Variant C — Image + years badge top-right, top border (hover)</div>
+  <div class="expertise-grid is-top" style="margin-bottom: 3rem">
+    <% expertise_sample.each do |e| %>
+      <div class="expertise-card <%= e[:css] %>">
+        <div class="expertise-card-image-wrap">
+          <img src="https://placehold.co/600x338/ffffff/cccccc" alt="">
+        </div>
+        <div class="expertise-card-body">
+          <div class="expertise-card-header">
+            <h3 class="expertise-card-name"><%= e[:name] %></h3>
+            <span class="expertise-card-years"><%= e[:years] %></span>
+          </div>
+          <p class="expertise-card-description"><%= e[:desc] %></p>
+          <div class="expertise-card-tags">
+            <% e[:tags].each do |t| %><span class="tag skill-tag"><%= t %></span><% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="preview-label">Variant D — Horizontal rows (hover)</div>
+  <div class="expertise-grid is-list" style="margin-bottom: 3rem">
+    <% expertise_sample.each do |e| %>
+      <div class="expertise-card <%= e[:css] %>">
+        <span class="expertise-card-years"><%= e[:years] %></span>
+        <h3 class="expertise-card-name"><%= e[:name] %></h3>
+        <p class="expertise-card-description"><%= e[:desc] %></p>
+        <div class="expertise-card-tags">
+          <% e[:tags].each do |t| %><span class="tag skill-tag"><%= t %></span><% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="preview-label">Default (current)</div>
   <div class="expertise-grid">
     <div class="expertise-card is-featured is-backend">
       <span class="expertise-card-years">10+</span>
