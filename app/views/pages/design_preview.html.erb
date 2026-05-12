@@ -268,38 +268,20 @@
     <div class="subtitle">Individual tools</div>
   </div>
 
-  <div class="preview-label">Grid (hover to reveal level)</div>
+  <div class="preview-label">Circular badges (hover)</div>
   <%
     preview_skills = [
-      { name: "Ruby on Rails", level: "expert"     },
-      { name: "PostgreSQL",    level: "expert"     },
-      { name: "Sidekiq",       level: "expert"     },
-      { name: "RSpec",         level: "expert"     },
-      { name: "Docker",        level: "proficient" },
-      { name: "AWS",           level: "proficient" },
-      { name: "Redis",         level: "proficient" },
-      { name: "GraphQL",       level: "proficient" },
-      { name: "React",         level: "familiar"   },
-      { name: "Swift",         level: "familiar"   },
-      { name: "Kubernetes",    level: "familiar"   },
-      { name: "Terraform",     level: "familiar"   },
+      "Ruby on Rails", "PostgreSQL", "Sidekiq", "RSpec",
+      "Docker", "AWS", "Redis", "GraphQL",
+      "React", "Swift", "Kubernetes", "Terraform",
     ]
   %>
   <div class="skills-grid">
-    <% preview_skills.each do |skill| %>
-      <div class="card skill-card">
-        <div class="card-content skill-card-footer">
-          <p class="skill-card-name"><%= skill[:name] %></p>
-        </div>
-        <div class="skill-card-image-wrap">
-          <figure class="image is-square">
-            <img src="https://placehold.co/256x256" alt="<%= skill[:name] %>">
-          </figure>
-          <div class="skill-card-level is-<%= skill[:level] %>">
-            <span class="skill-level-badge is-<%= skill[:level] %>"><%= skill[:level].upcase %></span>
-          </div>
-        </div>
-      </div>
+    <% preview_skills.each do |name| %>
+      <figure class="image is-128x128 skill-badge">
+        <img src="https://placehold.co/256x256/ffffff/cccccc" alt="<%= name %>">
+        <span class="skill-badge-name"><%= name %></span>
+      </figure>
     <% end %>
   </div>
 </section>

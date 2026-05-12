@@ -76,21 +76,11 @@
     ] %>
 
     <% skills_to_show.each do |skill| %>
-      <% level = skill.respond_to?(:level) ? skill.level : skill[:level] %>
-      <% name  = skill.respond_to?(:name)  ? skill.name  : skill[:name] %>
-      <div class="card skill-card">
-        <div class="card-content skill-card-footer">
-          <p class="skill-card-name"><%= name %></p>
-        </div>
-        <div class="skill-card-image-wrap">
-          <figure class="image is-square">
-            <img src="https://placehold.co/256x256" alt="<%= name %>">
-          </figure>
-          <div class="skill-card-level is-<%= level %>">
-            <span class="skill-level-badge is-<%= level %>"><%= level.upcase %></span>
-          </div>
-        </div>
-      </div>
+      <% name = skill.respond_to?(:name) ? skill.name : skill[:name] %>
+      <figure class="image is-128x128 skill-badge">
+        <img src="https://placehold.co/256x256/ffffff/cccccc" alt="<%= name %>">
+        <span class="skill-badge-name"><%= name %></span>
+      </figure>
     <% end %>
   </div>
 </section>
