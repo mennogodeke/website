@@ -22,6 +22,7 @@
     <%= stylesheet_link_tag "bulma.min", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css">
     <%= javascript_importmap_tags %>
   </head>
 
@@ -59,5 +60,24 @@
     </nav>
 
     <%= yield %>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-built-with">
+          <span class="footer-built-label">Built with:</span>
+          <div class="footer-tech-icons">
+            <i class="devicon-ruby-plain colored" title="Ruby"></i>
+            <i class="devicon-bulma-plain colored" title="Bulma CSS"></i>
+            <i class="devicon-github-original" title="GitHub"></i>
+            <i class="devicon-docker-plain colored" title="Docker"></i>
+            <i class="fa-solid fa-robot footer-claude-icon" title="Claude"></i>
+          </div>
+        </div>
+        <div class="footer-brand">
+          <span class="footer-logo">MENNO.CODES</span>
+          <span class="footer-copy">&copy; <%= Time.current.year %> Menno Godeke</span>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
