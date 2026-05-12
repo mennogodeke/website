@@ -21,6 +21,23 @@
 }
 
 /* ============================================================
+   Shared layout utilities
+   ============================================================ */
+
+/* .title-row — title left, subtitle badge right, baseline-aligned */
+.title-row {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.title-row .title    { margin-bottom: 0 !important; }
+.title-row .subtitle { margin-bottom: 0 !important; flex-shrink: 0; }
+
+/* ============================================================
    Bulma overrides — title / subtitle / buttons
    ============================================================ */
 
