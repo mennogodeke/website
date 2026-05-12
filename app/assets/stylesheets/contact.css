@@ -1,17 +1,4 @@
-.contact-section {
-  max-width: 860px;
-  margin: 0 auto;
-  padding: 7rem 2rem 5rem;
-}
-
-.contact-title {
-  font-family: var(--app-font-display);
-  font-weight: 900;
-  font-size: clamp(4.5rem, 9vw, 7.5rem);
-  line-height: 0.9;
-  color: #ffffff;
-  text-transform: uppercase;
-  letter-spacing: -0.01em;
+.contact-section .title.is-1 {
   margin-bottom: 1.25rem;
 }
 
@@ -58,35 +45,6 @@
 /* Form */
 .contact-form .field {
   margin-bottom: 1.25rem;
-}
-
-.contact-form .label {
-  font-family: var(--app-font-display);
-  font-weight: 700;
-  font-size: 0.85rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.75);
-}
-
-.contact-form .input,
-.contact-form .textarea {
-  background: #ffffff;
-  color: #0b1729;
-  border-color: rgba(0, 0, 0, 0.15);
-  box-shadow: none;
-  font-family: var(--app-font-body);
-}
-
-.contact-form .input:focus,
-.contact-form .textarea:focus {
-  border-color: var(--app-accent);
-  box-shadow: 0 0 0 2px rgba(245, 233, 12, 0.25);
-}
-
-.contact-form .input::placeholder,
-.contact-form .textarea::placeholder {
-  color: rgba(11, 23, 41, 0.35);
 }
 
 /* Responsive */

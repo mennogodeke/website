@@ -12,21 +12,117 @@
   --app-green:        #00e676;
   --app-font-display: 'Barlow Condensed', sans-serif;
   --app-font-body:    'Barlow', -apple-system, sans-serif;
+
+  /* Override Bulma's size scale with fluid clamp values */
+  --bulma-size-1: clamp(4.5rem, 9vw, 7.5rem);
+  --bulma-size-2: clamp(2.5rem, 5vw, 4rem);
+  --bulma-size-3: clamp(1.75rem, 3vw, 2.5rem);
+
 }
 
 /* ============================================================
-   Shared components
+   Bulma overrides — title / subtitle / buttons
    ============================================================ */
-.section-label {
-  display: inline-block;
-  background: var(--app-accent);
-  color: #1a1200;
+
+/* .title — our display type scale */
+.title {
+  font-family: var(--app-font-display) !important;
+  font-weight: 900 !important;
+  color: #ffffff !important;
+  text-transform: uppercase !important;
+  letter-spacing: -0.01em !important;
+  line-height: 0.9 !important;
+}
+
+.title.is-1 { font-size: clamp(4.5rem, 9vw, 7.5rem) !important; margin-bottom: 2.5rem; }
+.title.is-2 { font-size: clamp(2.5rem, 5vw, 4rem) !important;   margin-bottom: 2rem; }
+.title.is-3 { font-size: clamp(1.75rem, 3vw, 2.5rem) !important; margin-bottom: 1.5rem; }
+
+/* .subtitle — yellow badge label */
+.subtitle {
+  display: inline-block !important;
+  background: var(--app-accent) !important;
+  color: #1a1200 !important;
+  font-family: var(--app-font-display) !important;
+  font-weight: 800 !important;
+  font-size: 1.5rem !important;
+  line-height: 1 !important;
+  text-transform: uppercase !important;
+  padding: 0.4rem 1.25rem !important;
+  margin-bottom: 1.5rem !important;
+}
+
+/* .button — override Bulma's button with our design system */
+.button {
+  border-radius: 0;
   font-family: var(--app-font-display);
   font-weight: 800;
-  font-size: 1.5rem;
+  font-size: 1.05rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  padding: 0.4rem 1.25rem;
-  margin-bottom: 1.5rem;
+  padding: 0.7rem 1.5rem;
+  height: auto;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.button.is-primary {
+  background: var(--app-accent);
+  color: #0b1729;
+  border: 2px solid var(--app-accent);
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.button.is-primary:hover,
+.button.is-primary:focus {
+  background: transparent;
+  color: var(--app-accent);
+  border-color: var(--app-accent);
+}
+
+.button.is-outlined {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.8);
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.button.is-outlined:hover,
+.button.is-outlined:focus {
+  background: transparent;
+  color: var(--app-accent);
+  border-color: var(--app-accent);
+}
+
+/* .input / .textarea — light form controls on dark background */
+.input,
+.textarea {
+  background: #ffffff !important;
+  color: #0b1729 !important;
+  border-color: rgba(0, 0, 0, 0.15) !important;
+  box-shadow: none !important;
+  font-family: var(--app-font-body) !important;
+}
+
+.input:focus,
+.textarea:focus {
+  border-color: var(--app-accent) !important;
+  box-shadow: 0 0 0 2px rgba(245, 233, 12, 0.25) !important;
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: rgba(11, 23, 41, 0.35) !important;
+}
+
+/* .label — uppercase display-font label */
+.label {
+  font-family: var(--app-font-display) !important;
+  font-weight: 700 !important;
+  font-size: 0.85rem !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  color: rgba(255, 255, 255, 0.75) !important;
 }
 
 /* ============================================================

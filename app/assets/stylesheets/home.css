@@ -38,13 +38,6 @@
 
 /* ── Name ── */
 .hero-name {
-  font-family: var(--app-font-display);
-  font-weight: 900;
-  font-size: clamp(4.5rem, 9vw, 7.5rem);
-  line-height: 0.9;
-  color: #ffffff;
-  text-transform: uppercase;
-  letter-spacing: -0.01em;
   margin: 0 0 1.5rem;
 }
 
@@ -68,50 +61,6 @@
   gap: 0.75rem;
   flex-wrap: wrap;
   margin-bottom: 2.25rem;
-}
-
-.btn-primary {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: var(--app-accent);
-  color: #0b1729;
-  font-family: var(--app-font-display);
-  font-weight: 800;
-  font-size: 1.05rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  padding: 0.7rem 1.5rem;
-  border: 2px solid var(--app-accent);
-  text-decoration: none;
-  transition: background 0.15s ease, color 0.15s ease;
-}
-
-.btn-primary:hover {
-  background: transparent;
-  color: var(--app-accent);
-}
-
-.btn-outline {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: transparent;
-  color: rgba(255, 255, 255, 0.8);
-  font-family: var(--app-font-display);
-  font-weight: 800;
-  font-size: 1.05rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  padding: 0.7rem 1.5rem;
-  border: 2px solid rgba(255, 255, 255, 0.25);
-  text-decoration: none;
-  transition: border-color 0.15s ease, color 0.15s ease;
-}
-
-.btn-outline:hover {
-  border-color: var(--app-accent);
-  color: var(--app-accent);
 }
 
 /* ── Status indicator ── */
