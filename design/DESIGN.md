@@ -16,7 +16,8 @@ Built on Bulma CSS 1.0.4 (vendored). Bulma's class system is used directly and o
 - **Page containers** use Bulma's `.container` with width modifiers (`.is-max-desktop`, `.is-max-widescreen`) — max-widths are per-page and subject to change
 - **Navbar** is fixed, transparent, Bulma-structured with a Stimulus controller for mobile burger toggle
 - **No sidebar** — all layouts are single-column or simple grids
-- **Homepage** is the exception: full-viewport hero with a two-column grid (text left, hexagon avatar right), followed by a white stats bar
+- **Homepage** is the exception: full-viewport hero with a two-column grid (text left, circular avatar right), followed by a site-wide footer
+- **Footer** sits at the bottom of every page (document flow, not fixed)
 
 ---
 
@@ -31,7 +32,7 @@ Built on Bulma CSS 1.0.4 (vendored). Bulma's class system is used directly and o
 | `--app-border` | `rgba(255,255,255,0.1)` | Subtle dividers |
 | `--app-green` | `#00e676` | Status indicator (pulsing dot) |
 
-**Expertise card accent colours** (hover tint + glow):
+**Expertise card accent colours** (body background + top border):
 
 | Area | Colour |
 |---|---|
@@ -39,14 +40,6 @@ Built on Bulma CSS 1.0.4 (vendored). Bulma's class system is used directly and o
 | Cloud & DevOps | `#7d09d6` (purple) |
 | iOS & macOS | `#0f5edb` (blue) |
 | Front-end | `#12e012` (green) |
-
-**Skill level colours:**
-
-| Level | Colour |
-|---|---|
-| Expert | `#7d09d6` (purple) |
-| Proficient | `#0f5edb` (blue) |
-| Familiar | `#12e012` (green) |
 
 ---
 
@@ -66,8 +59,13 @@ Bulma's title size scale is overridden in `:root` with fluid `clamp()` values:
 | `.title.is-1` | `clamp(4.5rem, 9vw, 7.5rem)` |
 | `.title.is-2` | `clamp(2.5rem, 5vw, 4rem)` |
 | `.title.is-3` | `clamp(1.75rem, 3vw, 2.5rem)` |
+| `.title.is-4` | `clamp(1.25rem, 2vw, 1.75rem)` |
+| `.title.is-5` | `clamp(1rem, 1.5vw, 1.25rem)` |
+| `.title.is-6` | `0.9rem` |
 
 All `.title` elements are forced uppercase, weight 900, Barlow Condensed, line-height 0.9, letter-spacing -0.01em.
+
+`.subtitle` sizes follow the same is-1 → is-6 scale and render as a yellow badge (`#f5e90c` background, near-black text), Barlow Condensed 800, uppercase.
 
 ---
 
@@ -107,7 +105,10 @@ Bulma's `.input`, `.textarea`, and `.label` are globally overridden:
 
 ### Footer
 
-Not yet implemented.
+White background, sits at the bottom of every page in document flow (not fixed). 3rem tall.
+
+- **Left** — "Built with:" label + Devicons for Ruby, Bulma, GitHub, Docker, and a Font Awesome robot icon for Claude. Icons are slightly dimmed and brighten on hover.
+- **Right** — `MENNO.CODES` logo (Barlow Condensed 800) and `© year Menno Godeke` copyright.
 
 ---
 
@@ -115,23 +116,51 @@ Not yet implemented.
 
 ### Job
 
-Used on the Career page. Bulma `.box` with transparent background, 25% white border, subtle white text. On hover: border brightens to 70% white, text goes full white. Transition on `border-color` and `color`.
+Used on the Career page. Full-bleed row list (`.career-list` + `.job-box`). Each row has a transparent background with a subtle top border. On hover: a 3px yellow left border appears and the row shifts right via `padding-left` transition, text brightens to full white.
 
-Structure: company logo placeholder (initials) left, job title + company centre, date range right. Uses Bulma `.media` layout.
+Structure: job title + company name left, date range right.
 
 ### Expertise
 
-Used on the Experience page. Bordered card (`.expertise-card`) with a per-area CSS custom property (`--card-color`). On hover: border takes the card colour, background gets a 10% tint of the colour, and a layered glow box-shadow appears. Colour areas: backend (orange), cloud (purple), iOS (blue), frontend (green).
+Used on the Experience page in a **3-column grid** (`.expertise-grid.is-top`), responsive to 2-col at ≤1024px and 1-col at ≤640px.
 
-The first card in the grid spans full width (`.is-featured`).
+Each card has:
+- A 4px top border in the area's accent colour
+- A 16:9 placeholder image (white background)
+- A card body with a **semi-transparent area-colour background** (gradient with a white diagonal sheen); on hover the body transitions to a fully opaque glossy gradient
+- Card header inside the body: area name (left) + years of experience as a large yellow number (right)
+- Description text and skill tags below
+
+Hover animations (all triggered together):
+- **Lift** — `translateY(-6px)` with a deeper drop shadow
+- **Image zoom** — image scales to 107%, cropped by the overflow-hidden wrap
+- **Shimmer sweep** — a skewed white band sweeps left-to-right across the card body via `::after`
+
+Area colours used as `--card-color` CSS custom property:
+
+| Area class | Colour |
+|---|---|
+| `.is-backend` | `#ff6200` (orange) |
+| `.is-cloud` | `#7d09d6` (purple) |
+| `.is-ios` | `#0f5edb` (blue) |
+| `.is-frontend` | `#12e012` (green) |
 
 ### Skill
 
-Used on the Experience page in a 6-column grid (responsive: 4-col at ≤1024px, 2-col at ≤640px). Each card has:
-- A white header bar with the skill name (always visible)
-- A square placeholder image below
-- A coloured level overlay that slides up from the bottom on hover (familiar/proficient/expert)
-- Border colour on hover matches the skill level colour
+Used on the Experience page in a **6-column grid** (responsive: 4-col at ≤1024px, 3-col at ≤640px).
+
+Each skill is a **circular badge** built on Bulma's `figure.image.is-128x128`:
+- 3px solid white border + faint outer ring shadow
+- White placeholder image
+- Skill name overlaid at the bottom inside the circle on a dark semi-transparent band (`bottom: 8%`)
+- Hover: lifts 4px (`translateY`) with a brighter border and deeper shadow
+
+### Homepage Avatar
+
+Circular image (`figure.image.is-384x384`) in the hero right column:
+- 4px solid white border + faint outer ring shadow
+- Black placeholder image background
+- Shifted slightly upward with `translateY(-3rem)`
 
 ### Project
 
@@ -154,10 +183,6 @@ Not yet implemented.
 ---
 
 ## TODO:
-- Add footer
 - Revisit navigation
 - Add 3rd Font
-- Add new accent colors
-- Style Job Resources
-- Style Experience Resources
-- Style Skill Resources
+- Style Project resources
