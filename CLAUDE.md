@@ -31,3 +31,4 @@ No Node.js build step — JavaScript is managed via importmap (`config/importmap
 - Ruby style follows `rubocop-rails-omakase` (inherited in `.rubocop.yml`)
 - Stimulus controllers live in `app/javascript/controllers/`
 - CSS lives in `app/assets/stylesheets/` via manifest
+- **Bulma customisation** — extend via CSS cascade order (our stylesheet loads after `bulma.min.css`), scoped selectors (e.g. `.career-list .box`), and `:root` custom properties. Avoid `!important`; rely on specificity or load order instead. See `DESIGN.md` for the full design system.
