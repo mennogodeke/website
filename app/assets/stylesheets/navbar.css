@@ -29,26 +29,26 @@
 }
 
 /* ── Logo ── */
-.navbar-logo {
+.navbar .navbar-logo {
   font-family: var(--app-font-display);
   font-weight: 800;
   font-size: 1.35rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--app-text) !important;
+  color: var(--app-text);
 }
 
-.navbar-logo:hover,
-.navbar-logo:focus {
-  color: var(--app-text) !important;
-  background-color: transparent !important;
+.navbar .navbar-logo:hover,
+.navbar .navbar-logo:focus {
+  color: var(--app-text);
+  background-color: transparent;
 }
 
 /* ── Center nav links ── */
-.navbar-start {
+.navbar .navbar-start {
   flex: 1;
-  justify-content: center !important;
-  margin-right: 0 !important;
+  justify-content: center;
+  margin-right: 0;
   gap: 1.25rem;
 }
 
@@ -66,14 +66,14 @@
   padding-right: 0.6rem;
 }
 
-.navbar-item:hover,
-.navbar-item:focus,
-.navbar-item.is-active {
-  background-color: transparent !important;
+.navbar .navbar-item:hover,
+.navbar .navbar-item:focus,
+.navbar .navbar-item.is-active {
+  background-color: transparent;
 }
 
-.navbar-item.is-active {
-  color: #ffffff !important;
+.navbar .navbar-item.is-active {
+  color: #ffffff;
 }
 
 .navbar-start .navbar-item {
@@ -120,15 +120,15 @@
   color: #0b1729;
 }
 
-.navbar-cta-secondary {
-  color: rgba(255, 255, 255, 0.7) !important;
-  border-color: rgba(255, 255, 255, 0.35) !important;
+.navbar .navbar-cta-secondary {
+  color: rgba(255, 255, 255, 0.7);
+  border-color: rgba(255, 255, 255, 0.35);
 }
 
-.navbar-cta-secondary:hover {
-  background: rgba(255, 255, 255, 0.1) !important;
-  color: #ffffff !important;
-  border-color: rgba(255, 255, 255, 0.7) !important;
+.navbar .navbar-cta-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.7);
 }
 
 .navbar-cta-divider {
