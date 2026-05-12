@@ -17,6 +17,11 @@
   transition: border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
 }
 
+.expertise-card.is-backend  { --card-color: #ff6200; }
+.expertise-card.is-cloud    { --card-color: #7d09d6; }
+.expertise-card.is-ios      { --card-color: #0f5edb; }
+.expertise-card.is-frontend { --card-color: #12e012; }
+
 .expertise-card:hover {
   border-color: var(--app-accent);
   background: color-mix(in srgb, var(--app-accent) 10%, transparent);
@@ -178,19 +183,25 @@
 
 .expertise-grid.is-top .expertise-card {
   border: 1px solid rgba(255,255,255,0.1);
-  border-top: 4px solid var(--app-accent);
+  border-top: 4px solid var(--card-color, var(--app-accent));
   border-radius: 0;
   padding: 0;
   gap: 0;
   overflow: hidden;
-  transition: border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .expertise-grid.is-top .expertise-card:hover {
-  border-color: rgba(255,255,255,0.5);
-  border-top-color: var(--app-accent);
-  background: rgba(255,255,255,0.05);
-  box-shadow: 0 0 40px rgba(255, 255, 255, 0.08);
+  border-color: rgba(255,255,255,0.4);
+  border-top-color: var(--card-color, var(--app-accent));
+  box-shadow: 0 12px 40px rgba(0,0,0,0.4), 0 0 30px rgba(255,255,255,0.06);
+  transform: translateY(-6px);
+}
+
+.expertise-grid.is-top .expertise-card:hover .expertise-card-body {
+  background:
+    linear-gradient(135deg, rgba(255,255,255,0.18) 0%, transparent 55%),
+    linear-gradient(180deg, var(--card-color, rgba(255,255,255,0.08)) 0%, color-mix(in srgb, var(--card-color, #0b1729) 75%, #000000) 100%);
 }
 
 .expertise-grid.is-top .expertise-card-image-wrap {
@@ -204,6 +215,11 @@
   height: 100%;
   object-fit: cover;
   background: #ffffff;
+  transition: transform 0.5s ease;
+}
+
+.expertise-grid.is-top .expertise-card:hover .expertise-card-image-wrap img {
+  transform: scale(1.07);
 }
 
 .expertise-grid.is-top .expertise-card-body {
@@ -212,6 +228,31 @@
   flex-direction: column;
   gap: 0.65rem;
   flex: 1;
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,0.06) 0%, transparent 55%),
+    color-mix(in srgb, var(--card-color, rgba(255,255,255,0.03)) 30%, transparent);
+  color: #ffffff;
+  transition: background 0.3s ease;
+}
+
+.expertise-grid.is-top .expertise-card-body::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
+  transform: skewX(-15deg);
+  transition: left 0s;
+  pointer-events: none;
+}
+
+.expertise-grid.is-top .expertise-card:hover .expertise-card-body::after {
+  left: 150%;
+  transition: left 0.55s ease;
 }
 
 .expertise-grid.is-top .expertise-card-header {
@@ -234,10 +275,14 @@
   font-family: var(--app-font-display);
   font-weight: 900;
   font-size: clamp(2rem, 3.5vw, 3rem);
-  color: var(--app-accent);
+  color: rgba(255,255,255,0.9);
   line-height: 1;
   flex-shrink: 0;
-  text-shadow: 0 0 30px rgba(245, 233, 12, 0.4);
+}
+
+.expertise-grid.is-top .skill-tag {
+  border-color: rgba(255,255,255,0.4) !important;
+  color: #ffffff !important;
 }
 
 /* ── Variant B: Full color fill on hover ── */
