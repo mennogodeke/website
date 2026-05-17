@@ -5,16 +5,6 @@
   </div>
 
   <div class="career-list">
-    <% @jobs.each do |job| %>
-      <div class="box">
-        <div>
-          <p class="job-title"><%= job.title %></p>
-          <span class="job-company"><%= job.company %></span>
-        </div>
-        <span class="job-dates">
-          <%= job.start_date.strftime("%b %Y") %> – <%= job.end_date ? job.end_date.strftime("%b %Y") : "Present" %>
-        </span>
-      </div>
-    <% end %>
+    <%= render @jobs %>
   </div>
 </section>

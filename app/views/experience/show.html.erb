@@ -6,32 +6,7 @@
   <h2 class="title is-2">What I've been doing</h2>
 
   <div class="expertise-grid is-top">
-    <% @expertises.each_with_index do |expertise, index| %>
-      <% card_class = case expertise.name
-          when /back.?end/i    then "is-backend"
-          when /cloud|devops/i then "is-cloud"
-          when /ios|macos/i    then "is-ios"
-          when /front.?end/i   then "is-frontend"
-          else ""
-          end %>
-      <div class="expertise-card <%= card_class %>">
-        <div class="expertise-card-image-wrap">
-          <img src="https://placehold.co/600x338/ffffff/cccccc" alt="">
-        </div>
-        <div class="expertise-card-body">
-          <div class="expertise-card-header">
-            <h2 class="expertise-card-name"><%= expertise.name %></h2>
-            <span class="expertise-card-years"><%= expertise.years_of_experience %>+</span>
-          </div>
-          <p class="expertise-card-description"><%= expertise.description %></p>
-          <div class="expertise-card-tags">
-            <% expertise.skills.each do |skill| %>
-              <span class="tag skill-tag"><%= skill.name %></span>
-            <% end %>
-          </div>
-        </div>
-      </div>
-    <% end %>
+    <%= render partial: "experience/expertise_card", collection: @expertises, as: :expertise_card %>
   </div>
 </section>
 
