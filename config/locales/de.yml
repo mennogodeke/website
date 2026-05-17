@@ -1,8 +1,18 @@
 de:
   pages:
     home:
-      hello: "Hi, Ich bin Menno 👋"
-      title: "Chia tumeric direct"
-      subtitle: "Japanese breakfast 3 wolf moon distillery stereolab, direct trade girl dinner caviar bump lockwood bruh mixtape open studio. Vape JOMO church-key jean shorts imposter syndrome keffiyeh."
-      cv_cta: "Zur Lebenslauf!"
-      contact_cta: "Meld dich"
+      hello: "Hi, ich bin Menno 👋"
+      title: "Web, App und Platform Entwickler."
+      subtitle: "10+ Jahre Erfahrung"
+      intro: "Ich bin ein Full-Stack-Entwickler mit Sitz in Deutschland und über einem Jahrzehnt Erfahrung in der Entwicklung von Backend-Systemen, Zahlungsintegrationen und Cloud-Infrastruktur. Ich habe in der gesamten VPN-Branche gearbeitet — von kleinen Berliner Startups bis hin zu Produkten, die von Millionen genutzt werden — mit einem starken Fokus auf Abonnement-Abrechnung und allem, was sie zuverlässig am Laufen hält."
+      cv_cta: "CV herunterladen"
+      contact_cta: "Kontakt aufnehmen"
+    career:
+      title: "Karriere"
+      subtitle: "Wo ich gearbeitet habe"
+    experience:
+      title: "Erfahrung"
+      subtitle: "Was ich mache"
+    projects:
+      title: "Projekte"
+      subtitle: "Was ich gebaut habe"

@@ -31,10 +31,10 @@ en:
   pages:
     home:
       hello: "Hi, I'm Menno 👋"
-      title: "Full-Stack Software Engineer"
-      subtitle: "Japanese breakfast 3 wolf moon distillery stereolab, direct trade girl dinner caviar bump lockwood bruh mixtape open studio. Vape JOMO church-key jean shorts imposter syndrome keffiyeh."
-      intro: "Cupping jianbing master cleanse, echo park super 8 feeld miso aeropress lockwood cronut bluesky. Polaroid cortado robert walser no wave."
-      cv_cta: "Get my CV!"
+      title: "Web, App and Platform Developer."
+      subtitle: "10+ Years of experience"
+      intro: "I'm a full-stack engineer based in Germany, with over a decade of experience building backend systems, payment integrations, and cloud infrastructure. I've worked across the full VPN industry — from small Berlin startups to products used by millions — with a heavy focus on subscription billing and everything that keeps it running reliably."
+      cv_cta: "Download CV"
       contact_cta: "Get in touch"
     career:
       title: "Career"
@@ -44,4 +44,4 @@ en:
       subtitle: "What I've been doing"
     projects:
       title: "Projects"
-      subtitle: "What I've build"
+      subtitle: "What I've built"
