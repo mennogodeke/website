@@ -1,20 +1,59 @@
-senior_engineer:
-  title: Senior Software Engineer
+kape_senior:
+  title_en: Senior Software Engineer
+  title_nl: Senior Software Engineer
+  title_de: Senior Software Engineer
   company: Kape Technologies
-  description: Led development of payment integrations and data-heavy Rails applications.
+  logo: kape_technologies.png
   start_date: 2022-02-01
   end_date: 2026-01-01
+  description_en: "Led payment and subscription engineering across PIA and ExpressVPN. Built an in-house product catalog on top of ChargeBee, automated marketing campaign workflows, and pivoted into DevOps — shipping microservice templates in Go, managing AWS infrastructure with Terraform, and setting up secure database access for developers and CI pipelines via SSM port-forwarding."
+  description_nl: "Leidde betalings- en abonnementsontwikkeling voor PIA en ExpressVPN. Bouwde een intern productcatalogussysteem bovenop ChargeBee, automatiseerde marketingcampagne-workflows en verschoof richting DevOps — met microservice-templates in Go, AWS-infrastructuurbeheer via Terraform en het opzetten van veilige databasetoegang voor ontwikkelaars en CI-pipelines via SSM port-forwarding."
+  description_de: "Leitete Payment- und Subscription-Engineering für PIA und ExpressVPN. Entwickelte einen internen Produktkatalog auf Basis von ChargeBee, automatisierte Marketing-Kampagnen-Workflows und wechselte in den DevOps-Bereich — mit Microservice-Templates in Go, AWS-Infrastrukturverwaltung über Terraform und sicherem Datenbankzugang für Entwickler und CI-Pipelines via SSM Port-Forwarding."
 
-junior_engineer:
-  title: Junior Software Engineer
+kape_mid:
+  title_en: Software Engineer
+  title_nl: Software Engineer
+  title_de: Software Engineer
+  company: Kape Technologies
+  logo: kape_technologies.png
+  start_date: 2019-02-01
+  end_date: 2022-01-01
+  description_en: "Worked across ZenMate, CyberGhost, and PIA. Led the migration of all paying ZenMate customers to the CyberGhost platform following their merger — a high-stakes data migration with zero room for billing errors. Also built and maintained recurring subscription engines and payment integrations with Adyen, PayPal, and BitPay."
+  description_nl: "Werkte voor ZenMate, CyberGhost en PIA. Leidde de migratie van alle betalende ZenMate-klanten naar het CyberGhost-platform na de fusie — een risicovolle gegevensmigratie zonder ruimte voor factureringsfouten. Bouwde en onderhield ook terugkerende abonnementsmotoren en betalingsintegraties met Adyen, PayPal en BitPay."
+  description_de: "Arbeitete für ZenMate, CyberGhost und PIA. Leitete die Migration aller zahlenden ZenMate-Kunden auf die CyberGhost-Plattform nach der Fusion — eine risikoreiche Datenmigration ohne Spielraum für Abrechnungsfehler. Entwickelte und pflegte außerdem wiederkehrende Subscription-Engines und Zahlungsintegrationen mit Adyen, PayPal und BitPay."
+
+zenguard_junior:
+  title_en: Junior Software Engineer
+  title_nl: Junior Software Engineer
+  title_de: Junior Software Engineer
   company: ZenGuard
-  description:
+  logo: zenguard.png
   start_date: 2017-08-01
   end_date: 2019-01-01
+  description_en: "Developed and maintained features for the ZenMate VPN product in a Rails and Vue.js stack. Deepened test-driven development practices and got comfortable with the full product development lifecycle — from ticket to production."
+  description_nl: "Ontwikkelde en onderhield functionaliteiten voor het ZenMate VPN-product in een Rails- en Vue.js-stack. Verdiepte testgedreven ontwikkelingspraktijken en raakte vertrouwd met de volledige productontwikkelingscyclus — van ticket tot productie."
+  description_de: "Entwickelte und pflegte Features für das ZenMate-VPN-Produkt in einem Rails- und Vue.js-Stack. Vertiefte testgetriebene Entwicklungspraktiken und wurde mit dem gesamten Produktentwicklungslebenszyklus vertraut — vom Ticket bis zur Produktion."
 
-current_job:
-  title: Staff Engineer
-  company: Acme Corp
-  description: Current role with no end date.
-  start_date: 2026-02-01
-  end_date:
+zenguard_intern:
+  title_en: Software Engineering Intern
+  title_nl: Software Engineering Stagiair
+  title_de: Software Engineering Praktikant
+  company: ZenGuard
+  logo: zenguard.png
+  start_date: 2017-02-01
+  end_date: 2017-07-01
+  description_en: "First experience with production software engineering — shipping real code for a real product. Learned the fundamentals of TDD, code review, and deploying to production in a professional team environment."
+  description_nl: "Eerste ervaring met professionele softwareontwikkeling — echte code schrijven voor een echt product. Leerde de basisprincipes van TDD, code review en het deployen naar productie in een professionele teamomgeving."
+  description_de: "Erste Erfahrung mit professioneller Softwareentwicklung — echten Code für ein echtes Produkt liefern. Erlernte die Grundlagen von TDD, Code-Reviews und dem Deployment in Produktionsumgebungen in einem professionellen Team."
+
+shopboostr_intern:
+  title_en: Software Engineering Intern
+  title_nl: Software Engineering Stagiair
+  title_de: Software Engineering Praktikant
+  company: Shopboostr
+  logo: shopboostr.png
+  start_date: 2016-06-01
+  end_date: 2016-12-01
+  description_en: "First steps in professional software development — working in a team, opening pull requests, and contributing to a live Rails application. Shopboostr was a small software agency taking on varied client projects."
+  description_nl: "Eerste stappen in professionele softwareontwikkeling — werken in een team, pull requests openen en bijdragen aan een live Rails-applicatie. Shopboostr was een klein softwarebedrijf met diverse klantprojecten."
+  description_de: "Erste Schritte in der professionellen Softwareentwicklung — in einem Team arbeiten, Pull Requests öffnen und zu einer Live-Rails-Anwendung beitragen. Shopboostr war eine kleine Softwareagentur mit vielfältigen Kundenprojekten."

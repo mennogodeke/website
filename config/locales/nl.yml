@@ -1,8 +1,18 @@
 nl:
   pages:
     home:
-      hello: "Hallo, ik ben Menno 👋"
-      title: "Chia tumeric direct"
-      subtitle: "Japanese breakfast 3 wolf moon distillery stereolab, direct trade girl dinner caviar bump lockwood bruh mixtape open studio. Vape JOMO church-key jean shorts imposter syndrome keffiyeh."
-      cv_cta: "Bekijk mijn CV!"
+      hello: "Hoi, ik ben Menno 👋"
+      title: "Web, App en Platform Ontwikkelaar."
+      subtitle: "10+ jaar ervaring"
+      intro: "Ik ben een full-stack engineer gebaseerd in Duitsland, met meer dan tien jaar ervaring in het bouwen van backendsystemen, betalingsintegraties en cloudinfrastructuur. Ik heb door de gehele VPN-industrie gewerkt — van kleine Berlijnse startups tot producten die door miljoenen worden gebruikt — met een sterke focus op abonnementsfacturering en alles wat nodig is om dit betrouwbaar te laten werken."
+      cv_cta: "Download CV"
       contact_cta: "Neem contact op"
+    career:
+      title: "Carrière"
+      subtitle: "Waar ik heb gewerkt"
+    experience:
+      title: "Expertise"
+      subtitle: "Wat ik doe"
+    projects:
+      title: "Projecten"
+      subtitle: "Wat ik heb gebouwd"
