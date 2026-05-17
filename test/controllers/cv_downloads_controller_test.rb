@@ -26,7 +26,7 @@ class CvDownloadsControllerTest < ActionDispatch::IntegrationTest
     cv_download.update!(requested_at: 1.hour.ago)
     count_before = cv_download.download_count
 
-    get cv_download_url(cv_download.token)
+    get cv_download_url(token: cv_download.token)
 
     assert_equal count_before + 1, cv_download.reload.download_count
     # sends the file (200) if the PDF exists, redirects to cv_path if not yet generated
@@ -37,13 +37,13 @@ class CvDownloadsControllerTest < ActionDispatch::IntegrationTest
     cv_download = cv_downloads(:two)
     cv_download.update!(requested_at: 25.hours.ago)
 
-    get cv_download_url(cv_download.token)
+    get cv_download_url(token: cv_download.token)
 
     assert_redirected_to new_cv_download_url
   end
 
   test "show with unknown token redirects to new with alert" do
-    get cv_download_url("doesnotexist")
+    get cv_download_url(token: "doesnotexist")
     assert_redirected_to new_cv_download_url
   end
 end

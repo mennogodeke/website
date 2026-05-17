@@ -1,18 +1,49 @@
 de:
+  nav:
+    home: "Home"
+    career: "Karriere"
+    experience: "Erfahrung"
+    projects: "Projekte"
+    get_in_touch: "Kontakt aufnehmen"
+    get_my_cv: "Mein Lebenslauf"
+
+  footer:
+    built_with: "Gebaut mit:"
+
+  cv_download:
+    title: "Lebenslauf"
+    get_link: "Download-Link anfordern"
+    send: "Senden"
+    open_in_browser: "Im Browser öffnen"
+
+  contact:
+    subtitle: "Möchtest du zusammenarbeiten?"
+    title: "Kontakt aufnehmen"
+    intro: "Hast du ein Projekt im Sinn oder möchtest einfach Hallo sagen? Mein Postfach ist offen."
+    form:
+      name: "Name"
+      name_placeholder: "Dein Name"
+      email: "E-Mail"
+      message: "Nachricht"
+      message_placeholder: "Was hast du auf dem Herzen?"
+      submit: "Nachricht senden →"
+
   pages:
     home:
       hello: "Hi, ich bin Menno 👋"
       title: "Web, App und Platform Entwickler."
       subtitle: "10+ Jahre Erfahrung"
       intro: "Ich bin ein Full-Stack-Entwickler mit Sitz in Deutschland und über einem Jahrzehnt Erfahrung in der Entwicklung von Backend-Systemen, Zahlungsintegrationen und Cloud-Infrastruktur. Ich habe in der gesamten VPN-Branche gearbeitet — von kleinen Berliner Startups bis hin zu Produkten, die von Millionen genutzt werden — mit einem starken Fokus auf Abonnement-Abrechnung und allem, was sie zuverlässig am Laufen hält."
-      cv_cta: "CV herunterladen"
-      contact_cta: "Kontakt aufnehmen"
+      view_work: "Arbeiten ansehen"
+      download_cv: "Lebenslauf herunterladen"
+      status: "Offen für Zusammenarbeit · Remote oder vor Ort"
     career:
       title: "Karriere"
       subtitle: "Wo ich gearbeitet habe"
     experience:
       title: "Erfahrung"
       subtitle: "Was ich mache"
+      skills_title: "Womit ich arbeite"
     projects:
       title: "Projekte"
       subtitle: "Was ich gebaut habe"
