@@ -1,0 +1,974 @@
+# ============================================================
+# CONTENT_DATA.yml
+# Production content for menno.codes
+# Resources: Skills, Expertises, Jobs, Projects
+# Languages: en (default), nl, de
+#
+# Notes:
+#   accent: on hold — to be added in a follow-up pass
+#   image:  on hold — to be added once assets are ready
+#   icons:  Devicons classes for tech skills/expertises,
+#           Font Awesome classes for expertise categories
+# ============================================================
+
+# ============================================================
+# SKILLS
+# 20 entries
+# level enum: expert | proficient | familiar
+# ============================================================
+skills:
+
+  - key: ruby_on_rails
+    level: expert
+    accent: ~
+    icon: devicon-rails-plain
+    image: ~
+    translations:
+      en:
+        name: Ruby on Rails
+        description: >
+          Primary back-end framework — APIs, payment integrations,
+          and full-stack web applications.
+      nl:
+        name: Ruby on Rails
+        description: >
+          Primair back-end framework — API's, betalingsintegraties
+          en full-stack webapplicaties.
+      de:
+        name: Ruby on Rails
+        description: >
+          Primäres Back-End-Framework — APIs, Zahlungsintegrationen
+          und Full-Stack-Webanwendungen.
+
+  - key: ruby
+    level: expert
+    accent: ~
+    icon: devicon-ruby-plain
+    image: ~
+    translations:
+      en:
+        name: Ruby
+        description: >
+          The language behind the Rails magic — clean, expressive,
+          and still a joy to write.
+      nl:
+        name: Ruby
+        description: >
+          De taal achter de Rails-magie — overzichtelijk, expressief
+          en nog steeds een plezier om te schrijven.
+      de:
+        name: Ruby
+        description: >
+          Die Sprache hinter der Rails-Magie — klar, ausdrucksstark
+          und noch immer ein Vergnügen zu schreiben.
+
+  - key: docker
+    level: expert
+    accent: ~
+    icon: devicon-docker-plain
+    image: ~
+    translations:
+      en:
+        name: Docker
+        description: >
+          Containerising apps for consistent local development
+          and reliable production deployments.
+      nl:
+        name: Docker
+        description: >
+          Apps containeriseren voor consistente lokale ontwikkeling
+          en betrouwbare productie-deployments.
+      de:
+        name: Docker
+        description: >
+          Apps containerisieren für konsistente lokale Entwicklung
+          und zuverlässige Produktions-Deployments.
+
+  - key: git
+    level: expert
+    accent: ~
+    icon: devicon-git-plain
+    image: ~
+    translations:
+      en:
+        name: Git
+        description: >
+          Version control — branches, rebases, and the occasional
+          panic-driven force-push.
+      nl:
+        name: Git
+        description: >
+          Versiebeheer — branches, rebases en af en toe een
+          paniekgedreven force-push.
+      de:
+        name: Git
+        description: >
+          Versionskontrolle — Branches, Rebases und gelegentliche
+          panikgetriebene Force-Pushes.
+
+  - key: github_actions
+    level: proficient
+    accent: ~
+    icon: devicon-github-plain
+    image: ~
+    translations:
+      en:
+        name: GitHub Actions
+        description: >
+          CI/CD pipelines for automated testing, linting,
+          and deployment workflows.
+      nl:
+        name: GitHub Actions
+        description: >
+          CI/CD-pipelines voor geautomatiseerd testen, linting
+          en deployment-workflows.
+      de:
+        name: GitHub Actions
+        description: >
+          CI/CD-Pipelines für automatisiertes Testen, Linting
+          und Deployment-Workflows.
+
+  - key: postgresql
+    level: proficient
+    accent: ~
+    icon: devicon-postgresql-plain
+    image: ~
+    translations:
+      en:
+        name: PostgreSQL
+        description: >
+          Go-to relational database for production Rails apps —
+          rock solid and well understood.
+      nl:
+        name: PostgreSQL
+        description: >
+          Vaste relationele database voor productie Rails-apps —
+          robuust en goed bekend.
+      de:
+        name: PostgreSQL
+        description: >
+          Bevorzugte relationale Datenbank für Rails-Produktionsanwendungen —
+          solide und bestens bekannt.
+
+  - key: go
+    level: proficient
+    accent: ~
+    icon: devicon-go-plain
+    image: ~
+    translations:
+      en:
+        name: Go
+        description: >
+          Systems programming and microservices — fast, explicit,
+          and refreshingly boring.
+      nl:
+        name: Go
+        description: >
+          Systeemprogrammering en microservices — snel, expliciet
+          en verfrissend saai.
+      de:
+        name: Go
+        description: >
+          Systemprogrammierung und Microservices — schnell, explizit
+          und erfrischend langweilig.
+
+  - key: javascript
+    level: proficient
+    accent: ~
+    icon: devicon-javascript-plain
+    image: ~
+    translations:
+      en:
+        name: JavaScript
+        description: >
+          Front-end scripting alongside back-end Rails projects —
+          from vanilla JS to component-based work.
+      nl:
+        name: JavaScript
+        description: >
+          Front-end scripting naast back-end Rails-projecten —
+          van vanilla JS tot componentgebaseerd werk.
+      de:
+        name: JavaScript
+        description: >
+          Front-End-Scripting neben Back-End-Rails-Projekten —
+          von Vanilla-JS bis hin zu komponentenbasierter Arbeit.
+
+  - key: kubernetes
+    level: proficient
+    accent: ~
+    icon: devicon-kubernetes-plain
+    image: ~
+    translations:
+      en:
+        name: Kubernetes
+        description: >
+          Container orchestration for production workloads —
+          deployments, scaling, and the occasional head-scratching YAML.
+      nl:
+        name: Kubernetes
+        description: >
+          Container-orchestratie voor productie-workloads —
+          deployments, schaling en af en toe verwarrende YAML.
+      de:
+        name: Kubernetes
+        description: >
+          Container-Orchestrierung für Produktions-Workloads —
+          Deployments, Skalierung und gelegentlich rätselhaftes YAML.
+
+  - key: aws
+    level: proficient
+    accent: ~
+    icon: devicon-amazonwebservices-plain-wordmark
+    image: ~
+    translations:
+      en:
+        name: AWS
+        description: >
+          Cloud infrastructure — EC2, RDS, SSM, and enough IAM policies
+          to fill a small novel.
+      nl:
+        name: AWS
+        description: >
+          Cloud-infrastructuur — EC2, RDS, SSM en genoeg IAM-policies
+          voor een klein boek.
+      de:
+        name: AWS
+        description: >
+          Cloud-Infrastruktur — EC2, RDS, SSM und genug IAM-Policies
+          für einen kleinen Roman.
+
+  - key: typescript
+    level: proficient
+    accent: ~
+    icon: devicon-typescript-plain
+    image: ~
+    translations:
+      en:
+        name: TypeScript
+        description: >
+          Type-safe JavaScript for larger front-end
+          and Node.js projects.
+      nl:
+        name: TypeScript
+        description: >
+          Type-veilig JavaScript voor grotere front-end
+          en Node.js-projecten.
+      de:
+        name: TypeScript
+        description: >
+          Typsicheres JavaScript für größere Front-End-
+          und Node.js-Projekte.
+
+  - key: nodejs
+    level: proficient
+    accent: ~
+    icon: devicon-nodejs-plain
+    image: ~
+    translations:
+      en:
+        name: Node.js
+        description: >
+          Server-side JavaScript for APIs, tooling, and anything
+          that benefits from the npm ecosystem.
+      nl:
+        name: Node.js
+        description: >
+          Server-side JavaScript voor API's, tooling en alles
+          wat baat heeft bij het npm-ecosysteem.
+      de:
+        name: Node.js
+        description: >
+          Serverseitiges JavaScript für APIs, Tooling und alles,
+          was vom npm-Ökosystem profitiert.
+
+  - key: vuejs
+    level: proficient
+    accent: ~
+    icon: devicon-vuejs-plain
+    image: ~
+    translations:
+      en:
+        name: Vue.js
+        description: >
+          Component-based front-end framework —
+          the approachable one.
+      nl:
+        name: Vue.js
+        description: >
+          Componentgebaseerd front-end framework —
+          de toegankelijke keuze.
+      de:
+        name: Vue.js
+        description: >
+          Komponentenbasiertes Front-End-Framework —
+          die zugängliche Option.
+
+  - key: swift
+    level: proficient
+    accent: ~
+    icon: devicon-swift-plain
+    image: ~
+    translations:
+      en:
+        name: Swift
+        description: >
+          Native app development for iOS and macOS, plus
+          server-side Swift with the Vapor framework.
+      nl:
+        name: Swift
+        description: >
+          Native app-ontwikkeling voor iOS en macOS, plus
+          server-side Swift met het Vapor-framework.
+      de:
+        name: Swift
+        description: >
+          Native App-Entwicklung für iOS und macOS, plus
+          serverseitiges Swift mit dem Vapor-Framework.
+
+  - key: adyen
+    level: proficient
+    accent: ~
+    icon: fa-solid fa-credit-card   # no Devicon available
+    image: ~
+    translations:
+      en:
+        name: Adyen
+        description: >
+          Payment processing integration — recurring subscriptions,
+          refund handling, and payment method management.
+      nl:
+        name: Adyen
+        description: >
+          Betalingsverwerkingsintegratie — terugkerende abonnementen,
+          terugbetalingen en betalingsmethodenbeheer.
+      de:
+        name: Adyen
+        description: >
+          Zahlungsverarbeitungsintegration — wiederkehrende Abonnements,
+          Rückerstattungen und Zahlungsmethodenverwaltung.
+
+  - key: chargebee
+    level: proficient
+    accent: ~
+    icon: fa-solid fa-file-invoice-dollar   # no Devicon available
+    image: ~
+    translations:
+      en:
+        name: ChargeBee
+        description: >
+          Subscription billing platform — product catalog management,
+          campaign automation, and billing lifecycle.
+      nl:
+        name: ChargeBee
+        description: >
+          Abonnementsfactureringsplatform — productcatalogus,
+          campagneautomatisering en factureringslevenscyclus.
+      de:
+        name: ChargeBee
+        description: >
+          Abonnement-Abrechnungsplattform — Produktkatalogverwaltung,
+          Kampagnenautomatisierung und Abrechnungslebenszyklus.
+
+  - key: terraform
+    level: familiar
+    accent: ~
+    icon: devicon-terraform-plain
+    image: ~
+    translations:
+      en:
+        name: Terraform
+        description: >
+          Infrastructure-as-code for cloud provisioning — because clicking
+          through the AWS console is not a deployment strategy.
+      nl:
+        name: Terraform
+        description: >
+          Infrastructure-as-code voor cloud-provisioning — want klikken
+          door de AWS-console is geen deployment-strategie.
+      de:
+        name: Terraform
+        description: >
+          Infrastructure-as-Code für Cloud-Provisioning — weil sich
+          durch die AWS-Konsole zu klicken keine Deployment-Strategie ist.
+
+  - key: ansible
+    level: familiar
+    accent: ~
+    icon: devicon-ansible-plain
+    image: ~
+    translations:
+      en:
+        name: Ansible
+        description: >
+          Configuration management and server provisioning —
+          getting machines into a known good state.
+      nl:
+        name: Ansible
+        description: >
+          Configuratiebeheer en serverprovisioning —
+          machines in een bekende, goede staat brengen.
+      de:
+        name: Ansible
+        description: >
+          Konfigurationsmanagement und Server-Provisioning —
+          Maschinen in einen bekannten, guten Zustand bringen.
+
+  - key: python
+    level: familiar
+    accent: ~
+    icon: devicon-python-plain
+    image: ~
+    translations:
+      en:
+        name: Python
+        description: >
+          Scripting, automation, and the occasional
+          data wrangling task.
+      nl:
+        name: Python
+        description: >
+          Scripting, automatisering en af en toe
+          wat data-verwerking.
+      de:
+        name: Python
+        description: >
+          Scripting, Automatisierung und gelegentliche
+          Datenverarbeitungsaufgaben.
+
+  - key: stripe
+    level: familiar
+    accent: ~
+    icon: devicon-stripe-plain
+    image: ~
+    translations:
+      en:
+        name: Stripe
+        description: >
+          Payment processing integration — checkout flows
+          and subscription management.
+      nl:
+        name: Stripe
+        description: >
+          Betalingsverwerkingsintegratie — checkout-flows
+          en abonnementsbeheer.
+      de:
+        name: Stripe
+        description: >
+          Zahlungsverarbeitungsintegration — Checkout-Flows
+          und Abonnementverwaltung.
+
+
+# ============================================================
+# EXPERTISES
+# 5 entries
+# ============================================================
+expertises:
+
+  - key: backend
+    years_of_experience: 8
+    accent: ~
+    icon: fa-solid fa-server
+    image: ~
+    skills:
+      - ruby_on_rails
+      - ruby
+      - postgresql
+      - docker
+      - adyen
+      - chargebee
+      - stripe
+      - nodejs
+      - typescript
+      - go
+    translations:
+      en:
+        name: Back-end Development
+        description: >
+          Building APIs, payment integrations, and subscription engines in
+          Ruby on Rails. Eight years of designing systems that handle real
+          money for real users — and haven't caught fire yet.
+      nl:
+        name: Back-end Ontwikkeling
+        description: >
+          Het bouwen van API's, betalingsintegraties en abonnementsmotoren
+          in Ruby on Rails. Acht jaar lang systemen ontwerpen die echt geld
+          verwerken voor echte gebruikers — en tot nu toe zonder brand.
+      de:
+        name: Back-End-Entwicklung
+        description: >
+          Entwicklung von APIs, Zahlungsintegrationen und
+          Subscription-Engines in Ruby on Rails. Acht Jahre lang Systeme
+          entworfen, die echtes Geld für echte Nutzer verarbeiten —
+          bisher ohne Zwischenfall.
+
+  - key: fullstack
+    years_of_experience: 10
+    accent: ~
+    icon: fa-solid fa-layer-group
+    image: ~
+    skills:
+      - ruby_on_rails
+      - javascript
+      - vuejs
+      - typescript
+      - nodejs
+      - postgresql
+    translations:
+      en:
+        name: Full-Stack Development
+        description: >
+          Front to back, from database schema to the button that triggers
+          it all. Ten years of making the whole thing work together —
+          including the parts that weren't supposed to talk to each other.
+      nl:
+        name: Full-Stack Ontwikkeling
+        description: >
+          Van voor tot achter, van databaseschema tot de knop die alles
+          in gang zet. Tien jaar lang de hele boel laten samenwerken —
+          inclusief de onderdelen die dat eigenlijk niet zouden moeten doen.
+      de:
+        name: Full-Stack-Entwicklung
+        description: >
+          Von vorne bis hinten, vom Datenbankschema bis zum Button, der
+          alles auslöst. Zehn Jahre lang das Gesamtsystem zum Laufen
+          gebracht — einschließlich der Teile, die eigentlich nicht
+          miteinander reden sollten.
+
+  - key: devops
+    years_of_experience: 5
+    accent: ~
+    icon: fa-solid fa-gears
+    image: ~
+    skills:
+      - docker
+      - github_actions
+      - kubernetes
+      - ansible
+    translations:
+      en:
+        name: DevOps & Automation
+        description: >
+          Automating everything from local dev environments to production
+          deployments. If something needs to happen more than once,
+          it should happen without me.
+      nl:
+        name: DevOps & Automatisering
+        description: >
+          Alles automatiseren, van lokale ontwikkelomgevingen tot
+          productie-deployments. Als iets vaker dan één keer moet
+          gebeuren, moet het zonder mij kunnen.
+      de:
+        name: DevOps & Automatisierung
+        description: >
+          Automatisierung von lokalen Entwicklungsumgebungen bis hin
+          zu Produktions-Deployments. Wenn etwas mehr als einmal
+          passieren muss, sollte es ohne mich passieren.
+
+  - key: cloud
+    years_of_experience: 3
+    accent: ~
+    icon: fa-solid fa-cloud
+    image: ~
+    skills:
+      - aws
+      - terraform
+      - ansible
+      - docker
+      - kubernetes
+    translations:
+      en:
+        name: Cloud & Infrastructure
+        description: >
+          Designing and managing cloud infrastructure on AWS —
+          infrastructure-as-code, secrets management, and making sure
+          the database is reachable without opening it to the entire internet.
+      nl:
+        name: Cloud & Infrastructuur
+        description: >
+          Cloud-infrastructuur ontwerpen en beheren op AWS —
+          infrastructure-as-code, secretenbeheer en ervoor zorgen dat
+          de database bereikbaar is zonder hem voor het hele internet
+          open te zetten.
+      de:
+        name: Cloud & Infrastruktur
+        description: >
+          Entwurf und Verwaltung von Cloud-Infrastruktur auf AWS —
+          Infrastructure-as-Code, Secrets-Management und sicherstellen,
+          dass die Datenbank erreichbar ist, ohne sie dem gesamten
+          Internet zu öffnen.
+
+  - key: apps
+    years_of_experience: 2
+    accent: ~
+    icon: fa-brands fa-apple
+    image: ~
+    skills:
+      - swift
+    translations:
+      en:
+        name: iOS & macOS Development
+        description: >
+          Native app development for Apple platforms using Swift and Xcode,
+          plus server-side Swift with the Vapor framework.
+      nl:
+        name: iOS & macOS Ontwikkeling
+        description: >
+          Native app-ontwikkeling voor Apple-platforms met Swift en Xcode,
+          plus server-side Swift met het Vapor-framework.
+      de:
+        name: iOS & macOS Entwicklung
+        description: >
+          Native App-Entwicklung für Apple-Plattformen mit Swift und Xcode,
+          plus serverseitiges Swift mit dem Vapor-Framework.
+
+
+# ============================================================
+# JOBS
+# 5 entries — ordered newest first
+# logo: filename expected in app/assets/images/logos/
+# accent: on hold
+# ============================================================
+jobs:
+
+  - key: kape_senior
+    company: Kape Technologies
+    logo: kape_technologies.png   # to be provided
+    start_date: "2022-02-01"
+    end_date: "2026-01-01"
+    accent: ~
+    skills:
+      - ruby_on_rails
+      - ruby
+      - go
+      - docker
+      - aws
+      - terraform
+      - github_actions
+      - chargebee
+      - kubernetes
+    translations:
+      en:
+        title: Senior Software Engineer
+        description: >
+          Led payment and subscription engineering across PIA and ExpressVPN.
+          Built an in-house product catalog on top of ChargeBee, automated
+          marketing campaign workflows, and pivoted into DevOps — shipping
+          microservice templates in Go, managing AWS infrastructure with
+          Terraform, and setting up secure database access for developers
+          and CI pipelines via SSM port-forwarding.
+      nl:
+        title: Senior Software Engineer
+        description: >
+          Leidde betalings- en abonnementsontwikkeling voor PIA en ExpressVPN.
+          Bouwde een intern productcatalogussysteem bovenop ChargeBee,
+          automatiseerde marketingcampagne-workflows en verschoof richting
+          DevOps — met microservice-templates in Go, AWS-infrastructuurbeheer
+          via Terraform en het opzetten van veilige databasetoegang voor
+          ontwikkelaars en CI-pipelines via SSM port-forwarding.
+      de:
+        title: Senior Software Engineer
+        description: >
+          Leitete Payment- und Subscription-Engineering für PIA und ExpressVPN.
+          Entwickelte einen internen Produktkatalog auf Basis von ChargeBee,
+          automatisierte Marketing-Kampagnen-Workflows und wechselte in den
+          DevOps-Bereich — mit Microservice-Templates in Go,
+          AWS-Infrastrukturverwaltung über Terraform und sicherem
+          Datenbankzugang für Entwickler und CI-Pipelines via SSM
+          Port-Forwarding.
+
+  - key: kape_mid
+    company: Kape Technologies
+    logo: kape_technologies.png   # same logo as above
+    start_date: "2019-02-01"
+    end_date: "2022-01-01"
+    accent: ~
+    skills:
+      - ruby_on_rails
+      - ruby
+      - postgresql
+      - docker
+      - javascript
+      - vuejs
+      - adyen
+    translations:
+      en:
+        title: Software Engineer
+        description: >
+          Worked across ZenMate, CyberGhost, and PIA. Led the migration of
+          all paying ZenMate customers to the CyberGhost platform following
+          their merger — a high-stakes data migration with zero room for
+          billing errors. Also built and maintained recurring subscription
+          engines and payment integrations with Adyen, PayPal, and BitPay.
+      nl:
+        title: Software Engineer
+        description: >
+          Werkte voor ZenMate, CyberGhost en PIA. Leidde de migratie van alle
+          betalende ZenMate-klanten naar het CyberGhost-platform na de fusie —
+          een risicovolle gegevensmigratie zonder ruimte voor
+          factureringsfouten. Bouwde en onderhield ook terugkerende
+          abonnementsmotoren en betalingsintegraties met Adyen, PayPal
+          en BitPay.
+      de:
+        title: Software Engineer
+        description: >
+          Arbeitete für ZenMate, CyberGhost und PIA. Leitete die Migration
+          aller zahlenden ZenMate-Kunden auf die CyberGhost-Plattform nach
+          der Fusion — eine risikoreiche Datenmigration ohne Spielraum für
+          Abrechnungsfehler. Entwickelte und pflegte außerdem wiederkehrende
+          Subscription-Engines und Zahlungsintegrationen mit Adyen, PayPal
+          und BitPay.
+
+  - key: zenguard_junior
+    company: ZenGuard
+    logo: zenguard.png   # to be provided
+    start_date: "2017-08-01"
+    end_date: "2019-01-01"
+    accent: ~
+    skills:
+      - ruby_on_rails
+      - ruby
+      - vuejs
+      - javascript
+      - postgresql
+    translations:
+      en:
+        title: Junior Software Engineer
+        description: >
+          Developed and maintained features for the ZenMate VPN product in a
+          Rails and Vue.js stack. Deepened test-driven development practices
+          and got comfortable with the full product development lifecycle —
+          from ticket to production.
+      nl:
+        title: Junior Software Engineer
+        description: >
+          Ontwikkelde en onderhield functionaliteiten voor het ZenMate
+          VPN-product in een Rails- en Vue.js-stack. Verdiepte
+          testgedreven ontwikkelingspraktijken en raakte vertrouwd met de
+          volledige productontwikkelingscyclus — van ticket tot productie.
+      de:
+        title: Junior Software Engineer
+        description: >
+          Entwickelte und pflegte Features für das ZenMate-VPN-Produkt in
+          einem Rails- und Vue.js-Stack. Vertiefte testgetriebene
+          Entwicklungspraktiken und wurde mit dem gesamten
+          Produktentwicklungslebenszyklus vertraut — vom Ticket bis zur
+          Produktion.
+
+  - key: zenguard_intern
+    company: ZenGuard
+    logo: zenguard.png
+    start_date: "2017-02-01"
+    end_date: "2017-07-01"
+    accent: ~
+    skills:
+      - ruby_on_rails
+      - ruby
+      - vuejs
+      - javascript
+    translations:
+      en:
+        title: Software Engineering Intern
+        description: >
+          First experience with production software engineering — shipping
+          real code for a real product. Learned the fundamentals of TDD,
+          code review, and deploying to production in a professional
+          team environment.
+      nl:
+        title: Software Engineering Stagiair
+        description: >
+          Eerste ervaring met professionele softwareontwikkeling — echte
+          code schrijven voor een echt product. Leerde de basisprincipes
+          van TDD, code review en het deployen naar productie in een
+          professionele teamomgeving.
+      de:
+        title: Software Engineering Praktikant
+        description: >
+          Erste Erfahrung mit professioneller Softwareentwicklung — echten
+          Code für ein echtes Produkt liefern. Erlernte die Grundlagen von
+          TDD, Code-Reviews und dem Deployment in Produktionsumgebungen
+          in einem professionellen Team.
+
+  - key: shopboostr_intern
+    company: Shopboostr
+    logo: shopboostr.png   # to be provided
+    start_date: "2016-06-01"
+    end_date: "2016-12-01"
+    accent: ~
+    skills:
+      - ruby_on_rails
+      - javascript
+    translations:
+      en:
+        title: Software Engineering Intern
+        description: >
+          First steps in professional software development — working in a
+          team, opening pull requests, and contributing to a live Rails
+          application. Shopboostr was a small software agency taking on
+          varied client projects.
+      nl:
+        title: Software Engineering Stagiair
+        description: >
+          Eerste stappen in professionele softwareontwikkeling — werken in
+          een team, pull requests openen en bijdragen aan een live
+          Rails-applicatie. Shopboostr was een klein softwarebedrijf
+          met diverse klantprojecten.
+      de:
+        title: Software Engineering Praktikant
+        description: >
+          Erste Schritte in der professionellen Softwareentwicklung —
+          in einem Team arbeiten, Pull Requests öffnen und zu einer
+          Live-Rails-Anwendung beitragen. Shopboostr war eine kleine
+          Softwareagentur mit vielfältigen Kundenprojekten.
+
+
+# ============================================================
+# PROJECTS
+# 4 entries — ordered by position
+# image: on hold — to be added once assets are ready
+# ============================================================
+projects:
+
+  - key: menno_codes
+    position: 1
+    year: 2026
+    url: ~                                        # live URL TBD
+    repo_url: https://github.com/mennogodeke/website
+    image: ~
+    skills:
+      - ruby_on_rails
+      - ruby
+      - postgresql
+      - docker
+    translations:
+      en:
+        name: menno.codes
+        description: >
+          This very website — a personal portfolio and CV built with Rails 8.
+          Features a CV download flow with email-gated token links, PDF
+          generation, and a Kamal deployment pipeline.
+      nl:
+        name: menno.codes
+        description: >
+          Deze website zelf — een persoonlijk portfolio en CV gebouwd met
+          Rails 8. Met een CV-downloadflow via e-mailgebaseerde tokenlinks,
+          PDF-generatie en een Kamal-deploymentpipeline.
+      de:
+        name: menno.codes
+        description: >
+          Diese Website selbst — ein persönliches Portfolio und CV, gebaut
+          mit Rails 8. Mit einem CV-Download-Flow über e-mailbasierte
+          Token-Links, PDF-Generierung und einer Kamal-Deployment-Pipeline.
+
+  - key: timelanes
+    position: 2
+    year: 2026
+    url: ~                                        # coming soon
+    repo_url: ~                                   # private for now
+    image: ~
+    skills:
+      - ruby_on_rails
+      - swift
+      - kubernetes
+      - docker
+    translations:
+      en:
+        name: Timelanes
+        description: >
+          A side project in two flavours — the same app written in both Ruby
+          on Rails and Swift (Vapor). The goal: a playground for Kubernetes
+          experiments, A/B traffic splitting, and benchmarking real-world
+          performance differences between the two stacks.
+      nl:
+        name: Timelanes
+        description: >
+          Een nevenproject in twee smaken — dezelfde app geschreven in zowel
+          Ruby on Rails als Swift (Vapor). Het doel: een speeltuin voor
+          Kubernetes-experimenten, A/B-verkeersopsplitsing en het benchmarken
+          van prestatieverschillen tussen de twee stacks.
+      de:
+        name: Timelanes
+        description: >
+          Ein Nebenprojekt in zwei Varianten — dieselbe App, geschrieben in
+          Ruby on Rails und Swift (Vapor). Das Ziel: ein Spielplatz für
+          Kubernetes-Experimente, A/B-Traffic-Splitting und das Benchmarking
+          realer Performance-Unterschiede zwischen den beiden Stacks.
+
+  - key: we_voucher
+    position: 3
+    year: 2021
+    url: ~                                        # site is offline (company liquidated 2022)
+    repo_url: ~
+    image: ~
+    skills:
+      - ruby_on_rails
+      - ruby
+      - postgresql
+      - javascript
+    translations:
+      en:
+        name: we-voucher.de
+        description: >
+          A voucher campaign platform built for Incent-Now — developed the API
+          handling voucher claims and an admin dashboard for campaign
+          configuration, code generation, and reporting. Ran campaigns in
+          partnership with Thalia and Eurowings. The company was liquidated
+          in 2022.
+      nl:
+        name: we-voucher.de
+        description: >
+          Een vouchercampagneplatform gebouwd voor Incent-Now — ontwikkelde
+          de API voor het verwerken van voucherclaims en een admin-dashboard
+          voor campagneconfiguratie, codegeneratie en rapportage. Campagnes
+          liepen in samenwerking met Thalia en Eurowings. Het bedrijf werd
+          geliquideerd in 2022.
+      de:
+        name: we-voucher.de
+        description: >
+          Eine Gutscheinkampagnenplattform für Incent-Now — entwickelte die
+          API zur Verarbeitung von Gutscheinclaims und ein Admin-Dashboard
+          für Kampagnenkonfiguration, Code-Generierung und Reporting.
+          Kampagnen liefen in Kooperation mit Thalia und Eurowings.
+          Das Unternehmen wurde 2022 liquidiert.
+
+  - key: poolbar
+    position: 4
+    year: 2025
+    url: ~                                        # TBD — awaiting client details
+    repo_url: ~
+    image: ~
+    skills: []
+    translations:
+      en:
+        name: Pool Bar Website
+        description: >
+          A WordPress website for a local pool bar — custom theme, contact
+          form, and event listings.
+      nl:
+        name: Poolbar Website
+        description: >
+          Een WordPress-website voor een lokale poolbar — eigen thema,
+          contactformulier en evenementenoverzicht.
+      de:
+        name: Poolbar-Website
+        description: >
+          Eine WordPress-Website für eine lokale Poolbar — eigenes Theme,
+          Kontaktformular und Veranstaltungsübersicht.
+
+# ============================================================
+# PAGES
+# Home, Experience, Career, Projects, Contact, Get CV
+# ============================================================
+
+pages:
+  home:
+    about:
+      me:
+        eyebrow: "Hi, I'm Menno 👋"
+        title: Web, App and Platform Developer.
+        subtitle: 10+ Years of experience
+        intro: I'm a full-stack engineer based in Germany, with over a decade of experience building backend systems, payment integrations, and cloud infrastructure. I've worked across the full VPN industry — from small Berlin startups to products used by millions — with a heavy focus on subscription billing and everything that keeps it running reliably.
+      menno_codes:
+        eyebrow: "Hello and welcome to"
+        title: MENNO.CODES
+        intro: This is my corner of the internet — part portfolio, part CV, part proof that I can ship something beyond a backend API. You'll find my work history, the projects I've built, and a downloadable CV if you'd rather read me offline.
