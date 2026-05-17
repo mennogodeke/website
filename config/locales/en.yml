@@ -28,20 +28,51 @@
 #       enabled: "ON"
 
 en:
+  nav:
+    home: "Home"
+    career: "Career"
+    experience: "Experience"
+    projects: "Projects"
+    get_in_touch: "Get in touch"
+    get_my_cv: "Get my CV"
+
+  footer:
+    built_with: "Built with:"
+
+  cv_download:
+    title: "Curriculum Vitae"
+    get_link: "Get a download link"
+    send: "Send"
+    open_in_browser: "Open in browser"
+
+  contact:
+    subtitle: "Wanna work together?"
+    title: "Get in touch"
+    intro: "Have a project in mind, or just want to say hi? Either way, my inbox is open."
+    form:
+      name: "Name"
+      name_placeholder: "Your name"
+      email: "Email"
+      message: "Message"
+      message_placeholder: "What's on your mind?"
+      submit: "Send message →"
+
   pages:
     home:
       hello: "Hi, I'm Menno 👋"
       title: "Web, App and Platform Developer."
       subtitle: "10+ Years of experience"
       intro: "I'm a full-stack engineer based in Germany, with over a decade of experience building backend systems, payment integrations, and cloud infrastructure. I've worked across the full VPN industry — from small Berlin startups to products used by millions — with a heavy focus on subscription billing and everything that keeps it running reliably."
-      cv_cta: "Download CV"
-      contact_cta: "Get in touch"
+      view_work: "View work"
+      download_cv: "Download CV"
+      status: "Open for collabs · Remote or on location"
     career:
       title: "Career"
       subtitle: "Where I've worked"
     experience:
       title: "Experience"
       subtitle: "What I've been doing"
+      skills_title: "What I'm working with"
     projects:
       title: "Projects"
       subtitle: "What I've built"

@@ -1,5 +1,5 @@
 <section class="section is-medium container is-max-widescreen">
-  <h1 class="title is-1">Curriculum Vitae</h1>
+  <h1 class="title is-1"><%= t("cv_download.title") %></h1>
 
   <% if notice %>
     <div class="notification is-success"><%= notice %></div>
@@ -12,7 +12,7 @@
 
     <%# Column 1 — email form %>
     <div class="cv-col-form">
-      <div class="subtitle">Get a download link</div>
+      <div class="subtitle"><%= t("cv_download.get_link") %></div>
 
       <%= form_with model: @cv_download, url: cv_downloads_path, class: "cv-download-form" do |f| %>
         <div class="field">
@@ -23,7 +23,7 @@
             <p class="help is-danger"><%= message %></p>
           <% end %>
         </div>
-        <%= f.submit "SEND", class: "button is-primary" %>
+        <%= f.submit t("cv_download.send").upcase, class: "button is-primary" %>
       <% end %>
     </div>
 
@@ -37,7 +37,7 @@
     <%# Column 3 — open in browser %>
     <div class="cv-col-browser">
       <%= link_to cv_path, class: "cv-browser-btn" do %>
-        OPEN IN BROWSER
+        <%= t("cv_download.open_in_browser").upcase %>
       <% end %>
     </div>
 
