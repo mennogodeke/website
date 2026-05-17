@@ -2,8 +2,8 @@
 <%# 1. EXPERTISE — feature cards grid %>
 <%# ============================================================ %>
 <section class="section is-medium container is-max-widescreen">
-  <h1 class="title is-1">Experience</h1>
-  <h2 class="title is-2">What I've been doing</h2>
+  <h1 class="title is-1"><%= t 'pages.experience.title' %></h1>
+  <h2 class="title is-2"><%= t 'pages.experience.subtitle' %></h2>
 
   <div class="expertise-grid is-top">
     <%= render partial: "experience/expertise_card", collection: @expertises, as: :expertise_card %>

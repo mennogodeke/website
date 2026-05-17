@@ -2,6 +2,7 @@
   <div>
     <p class="job-title"><%= job.title %></p>
     <span class="job-company"><%= job.company %></span>
+    <p><%= job.description %></p>
   </div>
   <span class="job-dates">
     <%= job.start_date.strftime("%b %Y") %> – <%= job_end_date(job.end_date) %>

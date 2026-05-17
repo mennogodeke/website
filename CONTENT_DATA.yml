@@ -954,3 +954,21 @@ projects:
         description: >
           Eine WordPress-Website für eine lokale Poolbar — eigenes Theme,
           Kontaktformular und Veranstaltungsübersicht.
+
+# ============================================================
+# PAGES
+# Home, Experience, Career, Projects, Contact, Get CV
+# ============================================================
+
+pages:
+  home:
+    about:
+      me:
+        eyebrow: "Hi, I'm Menno 👋"
+        title: Web, App and Platform Developer.
+        subtitle: 10+ Years of experience
+        intro: I'm a full-stack engineer based in Germany, with over a decade of experience building backend systems, payment integrations, and cloud infrastructure. I've worked across the full VPN industry — from small Berlin startups to products used by millions — with a heavy focus on subscription billing and everything that keeps it running reliably.
+      menno_codes:
+        eyebrow: "Hello and welcome to"
+        title: MENNO.CODES
+        intro: This is my corner of the internet — part portfolio, part CV, part proof that I can ship something beyond a backend API. You'll find my work history, the projects I've built, and a downloadable CV if you'd rather read me offline.

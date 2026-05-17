@@ -31,7 +31,17 @@ en:
   pages:
     home:
       hello: "Hi, I'm Menno 👋"
-      title: "Chia tumeric direct"
+      title: "Full-Stack Software Engineer"
       subtitle: "Japanese breakfast 3 wolf moon distillery stereolab, direct trade girl dinner caviar bump lockwood bruh mixtape open studio. Vape JOMO church-key jean shorts imposter syndrome keffiyeh."
+      intro: "Cupping jianbing master cleanse, echo park super 8 feeld miso aeropress lockwood cronut bluesky. Polaroid cortado robert walser no wave."
       cv_cta: "Get my CV!"
       contact_cta: "Get in touch"
+    career:
+      title: "Career"
+      subtitle: "Where I've worked"
+    experience:
+      title: "Experience"
+      subtitle: "What I've been doing"
+    projects:
+      title: "Projects"
+      subtitle: "What I've build"
