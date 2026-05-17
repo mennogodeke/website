@@ -12,12 +12,12 @@ class ProjectsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "gets show" do
-    get project_url(projects(:menno_codes))
+    get project_url(id: projects(:menno_codes))
     assert_response :success
   end
 
   test "show displays project name" do
-    get project_url(projects(:menno_codes))
+    get project_url(id: projects(:menno_codes))
     assert_select "h1", text: projects(:menno_codes).name
   end
 end
