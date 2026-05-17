@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_05_10_213924) do
+ActiveRecord::Schema[8.1].define(version: 2026_05_17_144201) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -36,8 +36,10 @@ ActiveRecord::Schema[8.1].define(version: 2026_05_10_213924) do
   end
 
   create_table "expertises", force: :cascade do |t|
+    t.string "accent"
     t.datetime "created_at", null: false
     t.text "description"
+    t.string "icon"
     t.string "name"
     t.datetime "updated_at", null: false
     t.integer "years_of_experience"
@@ -53,10 +55,12 @@ ActiveRecord::Schema[8.1].define(version: 2026_05_10_213924) do
   end
 
   create_table "jobs", force: :cascade do |t|
+    t.string "accent"
     t.string "company"
     t.datetime "created_at", null: false
     t.text "description"
     t.date "end_date"
+    t.string "logo"
     t.date "start_date"
     t.string "title"
     t.datetime "updated_at", null: false
@@ -72,8 +76,10 @@ ActiveRecord::Schema[8.1].define(version: 2026_05_10_213924) do
   end
 
   create_table "projects", force: :cascade do |t|
+    t.string "accent"
     t.datetime "created_at", null: false
     t.text "description"
+    t.string "image"
     t.string "name"
     t.integer "position"
     t.string "repo_url"
@@ -83,8 +89,10 @@ ActiveRecord::Schema[8.1].define(version: 2026_05_10_213924) do
   end
 
   create_table "skills", force: :cascade do |t|
+    t.string "accent"
     t.datetime "created_at", null: false
     t.text "description"
+    t.string "icon"
     t.integer "level"
     t.string "name"
     t.datetime "updated_at", null: false
