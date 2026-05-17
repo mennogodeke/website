@@ -4,6 +4,6 @@
     <span class="job-company"><%= job.company %></span>
   </div>
   <span class="job-dates">
-    <%= job.start_date.strftime("%b %Y") %> – <%= job.end_date ? job.end_date.strftime("%b %Y") : "Present" %>
+    <%= job.start_date.strftime("%b %Y") %> – <%= job_end_date(job.end_date) %>
   </span>
 </div>
