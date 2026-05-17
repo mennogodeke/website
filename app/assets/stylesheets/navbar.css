@@ -33,7 +33,6 @@
   font-family: var(--app-font-display);
   font-weight: 800;
   font-size: 1.35rem;
-  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--app-text);
 }
@@ -56,8 +55,8 @@
 .navbar-item {
   font-family: var(--app-font-display);
   font-weight: 700;
-  font-size: 1.15rem;
-  letter-spacing: 0.08em;
+  font-size: 1.25rem;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   position: relative;
   padding-top: 0.25rem;
@@ -101,7 +100,7 @@
 .navbar-cta {
   font-family: var(--app-font-display);
   font-weight: 800;
-  font-size: 1.15rem;
+  font-size: 1.25rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--app-accent);
