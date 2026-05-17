@@ -1,23 +1,31 @@
-senior_engineer_rails:
-  job: senior_engineer
-  skill: ruby_on_rails
+kape_senior_rails:          { job: kape_senior, skill: ruby_on_rails }
+kape_senior_ruby:           { job: kape_senior, skill: ruby }
+kape_senior_go:             { job: kape_senior, skill: go }
+kape_senior_docker:         { job: kape_senior, skill: docker }
+kape_senior_aws:            { job: kape_senior, skill: aws }
+kape_senior_terraform:      { job: kape_senior, skill: terraform }
+kape_senior_github_actions: { job: kape_senior, skill: github_actions }
+kape_senior_chargebee:      { job: kape_senior, skill: chargebee }
+kape_senior_kubernetes:     { job: kape_senior, skill: kubernetes }
 
-senior_engineer_ruby:
-  job: senior_engineer
-  skill: ruby
+kape_mid_rails:      { job: kape_mid, skill: ruby_on_rails }
+kape_mid_ruby:       { job: kape_mid, skill: ruby }
+kape_mid_postgresql: { job: kape_mid, skill: postgresql }
+kape_mid_docker:     { job: kape_mid, skill: docker }
+kape_mid_javascript: { job: kape_mid, skill: javascript }
+kape_mid_vuejs:      { job: kape_mid, skill: vuejs }
+kape_mid_adyen:      { job: kape_mid, skill: adyen }
 
-senior_engineer_postgresql:
-  job: senior_engineer
-  skill: postgresql
+zenguard_junior_rails:      { job: zenguard_junior, skill: ruby_on_rails }
+zenguard_junior_ruby:       { job: zenguard_junior, skill: ruby }
+zenguard_junior_vuejs:      { job: zenguard_junior, skill: vuejs }
+zenguard_junior_javascript: { job: zenguard_junior, skill: javascript }
+zenguard_junior_postgresql: { job: zenguard_junior, skill: postgresql }
 
-senior_engineer_docker:
-  job: senior_engineer
-  skill: docker
+zenguard_intern_rails:      { job: zenguard_intern, skill: ruby_on_rails }
+zenguard_intern_ruby:       { job: zenguard_intern, skill: ruby }
+zenguard_intern_vuejs:      { job: zenguard_intern, skill: vuejs }
+zenguard_intern_javascript: { job: zenguard_intern, skill: javascript }
 
-junior_engineer_rails:
-  job: junior_engineer
-  skill: ruby_on_rails
-
-junior_engineer_ruby:
-  job: junior_engineer
-  skill: ruby
+shopboostr_intern_rails:      { job: shopboostr_intern, skill: ruby_on_rails }
+shopboostr_intern_javascript: { job: shopboostr_intern, skill: javascript }

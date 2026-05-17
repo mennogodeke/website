@@ -1,49 +1,159 @@
 ruby_on_rails:
   name: Ruby on Rails
-  description: Primary back-end framework — APIs, payment integrations, full-stack apps.
   level: expert
-
-docker:
-  name: Docker
-  description: Containerising apps for local dev and production deployments.
-  level: expert
-
-swift:
-  name: Swift
-  description: Native app development for iOS and macOS.
-  level: expert
-
-javascript:
-  name: JavaScript
-  description: Front-end scripting, component-based work alongside back-end projects.
-  level: proficient
-
-kubernetes:
-  name: Kubernetes
-  description: Container orchestration for production workloads.
-  level: proficient
-
-terraform:
-  name: Terraform
-  description: Infrastructure-as-code for cloud provisioning.
-  level: familiar
+  icon: devicon-rails-plain
+  description_en: "Primary back-end framework — APIs, payment integrations, and full-stack web applications."
+  description_nl: "Primair back-end framework — API's, betalingsintegraties en full-stack webapplicaties."
+  description_de: "Primäres Back-End-Framework — APIs, Zahlungsintegrationen und Full-Stack-Webanwendungen."
 
 ruby:
   name: Ruby
-  description:
   level: expert
+  icon: devicon-ruby-plain
+  description_en: "The language behind the Rails magic — clean, expressive, and still a joy to write."
+  description_nl: "De taal achter de Rails-magie — overzichtelijk, expressief en nog steeds een plezier om te schrijven."
+  description_de: "Die Sprache hinter der Rails-Magie — klar, ausdrucksstark und noch immer ein Vergnügen zu schreiben."
 
-postgresql:
-  name: PostgreSQL
-  description:
-  level: proficient
+docker:
+  name: Docker
+  level: expert
+  icon: devicon-docker-plain
+  description_en: "Containerising apps for consistent local development and reliable production deployments."
+  description_nl: "Apps containeriseren voor consistente lokale ontwikkeling en betrouwbare productie-deployments."
+  description_de: "Apps containerisieren für konsistente lokale Entwicklung und zuverlässige Produktions-Deployments."
 
-aws:
-  name: AWS
-  description:
-  level: proficient
+git:
+  name: Git
+  level: expert
+  icon: devicon-git-plain
+  description_en: "Version control — branches, rebases, and the occasional panic-driven force-push."
+  description_nl: "Versiebeheer — branches, rebases en af en toe een paniekgedreven force-push."
+  description_de: "Versionskontrolle — Branches, Rebases und gelegentliche panikgetriebene Force-Pushes."
 
 github_actions:
   name: GitHub Actions
-  description: CI/CD pipelines for automated testing and deployment.
   level: proficient
+  icon: devicon-github-plain
+  description_en: "CI/CD pipelines for automated testing, linting, and deployment workflows."
+  description_nl: "CI/CD-pipelines voor geautomatiseerd testen, linting en deployment-workflows."
+  description_de: "CI/CD-Pipelines für automatisiertes Testen, Linting und Deployment-Workflows."
+
+postgresql:
+  name: PostgreSQL
+  level: proficient
+  icon: devicon-postgresql-plain
+  description_en: "Go-to relational database for production Rails apps — rock solid and well understood."
+  description_nl: "Vaste relationele database voor productie Rails-apps — robuust en goed bekend."
+  description_de: "Bevorzugte relationale Datenbank für Rails-Produktionsanwendungen — solide und bestens bekannt."
+
+go:
+  name: Go
+  level: proficient
+  icon: devicon-go-plain
+  description_en: "Systems programming and microservices — fast, explicit, and refreshingly boring."
+  description_nl: "Systeemprogrammering en microservices — snel, expliciet en verfrissend saai."
+  description_de: "Systemprogrammierung und Microservices — schnell, explizit und erfrischend langweilig."
+
+javascript:
+  name: JavaScript
+  level: proficient
+  icon: devicon-javascript-plain
+  description_en: "Front-end scripting alongside back-end Rails projects — from vanilla JS to component-based work."
+  description_nl: "Front-end scripting naast back-end Rails-projecten — van vanilla JS tot componentgebaseerd werk."
+  description_de: "Front-End-Scripting neben Back-End-Rails-Projekten — von Vanilla-JS bis hin zu komponentenbasierter Arbeit."
+
+kubernetes:
+  name: Kubernetes
+  level: proficient
+  icon: devicon-kubernetes-plain
+  description_en: "Container orchestration for production workloads — deployments, scaling, and the occasional head-scratching YAML."
+  description_nl: "Container-orchestratie voor productie-workloads — deployments, schaling en af en toe verwarrende YAML."
+  description_de: "Container-Orchestrierung für Produktions-Workloads — Deployments, Skalierung und gelegentlich rätselhaftes YAML."
+
+aws:
+  name: AWS
+  level: proficient
+  icon: devicon-amazonwebservices-plain-wordmark
+  description_en: "Cloud infrastructure — EC2, RDS, SSM, and enough IAM policies to fill a small novel."
+  description_nl: "Cloud-infrastructuur — EC2, RDS, SSM en genoeg IAM-policies voor een klein boek."
+  description_de: "Cloud-Infrastruktur — EC2, RDS, SSM und genug IAM-Policies für einen kleinen Roman."
+
+typescript:
+  name: TypeScript
+  level: proficient
+  icon: devicon-typescript-plain
+  description_en: "Type-safe JavaScript for larger front-end and Node.js projects."
+  description_nl: "Type-veilig JavaScript voor grotere front-end en Node.js-projecten."
+  description_de: "Typsicheres JavaScript für größere Front-End- und Node.js-Projekte."
+
+nodejs:
+  name: Node.js
+  level: proficient
+  icon: devicon-nodejs-plain
+  description_en: "Server-side JavaScript for APIs, tooling, and anything that benefits from the npm ecosystem."
+  description_nl: "Server-side JavaScript voor API's, tooling en alles wat baat heeft bij het npm-ecosysteem."
+  description_de: "Serverseitiges JavaScript für APIs, Tooling und alles, was vom npm-Ökosystem profitiert."
+
+vuejs:
+  name: Vue.js
+  level: proficient
+  icon: devicon-vuejs-plain
+  description_en: "Component-based front-end framework — the approachable one."
+  description_nl: "Componentgebaseerd front-end framework — de toegankelijke keuze."
+  description_de: "Komponentenbasiertes Front-End-Framework — die zugängliche Option."
+
+swift:
+  name: Swift
+  level: proficient
+  icon: devicon-swift-plain
+  description_en: "Native app development for iOS and macOS, plus server-side Swift with the Vapor framework."
+  description_nl: "Native app-ontwikkeling voor iOS en macOS, plus server-side Swift met het Vapor-framework."
+  description_de: "Native App-Entwicklung für iOS und macOS, plus serverseitiges Swift mit dem Vapor-Framework."
+
+adyen:
+  name: Adyen
+  level: proficient
+  icon: "fa-solid fa-credit-card"
+  description_en: "Payment processing integration — recurring subscriptions, refund handling, and payment method management."
+  description_nl: "Betalingsverwerkingsintegratie — terugkerende abonnementen, terugbetalingen en betalingsmethodenbeheer."
+  description_de: "Zahlungsverarbeitungsintegration — wiederkehrende Abonnements, Rückerstattungen und Zahlungsmethodenverwaltung."
+
+chargebee:
+  name: ChargeBee
+  level: proficient
+  icon: "fa-solid fa-file-invoice-dollar"
+  description_en: "Subscription billing platform — product catalog management, campaign automation, and billing lifecycle."
+  description_nl: "Abonnementsfactureringsplatform — productcatalogus, campagneautomatisering en factureringslevenscyclus."
+  description_de: "Abonnement-Abrechnungsplattform — Produktkatalogverwaltung, Kampagnenautomatisierung und Abrechnungslebenszyklus."
+
+terraform:
+  name: Terraform
+  level: familiar
+  icon: devicon-terraform-plain
+  description_en: "Infrastructure-as-code for cloud provisioning — because clicking through the AWS console is not a deployment strategy."
+  description_nl: "Infrastructure-as-code voor cloud-provisioning — want klikken door de AWS-console is geen deployment-strategie."
+  description_de: "Infrastructure-as-Code für Cloud-Provisioning — weil sich durch die AWS-Konsole zu klicken keine Deployment-Strategie ist."
+
+ansible:
+  name: Ansible
+  level: familiar
+  icon: devicon-ansible-plain
+  description_en: "Configuration management and server provisioning — getting machines into a known good state."
+  description_nl: "Configuratiebeheer en serverprovisioning — machines in een bekende, goede staat brengen."
+  description_de: "Konfigurationsmanagement und Server-Provisioning — Maschinen in einen bekannten, guten Zustand bringen."
+
+python:
+  name: Python
+  level: familiar
+  icon: devicon-python-plain
+  description_en: "Scripting, automation, and the occasional data wrangling task."
+  description_nl: "Scripting, automatisering en af en toe wat data-verwerking."
+  description_de: "Scripting, Automatisierung und gelegentliche Datenverarbeitungsaufgaben."
+
+stripe:
+  name: Stripe
+  level: familiar
+  icon: devicon-stripe-plain
+  description_en: "Payment processing integration — checkout flows and subscription management."
+  description_nl: "Betalingsverwerkingsintegratie — checkout-flows en abonnementsbeheer."
+  description_de: "Zahlungsverarbeitungsintegration — Checkout-Flows und Abonnementverwaltung."

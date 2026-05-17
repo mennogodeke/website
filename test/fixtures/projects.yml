@@ -1,15 +1,39 @@
 menno_codes:
   name: menno.codes
-  description: Personal portfolio and CV website built with Rails.
+  position: 1
+  year: 2026
   url:
   repo_url: https://github.com/mennogodeke/website
-  year: 2026
-  position: 1
+  description_en: "This very website — a personal portfolio and CV built with Rails 8. Features a CV download flow with email-gated token links, PDF generation, and a Kamal deployment pipeline."
+  description_nl: "Deze website zelf — een persoonlijk portfolio en CV gebouwd met Rails 8. Met een CV-downloadflow via e-mailgebaseerde tokenlinks, PDF-generatie en een Kamal-deploymentpipeline."
+  description_de: "Diese Website selbst — ein persönliches Portfolio und CV, gebaut mit Rails 8. Mit einem CV-Download-Flow über e-mailbasierte Token-Links, PDF-Generierung und einer Kamal-Deployment-Pipeline."
 
-placeholder:
-  name: Project Placeholder
-  description: A placeholder project.
+timelanes:
+  name: Timelanes
+  position: 2
+  year: 2026
   url:
   repo_url:
-  year:
-  position: 2
+  description_en: "A side project in two flavours — the same app written in both Ruby on Rails and Swift (Vapor). The goal: a playground for Kubernetes experiments, A/B traffic splitting, and benchmarking real-world performance differences between the two stacks."
+  description_nl: "Een nevenproject in twee smaken — dezelfde app geschreven in zowel Ruby on Rails als Swift (Vapor). Het doel: een speeltuin voor Kubernetes-experimenten, A/B-verkeersopsplitsing en het benchmarken van prestatieverschillen tussen de twee stacks."
+  description_de: "Ein Nebenprojekt in zwei Varianten — dieselbe App, geschrieben in Ruby on Rails und Swift (Vapor). Das Ziel: ein Spielplatz für Kubernetes-Experimente, A/B-Traffic-Splitting und das Benchmarking realer Performance-Unterschiede zwischen den beiden Stacks."
+
+we_voucher:
+  name: we-voucher.de
+  position: 3
+  year: 2021
+  url:
+  repo_url:
+  description_en: "A voucher campaign platform built for Incent-Now — developed the API handling voucher claims and an admin dashboard for campaign configuration, code generation, and reporting. Ran campaigns in partnership with Thalia and Eurowings. The company was liquidated in 2022."
+  description_nl: "Een vouchercampagneplatform gebouwd voor Incent-Now — ontwikkelde de API voor het verwerken van voucherclaims en een admin-dashboard voor campagneconfiguratie, codegeneratie en rapportage. Campagnes liepen in samenwerking met Thalia en Eurowings. Het bedrijf werd geliquideerd in 2022."
+  description_de: "Eine Gutscheinkampagnenplattform für Incent-Now — entwickelte die API zur Verarbeitung von Gutscheinclaims und ein Admin-Dashboard für Kampagnenkonfiguration, Code-Generierung und Reporting. Kampagnen liefen in Kooperation mit Thalia und Eurowings. Das Unternehmen wurde 2022 liquidiert."
+
+poolbar:
+  name: Pool Bar Website
+  position: 4
+  year: 2025
+  url:
+  repo_url:
+  description_en: "A WordPress website for a local pool bar — custom theme, contact form, and event listings."
+  description_nl: "Een WordPress-website voor een lokale poolbar — eigen thema, contactformulier en evenementenoverzicht."
+  description_de: "Eine WordPress-Website für eine lokale Poolbar — eigenes Theme, Kontaktformular und Veranstaltungsübersicht."
