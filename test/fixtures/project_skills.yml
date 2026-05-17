@@ -1,3 +1,14 @@
-menno_codes_rails:
-  project: menno_codes
-  skill: ruby_on_rails
+menno_codes_rails:      { project: menno_codes, skill: ruby_on_rails }
+menno_codes_ruby:       { project: menno_codes, skill: ruby }
+menno_codes_postgresql: { project: menno_codes, skill: postgresql }
+menno_codes_docker:     { project: menno_codes, skill: docker }
+
+timelanes_rails:      { project: timelanes, skill: ruby_on_rails }
+timelanes_swift:      { project: timelanes, skill: swift }
+timelanes_kubernetes: { project: timelanes, skill: kubernetes }
+timelanes_docker:     { project: timelanes, skill: docker }
+
+we_voucher_rails:      { project: we_voucher, skill: ruby_on_rails }
+we_voucher_ruby:       { project: we_voucher, skill: ruby }
+we_voucher_postgresql: { project: we_voucher, skill: postgresql }
+we_voucher_javascript: { project: we_voucher, skill: javascript }

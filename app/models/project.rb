@@ -2,6 +2,8 @@ class Project < ApplicationRecord
   has_many :project_skills, dependent: :destroy
   has_many :skills, through: :project_skills
 
+  translates :description
+
   validates :name, presence: true
   validate :url_is_http,      if: -> { url.present? }
   validate :repo_url_is_http, if: -> { repo_url.present? }

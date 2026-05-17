@@ -1,24 +1,39 @@
 backend:
   name: Back-end Development
-  description: Building APIs, payment integrations, and data-heavy Rails applications. Strong focus on TDD and CI/CD pipelines.
   years_of_experience: 8
+  icon: "fa-solid fa-server"
+  description_en: "Building APIs, payment integrations, and subscription engines in Ruby on Rails. Eight years of designing systems that handle real money for real users — and haven't caught fire yet."
+  description_nl: "Het bouwen van API's, betalingsintegraties en abonnementsmotoren in Ruby on Rails. Acht jaar lang systemen ontwerpen die echt geld verwerken voor echte gebruikers — en tot nu toe zonder brand."
+  description_de: "Entwicklung von APIs, Zahlungsintegrationen und Subscription-Engines in Ruby on Rails. Acht Jahre lang Systeme entworfen, die echtes Geld für echte Nutzer verarbeiten — bisher ohne Zwischenfall."
 
-cloud:
-  name: Cloud Engineering
-  description: Designing and managing cloud infrastructure across AWS and DigitalOcean, with a focus on infrastructure-as-code and reliability.
-  years_of_experience: 6
+fullstack:
+  name: Full-Stack Development
+  years_of_experience: 10
+  icon: "fa-solid fa-layer-group"
+  description_en: "Front to back, from database schema to the button that triggers it all. Ten years of making the whole thing work together — including the parts that weren't supposed to talk to each other."
+  description_nl: "Van voor tot achter, van databaseschema tot de knop die alles in gang zet. Tien jaar lang de hele boel laten samenwerken — inclusief de onderdelen die dat eigenlijk niet zouden moeten doen."
+  description_de: "Von vorne bis hinten, vom Datenbankschema bis zum Button, der alles auslöst. Zehn Jahre lang das Gesamtsystem zum Laufen gebracht — einschließlich der Teile, die eigentlich nicht miteinander reden sollten."
 
 devops:
-  name: DevOps
-  description: Automating everything from local dev environments to production deployments.
-  years_of_experience: 6
+  name: DevOps & Automation
+  years_of_experience: 5
+  icon: "fa-solid fa-gears"
+  description_en: "Automating everything from local dev environments to production deployments. If something needs to happen more than once, it should happen without me."
+  description_nl: "Alles automatiseren, van lokale ontwikkelomgevingen tot productie-deployments. Als iets vaker dan één keer moet gebeuren, moet het zonder mij kunnen."
+  description_de: "Automatisierung von lokalen Entwicklungsumgebungen bis hin zu Produktions-Deployments. Wenn etwas mehr als einmal passieren muss, sollte es ohne mich passieren."
 
-ios:
-  name: iOS & macOS Development
-  description: Native app development for Apple platforms — from side projects to production apps on the App Store.
-  years_of_experience: 4
-
-frontend:
-  name: Front-end Development
-  description: Building interfaces that don't make users want to close the tab. Mostly component-based work alongside back-end projects.
+cloud:
+  name: Cloud & Infrastructure
   years_of_experience: 3
+  icon: "fa-solid fa-cloud"
+  description_en: "Designing and managing cloud infrastructure on AWS — infrastructure-as-code, secrets management, and making sure the database is reachable without opening it to the entire internet."
+  description_nl: "Cloud-infrastructuur ontwerpen en beheren op AWS — infrastructure-as-code, secretenbeheer en ervoor zorgen dat de database bereikbaar is zonder hem voor het hele internet open te zetten."
+  description_de: "Entwurf und Verwaltung von Cloud-Infrastruktur auf AWS — Infrastructure-as-Code, Secrets-Management und sicherstellen, dass die Datenbank erreichbar ist, ohne sie dem gesamten Internet zu öffnen."
+
+apps:
+  name: iOS & macOS Development
+  years_of_experience: 2
+  icon: "fa-brands fa-apple"
+  description_en: "Native app development for Apple platforms using Swift and Xcode, plus server-side Swift with the Vapor framework."
+  description_nl: "Native app-ontwikkeling voor Apple-platforms met Swift en Xcode, plus server-side Swift met het Vapor-framework."
+  description_de: "Native App-Entwicklung für Apple-Plattformen mit Swift und Xcode, plus serverseitiges Swift mit dem Vapor-Framework."

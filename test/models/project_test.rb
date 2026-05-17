@@ -52,6 +52,6 @@ class ProjectTest < ActiveSupport::TestCase
   test "ordered by position ascending" do
     ordered = Project.all.to_a
     assert_equal projects(:menno_codes), ordered.first
-    assert_equal projects(:placeholder), ordered.last
+    assert_equal projects(:poolbar), ordered.last
   end
 end
