@@ -1,8 +1,8 @@
 <section class="section is-medium container is-max-desktop">
-  <div class="subtitle">Wanna work together?</div>
-  <h1 class="title is-1">Get in touch</h1>
+  <div class="subtitle"><%= t("contact.subtitle") %></div>
+  <h1 class="title is-1"><%= t("contact.title") %></h1>
     <p class="contact-intro">
-      Have a project in mind, or just want to say hi? Either way, my inbox is open.
+      <%= t("contact.intro") %>
     </p>
 
   <div class="contact-layout">
@@ -10,29 +10,29 @@
     <div class="contact-form-wrapper">
       <%= form_with url: "#", method: :post, class: "contact-form" do |f| %>
         <div class="field">
-          <%= f.label :name, "Name", class: "label" %>
+          <%= f.label :name, t("contact.form.name"), class: "label" %>
           <div class="control">
-            <%= f.text_field :name, class: "input", placeholder: "Your name" %>
+            <%= f.text_field :name, class: "input", placeholder: t("contact.form.name_placeholder") %>
           </div>
         </div>
 
         <div class="field">
-          <%= f.label :email, "Email", class: "label" %>
+          <%= f.label :email, t("contact.form.email"), class: "label" %>
           <div class="control">
             <%= f.email_field :email, class: "input", placeholder: "your@email.com" %>
           </div>
         </div>
 
         <div class="field">
-          <%= f.label :message, "Message", class: "label" %>
+          <%= f.label :message, t("contact.form.message"), class: "label" %>
           <div class="control">
-            <%= f.text_area :message, class: "textarea", placeholder: "What's on your mind?", rows: 6 %>
+            <%= f.text_area :message, class: "textarea", placeholder: t("contact.form.message_placeholder"), rows: 6 %>
           </div>
         </div>
 
         <div class="field">
           <div class="control">
-            <%= f.submit "Send message →", class: "button is-primary" %>
+            <%= f.submit t("contact.form.submit"), class: "button is-primary" %>
           </div>
         </div>
       <% end %>

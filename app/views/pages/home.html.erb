@@ -15,16 +15,16 @@
 
       <div class="hero-ctas">
         <%= link_to projects_path, class: "button is-primary" do %>
-          VIEW WORK <i class="fa-solid fa-arrow-right"></i>
+          <%= t("pages.home.view_work").upcase %> <i class="fa-solid fa-arrow-right"></i>
         <% end %>
         <%= link_to new_cv_download_path, class: "button is-outlined" do %>
-          DOWNLOAD CV
+          <%= t("pages.home.download_cv").upcase %>
         <% end %>
       </div>
 
       <div class="hero-status">
         <span class="status-dot"></span>
-        <span class="status-label">OPEN FOR COLLABS &middot; AMSTERDAM, NL</span>
+        <span class="status-label"><%= t("pages.home.status").upcase %></span>
       </div>
     </div>
 

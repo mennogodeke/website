@@ -1,18 +1,49 @@
 nl:
+  nav:
+    home: "Home"
+    career: "Carrière"
+    experience: "Expertise"
+    projects: "Projecten"
+    get_in_touch: "Neem contact op"
+    get_my_cv: "Mijn CV"
+
+  footer:
+    built_with: "Gebouwd met:"
+
+  cv_download:
+    title: "Curriculum Vitae"
+    get_link: "Ontvang een downloadlink"
+    send: "Versturen"
+    open_in_browser: "Openen in browser"
+
+  contact:
+    subtitle: "Wil je samenwerken?"
+    title: "Neem contact op"
+    intro: "Heb je een project in gedachten, of wil je gewoon hallo zeggen? Mijn inbox staat altijd open."
+    form:
+      name: "Naam"
+      name_placeholder: "Jouw naam"
+      email: "E-mail"
+      message: "Bericht"
+      message_placeholder: "Wat heb je in gedachten?"
+      submit: "Bericht versturen →"
+
   pages:
     home:
       hello: "Hoi, ik ben Menno 👋"
       title: "Web, App en Platform Ontwikkelaar."
       subtitle: "10+ jaar ervaring"
       intro: "Ik ben een full-stack engineer gebaseerd in Duitsland, met meer dan tien jaar ervaring in het bouwen van backendsystemen, betalingsintegraties en cloudinfrastructuur. Ik heb door de gehele VPN-industrie gewerkt — van kleine Berlijnse startups tot producten die door miljoenen worden gebruikt — met een sterke focus op abonnementsfacturering en alles wat nodig is om dit betrouwbaar te laten werken."
-      cv_cta: "Download CV"
-      contact_cta: "Neem contact op"
+      view_work: "Bekijk werk"
+      download_cv: "Download CV"
+      status: "Beschikbaar voor samenwerking · Remote of op locatie"
     career:
       title: "Carrière"
       subtitle: "Waar ik heb gewerkt"
     experience:
       title: "Expertise"
       subtitle: "Wat ik doe"
+      skills_title: "Waarmee ik werk"
     projects:
       title: "Projecten"
       subtitle: "Wat ik heb gebouwd"

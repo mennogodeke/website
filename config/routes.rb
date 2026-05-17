@@ -9,18 +9,20 @@ Rails.application.routes.draw do
   # get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
   # get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
 
-  resources :jobs, only: [ :index ]
-  resources :projects, only: [ :index, :show ]
+  scope "(:locale)", locale: /nl|de/ do
+    resources :jobs, only: [ :index ]
+    resources :projects, only: [ :index, :show ]
 
-  get  "cv",                 to: "pages#cv"
-  get  "cv/preview",        to: "pages#cv_preview"
-  get  "cv/download",       to: "cv_downloads#new",    as: :new_cv_download
-  post "cv/download",       to: "cv_downloads#create", as: :cv_downloads
-  get  "cv/download/:token", to: "cv_downloads#show",  as: :cv_download
+    get  "cv",                  to: "pages#cv"
+    get  "cv/preview",          to: "pages#cv_preview"
+    get  "cv/download",         to: "cv_downloads#new",    as: :new_cv_download
+    post "cv/download",         to: "cv_downloads#create", as: :cv_downloads
+    get  "cv/download/:token",  to: "cv_downloads#show",   as: :cv_download
 
-  get "design-preview", to: "pages#design_preview"
-  get "home", to: "pages#home"
-  get "experience", to: "experience#show"
-  get "contact", to: "pages#contact"
-  root "pages#home"
+    get "design-preview", to: "pages#design_preview"
+    get "home", to: "pages#home"
+    get "experience", to: "experience#show"
+    get "contact", to: "pages#contact"
+    root "pages#home"
+  end
 end
