@@ -1,47 +1,30 @@
-backend_rails:
-  expertise: backend
-  skill: ruby_on_rails
+backend_rails:       { expertise: backend,   skill: ruby_on_rails }
+backend_ruby:        { expertise: backend,   skill: ruby }
+backend_postgresql:  { expertise: backend,   skill: postgresql }
+backend_docker:      { expertise: backend,   skill: docker }
+backend_adyen:       { expertise: backend,   skill: adyen }
+backend_chargebee:   { expertise: backend,   skill: chargebee }
+backend_stripe:      { expertise: backend,   skill: stripe }
+backend_nodejs:      { expertise: backend,   skill: nodejs }
+backend_typescript:  { expertise: backend,   skill: typescript }
+backend_go:          { expertise: backend,   skill: go }
 
-backend_ruby:
-  expertise: backend
-  skill: ruby
+fullstack_rails:      { expertise: fullstack, skill: ruby_on_rails }
+fullstack_javascript: { expertise: fullstack, skill: javascript }
+fullstack_vuejs:      { expertise: fullstack, skill: vuejs }
+fullstack_typescript: { expertise: fullstack, skill: typescript }
+fullstack_nodejs:     { expertise: fullstack, skill: nodejs }
+fullstack_postgresql: { expertise: fullstack, skill: postgresql }
 
-backend_postgresql:
-  expertise: backend
-  skill: postgresql
+devops_docker:          { expertise: devops, skill: docker }
+devops_github_actions:  { expertise: devops, skill: github_actions }
+devops_kubernetes:      { expertise: devops, skill: kubernetes }
+devops_ansible:         { expertise: devops, skill: ansible }
 
-backend_docker:
-  expertise: backend
-  skill: docker
+cloud_aws:        { expertise: cloud, skill: aws }
+cloud_terraform:  { expertise: cloud, skill: terraform }
+cloud_ansible:    { expertise: cloud, skill: ansible }
+cloud_docker:     { expertise: cloud, skill: docker }
+cloud_kubernetes: { expertise: cloud, skill: kubernetes }
 
-cloud_aws:
-  expertise: cloud
-  skill: aws
-
-cloud_terraform:
-  expertise: cloud
-  skill: terraform
-
-cloud_docker:
-  expertise: cloud
-  skill: docker
-
-devops_kubernetes:
-  expertise: devops
-  skill: kubernetes
-
-devops_docker:
-  expertise: devops
-  skill: docker
-
-devops_github_actions:
-  expertise: devops
-  skill: github_actions
-
-ios_swift:
-  expertise: ios
-  skill: swift
-
-frontend_javascript:
-  expertise: frontend
-  skill: javascript
+apps_swift: { expertise: apps, skill: swift }

@@ -27,7 +27,7 @@ class JobTest < ActiveSupport::TestCase
   end
 
   test "has many skills through job_skills" do
-    job = jobs(:senior_engineer)
+    job = jobs(:kape_senior)
     assert_includes job.skills, skills(:ruby_on_rails)
   end
 end

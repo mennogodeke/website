@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_05_17_144201) do
+ActiveRecord::Schema[8.1].define(version: 2026_05_10_213924) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
   create_table "cv_downloads", force: :cascade do |t|
     t.datetime "approved_at"
     t.datetime "created_at", null: false
-    t.integer "download_count"
+    t.integer "download_count", default: 0, null: false
     t.string "email"
     t.datetime "last_download_at"
     t.datetime "requested_at"
@@ -38,7 +38,9 @@ ActiveRecord::Schema[8.1].define(version: 2026_05_17_144201) do
   create_table "expertises", force: :cascade do |t|
     t.string "accent"
     t.datetime "created_at", null: false
-    t.text "description"
+    t.text "description_de"
+    t.text "description_en"
+    t.text "description_nl"
     t.string "icon"
     t.string "name"
     t.datetime "updated_at", null: false
@@ -58,11 +60,15 @@ ActiveRecord::Schema[8.1].define(version: 2026_05_17_144201) do
     t.string "accent"
     t.string "company"
     t.datetime "created_at", null: false
-    t.text "description"
+    t.text "description_de"
+    t.text "description_en"
+    t.text "description_nl"
     t.date "end_date"
     t.string "logo"
     t.date "start_date"
-    t.string "title"
+    t.string "title_de"
+    t.string "title_en"
+    t.string "title_nl"
     t.datetime "updated_at", null: false
   end
 
@@ -78,7 +84,9 @@ ActiveRecord::Schema[8.1].define(version: 2026_05_17_144201) do
   create_table "projects", force: :cascade do |t|
     t.string "accent"
     t.datetime "created_at", null: false
-    t.text "description"
+    t.text "description_de"
+    t.text "description_en"
+    t.text "description_nl"
     t.string "image"
     t.string "name"
     t.integer "position"
@@ -91,7 +99,9 @@ ActiveRecord::Schema[8.1].define(version: 2026_05_17_144201) do
   create_table "skills", force: :cascade do |t|
     t.string "accent"
     t.datetime "created_at", null: false
-    t.text "description"
+    t.text "description_de"
+    t.text "description_en"
+    t.text "description_nl"
     t.string "icon"
     t.integer "level"
     t.string "name"
