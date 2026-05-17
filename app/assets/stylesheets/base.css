@@ -2,8 +2,8 @@
    Design tokens
    ============================================================ */
 :root {
-  --app-bg:           #0b1729;
-  --app-bg-card:      #0e2044;
+  --app-bg:           #e1e6ee;
+  --app-bg-card:      #e1e6ee;
   --app-accent:       #f5e90c;
   --app-accent-rgb:   245, 233, 12;
   --app-text:         #ffffff;
@@ -167,7 +167,7 @@ html {
 }
 
 body {
-  background-color: var(--app-bg);
+  background-color: white;
   background-image: url("hero-bg.jpg");
   background-size: cover;
   background-position: center;
@@ -177,11 +177,11 @@ body {
   font-family: var(--app-font-body);
   margin: 0;
   /* Override Bulma's light-mode scheme variables */
-  --bulma-body-background-color: var(--app-bg);
+  --bulma-body-background-color: white;
   --bulma-body-color: var(--app-text);
   --bulma-text: var(--app-text);
   --bulma-border: var(--app-border);
-  --bulma-scheme-main-l: 11%;
+  --bulma-scheme-main-l: 95%;
   --bulma-scheme-h: 221;
   --bulma-scheme-s: 50%;
 }
