@@ -2,9 +2,9 @@
 
 ## Overall look and feel
 
-Bold, dark, typographically-driven. Inspired by Fortnite/Epic Games — high-contrast, uppercase display type, sharp edges, and a single electric accent colour on a deep navy background. The aesthetic sits between editorial brutalism and gaming UI: confident, a little aggressive, but still legible and professional.
+Bold, typographically-driven. Inspired by Fortnite/Epic Games — high-contrast, uppercase display type, sharp edges, and a single electric accent colour. The aesthetic sits between editorial brutalism and gaming UI: confident, a little aggressive, but still legible and professional.
 
-The fixed background texture (dark navy-to-cyan diagonal halftone) creates depth and atmosphere across all pages without competing with content.
+A fixed full-viewport background image (`hero-bg.jpg`) creates depth and atmosphere across all pages without competing with content.
 
 ---
 
@@ -25,8 +25,9 @@ Built on Bulma CSS 1.0.4 (vendored). Bulma's class system is used directly and o
 
 | Token | Value | Usage |
 |---|---|---|
-| `--app-bg` | `#0b1729` | Page background, card backgrounds |
-| `--app-accent` | `#f5e90c` | Primary CTA, subtitle badges, hover states, focus rings |
+| `--app-bg` | `#e1e6ee` | Fallback background (body; normally covered by bg image) |
+| `--app-bg-card` | `#e1e6ee` | Card backgrounds |
+| `--app-accent` | `#f5e90c` | Primary CTA, section labels, hover states, focus rings |
 | `--app-text` | `#ffffff` | All body and heading text |
 | `--app-text-muted` | `rgba(255,255,255,0.6)` | Secondary text, intro copy |
 | `--app-border` | `rgba(255,255,255,0.1)` | Subtle dividers |
@@ -52,20 +53,20 @@ Two fonts from Google Fonts, loaded via `<link>` in the layout:
 | Display (`--app-font-display`) | Barlow Condensed | 600, 700, 800, 900 |
 | Body (`--app-font-body`) | Barlow | 400, 500, 600, 700 |
 
-Bulma's title size scale is overridden in `:root` with fluid `clamp()` values:
+Bulma's title size scale is overridden via `--bulma-size-X` custom properties in `:root`:
 
-| Class | Size |
+| Variable | Value |
 |---|---|
-| `.title.is-1` | `clamp(4.5rem, 9vw, 7.5rem)` |
-| `.title.is-2` | `clamp(2.5rem, 5vw, 4rem)` |
-| `.title.is-3` | `clamp(1.75rem, 3vw, 2.5rem)` |
-| `.title.is-4` | `clamp(1.25rem, 2vw, 1.75rem)` |
-| `.title.is-5` | `clamp(1rem, 1.5vw, 1.25rem)` |
-| `.title.is-6` | `0.9rem` |
+| `--bulma-size-1` | `clamp(3.5rem, 12vw, 10rem)` |
+| `--bulma-size-2` | `clamp(2rem, 5vw, 4rem)` |
+| `--bulma-size-3` | `clamp(1.75rem, 3vw, 2.5rem)` |
+| `--bulma-size-4` | `clamp(1.25rem, 2vw, 1.75rem)` |
+| `--bulma-size-5` | `clamp(1rem, 1.5vw, 1.25rem)` |
+| `--bulma-size-6` | `0.9rem` |
 
-All `.title` elements are forced uppercase, weight 900, Barlow Condensed, line-height 0.9, letter-spacing -0.01em.
+**`h1.title`** — Barlow Condensed 900, uppercase, white, line-height 0.9. Used for page hero headings.
 
-`.subtitle` sizes follow the same is-1 → is-6 scale and render as a yellow badge (`#f5e90c` background, near-black text), Barlow Condensed 800, uppercase.
+**`h2.title.is-2` and `.title.is-3`** — yellow badge (`#f5e90c` background, near-black text), Barlow Condensed, uppercase, inline-block with padding. Used for section and sub-section headings.
 
 ---
 
@@ -73,7 +74,7 @@ All `.title` elements are forced uppercase, weight 900, Barlow Condensed, line-h
 
 ### Navigation
 
-Fixed, full-width, transparent. Blends into the background texture. On scroll, a dark frosted-glass background (`rgba(11,23,41,0.92)` + `backdrop-filter: blur(12px)`) fades in via a Stimulus `navbar_controller` that toggles `.is-scrolled` after 20px of scroll.
+Fixed, full-width, transparent. Blends into the background texture. On scroll, a frosted-glass background (`rgba(43,68,125,0.5)` + `backdrop-filter: blur(12px)`) fades in via a Stimulus `navbar_controller` that toggles `.is-scrolled` after 20px of scroll.
 
 - **Logo** (`MENNO.CODES`): Barlow Condensed 800, no hover effect
 - **Nav links** (Home, Career, Experience, Projects): centered in `navbar-start`. Barlow Condensed 700, muted white → full white on active. Yellow 2px underline via `::after` on hover and active.
@@ -84,11 +85,11 @@ Fixed, full-width, transparent. Blends into the background texture. On scroll, a
 
 ### Titles
 
-Bulma's `.title` and `.subtitle` are globally overridden:
+Bulma's `.title` is globally overridden:
 
-- **`.title`** — Barlow Condensed 900, uppercase, white, line-height 0.9
-- **`.subtitle`** — Yellow badge (`#f5e90c` background, near-black text), Barlow Condensed 800, uppercase, inline-block with padding. Used as a section label, not a traditional subtitle.
-- **`.title-row`** — Flex wrapper that places a `.title` and `.subtitle` side-by-side, baseline-aligned. Used on Career, Experience, and Projects page headers.
+- **`h1.title`** — Barlow Condensed 900, uppercase, white, line-height 0.9. Used for page hero headings.
+- **`h2.title.is-2`** — Yellow badge (`#f5e90c` background, near-black text), Barlow Condensed, inline-block with padding. Used for section headings.
+- **`.title.is-3`** — Same yellow badge treatment. Used for sub-section headings.
 
 ### Buttons
 
@@ -124,19 +125,14 @@ Structure: job title + company name left, date range right.
 
 ### Expertise
 
-Used on the Experience page in a **3-column grid** (`.expertise-grid.is-top`), responsive to 2-col at ≤1024px and 1-col at ≤640px.
+Used on the Experience page as `.expertise-grid.is-top` — a **3-column grid**, responsive to 2-col at ≤1024px and 1-col at ≤640px.
 
 Each card has:
-- A 4px top border in the area's accent colour
-- A 16:9 placeholder image (white background)
-- A card body with a **semi-transparent area-colour background** (gradient with a white diagonal sheen); on hover the body transitions to a fully opaque glossy gradient
-- Card header inside the body: area name (left) + years of experience as a large yellow number (right)
-- Description text and skill tags below
-
-Hover animations (all triggered together):
-- **Lift** — `translateY(-6px)` with a deeper drop shadow
-- **Image zoom** — image scales to 107%, cropped by the overflow-hidden wrap
-- **Shimmer sweep** — a skewed white band sweeps left-to-right across the card body via `::after`
+- 4px top border in the area's accent colour
+- 16:9 image wrap
+- Card body: semi-transparent area-colour gradient + diagonal sheen; fully opaque glossy gradient on hover
+- Card header: area name (left) + years of experience (right)
+- Hover: `translateY(-6px)` lift, image zoom to 107%, shimmer sweep via `::after`
 
 Area colours used as `--card-color` CSS custom property:
 

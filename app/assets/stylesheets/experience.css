@@ -1,184 +1,15 @@
 /* ============================================================
-   Expertise cards
+   Expertise cards — is-top variant (production)
    ============================================================ */
-.expertise-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
-}
-
-.expertise-card {
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 0.75rem;
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  transition: border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
-}
-
 .expertise-card.is-backend  { --card-color: #ff6200; }
 .expertise-card.is-cloud    { --card-color: #7d09d6; }
 .expertise-card.is-ios      { --card-color: #0f5edb; }
 .expertise-card.is-frontend { --card-color: #12e012; }
 
-.expertise-card:hover {
-  border-color: var(--app-accent);
-  background: color-mix(in srgb, var(--app-accent) 10%, transparent);
-  box-shadow: 0 0 32px color-mix(in srgb, var(--app-accent) 35%, transparent),
-              inset 0 1px 0 color-mix(in srgb, var(--app-accent) 30%, transparent);
-}
-
-.expertise-card.is-featured {
-  grid-column: 1 / -1;
-}
-
-.expertise-card-years {
-  font-size: 3rem;
-  font-weight: 700;
-  line-height: 1;
-}
-
-.expertise-card-name {
-  font-size: 1.2rem;
-}
-
-.expertise-card-description {
-  font-size: 0.95rem;
-  line-height: 1.7;
-  flex: 1;
-}
-
-.expertise-card-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-  margin-top: 0.5rem;
-}
-
-/* ============================================================
-   Expertise card variants
-   ============================================================ */
-
-/* ── Variant A: Number dominant ── */
-.expertise-grid.is-stat .expertise-card {
-  position: relative;
-  overflow: hidden;
-  border-left: 4px solid rgba(255,255,255,0.15);
-  border-top: 1px solid rgba(255,255,255,0.08);
-  border-right: 1px solid rgba(255,255,255,0.08);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-  border-radius: 0;
-}
-
-.expertise-grid.is-stat .expertise-card-years {
-  position: absolute;
-  top: -1.5rem;
-  right: -0.5rem;
-  font-size: 10rem;
-  font-weight: 900;
-  font-family: var(--app-font-display);
-  line-height: 1;
-  color: var(--app-accent);
-  opacity: 0.07;
-  pointer-events: none;
-  user-select: none;
-}
-
-.expertise-grid.is-stat .expertise-card-name {
-  font-family: var(--app-font-display);
-  font-weight: 900;
-  font-size: clamp(1.25rem, 2vw, 1.75rem);
-  text-transform: uppercase;
-  letter-spacing: -0.01em;
-  position: relative;
-}
-
-.expertise-grid.is-stat .expertise-card:hover {
-  border-left-color: var(--app-accent);
-  border-left-width: 4px;
-  background: color-mix(in srgb, var(--app-accent) 8%, transparent);
-  box-shadow: 0 0 32px color-mix(in srgb, var(--app-accent) 25%, transparent);
-}
-
-/* ── Variant B: Image + centered years overlay, title below ── */
-.expertise-grid.is-band {
-  grid-template-columns: repeat(2, 1fr);
-}
-
-.expertise-grid.is-band .expertise-card {
-  padding: 0;
-  overflow: hidden;
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 0.75rem;
-  gap: 0;
-  transition: border-color 0.25s ease, box-shadow 0.25s ease;
-  background: rgba(255,255,255,0.02);
-}
-
-.expertise-grid.is-band .expertise-card.is-featured {
-  grid-column: unset;
-}
-
-.expertise-grid.is-band .expertise-card:hover {
-  border-color: var(--app-accent);
-  background: rgba(255,255,255,0.02);
-  box-shadow: 0 0 32px rgba(245, 233, 12, 0.15);
-}
-
-.expertise-grid.is-band .expertise-card-image-wrap {
-  position: relative;
-  overflow: hidden;
-  aspect-ratio: 16 / 9;
-}
-
-.expertise-grid.is-band .expertise-card-image-wrap img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.45;
-  transition: opacity 0.25s ease;
-}
-
-.expertise-grid.is-band .expertise-card:hover .expertise-card-image-wrap img {
-  opacity: 0.6;
-}
-
-.expertise-grid.is-band .expertise-card-years {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-family: var(--app-font-display);
-  font-weight: 900;
-  font-size: clamp(3.5rem, 7vw, 5.5rem);
-  color: var(--app-accent);
-  line-height: 1;
-  text-align: center;
-  text-shadow: 0 0 40px rgba(245, 233, 12, 0.5);
-  pointer-events: none;
-}
-
-.expertise-grid.is-band .expertise-card-body {
-  padding: 1.25rem 1.5rem 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  flex: 1;
-}
-
-.expertise-grid.is-band .expertise-card-name {
-  font-family: var(--app-font-display);
-  font-weight: 700;
-  font-size: clamp(1.1rem, 2vw, 1.4rem);
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  color: #ffffff;
-}
-
-/* ── Variant C: Top border, image, title + years badge in body ── */
 .expertise-grid.is-top {
+  display: grid;
   grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
 }
 
 .expertise-grid.is-top .expertise-card {
@@ -186,7 +17,8 @@
   border-top: 4px solid var(--card-color, var(--app-accent));
   border-radius: 0;
   padding: 0;
-  gap: 0;
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
   transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
 }
@@ -280,119 +112,28 @@
   flex-shrink: 0;
 }
 
-.expertise-grid.is-top .skill-tag {
-  border-color: rgba(255,255,255,0.4);
-  color: #ffffff;
+.expertise-grid.is-top .expertise-card-description {
+  font-size: 0.95rem;
+  line-height: 1.7;
 }
 
-/* ── Variant B: Full color fill on hover ── */
-.expertise-grid.is-fill .expertise-card {
-  border: 1px solid rgba(255,255,255,0.15);
-  border-radius: 0;
-}
-
-.expertise-grid.is-fill .expertise-card:hover {
-  background: var(--app-accent);
-  border-color: var(--app-accent);
-  box-shadow: 0 0 48px color-mix(in srgb, var(--app-accent) 45%, transparent);
-  color: #0b1729;
-}
-
-.expertise-grid.is-fill .expertise-card:hover .expertise-card-years,
-.expertise-grid.is-fill .expertise-card:hover .expertise-card-name,
-.expertise-grid.is-fill .expertise-card:hover .expertise-card-description {
-  color: #0b1729;
-}
-
-.expertise-grid.is-fill .expertise-card:hover .skill-tag {
-  border-color: rgba(11, 23, 41, 0.35);
-  color: #0b1729;
-}
-
-/* ── Variant D: Horizontal rows ── */
-.expertise-grid.is-list {
+.expertise-grid.is-top .expertise-card-tags {
   display: flex;
-  flex-direction: column;
-  gap: 0;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
 }
 
-.expertise-grid.is-list .expertise-card {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  grid-template-rows: auto auto auto;
-  gap: 0.5rem 3rem;
-  border: none;
-  border-top: 1px solid rgba(255,255,255,0.08);
-  border-left: 3px solid transparent;
-  border-radius: 0;
-  padding: 1.75rem 1.5rem 1.75rem 2rem;
-  transition: border-left-color 0.2s ease, padding-left 0.2s ease, background 0.2s ease;
-}
-
-.expertise-grid.is-list .expertise-card:last-child {
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-}
-
-.expertise-grid.is-list .expertise-card.is-featured {
-  grid-column: unset;
-}
-
-.expertise-grid.is-list .expertise-card:hover {
-  border-color: transparent;
-  border-left: 3px solid var(--app-accent);
-  padding-left: 3rem;
-  background: color-mix(in srgb, var(--app-accent) 6%, transparent);
-  box-shadow: none;
-}
-
-.expertise-grid.is-list .expertise-card-name {
-  grid-column: 1;
-  grid-row: 1;
-  font-family: var(--app-font-display);
-  font-weight: 900;
-  font-size: clamp(1.5rem, 3vw, 2.25rem);
-  text-transform: uppercase;
-  letter-spacing: -0.01em;
-  align-self: center;
-}
-
-.expertise-grid.is-list .expertise-card-years {
-  grid-column: 2;
-  grid-row: 1;
-  font-family: var(--app-font-display);
-  font-weight: 900;
-  font-size: 3.5rem;
-  color: rgba(255,255,255,0.15);
-  line-height: 1;
-  align-self: center;
-}
-
-.expertise-grid.is-list .expertise-card-description {
-  grid-column: 1 / -1;
-  grid-row: 2;
-  flex: unset;
-}
-
-.expertise-grid.is-list .expertise-card-tags {
-  grid-column: 1 / -1;
-  grid-row: 3;
-  margin-top: 0;
-}
-
-/* ── Skill tags (expertise cards) ── */
+/* ── Skill tags ── */
 .skill-tag {
   background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  color: var(--app-text);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: #ffffff;
 }
 
 /* ============================================================
    Skills grid — circular badges
    ============================================================ */
-.skills-section {
-  border-top: 1px solid var(--app-border);
-}
-
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -440,19 +181,6 @@
   line-height: 1.2;
 }
 
-@media (max-width: 1024px) {
-  .skills-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-@media (max-width: 640px) {
-  .skills-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-
 /* ============================================================
    Responsive
    ============================================================ */
@@ -460,11 +188,18 @@
   .expertise-grid.is-top {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .skills-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 @media (max-width: 640px) {
-  .expertise-grid,
   .expertise-grid.is-top {
     grid-template-columns: 1fr;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
