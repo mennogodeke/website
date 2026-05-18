@@ -1,5 +1,7 @@
 /* ============================================================
-   Design tokens
+   Design tokens — app-specific CSS custom properties
+   Bulma's own --bulma-* variables are set at compile time via
+   SASS variables in application.scss, not overridden here.
    ============================================================ */
 :root {
   --app-bg:           #e1e6ee;
@@ -12,20 +14,11 @@
   --app-green:        #00e676;
   --app-font-display: 'Barlow Condensed', sans-serif;
   --app-font-body:    'Barlow', -apple-system, sans-serif;
-
-  /* Override Bulma's size scale — .title.is-X reads these automatically */
-  --bulma-size-1: clamp(3.5rem, 12vw, 10rem);
-  --bulma-size-2: clamp(2rem, 5vw, 4rem);
-  --bulma-size-3: clamp(1.75rem, 3vw, 2.5rem);
-  --bulma-size-4: clamp(1.25rem, 2vw, 1.75rem);
-  --bulma-size-5: clamp(1rem, 1.5vw, 1.25rem);
-  --bulma-size-6: 0.9rem;
 }
 
 /* ============================================================
-   Bulma overrides — title / subtitle / buttons / forms
-   Loaded after bulma.min.css so equal-specificity rules cascade
-   correctly without !important in most cases.
+   Bulma overrides — title / buttons / forms
+   Loaded after bulma so equal-specificity rules cascade correctly.
    ============================================================ */
 
 /* .title — display type scale */
@@ -37,9 +30,8 @@ h1.title {
   line-height: 0.9;
 }
 
-h1.title.is-1 { 
-  margin-bottom: 2.5rem; 
-  font-size: 4.0rem; 
+h1.title.is-1 {
+  margin-bottom: 2.5rem;
 }
 
 h2.title.is-2 {
@@ -158,12 +150,4 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  /* Override Bulma's light-mode scheme variables */
-  --bulma-body-background-color: white;
-  --bulma-body-color: var(--app-text);
-  --bulma-text: var(--app-text);
-  --bulma-border: var(--app-border);
-  --bulma-scheme-main-l: 95%;
-  --bulma-scheme-h: 221;
-  --bulma-scheme-s: 50%;
 }

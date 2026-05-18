@@ -1,7 +1,29 @@
-// ── Bulma ─────────────────────────────────────────────────────────────
+// ── 1. Configure Bulma SASS variables (compile-time theme) ──────────────
+//    These override Bulma's defaults before compilation so the generated
+//    --bulma-* CSS custom properties already have our values.
+@use "bulma_sass/utilities" with (
+  // Typography
+  $family-primary:  '"Barlow", -apple-system, sans-serif',
+
+  // Title / text size scale
+  $size-1:          clamp(3.5rem, 12vw, 10rem),
+  $size-2:          clamp(2rem, 5vw, 4rem),
+  $size-3:          clamp(1.75rem, 3vw, 2.5rem),
+  $size-4:          clamp(1.25rem, 2vw, 1.75rem),
+  $size-5:          clamp(1rem, 1.5vw, 1.25rem),
+  $size-6:          0.9rem,
+
+  // Primary action colour (yellow)
+  $primary:         #f5e90c,
+
+  // Base text colour
+  $text:            #ffffff,
+);
+
+// ── 2. Load full Bulma (picks up the configured utilities above) ─────────
 @use "bulma";
 
-// ── Components ────────────────────────────────────────────────────────
+// ── 3. Component partials ────────────────────────────────────────────────
 @use "base";
 @use "navbar";
 @use "footer";
