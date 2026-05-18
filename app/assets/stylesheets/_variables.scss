@@ -8,7 +8,7 @@
   gap: 0.5rem;
 }
 
-@each $color in primary, link, info, success, warning, danger {
+@each $color in primary, link, info, success, warning, danger, legendary, epic, rare, uncommon, common {
   .button.is-#{$color} {
     background: var(--bulma-#{$color});
     color: var(--bulma-#{$color}-invert);
