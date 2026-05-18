@@ -8,10 +8,10 @@
     <div class="notification is-danger"><%= alert %></div>
   <% end %>
 
-  <div class="cv-download-grid">
+  <div class="columns is-vcentered">
 
     <%# Column 1 — email form %>
-    <div class="cv-col-form">
+    <div class="column">
       <h2 class="title is-2"><%= t("cv_download.get_link") %></h2>
 
       <%= form_with model: @cv_download, url: cv_downloads_path, class: "cv-download-form" do |f| %>
@@ -28,17 +28,21 @@
     </div>
 
     <%# Column 2 — divider %>
-    <div class="cv-col-divider">
-      <div class="cv-divider-line"></div>
-      <span class="cv-divider-or">OR</span>
-      <div class="cv-divider-line"></div>
+    <div class="column is-narrow">
+      <div class="cv-col-divider">
+        <div class="cv-divider-line"></div>
+        <span class="cv-divider-or">OR</span>
+        <div class="cv-divider-line"></div>
+      </div>
     </div>
 
     <%# Column 3 — open in browser %>
-    <div class="cv-col-browser">
-      <%= link_to cv_path, class: "cv-browser-btn" do %>
-        <%= t("cv_download.open_in_browser").upcase %>
-      <% end %>
+    <div class="column">
+      <div class="cv-col-browser">
+        <%= link_to cv_path, class: "cv-browser-btn" do %>
+          <%= t("cv_download.open_in_browser").upcase %>
+        <% end %>
+      </div>
     </div>
 
   </div>

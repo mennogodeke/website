@@ -1,47 +1,47 @@
 <%# ============================================================ %>
 <%# HERO %>
 <%# ============================================================ %>
-<section class="home-hero">
-  <div class="hero-inner">
-    <div class="hero-right">
-      <h2 class="title is-2"><%= t 'pages.home.hello' %></h2>
+<section class="section hero-section">
+  <div class="container is-max-widescreen">
+    <div class="columns is-vcentered">
 
-      <figure class="image is-384x384 hero-avatar">
-        <img class="is-rounded" src="https://placehold.co/384x384/000000/333333" alt="Menno Godeke">
-      </figure>
+      <%# Text column — left %>
+      <div class="column">
+        <h2 class="title is-2"><%= t 'pages.home.hello' %></h2>
+        <h1 class="title is-1 mb-5"><%= t 'pages.home.title' %></h1>
 
-      <div class="hero-status">
-        <span class="status-dot"></span>
-        <span class="status-label"><%= t("pages.home.status").upcase %></span>
+        <p class="hero-bio">
+          <%= t 'pages.home.intro' %>
+        </p>
+
+        <div class="hero-ctas">
+          <%= link_to projects_path, class: "button is-primary" do %>
+            <%= t("pages.home.view_work").upcase %> <i class="fa-solid fa-arrow-right"></i>
+          <% end %>
+          <%= link_to new_cv_download_path, class: "button is-outlined" do %>
+            <%= t("pages.home.download_cv").upcase %>
+          <% end %>
+        </div>
+
+        <div class="hero-status">
+          <span class="status-dot"></span>
+          <span class="status-label"><%= t("pages.home.status").upcase %></span>
+        </div>
       </div>
-    </div>
 
-    <div class="hero-left">
-      <h1 class="title is-1 hero-name"><%= t 'pages.home.title' %></h1>
-
-      <p class="hero-bio">
-        <%= t 'pages.home.intro' %>
-      </p>
-
-      <div class="hero-ctas">
-        <%= link_to projects_path, class: "button is-primary" do %>
-          <%= t("pages.home.view_work").upcase %> <i class="fa-solid fa-arrow-right"></i>
-        <% end %>
-        <%= link_to new_cv_download_path, class: "button is-outlined" do %>
-          <%= t("pages.home.download_cv").upcase %>
-        <% end %>
+      <%# Avatar column — right, hidden on touch devices %>
+      <div class="column is-narrow is-hidden-touch">
+        <figure class="image is-384x384 hero-avatar">
+          <img class="is-rounded" src="https://placehold.co/384x384/000000/333333" alt="Menno Godeke">
+        </figure>
       </div>
-    </div>
 
-  </div>
-</section>
-
-<section class="home-hero">
-  <div class="hero-inner">
-    <div class="hero-left">
-      <h3 class="title is-3"><%= t 'pages.home.subtitle' %></h3>
     </div>
   </div>
 </section>
 
-
+<section class="section">
+  <div class="container is-max-widescreen">
+    <h3 class="title is-3"><%= t 'pages.home.subtitle' %></h3>
+  </div>
+</section>

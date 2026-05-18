@@ -5,14 +5,6 @@
   margin-bottom: 3rem;
 }
 
-/* Two-column layout: form left, icons right */
-.contact-layout {
-  display: grid;
-  grid-template-columns: 1fr 44px;
-  gap: 3rem;
-  align-items: start;
-}
-
 /* Social icons — stacked vertically */
 .social-icons {
   display: flex;
@@ -41,15 +33,4 @@
 /* Form */
 .contact-form .field {
   margin-bottom: 1.25rem;
-}
-
-/* Responsive */
-@media (max-width: 640px) {
-  .contact-layout {
-    grid-template-columns: 1fr;
-  }
-
-  .social-icons {
-    flex-direction: row;
-  }
 }

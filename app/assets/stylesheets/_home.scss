@@ -1,29 +1,8 @@
 /* ============================================================
    Hero
    ============================================================ */
-.home-hero {
-  min-height: fit-content;
+.hero-section {
   padding-top: 70px; /* fixed navbar height */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  display: flex;
-  align-items: center;
-}
-
-.hero-inner {
-  max-width: 1200px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 4rem 2rem;
-  display: grid;
-  grid-template-columns: 1.5fr 1.6fr;
-  align-items: center;
-}
-
-/* ── Name ── */
-.hero-name {
-  margin: 0 0 1.5rem;
 }
 
 /* ── Bio ── */
@@ -79,21 +58,6 @@
 }
 
 /* ── Circular avatar ── */
-.hero-right {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1.5rem;
-}
-
-.hero-left {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  gap: 1.5rem;
-}
-
 .hero-avatar {
   border-radius: 50%;
   overflow: hidden;
@@ -107,26 +71,4 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-/* ============================================================
-   Responsive
-   ============================================================ */
-@media (max-width: 860px) {
-  .hero-inner {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-    padding: 3rem 1.5rem;
-  }
-
-  .hero-right {
-    display: none;
-  }
-
-}
-
-@media (max-width: 480px) {
-  .hero-name {
-    font-size: 4rem;
-  }
 }
