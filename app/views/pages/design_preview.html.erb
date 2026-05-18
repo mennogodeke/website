@@ -1,0 +1,383 @@
+<%# ============================================================ %>
+<%# Design Preview — living reference for the design system %>
+<%# ============================================================ %>
+
+<section class="section">
+  <div class="container is-max-widescreen">
+    <h1 class="title is-1">Design Preview</h1>
+  </div>
+</section>
+
+<%# ============================================================ %>
+<%# 1. TYPOGRAPHY %>
+<%# ============================================================ %>
+<section class="section">
+  <div class="container is-max-widescreen">
+    <h2 class="title is-2">Typography</h2>
+
+    <div class="mb-6">
+      <h1 class="title is-1">Title is-1 — The quick brown fox</h1>
+      <h2 class="title is-2">Title is-2 — The quick brown fox</h2>
+      <h3 class="title is-3">Title is-3 — The quick brown fox</h3>
+      <h4 class="title is-4">Title is-4 — The quick brown fox</h4>
+      <h5 class="title is-5">Title is-5 — The quick brown fox</h5>
+      <h6 class="title is-6">Title is-6 — The quick brown fox</h6>
+    </div>
+
+    <div class="mb-5">
+      <p style="font-size: 1rem; line-height: 1.75; color: rgba(255,255,255,0.75); max-width: 60ch;">
+        Body text — <strong>Barlow 400</strong>. The quick brown fox jumps over the lazy dog.
+        Used for all paragraph content across the site. Line height 1.75, muted white at 75% opacity.
+      </p>
+    </div>
+
+    <div>
+      <p class="contact-intro" style="max-width: 60ch;">
+        Contact intro style — slightly larger body text at 1.05rem with <code>var(--app-text-muted)</code>.
+        The quick brown fox jumps over the lazy dog.
+      </p>
+    </div>
+  </div>
+</section>
+
+<%# ============================================================ %>
+<%# 2. COLORS %>
+<%# ============================================================ %>
+<section class="section">
+  <div class="container is-max-widescreen">
+    <h2 class="title is-2">Colors</h2>
+
+    <div class="columns is-multiline">
+      <div class="column is-narrow">
+        <div style="width:120px; height:80px; background:var(--app-accent); margin-bottom:.5rem;"></div>
+        <p style="font-size:.85rem; font-family:var(--app-font-display); text-transform:uppercase; letter-spacing:.08em;">
+          Accent<br><span style="opacity:.6;">#f5e90c</span>
+        </p>
+      </div>
+      <div class="column is-narrow">
+        <div style="width:120px; height:80px; background:var(--app-green); margin-bottom:.5rem;"></div>
+        <p style="font-size:.85rem; font-family:var(--app-font-display); text-transform:uppercase; letter-spacing:.08em;">
+          Green<br><span style="opacity:.6;">#00e676</span>
+        </p>
+      </div>
+      <div class="column is-narrow">
+        <div style="width:120px; height:80px; background:#ffffff; margin-bottom:.5rem;"></div>
+        <p style="font-size:.85rem; font-family:var(--app-font-display); text-transform:uppercase; letter-spacing:.08em;">
+          Text<br><span style="opacity:.6;">#ffffff</span>
+        </p>
+      </div>
+      <div class="column is-narrow">
+        <div style="width:120px; height:80px; background:rgba(255,255,255,0.6); margin-bottom:.5rem;"></div>
+        <p style="font-size:.85rem; font-family:var(--app-font-display); text-transform:uppercase; letter-spacing:.08em;">
+          Text Muted<br><span style="opacity:.6;">rgba(255,255,255,.6)</span>
+        </p>
+      </div>
+      <div class="column is-narrow">
+        <div style="width:120px; height:80px; background:#e1e6ee; margin-bottom:.5rem;"></div>
+        <p style="font-size:.85rem; font-family:var(--app-font-display); text-transform:uppercase; letter-spacing:.08em;">
+          Background<br><span style="opacity:.6;">#e1e6ee</span>
+        </p>
+      </div>
+      <div class="column is-narrow">
+        <div style="width:120px; height:80px; background:#0b1729; margin-bottom:.5rem;"></div>
+        <p style="font-size:.85rem; font-family:var(--app-font-display); text-transform:uppercase; letter-spacing:.08em;">
+          Dark Base<br><span style="opacity:.6;">#0b1729</span>
+        </p>
+      </div>
+      <div class="column is-narrow">
+        <div style="width:120px; height:80px; background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); margin-bottom:.5rem;"></div>
+        <p style="font-size:.85rem; font-family:var(--app-font-display); text-transform:uppercase; letter-spacing:.08em;">
+          Border<br><span style="opacity:.6;">rgba(255,255,255,.1)</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%# ============================================================ %>
+<%# 3. BUTTONS %>
+<%# ============================================================ %>
+<section class="section">
+  <div class="container is-max-widescreen">
+    <h2 class="title is-2">Buttons</h2>
+
+    <div class="buttons mb-5">
+      <a class="button is-primary">Primary</a>
+      <a class="button is-outlined">Outlined</a>
+      <a class="button">Default</a>
+    </div>
+
+    <div class="buttons mb-5">
+      <a class="button is-primary">
+        View Work <i class="fa-solid fa-arrow-right"></i>
+      </a>
+      <a class="button is-outlined">Download CV</a>
+    </div>
+  </div>
+</section>
+
+<%# ============================================================ %>
+<%# 4. INPUTS %>
+<%# ============================================================ %>
+<section class="section">
+  <div class="container is-max-widescreen">
+    <h2 class="title is-2">Inputs</h2>
+
+    <div class="columns">
+      <div class="column is-half">
+
+        <div class="field">
+          <label class="label">Name</label>
+          <div class="control">
+            <input class="input" type="text" placeholder="Your name">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Email</label>
+          <div class="control">
+            <input class="input" type="email" placeholder="you@example.com">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Email — error state</label>
+          <div class="control">
+            <input class="input is-danger" type="email" placeholder="you@example.com" value="notanemail">
+          </div>
+          <p class="help is-danger">Please enter a valid email address</p>
+        </div>
+
+        <div class="field">
+          <label class="label">Message</label>
+          <div class="control">
+            <textarea class="textarea" placeholder="Your message..." rows="4"></textarea>
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="control">
+            <button class="button is-primary">Send Message</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<%# ============================================================ %>
+<%# 5. TAGS & LABELS %>
+<%# ============================================================ %>
+<section class="section">
+  <div class="container is-max-widescreen">
+    <h2 class="title is-2">Tags &amp; Labels</h2>
+
+    <div class="mb-5">
+      <p class="label mb-2">Form label style</p>
+      <div class="tags">
+        <span class="tag">Default tag</span>
+        <span class="tag is-primary">Primary tag</span>
+        <span class="tag is-dark">Dark tag</span>
+        <span class="tag skill-tag">Skill tag</span>
+        <span class="tag skill-tag">Ruby on Rails</span>
+        <span class="tag skill-tag">PostgreSQL</span>
+        <span class="tag skill-tag">Docker</span>
+      </div>
+    </div>
+
+    <div class="hero-status">
+      <span class="status-dot"></span>
+      <span class="status-label">Open to work</span>
+    </div>
+  </div>
+</section>
+
+<%# ============================================================ %>
+<%# 6. RESOURCES %>
+<%# ============================================================ %>
+
+<%# ── Job ── %>
+<section class="section">
+  <div class="container is-max-widescreen">
+    <h2 class="title is-2">Resource — Job</h2>
+
+    <h3 class="title is-3 mb-4">Single</h3>
+    <div class="career-list mb-6" style="max-width: 640px;">
+      <div class="box">
+        <div>
+          <h3 class="title is-4">Senior Software Engineer</h3>
+          <span class="job-company">Acme Corp</span>
+          <p>Led development of the core payments platform, reducing processing time by 40%.</p>
+        </div>
+        <span class="job-dates">Jan 2022 – Present</span>
+      </div>
+    </div>
+
+    <h3 class="title is-3 mb-4">Collection</h3>
+    <div class="career-list">
+      <div class="box">
+        <div>
+          <h3 class="title is-4">Senior Software Engineer</h3>
+          <span class="job-company">Acme Corp</span>
+          <p>Led development of the core payments platform, reducing processing time by 40%.</p>
+        </div>
+        <span class="job-dates">Jan 2022 – Present</span>
+      </div>
+      <div class="box">
+        <div>
+          <h3 class="title is-4">Software Engineer</h3>
+          <span class="job-company">Globex</span>
+          <p>Built and maintained microservices for the logistics domain.</p>
+        </div>
+        <span class="job-dates">Mar 2019 – Dec 2021</span>
+      </div>
+      <div class="box">
+        <div>
+          <h3 class="title is-4">Junior Developer</h3>
+          <span class="job-company">Initech</span>
+          <p>Developed internal tooling and automated reporting pipelines.</p>
+        </div>
+        <span class="job-dates">Jun 2017 – Feb 2019</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%# ── Expertise ── %>
+<section class="section">
+  <div class="container is-max-widescreen">
+    <h2 class="title is-2">Resource — Expertise</h2>
+
+    <h3 class="title is-3 mb-4">Single</h3>
+    <div class="expertise-grid is-top mb-6" style="grid-template-columns: 1fr; max-width: 360px;">
+      <div class="expertise-card is-backend">
+        <div class="expertise-card-image-wrap">
+          <img src="https://placehold.co/600x338/ffffff/cccccc" alt="">
+        </div>
+        <div class="expertise-card-body">
+          <div class="expertise-card-header">
+            <h3 class="title is-5">Backend</h3>
+            <span class="expertise-card-years">8+</span>
+          </div>
+          <p class="expertise-card-description">
+            Ruby on Rails, PostgreSQL, Redis, Sidekiq — building reliable, scalable APIs and services.
+          </p>
+          <div class="expertise-card-tags">
+            <span class="tag skill-tag">Ruby on Rails</span>
+            <span class="tag skill-tag">PostgreSQL</span>
+            <span class="tag skill-tag">Redis</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="title is-3 mb-4">Collection</h3>
+    <div class="expertise-grid is-top">
+      <div class="expertise-card is-backend">
+        <div class="expertise-card-image-wrap">
+          <img src="https://placehold.co/600x338/ffffff/cccccc" alt="">
+        </div>
+        <div class="expertise-card-body">
+          <div class="expertise-card-header">
+            <h3 class="title is-5">Backend</h3>
+            <span class="expertise-card-years">8+</span>
+          </div>
+          <p class="expertise-card-description">Ruby on Rails, PostgreSQL, Redis, Sidekiq.</p>
+          <div class="expertise-card-tags">
+            <span class="tag skill-tag">Ruby on Rails</span>
+            <span class="tag skill-tag">PostgreSQL</span>
+          </div>
+        </div>
+      </div>
+      <div class="expertise-card is-cloud">
+        <div class="expertise-card-image-wrap">
+          <img src="https://placehold.co/600x338/ffffff/cccccc" alt="">
+        </div>
+        <div class="expertise-card-body">
+          <div class="expertise-card-header">
+            <h3 class="title is-5">Cloud</h3>
+            <span class="expertise-card-years">5+</span>
+          </div>
+          <p class="expertise-card-description">AWS, Docker, Kubernetes, Terraform, Kamal.</p>
+          <div class="expertise-card-tags">
+            <span class="tag skill-tag">AWS</span>
+            <span class="tag skill-tag">Docker</span>
+          </div>
+        </div>
+      </div>
+      <div class="expertise-card is-ios">
+        <div class="expertise-card-image-wrap">
+          <img src="https://placehold.co/600x338/ffffff/cccccc" alt="">
+        </div>
+        <div class="expertise-card-body">
+          <div class="expertise-card-header">
+            <h3 class="title is-5">iOS</h3>
+            <span class="expertise-card-years">4+</span>
+          </div>
+          <p class="expertise-card-description">Swift, SwiftUI, UIKit — native iOS app development.</p>
+          <div class="expertise-card-tags">
+            <span class="tag skill-tag">Swift</span>
+            <span class="tag skill-tag">SwiftUI</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%# ── Project ── %>
+<section class="section">
+  <div class="container is-max-widescreen">
+    <h2 class="title is-2">Resource — Project</h2>
+
+    <h3 class="title is-3 mb-4">Single</h3>
+    <div class="container is-max-tablet mb-6">
+      <div class="project-show-header">
+        <h1 class="title is-1">Acme Dashboard</h1>
+        <span class="project-year">2023</span>
+      </div>
+      <p class="project-description">
+        A real-time analytics dashboard built with Rails and Hotwire. Displays live metrics,
+        alert thresholds, and historical trends for the operations team.
+      </p>
+      <div class="project-skills tags">
+        <span class="tag">Ruby on Rails</span>
+        <span class="tag">Hotwire</span>
+        <span class="tag">PostgreSQL</span>
+        <span class="tag">Chartkick</span>
+      </div>
+      <div class="project-links">
+        <a href="#" class="button">View live</a>
+        <a href="#" class="button">View repo</a>
+      </div>
+      <div class="project-show-back">
+        <a href="#">← Back to projects</a>
+      </div>
+    </div>
+
+    <h3 class="title is-3 mb-4">Collection</h3>
+    <div class="columns is-multiline">
+      <% [
+        { name: "Acme Dashboard", year: "2023", description: "Real-time analytics dashboard with Hotwire.", tags: ["Rails", "Hotwire", "PostgreSQL"] },
+        { name: "Payflow API",    year: "2022", description: "Payments microservice handling 10k req/min.",  tags: ["Rails", "Redis", "Sidekiq"] },
+        { name: "SwiftNotes",     year: "2021", description: "iOS note-taking app with CloudKit sync.",      tags: ["Swift", "SwiftUI", "CloudKit"] }
+      ].each do |project| %>
+        <div class="column is-one-third">
+          <div class="box" style="background:transparent; border:1px solid rgba(255,255,255,0.1); border-radius:0; height:100%;">
+            <div class="project-show-header" style="margin-bottom:.75rem;">
+              <h3 class="title is-5"><%= project[:name] %></h3>
+              <span class="project-year"><%= project[:year] %></span>
+            </div>
+            <p style="font-size:.9rem; color:rgba(255,255,255,.7); margin-bottom:.75rem;"><%= project[:description] %></p>
+            <div class="tags">
+              <% project[:tags].each do |tag| %>
+                <span class="tag skill-tag"><%= tag %></span>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>

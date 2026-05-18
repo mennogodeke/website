@@ -35,13 +35,7 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.job-title {
-  font-family: var(--app-font-display);
-  font-weight: 700;
-  font-size: clamp(1.25rem, 2vw, 1.75rem);
-  text-transform: uppercase;
-  letter-spacing: -0.01em;
-  color: #ffffff;
+.career-list .title {
   margin-bottom: 0.1rem;
 }
 
