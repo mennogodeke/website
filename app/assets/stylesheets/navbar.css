@@ -101,7 +101,6 @@
   font-family: var(--app-font-display);
   font-weight: 800;
   font-size: 1.25rem;
-  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--app-accent);
   text-decoration: none;

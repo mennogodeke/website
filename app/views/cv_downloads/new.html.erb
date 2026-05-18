@@ -12,7 +12,7 @@
 
     <%# Column 1 — email form %>
     <div class="cv-col-form">
-      <div class="subtitle"><%= t("cv_download.get_link") %></div>
+      <h2 class="title is-2"><%= t("cv_download.get_link") %></h2>
 
       <%= form_with model: @cv_download, url: cv_downloads_path, class: "cv-download-form" do |f| %>
         <div class="field">
