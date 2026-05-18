@@ -69,6 +69,33 @@
   transition: color 0.2s ease;
 }
 
+/* ============================================================
+   Project show
+   ============================================================ */
+
+.proj-hero {
+  aspect-ratio: 21 / 7;
+  width: 100%;
+}
+
+.proj-detail-row {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.proj-detail-meta {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.proj-meta-row {
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
 /* ── Responsive ── */
 @media (max-width: 900px) {
   .proj-row,
@@ -78,5 +105,9 @@
 
     .proj-content { order: 1; }
     .proj-img     { order: 2; }
+  }
+
+  .proj-detail-row {
+    grid-template-columns: 1fr;
   }
 }
