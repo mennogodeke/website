@@ -6,136 +6,189 @@
 <%# ============================================================ %>
 <%# 1. COLORS                                                    %>
 <%# ============================================================ %>
-<section class="section is-medium container is-max-widescreen">
-  <h1 class="title is-1">Colors</h1>
+<section class="section is-medium">
+  <h1 class="title is-1">Design Preview</h1>
+  <div class="columns">
+    <div class="column">
+      <h2 class="title is-2">Colors</h2>
+      <%# ============================================================ %>
+      <%# 1. COLORS                                                    %>
+      <%# ============================================================ %>
+      <% theme_colors = %w[primary link info success warning danger] %>
+      <% shades = %w[00 05 10 15 20 25 30 35 40 45 50 55 60 65 70 75 80 85 90 95 100] %>
+      <% semantic = [nil, "light", "dark", "soft", "bold", "on-scheme"] %>
 
-  <% theme_colors = %w[primary link info success warning danger] %>
-  <% shades = %w[00 05 10 15 20 25 30 35 40 45 50 55 60 65 70 75 80 85 90 95 100] %>
-  <% semantic = [nil, "light", "dark", "soft", "bold", "on-scheme"] %>
+      <% theme_colors.each do |color| %>
+        <div class="mb-6">
+          <h2 class="title is-5 mb-2"><%= color.capitalize %></h2>
 
-  <% theme_colors.each do |color| %>
-    <div class="mb-6">
-      <h2 class="title is-5 mb-2"><%= color.capitalize %></h2>
-
-      <%# Numbered shades %>
-      <div class="is-flex mb-2">
-        <% shades.each do |shade| %>
-          <div class="is-flex-grow-1 has-background-<%= color %>-<%= shade %> has-text-centered py-5">
-            <span class="is-size-7 has-text-<%= color %>-<%= shade %>-invert"><%= shade %></span>
+          <%# Numbered shades %>
+          <div class="is-flex mb-2">
+            <% shades.each do |shade| %>
+              <div class="is-flex-grow-1 has-background-<%= color %>-<%= shade %> has-text-centered py-5">
+                <span class="is-size-7 has-text-<%= color %>-<%= shade %>-invert"><%= shade %></span>
+              </div>
+            <% end %>
           </div>
-        <% end %>
-      </div>
 
-      <%# Semantic variants %>
-      <div class="is-flex">
-        <% semantic.each do |variant| %>
-          <% bg = variant ? "has-background-#{color}-#{variant}" : "has-background-#{color}" %>
-          <div class="is-flex-grow-1 <%= bg %> has-text-centered py-3">
-            <span class="is-size-7"><%= variant || "base" %></span>
+          <%# Semantic variants %>
+          <div class="is-flex">
+            <% semantic.each do |variant| %>
+              <% bg = variant ? "has-background-#{color}-#{variant}" : "has-background-#{color}" %>
+              <div class="is-flex-grow-1 <%= bg %> has-text-centered py-3">
+                <span class="is-size-7"><%= variant || "base" %></span>
+              </div>
+            <% end %>
           </div>
-        <% end %>
-      </div>
-    </div>
-  <% end %>
-
-  <%# Greys & neutrals %>
-  <div class="mb-6">
-    <h2 class="title is-5 mb-2">Greys &amp; Neutrals</h2>
-    <div class="is-flex">
-      <% %w[white light grey-light grey grey-dark dark black].each do |name| %>
-        <div class="is-flex-grow-1 has-background-<%= name %> has-text-centered py-5">
-          <span class="is-size-7"><%= name %></span>
         </div>
       <% end %>
+
+      <%# Greys & neutrals %>
+      <div class="mb-6">
+        <h2 class="title is-5 mb-2">Greys &amp; Neutrals</h2>
+        <div class="is-flex">
+          <% %w[white light grey-light grey grey-dark dark black].each do |name| %>
+            <div class="is-flex-grow-1 has-background-<%= name %> has-text-centered py-5">
+              <span class="is-size-7"><%= name %></span>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <%# ============================================================ %>
+    <%# 2. TYPOGRAPHY                                                %>
+    <%# ============================================================ %>
+    <h1 class="title is-1">Typography</h1>
+
+    <%# Titles %>
+    <h2 class="title is-2">Titles</h2>
+    <div class="mb-6">
+      <% [1,2,3,4,5,6].each do |n| %>
+        <h<%= n %> class="title is-<%= n %>">Title is-<%= n %></h<%= n %>>
+      <% end %>
     </div>
-  </div>
-</section>
 
-<%# ============================================================ %>
-<%# 2. TYPOGRAPHY                                                %>
-<%# ============================================================ %>
-<section class="section is-medium container is-max-widescreen">
-  <h1 class="title is-1">Typography</h1>
+    <%# Subtitles %>
+    <h2 class="title is-2">Subtitles</h2>
+    <div class="mb-6">
+      <% [1,2,3,4,5,6].each do |n| %>
+        <p class="subtitle is-<%= n %>">Subtitle is-<%= n %></p>
+      <% end %>
+    </div>
 
-  <%# Titles %>
-  <h2 class="title is-2">Titles</h2>
-  <div class="mb-6">
-    <% [1,2,3,4,5,6].each do |n| %>
-      <h<%= n %> class="title is-<%= n %>">Title is-<%= n %></h<%= n %>>
-    <% end %>
-  </div>
+    <%# Size helpers %>
+    <h2 class="title is-2">Size helpers</h2>
+    <div class="mb-6">
+      <% [1,2,3,4,5,6,7].each do |n| %>
+        <p class="is-size-<%= n %> mb-2">is-size-<%= n %> — The quick brown fox jumps over the lazy dog</p>
+      <% end %>
+    </div>
 
-  <%# Subtitles %>
-  <h2 class="title is-2">Subtitles</h2>
-  <div class="mb-6">
-    <% [1,2,3,4,5,6].each do |n| %>
-      <p class="subtitle is-<%= n %>">Subtitle is-<%= n %></p>
-    <% end %>
-  </div>
+    <%# Weight helpers %>
+    <h2 class="title is-2">Weight helpers</h2>
+    <div class="mb-6">
+      <% { light: 300, normal: 400, medium: 500, semibold: 600, bold: 700 }.each do |name, val| %>
+        <p class="has-text-weight-<%= name %> mb-2">has-text-weight-<%= name %> (<%= val %>) — The quick brown fox jumps over the lazy dog</p>
+      <% end %>
+    </div>
 
-  <%# Size helpers %>
-  <h2 class="title is-2">Size helpers</h2>
-  <div class="mb-6">
-    <% [1,2,3,4,5,6,7].each do |n| %>
-      <p class="is-size-<%= n %> mb-2">is-size-<%= n %> — The quick brown fox jumps over the lazy dog</p>
-    <% end %>
-  </div>
+    <%# Font families %>
+    <h2 class="title is-2">Font families</h2>
+    <div class="mb-6">
+      <p class="is-size-4 mb-2" style="font-family: var(--bulma-family-primary)">family-primary (Barlow) — The quick brown fox jumps over the lazy dog</p>
+      <p class="is-size-4 mb-2" style="font-family: var(--bulma-family-secondary)">family-secondary — The quick brown fox jumps over the lazy dog</p>
+      <p class="is-size-4" style="font-family: var(--bulma-family-code)">family-code — The quick brown fox jumps over the lazy dog</p>
+    </div>
+    <h2 class="title is-2">Elements</h2>
+    <%# ============================================================ %>
+    <%# 3. BUTTONS                                                   %>
+    <%# ============================================================ %>
+    <h3 class="title is-3">Buttons</h3>
+      <h4 class="title is-4">Colors</h4>
+      <div class="buttons mb-6">
+        <% %w[primary link info success warning danger].each do |color| %>
+          <a class="button is-<%= color %>"><%= color.capitalize %></a>
+        <% end %>
+        <a class="button">Default</a>
+        <a class="button is-ghost">Ghost</a>
+        <a class="button is-text">Text</a>
+      </div>
 
-  <%# Weight helpers %>
-  <h2 class="title is-2">Weight helpers</h2>
-  <div class="mb-6">
-    <% { light: 300, normal: 400, medium: 500, semibold: 600, bold: 700 }.each do |name, val| %>
-      <p class="has-text-weight-<%= name %> mb-2">has-text-weight-<%= name %> (<%= val %>) — The quick brown fox jumps over the lazy dog</p>
-    <% end %>
-  </div>
+      <h4 class="title is-4">Outlined</h4>
+      <div class="buttons mb-6">
+        <% %w[primary link info success warning danger].each do |color| %>
+          <a class="button is-<%= color %> is-outlined"><%= color.capitalize %></a>
+        <% end %>
+      </div>
 
-  <%# Font families %>
-  <h2 class="title is-2">Font families</h2>
-  <div class="mb-6">
-    <p class="is-size-4 mb-2" style="font-family: var(--bulma-family-primary)">family-primary (Barlow) — The quick brown fox jumps over the lazy dog</p>
-    <p class="is-size-4 mb-2" style="font-family: var(--bulma-family-secondary)">family-secondary — The quick brown fox jumps over the lazy dog</p>
-    <p class="is-size-4" style="font-family: var(--bulma-family-code)">family-code — The quick brown fox jumps over the lazy dog</p>
-  </div>
-</section>
+      <h4 class="title is-4">Sizes</h4>
+      <div class="buttons is-vcentered mb-6">
+        <a class="button is-primary is-small">Small</a>
+        <a class="button is-primary">Normal</a>
+        <a class="button is-primary is-medium">Medium</a>
+        <a class="button is-primary is-large">Large</a>
+      </div>
 
-<%# ============================================================ %>
-<%# 3. BUTTONS                                                   %>
-<%# ============================================================ %>
-<section class="section is-medium container is-max-widescreen">
-  <h1 class="title is-1">Buttons</h1>
+      <h4 class="title is-4">States</h4>
+      <div class="buttons mb-6">
+        <a class="button is-primary">Normal</a>
+        <a class="button is-primary is-hovered">Hovered</a>
+        <a class="button is-primary is-focused">Focused</a>
+        <a class="button is-primary is-active">Active</a>
+        <a class="button is-primary is-loading">Loading</a>
+        <a class="button is-primary" disabled>Disabled</a>
+      </div>
+    </div>
+    <div class="column">
+      <h2 class="title is-2">Components</h2>
 
-  <h2 class="title is-2">Colors</h2>
-  <div class="buttons mb-6">
-    <% %w[primary link info success warning danger].each do |color| %>
-      <a class="button is-<%= color %>"><%= color.capitalize %></a>
-    <% end %>
-    <a class="button">Default</a>
-    <a class="button is-ghost">Ghost</a>
-    <a class="button is-text">Text</a>
-  </div>
+      <h3 class="title is-3">Job</h3>
+      <div class="career-list">
+        <div class="box">
+          <div>
+            <p class="job-title">Senior Software Engineer</p>
+            <span class="job-company">Acme Corp</span>
+            <p>Led development of core platform features and improved system reliability.</p>
+          </div>
+          <span class="job-dates">Jan 2022 – Present</span>
+        </div>
+      </div>
 
-  <h2 class="title is-2">Outlined</h2>
-  <div class="buttons mb-6">
-    <% %w[primary link info success warning danger].each do |color| %>
-      <a class="button is-<%= color %> is-outlined"><%= color.capitalize %></a>
-    <% end %>
-  </div>
-
-  <h2 class="title is-2">Sizes</h2>
-  <div class="buttons is-vcentered mb-6">
-    <a class="button is-primary is-small">Small</a>
-    <a class="button is-primary">Normal</a>
-    <a class="button is-primary is-medium">Medium</a>
-    <a class="button is-primary is-large">Large</a>
-  </div>
-
-  <h2 class="title is-2">States</h2>
-  <div class="buttons mb-6">
-    <a class="button is-primary">Normal</a>
-    <a class="button is-primary is-hovered">Hovered</a>
-    <a class="button is-primary is-focused">Focused</a>
-    <a class="button is-primary is-active">Active</a>
-    <a class="button is-primary is-loading">Loading</a>
-    <a class="button is-primary" disabled>Disabled</a>
+      <h3 class="title is-3 mt-6">Jobs</h3>
+      <div class="career-list">
+        <div class="box">
+          <div>
+            <p class="job-title">Senior Software Engineer</p>
+            <span class="job-company">Acme Corp</span>
+            <p>Led development of core platform features and improved system reliability.</p>
+          </div>
+          <span class="job-dates">Jan 2022 – Present</span>
+        </div>
+        <div class="box">
+          <div>
+            <p class="job-title">Software Engineer</p>
+            <span class="job-company">Example Ltd</span>
+            <p>Built and maintained customer-facing APIs and internal tooling.</p>
+          </div>
+          <span class="job-dates">Mar 2019 – Dec 2021</span>
+        </div>
+        <div class="box">
+          <div>
+            <p class="job-title">Junior Developer</p>
+            <span class="job-company">Startup Inc</span>
+            <p>Contributed to frontend and backend features across a SaaS product.</p>
+          </div>
+          <span class="job-dates">Jun 2017 – Feb 2019</span>
+        </div>
+        <div class="box">
+          <div>
+            <p class="job-title">Intern</p>
+            <span class="job-company">Agency BV</span>
+            <p>Assisted with web development projects for various clients.</p>
+          </div>
+          <span class="job-dates">Sep 2016 – May 2017</span>
+        </div>
+      </div>
+    </div>    
+    </div>
   </div>
 </section>
