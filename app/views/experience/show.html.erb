@@ -5,18 +5,18 @@
   <h1 class="title is-1"><%= t 'pages.experience.title' %></h1>
   <h2 class="title is-2"><%= t 'pages.experience.subtitle' %></h2>
 
-  <div class="expertise-grid is-top">
+  <div class="columns is-multiline">
     <%= render partial: "experience/expertise_card", collection: @expertises, as: :expertise_card %>
   </div>
 </section>
 
 <%# ============================================================ %>
-<%# 2. SKILLS — 6-column card grid %>
+<%# 2. SKILLS — icon grid %>
 <%# ============================================================ %>
 <section class="section container is-max-widescreen">
   <h2 class="title is-2"><%= t("pages.experience.skills_title") %></h2>
 
-  <div class="skills-grid">
+  <div class="columns is-multiline">
     <% skills_to_show = [
       { name: "Ruby on Rails", level: "expert" },
       { name: "PostgreSQL",    level: "expert" },
@@ -52,10 +52,12 @@
 
     <% skills_to_show.each do |skill| %>
       <% name = skill.respond_to?(:name) ? skill.name : skill[:name] %>
-      <figure class="image is-128x128 skill-badge">
-        <img src="https://placehold.co/256x256/ffffff/cccccc" alt="<%= name %>">
-        <span class="skill-badge-name"><%= name %></span>
-      </figure>
+      <div class="column is-2 has-text-centered">
+        <figure class="image is-128x128">
+          <img class="is-rounded" src="https://placehold.co/256x256/ffffff/cccccc" alt="<%= name %>">
+        </figure>
+        <p><%= name %></p>
+      </div>
     <% end %>
   </div>
 </section>

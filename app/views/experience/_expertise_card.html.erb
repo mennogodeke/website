@@ -1,17 +1,25 @@
-<div class="expertise-card <%= expertise_card_class(expertise_card.name) %>">
-  <div class="expertise-card-image-wrap">
-    <img src="https://placehold.co/600x338/ffffff/cccccc" alt="">
-  </div>
-  <div class="expertise-card-body">
-    <div class="expertise-card-header">
-      <h3 class="title is-5"><%= expertise_card.name %></h3>
-      <span class="expertise-card-years"><%= expertise_card.years_of_experience %>+</span>
+<div class="column is-one-third">
+  <div class="card">
+    <div class="card-image">
+      <figure class="image is-16by9">
+        <img src="https://placehold.co/600x338/ffffff/cccccc" alt="">
+      </figure>
     </div>
-    <p class="expertise-card-description"><%= expertise_card.description %></p>
-    <div class="expertise-card-tags">
-      <% expertise_card.skills.each do |skill| %>
-        <span class="tag skill-tag"><%= skill.name %></span>
-      <% end %>
+    <div class="card-content">
+      <div class="level">
+        <div class="level-left">
+          <h3 class="title is-3"><%= expertise_card.name %></h3>
+        </div>
+        <div class="level-right">
+          <span class="title is-2"><%= expertise_card.years_of_experience %>+</span>
+        </div>
+      </div>
+      <p class="content"><%= expertise_card.description %></p>
+      <div class="tags">
+        <% expertise_card.skills.each do |skill| %>
+          <span class="tag"><%= skill.name %></span>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

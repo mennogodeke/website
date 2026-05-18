@@ -1,21 +1,21 @@
 <% locale_flags = { en: "gb", nl: "nl", de: "de" } %>
 
-<div class="locale-dropdown navbar-item"
+<div class="navbar-item has-dropdown is-hoverable"
      data-controller="locale-dropdown"
      data-action="click@window->locale-dropdown#closeOnOutside">
-  <button class="locale-dropdown-trigger"
+  <button
           data-locale-dropdown-target="trigger"
           data-action="click->locale-dropdown#toggle"
           aria-haspopup="true"
           aria-expanded="false"
           aria-label="Select language">
-    <span class="fi fi-<%= locale_flags[I18n.locale] %> locale-flag"></span>
+    <span class="fi fi-<%= locale_flags[I18n.locale] %>"></span>
   </button>
-  <div class="locale-dropdown-menu" data-locale-dropdown-target="menu">
+  <div data-locale-dropdown-target="menu">
     <% I18n.available_locales.each do |locale| %>
       <%= link_to url_for(locale: locale == I18n.default_locale ? nil : locale),
                   class: "locale-dropdown-item #{'is-active' if locale == I18n.locale}" do %>
-        <span class="fi fi-<%= locale_flags[locale] %> locale-flag"></span>
+        <span class="fi fi-<%= locale_flags[locale] %>"></span>
         <%= locale.to_s.upcase %>
       <% end %>
     <% end %>

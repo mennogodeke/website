@@ -1,5 +1,9 @@
 {
   "dependencies": {
+    "bulma": "^1.0.4",
     "puppeteer": "^24.43.0"
+  },
+  "scripts": {
+    "build:css": "sass ./app/assets/stylesheets/application.sass.scss:./app/assets/builds/application.css --no-source-map --load-path=node_modules"
   }
 }

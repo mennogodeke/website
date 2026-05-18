@@ -1,41 +1,38 @@
 <%# ============================================================ %>
 <%# HERO %>
 <%# ============================================================ %>
-<section class="section hero-section">
-  <div class="container is-max-widescreen">
-    <div class="columns is-vcentered">
+<section class="hero is-large">
+  <div class="hero-body">
+    <div class="container is-max-widescreen">
+      <div class="columns is-vcentered">
 
-      <%# Text column — left %>
-      <div class="column">
-        <h2 class="title is-2"><%= t 'pages.home.hello' %></h2>
-        <h1 class="title is-1 mb-5"><%= t 'pages.home.title' %></h1>
+        <%# Text column — left %>
+        <div class="column">
+          <h2 class="title is-2"><%= t 'pages.home.hello' %></h2>
+          <h1 class="title is-1"><%= t 'pages.home.title' %></h1>
 
-        <p class="hero-bio">
-          <%= t 'pages.home.intro' %>
-        </p>
+          <p><%= t 'pages.home.intro' %></p>
 
-        <div class="hero-ctas">
-          <%= link_to projects_path, class: "button is-primary" do %>
-            <%= t("pages.home.view_work").upcase %> <i class="fa-solid fa-arrow-right"></i>
-          <% end %>
-          <%= link_to new_cv_download_path, class: "button is-outlined" do %>
-            <%= t("pages.home.download_cv").upcase %>
-          <% end %>
+          <div class="buttons">
+            <%= link_to projects_path, class: "button is-primary" do %>
+              <%= t("pages.home.view_work").upcase %> <i class="fa-solid fa-arrow-right"></i>
+            <% end %>
+            <%= link_to new_cv_download_path, class: "button is-outlined" do %>
+              <%= t("pages.home.download_cv").upcase %>
+            <% end %>
+          </div>
+
+          <span class="tag is-success is-light"><%= t("pages.home.status").upcase %></span>
         </div>
 
-        <div class="hero-status">
-          <span class="status-dot"></span>
-          <span class="status-label"><%= t("pages.home.status").upcase %></span>
+        <%# Avatar column — right, hidden on touch devices %>
+        <div class="column is-narrow is-hidden-touch">
+          <figure class="image is-384x384">
+            <img class="is-rounded" src="https://placehold.co/384x384/000000/333333" alt="Menno Godeke">
+          </figure>
         </div>
-      </div>
 
-      <%# Avatar column — right, hidden on touch devices %>
-      <div class="column is-narrow is-hidden-touch">
-        <figure class="image is-384x384 hero-avatar">
-          <img class="is-rounded" src="https://placehold.co/384x384/000000/333333" alt="Menno Godeke">
-        </figure>
       </div>
-
     </div>
   </div>
 </section>

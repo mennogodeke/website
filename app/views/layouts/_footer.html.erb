@@ -1,18 +1,26 @@
-<footer class="site-footer">
-  <div class="footer-inner">
-    <div class="footer-built-with">
-      <span class="footer-built-label"><%= t("footer.built_with") %></span>
-      <div class="footer-tech-icons">
-        <i class="devicon-ruby-plain colored" title="Ruby"></i>
-        <i class="devicon-bulma-plain colored" title="Bulma CSS"></i>
-        <i class="devicon-github-original" title="GitHub"></i>
-        <i class="devicon-docker-plain colored" title="Docker"></i>
-        <i class="fa-solid fa-robot footer-claude-icon" title="Claude"></i>
+<footer class="footer">
+  <div class="container">
+    <div class="level">
+      <div class="level-left">
+        <div class="level-item">
+          <span class="is-size-7 has-text-grey"><%= t("footer.built_with") %></span>
+        </div>
+        <div class="level-item">
+          <i class="devicon-ruby-plain colored" title="Ruby"></i>
+          <i class="devicon-bulma-plain colored" title="Bulma CSS"></i>
+          <i class="devicon-github-original" title="GitHub"></i>
+          <i class="devicon-docker-plain colored" title="Docker"></i>
+          <i class="fa-solid fa-robot has-text-danger" title="Claude"></i>
+        </div>
       </div>
-    </div>
-    <div class="footer-brand">
-      <span class="footer-logo">MENNO.CODES</span>
-      <span class="footer-copy">&copy; <%= Time.current.year %> Menno Godeke</span>
+      <div class="level-right">
+        <div class="level-item">
+          <strong>MENNO.CODES</strong>
+        </div>
+        <div class="level-item">
+          <span class="is-size-7 has-text-grey">&copy; <%= Time.current.year %> Menno Godeke</span>
+        </div>
+      </div>
     </div>
   </div>
 </footer>

@@ -1,10 +1,14 @@
 <div class="box">
-  <div>
-    <h3 class="title is-4"><%= job.title %></h3>
-    <span class="job-company"><%= job.company %></span>
-    <p><%= job.description %></p>
+  <div class="level">
+    <div class="level-left">
+      <h3 class="title is-3"><%= job.title %></h3>
+      <h6 class="subtitle is-6"><%= job.company %></h6>
+    </div>
+    <div class="level-right">
+      <span class="tag">
+        <%= job.start_date.strftime("%b %Y") %> – <%= job_end_date(job.end_date) %>
+      </span>
+    </div>
   </div>
-  <span class="job-dates">
-    <%= job.start_date.strftime("%b %Y") %> – <%= job_end_date(job.end_date) %>
-  </span>
+  <p><%= job.description %></p>
 </div>

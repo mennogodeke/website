@@ -1,7 +1,7 @@
 <nav class="navbar" role="navigation" aria-label="main navigation"
      data-controller="navbar">
   <div class="navbar-brand">
-    <%= link_to root_path, class: "navbar-item navbar-logo" do %>
+    <%= link_to root_path, class: "navbar-item navbar-brand" do %>
       MENNO.CODES
     <% end %>
 
@@ -23,17 +23,17 @@
     </div>
     <div class="navbar-end">
       <div class="navbar-item">
-        <%= link_to contact_path, class: "navbar-cta navbar-cta-secondary #{'is-active' if current_page?(contact_path)}" do %>
+        <%= link_to contact_path, class: "button is-primary is-outlined #{'is-active' if current_page?(contact_path)}" do %>
           <%= t("nav.get_in_touch").upcase %>
         <% end %>
       </div>
-      <div class="navbar-cta-divider">OR</div>
+      <span class="navbar-item has-text-grey">|</span>
       <div class="navbar-item">
-        <%= link_to new_cv_download_path, class: "navbar-cta" do %>
+        <%= link_to new_cv_download_path do %>
           <%= t("nav.get_my_cv").upcase %> <i class="fa-solid fa-arrow-right"></i>
         <% end %>
       </div>
-      <div class="navbar-cta-divider">|</div>
+      <span class="navbar-item has-text-grey">|</span>
       <%= render "layouts/locale_switcher" %>
     </div>
   </div>

@@ -1,14 +1,14 @@
 <section class="section is-medium container is-max-desktop">
   <h2 class="title is-2"><%= t("contact.subtitle") %></h2>
   <h1 class="title is-1"><%= t("contact.title") %></h1>
-  <p class="contact-intro">
+  <p>
     <%= t("contact.intro") %>
   </p>
 
   <div class="columns is-variable is-6">
 
     <div class="column">
-      <%= form_with url: "#", method: :post, class: "contact-form" do |f| %>
+      <%= form_with url: "#", method: :post do |f| %>
         <div class="field">
           <%= f.label :name, t("contact.form.name"), class: "label" %>
           <div class="control">
@@ -39,12 +39,12 @@
     </div>
 
     <div class="column is-narrow">
-      <div class="social-icons">
-        <a href="#" class="social-icon" title="GitHub"><i class="fa-brands fa-github"></i></a>
-        <a href="#" class="social-icon" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-        <a href="#" class="social-icon" title="Discord"><i class="fa-brands fa-discord"></i></a>
-        <a href="#" class="social-icon" title="Slack"><i class="fa-brands fa-slack"></i></a>
-        <a href="mailto:#" class="social-icon" title="Email"><i class="fa-solid fa-envelope"></i></a>
+      <div>
+        <span class="icon" title="GitHub"><i class="fa-brands fa-github"></i></span>
+        <span class="icon" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></span>
+        <span class="icon" title="Discord"><i class="fa-brands fa-discord"></i></span>
+        <span class="icon" title="Slack"><i class="fa-brands fa-slack"></i></span>
+        <span class="icon" title="Email"><i class="fa-solid fa-envelope"></i></a>
       </div>
     </div>
 

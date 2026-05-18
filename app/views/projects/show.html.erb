@@ -1,25 +1,23 @@
 <section class="section">
   <div class="container is-max-tablet">
-    <div class="project-show-header">
-      <h1 class="title is-1"><%= @project.name %></h1>
-      <% if @project.year.present? %>
-        <span class="project-year"><%= @project.year %></span>
-      <% end %>
-    </div>
+    <h1 class="title is-1"><%= @project.name %></h1>
+    <% if @project.year.present? %>
+      <span class="tag is-light"><%= @project.year %></span>
+    <% end %>
 
     <% if @project.description.present? %>
-      <p class="project-description"><%= @project.description %></p>
+      <p class="content"><%= @project.description %></p>
     <% end %>
 
     <% if @project.skills.any? %>
-      <div class="project-skills tags">
+      <div class="tags">
         <% @project.skills.each do |skill| %>
           <span class="tag"><%= skill.name %></span>
         <% end %>
       </div>
     <% end %>
 
-    <div class="project-links">
+    <div class="buttons">
       <% if safe_url(@project.url) %>
         <%= link_to "View live", safe_url(@project.url), class: "button", target: "_blank", rel: "noopener" %>
       <% end %>
@@ -28,8 +26,6 @@
       <% end %>
     </div>
 
-    <div class="project-show-back">
-      <%= link_to "← Back to projects", projects_path %>
-    </div>
+    <%= link_to "← Back to projects", projects_path %>
   </div>
 </section>
