@@ -52,34 +52,48 @@
 </section>
 
 <%# ============================================================ %>
-<%# 2. TITLES                                                    %>
+<%# 2. TYPOGRAPHY                                                %>
 <%# ============================================================ %>
 <section class="section is-medium container is-max-widescreen">
   <h1 class="title is-1">Typography</h1>
-    <h2 class="title is-2">Titles</h2>
-    <h1 class="title is-1">Is-1 — Page Hero</h1>
-    <br>
-    <h2 class="title is-2">Is-2 — Section Heading</h2>
-    <br>
-    <h3 class="title is-3">Is-3 — Subsection</h3>
-    <br>
-    <h4 class="title is-4">Is-4 — Card Heading</h4>
-    <br>
-    <h5 class="title is-5">Is-5 — Minor Heading</h5>
-    <br>
-    <h6 class="title is-6">Is-6 — Label Heading</h6>
 
-    <h2 class="title is-2">Subtitles</h2>
-    <br>
-    <h1 class="subtitle is-1">Is-1</h1>
-    <br>
-    <h2 class="subtitle is-2">Is-2</h2>
-    <br>
-    <h3 class="subtitle is-3">Is-3 (default)</h3>
-    <br>
-    <h4 class="subtitle is-4">Is-4</h4>
-    <br>
-    <h5 class="subtitle is-5">Is-5</h5>
-    <br>
-    <h6 class="subtitle is-6">Is-6</h6>
+  <%# Titles %>
+  <h2 class="title is-2">Titles</h2>
+  <div class="mb-6">
+    <% [1,2,3,4,5,6].each do |n| %>
+      <h<%= n %> class="title is-<%= n %>">Title is-<%= n %></h<%= n %>>
+    <% end %>
+  </div>
+
+  <%# Subtitles %>
+  <h2 class="title is-2">Subtitles</h2>
+  <div class="mb-6">
+    <% [1,2,3,4,5,6].each do |n| %>
+      <p class="subtitle is-<%= n %>">Subtitle is-<%= n %></p>
+    <% end %>
+  </div>
+
+  <%# Size helpers %>
+  <h2 class="title is-2">Size helpers</h2>
+  <div class="mb-6">
+    <% [1,2,3,4,5,6,7].each do |n| %>
+      <p class="is-size-<%= n %> mb-2">is-size-<%= n %> — The quick brown fox jumps over the lazy dog</p>
+    <% end %>
+  </div>
+
+  <%# Weight helpers %>
+  <h2 class="title is-2">Weight helpers</h2>
+  <div class="mb-6">
+    <% { light: 300, normal: 400, medium: 500, semibold: 600, bold: 700 }.each do |name, val| %>
+      <p class="has-text-weight-<%= name %> mb-2">has-text-weight-<%= name %> (<%= val %>) — The quick brown fox jumps over the lazy dog</p>
+    <% end %>
+  </div>
+
+  <%# Font families %>
+  <h2 class="title is-2">Font families</h2>
+  <div class="mb-6">
+    <p class="is-size-4 mb-2" style="font-family: var(--bulma-family-primary)">family-primary (Barlow) — The quick brown fox jumps over the lazy dog</p>
+    <p class="is-size-4 mb-2" style="font-family: var(--bulma-family-secondary)">family-secondary — The quick brown fox jumps over the lazy dog</p>
+    <p class="is-size-4" style="font-family: var(--bulma-family-code)">family-code — The quick brown fox jumps over the lazy dog</p>
+  </div>
 </section>
