@@ -1,10 +1,17 @@
-$yellow: #f5e90c;
+$yellow:       #f5e90c;
+$font-display: '"Barlow Condensed", sans-serif';
+$font-body:    '"Barlow", -apple-system, sans-serif';
 
 @use "bulma/sass" with (
   $primary:          $yellow,
   $success:          #00e676,
-  $family-primary:   '"Barlow", -apple-system, sans-serif',
-  $family-secondary: '"Barlow Condensed", sans-serif'
+  $family-primary:   $font-body,
+  $family-secondary: $font-display,
+  $title-color:      white,
+  $title-weight:     900,
+  $title-family:     $font-display,
+  $subtitle-family:  $font-display,
+  $button-family:    $font-display
 );
 
 @use "variables";
