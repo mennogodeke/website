@@ -4,47 +4,4 @@
     <p class="contact-intro">
       <%= t("contact.intro") %>
     </p>
-
-  <div class="contact-layout">
-
-    <div class="contact-form-wrapper">
-      <%= form_with url: "#", method: :post, class: "contact-form" do |f| %>
-        <div class="field">
-          <%= f.label :name, t("contact.form.name"), class: "label" %>
-          <div class="control">
-            <%= f.text_field :name, class: "input", placeholder: t("contact.form.name_placeholder") %>
-          </div>
-        </div>
-
-        <div class="field">
-          <%= f.label :email, t("contact.form.email"), class: "label" %>
-          <div class="control">
-            <%= f.email_field :email, class: "input", placeholder: "your@email.com" %>
-          </div>
-        </div>
-
-        <div class="field">
-          <%= f.label :message, t("contact.form.message"), class: "label" %>
-          <div class="control">
-            <%= f.text_area :message, class: "textarea", placeholder: t("contact.form.message_placeholder"), rows: 6 %>
-          </div>
-        </div>
-
-        <div class="field">
-          <div class="control">
-            <%= f.submit t("contact.form.submit"), class: "button is-primary" %>
-          </div>
-        </div>
-      <% end %>
-    </div>
-
-    <div class="social-icons">
-      <a href="#" class="social-icon" title="GitHub"><i class="fa-brands fa-github"></i></a>
-      <a href="#" class="social-icon" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-      <a href="#" class="social-icon" title="Discord"><i class="fa-brands fa-discord"></i></a>
-      <a href="#" class="social-icon" title="Slack"><i class="fa-brands fa-slack"></i></a>
-      <a href="mailto:#" class="social-icon" title="Email"><i class="fa-solid fa-envelope"></i></a>
-    </div>
-
-  </div>
 </section>
