@@ -22,32 +22,35 @@
   gap: 0.5rem;
 }
 
-.button.is-primary {
-  background: var(--bulma-primary);
-  color: #0b1729;
-  border: 2px solid var(--bulma-primary);
-  transition: background 0.15s ease, color 0.15s ease;
+@each $color in primary, link, info, success, warning, danger {
+  .button.is-#{$color}.is-outlined {
+    background: transparent;
+    color: var(--bulma-#{$color});
+    border: 2px solid var(--bulma-#{$color});
+    transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+
+    &:hover,
+    &:focus {
+      background: var(--bulma-#{$color});
+      color: var(--bulma-#{$color}-invert);
+    }
+  }
 }
 
-.button.is-primary:hover,
-.button.is-primary:focus {
-  background: transparent;
-  color: var(--bulma-primary);
-  border-color: var(--bulma-primary);
-}
+@each $color in primary, link, info, success, warning, danger {
+  .button.is-#{$color} {
+    background: var(--bulma-#{$color});
+    color: var(--bulma-#{$color}-invert);
+    border: 2px solid var(--bulma-#{$color});
+    transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
 
-.button.is-outlined {
-  background: transparent;
-  color: rgba(255, 255, 255, 0.8);
-  border: 2px solid rgba(255, 255, 255, 0.25);
-  transition: border-color 0.15s ease, color 0.15s ease;
-}
-
-.button.is-outlined:hover,
-.button.is-outlined:focus {
-  background: transparent;
-  color: var(--bulma-primary);
-  border-color: var(--bulma-primary);
+    &:hover,
+    &:focus {
+      background: transparent;
+      color: var(--bulma-#{$color});
+      border-color: var(--bulma-#{$color});
+    }
+  }
 }
 
 /* ============================================================

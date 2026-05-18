@@ -97,3 +97,45 @@
     <p class="is-size-4" style="font-family: var(--bulma-family-code)">family-code — The quick brown fox jumps over the lazy dog</p>
   </div>
 </section>
+
+<%# ============================================================ %>
+<%# 3. BUTTONS                                                   %>
+<%# ============================================================ %>
+<section class="section is-medium container is-max-widescreen">
+  <h1 class="title is-1">Buttons</h1>
+
+  <h2 class="title is-2">Colors</h2>
+  <div class="buttons mb-6">
+    <% %w[primary link info success warning danger].each do |color| %>
+      <a class="button is-<%= color %>"><%= color.capitalize %></a>
+    <% end %>
+    <a class="button">Default</a>
+    <a class="button is-ghost">Ghost</a>
+    <a class="button is-text">Text</a>
+  </div>
+
+  <h2 class="title is-2">Outlined</h2>
+  <div class="buttons mb-6">
+    <% %w[primary link info success warning danger].each do |color| %>
+      <a class="button is-<%= color %> is-outlined"><%= color.capitalize %></a>
+    <% end %>
+  </div>
+
+  <h2 class="title is-2">Sizes</h2>
+  <div class="buttons is-vcentered mb-6">
+    <a class="button is-primary is-small">Small</a>
+    <a class="button is-primary">Normal</a>
+    <a class="button is-primary is-medium">Medium</a>
+    <a class="button is-primary is-large">Large</a>
+  </div>
+
+  <h2 class="title is-2">States</h2>
+  <div class="buttons mb-6">
+    <a class="button is-primary">Normal</a>
+    <a class="button is-primary is-hovered">Hovered</a>
+    <a class="button is-primary is-focused">Focused</a>
+    <a class="button is-primary is-active">Active</a>
+    <a class="button is-primary is-loading">Loading</a>
+    <a class="button is-primary" disabled>Disabled</a>
+  </div>
+</section>
