@@ -1,0 +1,82 @@
+/* ============================================================
+   Projects index
+   ============================================================ */
+
+.proj-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.proj-row {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 28px;
+  align-items: center;
+  padding: 44px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  text-decoration: none;
+  color: var(--bulma-text);
+  transition: padding-left 0.2s ease;
+
+  &:last-child {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  &:hover {
+    padding-left: 8px;
+
+.proj-img { transform: scale(1.02); }
+    .proj-cta { color: var(--bulma-primary); }
+  }
+
+  &.flipped {
+    grid-template-columns: 1.3fr 1fr;
+
+    .proj-content { order: 2; }
+    .proj-img     { order: 1; }
+  }
+}
+
+/* ── Image placeholder ── */
+.proj-img {
+  aspect-ratio: 16 / 10;
+  width: 100%;
+  transition: transform 0.2s ease;
+  overflow: hidden;
+}
+
+.img-stub {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    repeating-linear-gradient(135deg, rgba(255,255,255,0.05) 0 1px, transparent 1px 10px),
+    rgba(255,255,255,0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.35);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* ── CTA label ── */
+.proj-cta {
+  font-family: var(--bulma-family-secondary);
+  font-weight: 800;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.6);
+  transition: color 0.2s ease;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .proj-row,
+  .proj-row.flipped {
+    grid-template-columns: 1fr;
+    padding: 28px 0;
+
+    .proj-content { order: 1; }
+    .proj-img     { order: 2; }
+  }
+}
