@@ -6,6 +6,10 @@ gem "grover"
 gem "traco"
 # The modern asset pipeline for Rails [https://github.com/rails/propshaft]
 gem "propshaft"
+# Dart Sass compiler for Rails
+gem "dartsass-rails"
+# Bulma CSS framework (SASS source)
+gem "bulma-rails", "~> 1.0.0"
 # Use PostgreSQL as the database for Active Record
 gem "pg", "~> 1.1"
 # Use the Puma web server [https://github.com/puma/puma]
