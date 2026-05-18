@@ -44,7 +44,7 @@
 }
 
 .cv-divider-or {
-  font-family: var(--app-font-display);
+  font-family: var(--bulma-family-secondary);
   font-weight: 700;
   font-size: 0.85rem;
   letter-spacing: 0.15em;
@@ -65,7 +65,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--app-font-display);
+  font-family: var(--bulma-family-secondary);
   font-weight: 900;
   font-size: 1.5rem;
   letter-spacing: 0.08em;
@@ -79,8 +79,8 @@
 }
 
 .cv-browser-btn:hover {
-  border-color: var(--app-accent);
-  color: var(--app-accent);
+  border-color: var(--bulma-primary);
+  color: var(--bulma-primary);
 }
 
 /* ── Responsive ── */

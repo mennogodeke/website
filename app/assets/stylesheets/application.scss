@@ -1,7 +1,10 @@
 $yellow: #f5e90c;
 
 @use "bulma/sass" with (
-  $primary: $yellow
+  $primary:          $yellow,
+  $success:          #00e676,
+  $family-primary:   '"Barlow", -apple-system, sans-serif',
+  $family-secondary: '"Barlow Condensed", sans-serif'
 );
 
 @use "variables";

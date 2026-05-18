@@ -23,10 +23,10 @@
 .expertise-card.is-frontend { --card-color: #12e012; }
 
 .expertise-card:hover {
-  border-color: var(--app-accent);
-  background: color-mix(in srgb, var(--app-accent) 10%, transparent);
-  box-shadow: 0 0 32px color-mix(in srgb, var(--app-accent) 35%, transparent),
-              inset 0 1px 0 color-mix(in srgb, var(--app-accent) 30%, transparent);
+  border-color: var(--bulma-primary);
+  background: color-mix(in srgb, var(--bulma-primary) 10%, transparent);
+  box-shadow: 0 0 32px color-mix(in srgb, var(--bulma-primary) 35%, transparent),
+              inset 0 1px 0 color-mix(in srgb, var(--bulma-primary) 30%, transparent);
 }
 
 .expertise-card.is-featured {
@@ -77,16 +77,16 @@
   right: -0.5rem;
   font-size: 10rem;
   font-weight: 900;
-  font-family: var(--app-font-display);
+  font-family: var(--bulma-family-secondary);
   line-height: 1;
-  color: var(--app-accent);
+  color: var(--bulma-primary);
   opacity: 0.07;
   pointer-events: none;
   user-select: none;
 }
 
 .expertise-grid.is-stat .expertise-card-name {
-  font-family: var(--app-font-display);
+  font-family: var(--bulma-family-secondary);
   font-weight: 900;
   font-size: clamp(1.25rem, 2vw, 1.75rem);
   text-transform: uppercase;
@@ -95,10 +95,10 @@
 }
 
 .expertise-grid.is-stat .expertise-card:hover {
-  border-left-color: var(--app-accent);
+  border-left-color: var(--bulma-primary);
   border-left-width: 4px;
-  background: color-mix(in srgb, var(--app-accent) 8%, transparent);
-  box-shadow: 0 0 32px color-mix(in srgb, var(--app-accent) 25%, transparent);
+  background: color-mix(in srgb, var(--bulma-primary) 8%, transparent);
+  box-shadow: 0 0 32px color-mix(in srgb, var(--bulma-primary) 25%, transparent);
 }
 
 /* ── Variant B: Image + centered years overlay, title below ── */
@@ -121,7 +121,7 @@
 }
 
 .expertise-grid.is-band .expertise-card:hover {
-  border-color: var(--app-accent);
+  border-color: var(--bulma-primary);
   background: rgba(255,255,255,0.02);
   box-shadow: 0 0 32px rgba(245, 233, 12, 0.15);
 }
@@ -149,10 +149,10 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-family: var(--app-font-display);
+  font-family: var(--bulma-family-secondary);
   font-weight: 900;
   font-size: clamp(3.5rem, 7vw, 5.5rem);
-  color: var(--app-accent);
+  color: var(--bulma-primary);
   line-height: 1;
   text-align: center;
   text-shadow: 0 0 40px rgba(245, 233, 12, 0.5);
@@ -168,7 +168,7 @@
 }
 
 .expertise-grid.is-band .expertise-card-name {
-  font-family: var(--app-font-display);
+  font-family: var(--bulma-family-secondary);
   font-weight: 700;
   font-size: clamp(1.1rem, 2vw, 1.4rem);
   text-transform: uppercase;
@@ -183,7 +183,7 @@
 
 .expertise-grid.is-top .expertise-card {
   border: 1px solid rgba(255,255,255,0.1);
-  border-top: 4px solid var(--card-color, var(--app-accent));
+  border-top: 4px solid var(--card-color, var(--bulma-primary));
   border-radius: 0;
   padding: 0;
   gap: 0;
@@ -193,7 +193,7 @@
 
 .expertise-grid.is-top .expertise-card:hover {
   border-color: rgba(255,255,255,0.4);
-  border-top-color: var(--card-color, var(--app-accent));
+  border-top-color: var(--card-color, var(--bulma-primary));
   box-shadow: 0 12px 40px rgba(0,0,0,0.4), 0 0 30px rgba(255,255,255,0.06);
   transform: translateY(-6px);
 }
@@ -263,7 +263,7 @@
 }
 
 .expertise-grid.is-top .expertise-card-name {
-  font-family: var(--app-font-display);
+  font-family: var(--bulma-family-secondary);
   font-weight: 900;
   font-size: clamp(1rem, 1.5vw, 1.35rem);
   text-transform: uppercase;
@@ -272,7 +272,7 @@
 }
 
 .expertise-grid.is-top .expertise-card-years {
-  font-family: var(--app-font-display);
+  font-family: var(--bulma-family-secondary);
   font-weight: 900;
   font-size: clamp(2rem, 3.5vw, 3rem);
   color: rgba(255,255,255,0.9);
@@ -292,9 +292,9 @@
 }
 
 .expertise-grid.is-fill .expertise-card:hover {
-  background: var(--app-accent);
-  border-color: var(--app-accent);
-  box-shadow: 0 0 48px color-mix(in srgb, var(--app-accent) 45%, transparent);
+  background: var(--bulma-primary);
+  border-color: var(--bulma-primary);
+  box-shadow: 0 0 48px color-mix(in srgb, var(--bulma-primary) 45%, transparent);
   color: #0b1729;
 }
 
@@ -339,16 +339,16 @@
 
 .expertise-grid.is-list .expertise-card:hover {
   border-color: transparent;
-  border-left: 3px solid var(--app-accent);
+  border-left: 3px solid var(--bulma-primary);
   padding-left: 3rem;
-  background: color-mix(in srgb, var(--app-accent) 6%, transparent);
+  background: color-mix(in srgb, var(--bulma-primary) 6%, transparent);
   box-shadow: none;
 }
 
 .expertise-grid.is-list .expertise-card-name {
   grid-column: 1;
   grid-row: 1;
-  font-family: var(--app-font-display);
+  font-family: var(--bulma-family-secondary);
   font-weight: 900;
   font-size: clamp(1.5rem, 3vw, 2.25rem);
   text-transform: uppercase;
@@ -359,7 +359,7 @@
 .expertise-grid.is-list .expertise-card-years {
   grid-column: 2;
   grid-row: 1;
-  font-family: var(--app-font-display);
+  font-family: var(--bulma-family-secondary);
   font-weight: 900;
   font-size: 3.5rem;
   color: rgba(255,255,255,0.15);
@@ -383,14 +383,14 @@
 .skill-tag {
   background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.3);
-  color: var(--app-text);
+  color: var(--bulma-text);
 }
 
 /* ============================================================
    Skills grid — circular badges
    ============================================================ */
 .skills-section {
-  border-top: 1px solid var(--app-border);
+  border-top: 1px solid var(--bulma-border);
 }
 
 .skills-grid {
@@ -431,7 +431,7 @@
   text-align: center;
   background: rgba(11, 23, 41, 0.88);
   padding: 0.55rem 0.35rem;
-  font-family: var(--app-font-display);
+  font-family: var(--bulma-family-secondary);
   font-weight: 700;
   font-size: 0.68rem;
   letter-spacing: 0.07em;
