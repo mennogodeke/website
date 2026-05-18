@@ -1,0 +1,32 @@
+// ============================================================
+// Custom Bulma theme
+// Single source of truth for all design tokens.
+// ============================================================
+
+// ── 1. Configure Bulma SASS variables at compile time ────────
+@use "bulma_sass/utilities" with (
+  $family-primary:    '"Barlow", -apple-system, sans-serif',
+  $family-secondary:  '"Barlow Condensed", sans-serif',
+
+  $size-1:            clamp(3.5rem, 12vw, 10rem),
+  $size-2:            clamp(2rem, 5vw, 4rem),
+  $size-3:            clamp(1.75rem, 3vw, 2.5rem),
+  $size-4:            clamp(1.25rem, 2vw, 1.75rem),
+  $size-5:            clamp(1rem, 1.5vw, 1.25rem),
+  $size-6:            0.9rem,
+
+  $primary:           #f5e90c,
+  $text:              #ffffff,
+);
+
+// ── 2. Load Bulma ─────────────────────────────────────────────
+@use "bulma";
+
+// ── 3. Custom tokens — no Bulma equivalent ───────────────────
+// --bulma-family-secondary  covers the display font (Barlow Condensed)
+// --bulma-primary            covers the accent color
+// --bulma-success            covers the green status color
+// Only tokens that Bulma's HSL color system cannot express remain here.
+:root {
+  --app-text-muted: rgba(255, 255, 255, 0.6); // semi-transparent white; Bulma's greys are opaque
+}

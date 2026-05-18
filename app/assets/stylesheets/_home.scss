@@ -37,19 +37,19 @@
 .status-dot {
   width: 8px;
   height: 8px;
-  background: var(--app-green);
+  background: var(--bulma-success);
   border-radius: 50%;
   flex-shrink: 0;
   animation: status-pulse 2.5s ease infinite;
 }
 
 @keyframes status-pulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(0, 230, 118, 0.4); }
-  50%       { box-shadow: 0 0 0 5px rgba(0, 230, 118, 0); }
+  0%, 100% { box-shadow: 0 0 0 0 hsla(var(--bulma-success-h), var(--bulma-success-s), var(--bulma-success-l), 0.4); }
+  50%       { box-shadow: 0 0 0 5px hsla(var(--bulma-success-h), var(--bulma-success-s), var(--bulma-success-l), 0); }
 }
 
 .status-label {
-  font-family: var(--app-font-display);
+  font-family: var(--bulma-family-secondary);
   font-weight: 600;
   font-size: 0.72rem;
   letter-spacing: 0.14em;

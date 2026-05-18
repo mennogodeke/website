@@ -1,29 +1,11 @@
 /* ============================================================
-   Design tokens — app-specific CSS custom properties
-   Bulma's own --bulma-* variables are set at compile time via
-   SASS variables in application.scss, not overridden here.
-   ============================================================ */
-:root {
-  --app-bg:           #e1e6ee;
-  --app-bg-card:      #e1e6ee;
-  --app-accent:       #f5e90c;
-  --app-accent-rgb:   245, 233, 12;
-  --app-text:         #ffffff;
-  --app-text-muted:   rgba(255, 255, 255, 0.6);
-  --app-border:       rgba(255, 255, 255, 0.1);
-  --app-green:        #00e676;
-  --app-font-display: 'Barlow Condensed', sans-serif;
-  --app-font-body:    'Barlow', -apple-system, sans-serif;
-}
-
-/* ============================================================
    Bulma overrides — title / buttons / forms
    Loaded after bulma so equal-specificity rules cascade correctly.
    ============================================================ */
 
 /* .title — display type scale */
 .title {
-  font-family: var(--app-font-display);
+  font-family: var(--bulma-family-secondary);
   font-weight: 700;
   text-transform: uppercase;
 }
@@ -39,7 +21,7 @@ h1.title.is-1 {
 
 h2.title.is-2 {
   display: inline-block;
-  background: var(--app-accent);
+  background: var(--bulma-primary);
   color: #000000;
   padding: 0.3rem 1.25rem;
   margin-bottom: 2rem;
@@ -47,7 +29,7 @@ h2.title.is-2 {
 }
 .title.is-3 {
   display: inline-block;
-  background: var(--app-accent);
+  background: var(--bulma-primary);
   color: #000000;
   padding: 0.3rem 1.25rem;
   margin-bottom: 2rem;
@@ -60,7 +42,7 @@ h2.title.is-2 {
 /* .button — sharp-edged display-font buttons */
 .button {
   border-radius: 0;
-  font-family: var(--app-font-display);
+  font-family: var(--bulma-family-secondary);
   text-transform: uppercase;
   padding: 0.7rem 1.5rem;
   height: auto;
@@ -69,15 +51,15 @@ h2.title.is-2 {
 
 .button.is-primary {
   color: #0b1729;
-  border: 2px solid var(--app-accent);
+  border: 2px solid var(--bulma-primary);
   transition: background 0.15s ease, color 0.15s ease;
 }
 
 .button.is-primary:hover,
 .button.is-primary:focus {
   background: transparent;
-  color: var(--app-accent);
-  border-color: var(--app-accent);
+  color: var(--bulma-primary);
+  border-color: var(--bulma-primary);
 }
 
 .button.is-outlined {
@@ -90,8 +72,8 @@ h2.title.is-2 {
 .button.is-outlined:hover,
 .button.is-outlined:focus {
   background: transparent;
-  color: var(--app-accent);
-  border-color: var(--app-accent);
+  color: var(--bulma-primary);
+  border-color: var(--bulma-primary);
 }
 
 /* .input / .textarea — light controls on dark background */
@@ -105,7 +87,7 @@ h2.title.is-2 {
 
 .input:focus,
 .textarea:focus {
-  border-color: var(--app-accent);
+  border-color: var(--bulma-primary);
   box-shadow: 0 0 0 2px rgba(245, 233, 12, 0.25);
 }
 
@@ -116,7 +98,7 @@ h2.title.is-2 {
 
 /* .label — uppercase display-font label */
 .label {
-  font-family: var(--app-font-display);
+  font-family: var(--bulma-family-secondary);
   font-weight: 700;
   font-size: 0.85rem;
   letter-spacing: 0.08em;
@@ -143,8 +125,6 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  color: var(--app-text);
-  font-family: var(--app-font-body);
   margin: 0;
   min-height: 100vh;
   display: flex;

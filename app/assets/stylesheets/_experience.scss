@@ -14,7 +14,7 @@
 
 .expertise-grid.is-top .expertise-card {
   border: 1px solid rgba(255,255,255,0.1);
-  border-top: 4px solid var(--card-color, var(--app-accent));
+  border-top: 4px solid var(--card-color, var(--bulma-primary));
   border-radius: 0;
   padding: 0;
   display: flex;
@@ -25,7 +25,7 @@
 
 .expertise-grid.is-top .expertise-card:hover {
   border-color: rgba(255,255,255,0.4);
-  border-top-color: var(--card-color, var(--app-accent));
+  border-top-color: var(--card-color, var(--bulma-primary));
   box-shadow: 0 12px 40px rgba(0,0,0,0.4), 0 0 30px rgba(255,255,255,0.06);
   transform: translateY(-6px);
 }
@@ -102,7 +102,7 @@
 }
 
 .expertise-grid.is-top .expertise-card-years {
-  font-family: var(--app-font-display);
+  font-family: var(--bulma-family-secondary);
   font-weight: 900;
   font-size: clamp(2rem, 3.5vw, 3rem);
   color: rgba(255,255,255,0.9);
@@ -170,7 +170,7 @@
   text-align: center;
   background: rgba(11, 23, 41, 0.88);
   padding: 0.55rem 0.35rem;
-  font-family: var(--app-font-display);
+  font-family: var(--bulma-family-secondary);
   font-weight: 700;
   font-size: 0.68rem;
   letter-spacing: 0.07em;
