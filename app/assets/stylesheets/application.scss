@@ -1,0 +1,17 @@
+$primary: #f5e90c;
+
+@use "bulma/sass" with (
+  $primary: $primary
+);
+
+@import "base";
+@import "navbar";
+@import "footer";
+@import "home";
+@import "experience";
+@import "career";
+@import "projects";
+@import "contact";
+@import "cv";
+@import "cv_download";
+@import "design_preview";
