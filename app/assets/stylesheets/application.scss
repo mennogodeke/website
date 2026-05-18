@@ -1,17 +1,17 @@
-$primary: #f5e90c;
+$yellow: #f5e90c;
 
 @use "bulma/sass" with (
-  $primary: $primary
+  $primary: $yellow
 );
 
-@import "base";
-@import "navbar";
-@import "footer";
-@import "home";
-@import "experience";
-@import "career";
-@import "projects";
-@import "contact";
-@import "cv";
-@import "cv_download";
-@import "design_preview";
+@use "variables";
+@use "navbar";
+@use "footer";
+@use "home";
+@use "experience";
+@use "career";
+@use "projects";
+@use "contact";
+@use "cv";
+@use "cv_download";
+@use "design_preview";

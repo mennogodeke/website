@@ -22,11 +22,8 @@
   --bulma-size-6: 0.9rem;
 }
 
-
 /* ============================================================
    Bulma overrides — title / subtitle / buttons / forms
-   Loaded after bulma.min.css so equal-specificity rules cascade
-   correctly without !important in most cases.
    ============================================================ */
 
 /* .title — display type scale */
@@ -38,9 +35,9 @@ h1.title {
   line-height: 0.9;
 }
 
-h1.title.is-1 { 
-  margin-bottom: 2.5rem; 
-  font-size: 4.0rem; 
+h1.title.is-1 {
+  margin-bottom: 2.5rem;
+  font-size: 4.0rem;
 }
 
 h2.title.is-2 {
@@ -52,6 +49,7 @@ h2.title.is-2 {
   margin-bottom: 2rem;
   font-size: 2.5rem;
 }
+
 .title.is-3 {
   font-family: var(--app-font-display);
   display: inline-block;
@@ -61,6 +59,7 @@ h2.title.is-2 {
   margin-bottom: 2rem;
   font-size: 1.5rem;
 }
+
 .title.is-4 { margin-bottom: 1.25rem; }
 .title.is-5 { margin-bottom: 1rem; }
 .title.is-6 { margin-bottom: 0.75rem; }
