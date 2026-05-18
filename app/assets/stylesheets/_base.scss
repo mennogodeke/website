@@ -67,7 +67,6 @@ h2.title.is-2 {
 }
 
 .button.is-primary {
-  background: var(--app-accent);
   color: #0b1729;
   border: 2px solid var(--app-accent);
   transition: background 0.15s ease, color 0.15s ease;
@@ -101,7 +100,6 @@ h2.title.is-2 {
   color: #0b1729;
   border-color: rgba(0, 0, 0, 0.15);
   box-shadow: none;
-  font-family: var(--app-font-body);
 }
 
 .input:focus,
