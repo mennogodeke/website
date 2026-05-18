@@ -4,6 +4,10 @@
   gap: 0;
 }
 
+.career-list > .box:not(:last-child) {
+  margin-bottom: 0;
+}
+
 .career-list .box {
   background: transparent;
   border: none;
