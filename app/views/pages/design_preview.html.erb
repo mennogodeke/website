@@ -15,6 +15,7 @@
   <div class="container is-max-widescreen">
     <h2 class="title is-2">Typography</h2>
 
+    <h3 class="title is-3">Titles</h3>
     <div class="mb-6">
       <h1 class="title is-1">Title is-1 — The quick brown fox</h1>
       <h2 class="title is-2">Title is-2 — The quick brown fox</h2>
@@ -24,11 +25,24 @@
       <h6 class="title is-6">Title is-6 — The quick brown fox</h6>
     </div>
 
-    <div class="mb-5">
-      <p style="font-size: 1rem; line-height: 1.75; color: rgba(255,255,255,0.75); max-width: 60ch;">
-        Body text — <strong>Barlow 400</strong>. The quick brown fox jumps over the lazy dog.
-        Used for all paragraph content across the site. Line height 1.75, muted white at 75% opacity.
-      </p>
+    <h3 class="title is-3">Subtitles</h3>
+    <div class="mb-6">
+      <h1 class="subtitle is-1">Subtitle is-1 — The quick brown fox</h1>
+      <h2 class="subtitle is-2">Subtitle is-2 — The quick brown fox</h2>
+      <h3 class="subtitle is-3">Subtitle is-3 — The quick brown fox</h3>
+      <h4 class="subtitle is-4">Subtitle is-4 — The quick brown fox</h4>
+      <h5 class="subtitle is-5">Subtitle is-5 — The quick brown fox</h5>
+      <h6 class="subtitle is-6">Subtitle is-6 — The quick brown fox</h6>
+    </div>
+
+    <h3 class="title is-3">Title + Subtitle pairing</h3>
+    <div>
+      <h1 class="title is-1">Title is-1</h1>
+      <h2 class="subtitle is-3">Subtitle is-3 paired below</h2>
+    </div>
+    <div>
+      <h3 class="title is-3">Title is-3</h3>
+      <h4 class="subtitle is-5">Subtitle is-5 paired below</h4>
     </div>
   </div>
 </section>
@@ -40,49 +54,48 @@
   <div class="container is-max-widescreen">
     <h2 class="title is-2">Colors</h2>
 
+    <h3 class="title is-3">Theme colors</h3>
+    <div class="columns is-multiline mb-6">
+      <% [
+        { name: "primary", label: "Primary" },
+        { name: "link",    label: "Link" },
+        { name: "info",    label: "Info" },
+        { name: "success", label: "Success" },
+        { name: "warning", label: "Warning" },
+        { name: "danger",  label: "Danger" },
+      ].each do |color| %>
+        <div class="column is-narrow">
+          <div class="has-background-<%= color[:name] %>" style="width:120px; height:80px; margin-bottom:.5rem;"></div>
+          <p class="is-size-7 has-text-weight-semibold"><%= color[:label] %></p>
+          <p class="is-size-7 has-text-grey">has-background-<%= color[:name] %></p>
+        </div>
+      <% end %>
+    </div>
+
+    <h3 class="title is-3">Neutral colors</h3>
+    <div class="columns is-multiline mb-6">
+      <% [
+        { name: "white",      label: "White",      border: true },
+        { name: "light",      label: "Light",      border: false },
+        { name: "dark",       label: "Dark",       border: false },
+        { name: "black",      label: "Black",      border: false },
+      ].each do |color| %>
+        <div class="column is-narrow">
+          <div class="has-background-<%= color[:name] %><%= " box" if color[:border] %>" style="width:120px; height:80px; margin-bottom:.5rem; <%= "border: 1px solid #dbdbdb;" if color[:border] %>"></div>
+          <p class="is-size-7 has-text-weight-semibold"><%= color[:label] %></p>
+          <p class="is-size-7 has-text-grey">has-background-<%= color[:name] %></p>
+        </div>
+      <% end %>
+    </div>
+
+    <h3 class="title is-3">Text colors</h3>
     <div class="columns is-multiline">
-      <div class="column is-narrow">
-        <div style="width:120px; height:80px; background:var(--app-accent); margin-bottom:.5rem;"></div>
-        <p style="font-size:.85rem; font-family:var(--app-font-display); text-transform:uppercase; letter-spacing:.08em;">
-          Accent<br><span style="opacity:.6;">#f5e90c</span>
-        </p>
-      </div>
-      <div class="column is-narrow">
-        <div style="width:120px; height:80px; background:var(--app-green); margin-bottom:.5rem;"></div>
-        <p style="font-size:.85rem; font-family:var(--app-font-display); text-transform:uppercase; letter-spacing:.08em;">
-          Green<br><span style="opacity:.6;">#00e676</span>
-        </p>
-      </div>
-      <div class="column is-narrow">
-        <div style="width:120px; height:80px; background:#ffffff; margin-bottom:.5rem;"></div>
-        <p style="font-size:.85rem; font-family:var(--app-font-display); text-transform:uppercase; letter-spacing:.08em;">
-          Text<br><span style="opacity:.6;">#ffffff</span>
-        </p>
-      </div>
-      <div class="column is-narrow">
-        <div style="width:120px; height:80px; background:rgba(255,255,255,0.6); margin-bottom:.5rem;"></div>
-        <p style="font-size:.85rem; font-family:var(--app-font-display); text-transform:uppercase; letter-spacing:.08em;">
-          Text Muted<br><span style="opacity:.6;">rgba(255,255,255,.6)</span>
-        </p>
-      </div>
-      <div class="column is-narrow">
-        <div style="width:120px; height:80px; background:#e1e6ee; margin-bottom:.5rem;"></div>
-        <p style="font-size:.85rem; font-family:var(--app-font-display); text-transform:uppercase; letter-spacing:.08em;">
-          Background<br><span style="opacity:.6;">#e1e6ee</span>
-        </p>
-      </div>
-      <div class="column is-narrow">
-        <div style="width:120px; height:80px; background:#0b1729; margin-bottom:.5rem;"></div>
-        <p style="font-size:.85rem; font-family:var(--app-font-display); text-transform:uppercase; letter-spacing:.08em;">
-          Dark Base<br><span style="opacity:.6;">#0b1729</span>
-        </p>
-      </div>
-      <div class="column is-narrow">
-        <div style="width:120px; height:80px; background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); margin-bottom:.5rem;"></div>
-        <p style="font-size:.85rem; font-family:var(--app-font-display); text-transform:uppercase; letter-spacing:.08em;">
-          Border<br><span style="opacity:.6;">rgba(255,255,255,.1)</span>
-        </p>
-      </div>
+      <% ["primary", "link", "info", "success", "warning", "danger", "dark", "grey", "grey-light", "grey-dark"].each do |color| %>
+        <div class="column is-narrow">
+          <p class="has-text-<%= color %> has-text-weight-semibold"><%= color.capitalize %></p>
+          <p class="is-size-7 has-text-grey">has-text-<%= color %></p>
+        </div>
+      <% end %>
     </div>
   </div>
 </section>
@@ -94,227 +107,75 @@
   <div class="container is-max-widescreen">
     <h2 class="title is-2">Buttons</h2>
 
-    <div class="buttons mb-5">
-      <a class="button is-primary">Primary</a>
-      <a class="button is-outlined">Outlined</a>
+    <h3 class="title is-3">Colors</h3>
+    <div class="buttons mb-6">
       <a class="button">Default</a>
+      <a class="button is-white">White</a>
+      <a class="button is-light">Light</a>
+      <a class="button is-dark">Dark</a>
+      <a class="button is-black">Black</a>
+      <a class="button is-text">Text</a>
+      <a class="button is-ghost">Ghost</a>
+      <a class="button is-primary">Primary</a>
+      <a class="button is-link">Link</a>
+      <a class="button is-info">Info</a>
+      <a class="button is-success">Success</a>
+      <a class="button is-warning">Warning</a>
+      <a class="button is-danger">Danger</a>
     </div>
 
-    <div class="buttons mb-5">
+    <h3 class="title is-3">Outlined</h3>
+    <div class="buttons mb-6">
+      <a class="button is-primary is-outlined">Primary</a>
+      <a class="button is-link is-outlined">Link</a>
+      <a class="button is-info is-outlined">Info</a>
+      <a class="button is-success is-outlined">Success</a>
+      <a class="button is-warning is-outlined">Warning</a>
+      <a class="button is-danger is-outlined">Danger</a>
+    </div>
+
+    <h3 class="title is-3">Rounded</h3>
+    <div class="buttons mb-6">
+      <a class="button is-rounded">Default</a>
+      <a class="button is-primary is-rounded">Primary</a>
+      <a class="button is-link is-rounded">Link</a>
+      <a class="button is-info is-rounded">Info</a>
+      <a class="button is-success is-rounded">Success</a>
+      <a class="button is-warning is-rounded">Warning</a>
+      <a class="button is-danger is-rounded">Danger</a>
+    </div>
+
+    <h3 class="title is-3">Sizes</h3>
+    <div class="buttons is-vcentered mb-6">
+      <a class="button is-small">Small</a>
+      <a class="button">Normal</a>
+      <a class="button is-medium">Medium</a>
+      <a class="button is-large">Large</a>
+    </div>
+
+    <h3 class="title is-3">States</h3>
+    <div class="buttons mb-6">
+      <a class="button is-primary">Normal</a>
+      <a class="button is-primary is-hovered">Hovered</a>
+      <a class="button is-primary is-focused">Focused</a>
+      <a class="button is-primary is-active">Active</a>
+      <a class="button is-primary is-loading">Loading</a>
+      <a class="button is-primary" disabled>Disabled</a>
+    </div>
+
+    <h3 class="title is-3">With icons</h3>
+    <div class="buttons mb-6">
       <a class="button is-primary">
-        View Work <i class="fa-solid fa-arrow-right"></i>
+        <span>View Work</span>
+        <span class="icon"><i class="fa-solid fa-arrow-right"></i></span>
       </a>
-      <a class="button is-outlined">Download CV</a>
-    </div>
-  </div>
-</section>
-
-<%# ============================================================ %>
-<%# 4. INPUTS %>
-<%# ============================================================ %>
-<section class="section">
-  <div class="container is-max-widescreen">
-    <h2 class="title is-2">Inputs</h2>
-
-    <div class="columns">
-      <div class="column is-half">
-
-        <div class="field">
-          <label class="label">Name</label>
-          <div class="control">
-            <input class="input" type="text" placeholder="Your name">
-          </div>
-        </div>
-
-        <div class="field">
-          <label class="label">Email</label>
-          <div class="control">
-            <input class="input" type="email" placeholder="you@example.com">
-          </div>
-        </div>
-
-        <div class="field">
-          <label class="label">Email — error state</label>
-          <div class="control">
-            <input class="input is-danger" type="email" placeholder="you@example.com" value="notanemail">
-          </div>
-          <p class="help is-danger">Please enter a valid email address</p>
-        </div>
-
-        <div class="field">
-          <label class="label">Message</label>
-          <div class="control">
-            <textarea class="textarea" placeholder="Your message..." rows="4"></textarea>
-          </div>
-        </div>
-
-        <div class="field">
-          <div class="control">
-            <button class="button is-primary">Send Message</button>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-</section>
-
-<%# ============================================================ %>
-<%# 5. TAGS & LABELS %>
-<%# ============================================================ %>
-<section class="section">
-  <div class="container is-max-widescreen">
-    <h2 class="title is-2">Tags &amp; Labels</h2>
-
-    <div class="mb-5">
-      <p class="label mb-2">Form label style</p>
-      <div class="tags">
-        <span class="tag">Default tag</span>
-        <span class="tag is-primary">Primary tag</span>
-        <span class="tag is-dark">Dark tag</span>
-        <span class="tag">Skill tag</span>
-        <span class="tag">Ruby on Rails</span>
-        <span class="tag">PostgreSQL</span>
-        <span class="tag">Docker</span>
-      </div>
-    </div>
-
-    <div>
-      <span class="status-dot"></span>
-      <span class="status-label">Open to work</span>
-    </div>
-  </div>
-</section>
-
-<%# ============================================================ %>
-<%# 6. RESOURCES %>
-<%# ============================================================ %>
-
-<%# ── Job ── %>
-<section class="section">
-  <div class="container is-max-widescreen">
-    <h2 class="title is-2">Resource — Job</h2>
-
-    <h3 class="title is-3 mb-4">Single</h3>
-    <div class="mb-6" style="max-width: 640px;">
-      <div class="box">
-        <div>
-          <h3 class="title is-3">Senior Software Engineer</h3>
-          <span>Acme Corp</span>
-          <p>Led development of the core payments platform, reducing processing time by 40%.</p>
-        </div>
-        <span>Jan 2022 – Present</span>
-      </div>
-    </div>
-
-    <h3 class="title is-3 mb-4">Collection</h3>
-    <div>
-      <div class="box">
-        <div>
-          <h3 class="title is-3">Senior Software Engineer</h3>
-          <span>Acme Corp</span>
-          <p>Led development of the core payments platform, reducing processing time by 40%.</p>
-        </div>
-        <span>Jan 2022 – Present</span>
-      </div>
-      <div class="box">
-        <div>
-          <h3 class="title is-3">Software Engineer</h3>
-          <span>Globex</span>
-          <p>Built and maintained microservices for the logistics domain.</p>
-        </div>
-        <span>Mar 2019 – Dec 2021</span>
-      </div>
-      <div class="box">
-        <div>
-          <h3 class="title is-3">Junior Developer</h3>
-          <span>Initech</span>
-          <p>Developed internal tooling and automated reporting pipelines.</p>
-        </div>
-        <span>Jun 2017 – Feb 2019</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<%# ── Expertise ── %>
-<section class="section">
-  <div class="container is-max-widescreen">
-    <h2 class="title is-2">Resource — Expertise</h2>
-
-    <h3 class="title is-3 mb-4">Single</h3>
-    <div class="mb-6" style="grid-template-columns: 1fr; max-width: 360px;">
-      <div>
-        <div>
-          <img src="https://placehold.co/600x338/ffffff/cccccc" alt="">
-        </div>
-        <div>
-          <div>
-            <h3 class="title is-3">Backend</h3>
-            <span>8+</span>
-          </div>
-          <p>
-            Ruby on Rails, PostgreSQL, Redis, Sidekiq — building reliable, scalable APIs and services.
-          </p>
-          <div>
-            <span class="tag">Ruby on Rails</span>
-            <span class="tag">PostgreSQL</span>
-            <span class="tag">Redis</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <h3 class="title is-3 mb-4">Collection</h3>
-    <div>
-      <div>
-        <div>
-          <img src="https://placehold.co/600x338/ffffff/cccccc" alt="">
-        </div>
-        <div>
-          <div>
-            <h3 class="title is-3">Backend</h3>
-            <span>8+</span>
-          </div>
-          <p>Ruby on Rails, PostgreSQL, Redis, Sidekiq.</p>
-          <div>
-            <span class="tag">Ruby on Rails</span>
-            <span class="tag">PostgreSQL</span>
-          </div>
-        </div>
-      </div>
-      <div>
-        <div>
-          <img src="https://placehold.co/600x338/ffffff/cccccc" alt="">
-        </div>
-        <div>
-          <div>
-            <h3 class="title is-3">Cloud</h3>
-            <span>5+</span>
-          </div>
-          <p>AWS, Docker, Kubernetes, Terraform, Kamal.</p>
-          <div>
-            <span class="tag">AWS</span>
-            <span class="tag">Docker</span>
-          </div>
-        </div>
-      </div>
-      <div>
-        <div>
-          <img src="https://placehold.co/600x338/ffffff/cccccc" alt="">
-        </div>
-        <div>
-          <div>
-            <h3 class="title is-3">iOS</h3>
-            <span>4+</span>
-          </div>
-          <p>Swift, SwiftUI, UIKit — native iOS app development.</p>
-          <div>
-            <span class="tag">Swift</span>
-            <span class="tag">SwiftUI</span>
-          </div>
-        </div>
-      </div>
+      <a class="button is-outlined">
+        <span class="icon"><i class="fa-solid fa-download"></i></span>
+        <span>Download CV</span>
+      </a>
+      <a class="button">
+        <span class="icon"><i class="fa-brands fa-github"></i></span>
+      </a>
     </div>
   </div>
 </section>
