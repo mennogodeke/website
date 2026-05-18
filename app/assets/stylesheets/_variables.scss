@@ -1,40 +1,11 @@
 /* ============================================================
-   Bulma size-scale overrides — clamp-based fluid type
-   ============================================================ */
-:root {
-  --bulma-size-1: clamp(3.5rem, 12vw, 10rem);
-  --bulma-size-2: clamp(2rem, 5vw, 4rem);
-  --bulma-size-3: clamp(1.75rem, 3vw, 2.5rem);
-  --bulma-size-4: clamp(1.25rem, 2vw, 1.75rem);
-  --bulma-size-5: clamp(1rem, 1.5vw, 1.25rem);
-  --bulma-size-6: 0.9rem;
-}
-
-/* ============================================================
    Button overrides
-   (font-family handled via $button-family Sass variable)
+   (font-family, padding, border-width handled via Sass variables)
    ============================================================ */
 .button {
   border-radius: 0;
   text-transform: uppercase;
-  padding: 0.7rem 1.5rem;
-  height: auto;
   gap: 0.5rem;
-}
-
-@each $color in primary, link, info, success, warning, danger {
-  .button.is-#{$color}.is-outlined {
-    background: transparent;
-    color: var(--bulma-#{$color});
-    border: 2px solid var(--bulma-#{$color});
-    transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
-
-    &:hover,
-    &:focus {
-      background: var(--bulma-#{$color});
-      color: var(--bulma-#{$color}-invert);
-    }
-  }
 }
 
 @each $color in primary, link, info, success, warning, danger {
@@ -49,6 +20,18 @@
       background: transparent;
       color: var(--bulma-#{$color});
       border-color: var(--bulma-#{$color});
+    }
+
+    &.is-outlined {
+      background: transparent;
+      color: var(--bulma-#{$color});
+      border: 2px solid var(--bulma-#{$color});
+
+      &:hover,
+      &:focus {
+        background: var(--bulma-#{$color});
+        color: var(--bulma-#{$color}-invert);
+      }
     }
   }
 }
@@ -68,7 +51,7 @@
 .input:focus,
 .textarea:focus {
   border-color: var(--bulma-primary);
-  box-shadow: 0 0 0 2px rgba(245, 233, 12, 0.25);
+  box-shadow: 0 0 0 2px rgba(var(--bulma-primary-rgb), 0.25);
 }
 
 .input::placeholder,
