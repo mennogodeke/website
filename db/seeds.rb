@@ -2,6 +2,9 @@ require "yaml"
 
 data = YAML.load_file(Rails.root.join("CONTENT_DATA.yml"))
 
+# Build a lookup map: skill key → skill record (populated after Skills seeding)
+skill_index = {}
+
 # Skills
 data["skills"].each do |attrs|
   en = attrs["translations"]["en"]
@@ -17,6 +20,7 @@ data["skills"].each do |attrs|
     description_de:  de["description"]
   )
   skill.save!
+  skill_index[attrs["key"]] = skill
 end
 
 # Experiences
@@ -37,8 +41,7 @@ data["experiences"].each do |attrs|
   experience.save!
 
   attrs["skills"].each do |skill_key|
-    skill_data = data["skills"].find { |s| s["key"] == skill_key }
-    skill = Skill.find_by!(name: skill_data["translations"]["en"]["name"])
+    skill = skill_index.fetch(skill_key)
     ExperienceSkill.find_or_create_by!(experience: experience, skill: skill)
   end
 end
@@ -65,9 +68,11 @@ data["jobs"].each do |attrs|
   job.save!
 
   attrs["skills"].each do |skill_key|
+    skill = skill_index.fetch(skill_key)
     skill_data = data["skills"].find { |s| s["key"] == skill_key }
-    skill = Skill.find_by!(name: skill_data["translations"]["en"]["name"])
-    JobSkill.find_or_create_by!(job: job, skill: skill)
+    js = JobSkill.find_or_initialize_by(job: job, skill: skill)
+    js.category ||= skill_data["category"]
+    js.save!
   end
 end
 
@@ -90,9 +95,8 @@ data["projects"].each do |attrs|
   project.save!
 
   attrs["skills"].each do |skill_key|
-    skill_data = data["skills"].find { |s| s["key"] == skill_key }
-    next if skill_data.nil?
-    skill = Skill.find_by!(name: skill_data["translations"]["en"]["name"])
+    skill = skill_index[skill_key]
+    next if skill.nil?
     ProjectSkill.find_or_create_by!(project: project, skill: skill)
   end
 end

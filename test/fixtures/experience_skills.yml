@@ -28,3 +28,15 @@ cloud_docker:     { experience: cloud, skill: docker }
 cloud_kubernetes: { experience: cloud, skill: kubernetes }
 
 apps_swift: { experience: apps, skill: swift }
+
+ruby_lang_ruby:       { experience: ruby_lang, skill: ruby }
+ruby_lang_rails:      { experience: ruby_lang, skill: ruby_on_rails }
+
+golang_go:            { experience: golang, skill: go }
+
+swift_lang_swift:     { experience: swift_lang, skill: swift }
+
+javascript_lang_js:         { experience: javascript_lang, skill: javascript }
+javascript_lang_typescript: { experience: javascript_lang, skill: typescript }
+javascript_lang_nodejs:     { experience: javascript_lang, skill: nodejs }
+javascript_lang_vuejs:      { experience: javascript_lang, skill: vuejs }

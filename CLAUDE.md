@@ -32,3 +32,15 @@ No Node.js build step — JavaScript is managed via importmap (`config/importmap
 - Stimulus controllers live in `app/javascript/controllers/`
 - CSS lives in `app/assets/stylesheets/` via manifest
 - **Bulma customisation** — extend via CSS cascade order (our stylesheet loads after `bulma.min.css`), scoped selectors (e.g. `.career-list .box`), and `:root` custom properties. Avoid `!important`; rely on specificity or load order instead. See `DESIGN.md` for the full design system.
+
+## Content
+
+### Audience
+Both recruiters screening for permanent roles and freelance clients looking to hire directly.
+Preference is toward permanent employment, but open to both. No specific industry focus.
+
+### Tone
+Personal and human rather than corporate. Informal but competent — the kind of person you'd
+want to work with, not just hire. Occasional dry humour is fine; never forced.
+Icon library: Devicons (tech stack) + Font Awesome (categories/UI).
+(Further tone refinement TBD — revisit once first page copy is drafted.)

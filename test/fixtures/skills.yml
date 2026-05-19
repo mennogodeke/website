@@ -157,3 +157,27 @@ stripe:
   description_en: "Payment processing integration — checkout flows and subscription management."
   description_nl: "Betalingsverwerkingsintegratie — checkout-flows en abonnementsbeheer."
   description_de: "Zahlungsverarbeitungsintegration — Checkout-Flows und Abonnementverwaltung."
+
+dutch:
+  name: Dutch
+  level: expert
+  icon: "fa-solid fa-language"
+  description_en: "Native language."
+  description_nl: "Moedertaal."
+  description_de: "Muttersprache."
+
+english:
+  name: English
+  level: expert
+  icon: "fa-solid fa-language"
+  description_en: "Fluent."
+  description_nl: "Vloeiend."
+  description_de: "Fließend."
+
+german:
+  name: German
+  level: proficient
+  icon: "fa-solid fa-language"
+  description_en: "Fluent."
+  description_nl: "Vloeiend."
+  description_de: "Fließend."
