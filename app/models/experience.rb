@@ -1,6 +1,6 @@
-class Expertise < ApplicationRecord
-  has_many :expertise_skills, dependent: :destroy
-  has_many :skills, through: :expertise_skills
+class Experience < ApplicationRecord
+  has_many :experience_skills, dependent: :destroy
+  has_many :skills, through: :experience_skills
 
   translates :description
 

@@ -463,7 +463,7 @@ skills:
 # EXPERTISES
 # 5 entries
 # ============================================================
-expertises:
+experiences:
 
   - key: backend
     years_of_experience: 8

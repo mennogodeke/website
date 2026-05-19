@@ -1,6 +1,6 @@
 class ExperienceController < ApplicationController
   def show
-    @expertises = Expertise.includes(:skills).all
+    @experiences = Experience.includes(:skills).all
     @skills = Skill.all
   end
 end
