@@ -32,7 +32,7 @@ class CvDownloadsController < ApplicationController
     end
 
     send_file pdf_path,
-              filename: "menno-godeke-cv.pdf",
+              filename: "placeholder.pdf",
               type: "application/pdf",
               disposition: "attachment"
   end

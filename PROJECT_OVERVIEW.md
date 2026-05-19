@@ -6,6 +6,8 @@ See also: [DESIGN.md](DESIGN.md) · [CONTENT.md](CONTENT.md)
 
 ## Controllers and Routes
 
+All routes are wrapped in a locale scope (`/nl/…` or `/de/…`), defaulting to English when no locale prefix is present.
+
 ```
 GET /             → pages#home
 GET /home         → pages#home
@@ -14,9 +16,10 @@ GET /jobs         → jobs#index          ← Career page
 GET /projects     → projects#index
 GET /projects/:id → projects#show
 GET /contact      → pages#contact
+GET /design-preview → pages#design_preview
 ```
 
-`PagesController` serves static pages (home, contact). `ExperienceController#show` loads `@expertises` (with skills eager-loaded) and `@skills`.
+`PagesController` serves static pages (home, contact, cv, cv_preview, design_preview). `ExperienceController#show` loads `@experiences` (with skills eager-loaded) and `@skills`.
 
 ```
 GET  /cv                 → pages#cv             ← HTML CV view
@@ -31,39 +34,48 @@ GET  /cv/download/:token → cv_downloads#show    ← Confirm & trigger download
 ## Models
 
 ### Job ✓
-Fields: `title` (string), `company` (string), `description` (text), `start_date` (date), `end_date` (date, nullable).
+Fields: `title` (i18n: `title_en`, `title_nl`, `title_de`), `company` (string), `description` (i18n: `description_en`, `description_nl`, `description_de`), `start_date` (date), `end_date` (date, nullable), `logo` (string), `accent` (string).
 Validations: `title`, `company`, `start_date` are required.
 Associations: `has_many :skills, through: :job_skills`.
+i18n: `translates :title, :description` (Mobility).
 
-### Expertise ✓
-Fields: `name` (string), `description` (text), `years_of_experience` (integer).
+### Experience ✓
+Fields: `name` (string), `description` (i18n: `description_en`, `description_nl`, `description_de`), `years_of_experience` (integer), `category` (integer enum), `icon` (string).
+`accent` is a computed method derived from `years_of_experience` (common → legendary).
 Validations: `name`, `years_of_experience` are required.
 Ordering: `default_scope` orders by `years_of_experience DESC`.
-Associations: `has_many :skills, through: :expertise_skills`.
+Associations: `has_many :skills, through: :experience_skills`.
+Enum: `category` — `frontend`, `backend`, `fullstack`, `devops`, `platform`, `apps`, `programming_language`, `other`.
+i18n: `translates :description` (Mobility).
 
 ### Skill ✓
-Fields: `name` (string), `description` (text), `level` (integer enum: `familiar: 1`, `proficient: 2`, `expert: 3`).
+Fields: `name` (string), `description` (i18n: `description_en`, `description_nl`, `description_de`), `level` (integer enum), `icon` (string), `accent` (string).
 Validations: `name`, `level` are required.
-Associations: `has_many :expertises, through: :expertise_skills`, `has_many :jobs, through: :job_skills`, `has_many :projects, through: :project_skills`.
+Associations: `has_many :experiences, through: :experience_skills`, `has_many :jobs, through: :job_skills`, `has_many :projects, through: :project_skills`.
+Enum: `level` — `familiar: 1`, `proficient: 2`, `expert: 3`.
+i18n: `translates :description` (Mobility).
 
-### ExpertiseSkill ✓
-Join table between `Expertise` and `Skill`. No extra fields.
+### ExperienceSkill ✓
+Join table between `Experience` and `Skill`. Extra field: `info` (text).
 
 ### JobSkill ✓
-Join table between `Job` and `Skill`. No extra fields.
+Join table between `Job` and `Skill`. Extra fields: `category` (integer), `info` (text).
 
 ### Project ✓
-Fields: `name` (string), `description` (text), `url` (string, optional), `repo_url` (string, optional), `position` (integer), `year` (integer).
+Fields: `name` (string), `description` (i18n: `description_en`, `description_nl`, `description_de`), `url` (string, optional), `repo_url` (string, optional), `position` (integer), `year` (integer), `accent` (string), `image` (string).
 Validations: `name` is required. `url` and `repo_url` must be valid HTTP/HTTPS URLs if present.
 Ordering: `default_scope` orders by `position ASC`.
 Associations: `has_many :skills, through: :project_skills`.
+i18n: `translates :description` (Mobility).
 
 ### ProjectSkill ✓
-Join table between `Project` and `Skill`. No extra fields.
+Join table between `Project` and `Skill`. Extra field: `info` (text).
 
 ### CvDownload ✓
-Fields: `email` (string), `token` (string, unique), `requested_at` (datetime), `approved_at` (datetime), `download_count` (integer), `last_download_at` (datetime, nullable).
+Fields: `email` (string), `token` (string, unique), `requested_at` (datetime), `approved_at` (datetime), `download_count` (integer, default 0), `last_download_at` (datetime, nullable), `role` (integer enum), `language` (integer enum), `skills` (text array).
 Token is generated via `has_secure_token` and expires after 24 hours. `approved_at` is auto-set on creation (no manual approval yet). `download_count` is incremented and `last_download_at` is updated on each download.
+Enum: `role` — `frontend`, `backend`, `fullstack`, `devops`, `platform`, `apps`, `default`.
+Enum: `language` — `en`, `nl`, `de`.
 
 **Future:** Add `denied_at` and admin approval/denial flow once User authentication is implemented.
 
@@ -72,7 +84,7 @@ Token is generated via `has_secure_token` and expires after 24 hours. `approved_
 ## CV
 
 ### Generation
-`PagesController#cv` renders the CV as an HTML page using Job, Skill, and Expertise data. `PagesController#cv_preview` renders the same view with the dedicated CV layout (intended for development/print preview).
+`PagesController#cv` renders the CV as an HTML page using Job, Skill, and Experience data. `PagesController#cv_preview` renders the same view with the dedicated CV layout (intended for development/print preview).
 
 The Rake task `bin/rails cv:generate` generates the PDF: it boots a temporary local Rails server on port 3099, hits `/cv/preview` via Grover (Puppeteer/Chrome), and writes the output to `storage/cv/cv.pdf`. Requires Chrome in the Docker image.
 
@@ -97,18 +109,16 @@ The landing page, also serving as the traditional "About" page.
 - Short personal introduction / bio
 - CTAs and hints pointing visitors to other sections of the site
 
-### Experience
-A combination of two sub-resources: **Expertise** and **Skills**.
+### Experience ✓
+Showcases broad areas of technical knowledge (`Experience` model) alongside individual skills (`Skill` model).
 
-#### Expertise ✓
-Showcases broad areas of knowledge and experience in software engineering, each with a short summary of the type of work and technologies involved. Rendered dynamically from the `Expertise` model on the experience page, ordered by `years_of_experience DESC`. Associated skills are shown as tags.
+#### Experience panels ✓
+Each experience entry renders as a selectable row in a two-column layout (rail + panel). Clicking a row reveals the associated skills as proficiency bars (familiar / proficient / expert). Ordered by `years_of_experience DESC`. Entries are category-tagged (backend, devops, etc.) and colour-coded by `accent`.
 
-#### Skills
-A grid/collection of specific technologies with an indication of proficiency level (1–3 scale: familiar/proficient/expert). `Skill` model is implemented and seeded; the view renders "Coming soon." Layout TBD.
+#### Skills ✓
+Skills are rendered per-experience in the panel view as inline proficiency bars, sorted by level descending. Skills grid/standalone view: TBD.
 
 Open question: Should non-engineering skills also be listed here? (e.g. spoken languages, SCRUM/Agile, JIRA)
-
-Idea: Skills displayed as a grid where tile size reflects proficiency level (xs–xl) and related skills are clustered together.
 
 ### Career ✓
 A chronological list of jobs and positions, ordered from most recent to oldest. Rendered dynamically from the `Job` model via `JobsController`. Each entry displays role, company, dates, and description. Seeded with 5 real entries.
