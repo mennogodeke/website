@@ -59,15 +59,15 @@ class LocaleTest < ActionDispatch::IntegrationTest
   test "home page renders Dutch intro text" do
     get "/nl"
     assert_response :success
-    assert_includes response.body, "full-stack engineer"
-    assert_includes response.body, "BEKIJK WERK"
+    assert_includes response.body, "Fullstack Software Engineer"
+    assert_includes response.body, "Bekijk werk"
   end
 
   test "home page renders German intro text" do
     get "/de"
     assert_response :success
-    assert_includes response.body, "Full-Stack-Entwickler"
-    assert_includes response.body, "ARBEITEN ANSEHEN"
+    assert_includes response.body, "Fullstack Software Engineer"
+    assert_includes response.body, "Arbeiten ansehen"
   end
 
   test "contact page renders Dutch form labels" do

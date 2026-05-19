@@ -1,6 +1,10 @@
 <section class="section is-medium container is-max-widescreen">
-  <div class="title-row">
-    <h1 class="title is-1"><%= t 'pages.projects.title' %></h1>
-    <div class="subtitle"><%= t 'pages.projects.subtitle' %></div>
+  <h1 class="title is-1"><%= t 'pages.projects.title' %></h1>
+  <h2 class="title is-2"><%= t 'pages.projects.subtitle' %></h2>
+
+  <div class="proj-list">
+    <% @projects.each_with_index do |project, i| %>
+      <%= render "project_row", project: project, index: i %>
+    <% end %>
   </div>
 </section>

@@ -21,7 +21,7 @@
 }
 
 .footer-built-label {
-  font-family: var(--app-font-body);
+  font-family: var(--bulma-family-primary);
   font-size: 0.72rem;
   color: rgba(0, 0, 0, 0.4);
   white-space: nowrap;
@@ -56,7 +56,7 @@
 }
 
 .footer-logo {
-  font-family: var(--app-font-display);
+  font-family: var(--bulma-family-secondary);
   font-weight: 800;
   font-size: 0.85rem;
   letter-spacing: 0.08em;
@@ -64,7 +64,7 @@
 }
 
 .footer-copy {
-  font-family: var(--app-font-body);
+  font-family: var(--bulma-family-primary);
   font-size: 0.72rem;
   color: rgba(0, 0, 0, 0.4);
 }

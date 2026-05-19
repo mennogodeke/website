@@ -1,40 +1,143 @@
-<%# ============================================================ %>
-<%# HERO %>
-<%# ============================================================ %>
-<section class="home-hero">
-  <div class="hero-inner">
-    <div class="hero-left">
-      <div class="hero-badge"><%= t 'pages.home.hello' %></div>
+<%# ── Hero ── %>
+<div class="home-hero container is-max-widescreen section">
+  <div class="home-hero-grid">
 
-      <h1 class="title is-1 hero-name"><%= t 'pages.home.title' %></h1>
-      <h1 class="subtitle"><%= t 'pages.home.subtitle' %></h1>
-
-      <p class="hero-bio">
-        <%= t 'pages.home.intro' %>
-      </p>
-
-      <div class="hero-ctas">
-        <%= link_to projects_path, class: "button is-primary" do %>
-          <%= t("pages.home.view_work").upcase %> <i class="fa-solid fa-arrow-right"></i>
-        <% end %>
-        <%= link_to new_cv_download_path, class: "button is-outlined" do %>
-          <%= t("pages.home.download_cv").upcase %>
-        <% end %>
-      </div>
-
-      <div class="hero-status">
-        <span class="status-dot"></span>
-        <span class="status-label"><%= t("pages.home.status").upcase %></span>
-      </div>
+    <%# Left: site identity %>
+    <div>
+      <p class="is-family-code is-size-7 has-text-primary mb-3">Hi, I'm Menno</p>
+      <p class="title is-3 mb-1">Welcome to</p>
+      <h1 class="title home-site-title mb-5"><span class="has-text-primary">MENNO</span>.CODES</h1>
+      <p class="is-size-5 home-hero-sub">My little corner of the internet — a personal portfolio and interactive CV where you can explore my work, browse my experience, and grab my CV if you like what you see.</p>
     </div>
 
-    <div class="hero-right">
-      <figure class="image is-384x384 hero-avatar">
-        <img class="is-rounded" src="https://placehold.co/384x384/000000/333333" alt="Menno Godeke">
-      </figure>
+    <%# Right: personal intro %>
+    <div class="home-hero-right">
+
+      <div class="home-headshot img-stub">
+        <span class="is-family-code is-size-7">headshot</span>
+      </div>
+
+      <div>
+        <p class="title is-4 mb-2">Fullstack Software Engineer</p>
+        <span class="home-badge"><span class="home-badge-dot"></span>Open to work</span>
+      </div>
+
+      <p class="is-size-6 home-hero-bio">10 years building back-end systems, full-stack web apps, and developer tooling. Ruby on Rails at the core. Everything else as needed.</p>
+
+      <div class="is-flex home-hero-actions">
+        <%= link_to "Get My CV →", new_cv_download_path, class: "button is-primary" %>
+        <%= link_to "Get in Touch", contact_path, class: "button is-primary is-outlined" %>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<%# ── Bento ── %>
+<section class="section is-medium container is-max-widescreen">
+  <p class="is-family-code is-size-7 has-text-primary mb-2">A Quick Look</p>
+  <h2 class="title is-2 mb-5">The Highlights</h2>
+
+  <div class="home-bento">
+
+    <%# Latest role %>
+    <div class="home-bento-cell">
+      <p class="is-family-code is-size-7 mb-3">Career · Latest Role</p>
+      <% job = @jobs.first %>
+      <% if job %>
+        <h3 class="title is-5 mb-1"><%= job.title %></h3>
+        <p class="is-size-7 mb-2"><%= job.company %></p>
+        <p class="is-size-7 home-bento-body"><%= job.description&.truncate(120) %></p>
+      <% end %>
+      <%= link_to "Full career →", jobs_path, class: "is-family-code is-size-7 has-text-primary home-bento-link" %>
+    </div>
+
+    <%# Years stat %>
+    <div class="home-bento-cell home-bento-stat">
+      <p class="is-family-code is-size-7 mb-3">Experience</p>
+      <p class="home-bento-big has-text-primary">10</p>
+      <p class="title is-6 mb-1">Years Full-Stack</p>
+      <p class="is-family-code is-size-7">8yr Back-End · 5yr DevOps</p>
+    </div>
+
+    <%# Top skills %>
+    <div class="home-bento-cell">
+      <p class="is-family-code is-size-7 mb-3">Top Skills</p>
+      <% max_yoe = @top_expertises.first&.years_of_experience.to_f.nonzero? || 1 %>
+      <% @top_expertises.each do |exp| %>
+        <div class="home-mbar">
+          <span class="home-mbar-name is-size-7"><%= exp.name %></span>
+          <div class="home-mbar-track">
+            <div class="home-mbar-fill" style="width: <%= [(exp.years_of_experience / max_yoe * 100).round, 100].min %>%"></div>
+          </div>
+        </div>
+      <% end %>
+      <%= link_to "All experience →", experience_path, class: "is-family-code is-size-7 has-text-primary home-bento-link" %>
+    </div>
+
+    <%# Featured project (wide) %>
+    <div class="home-bento-cell home-bento-wide">
+      <% if @featured_project %>
+        <div>
+          <p class="is-family-code is-size-7 mb-3">Projects · Featured</p>
+          <h3 class="title is-5 mb-1"><%= @featured_project.name %></h3>
+          <p class="is-size-7 home-bento-body mb-3"><%= @featured_project.description&.truncate(120) %></p>
+          <div class="tags mb-3">
+            <% @featured_project.skills.first(4).each do |skill| %>
+              <span class="tag"><%= skill.name %></span>
+            <% end %>
+          </div>
+          <%= link_to t('pages.home.view_work'), projects_path, class: "is-family-code is-size-7 has-text-primary home-bento-link" %>
+        </div>
+        <div class="img-stub home-bento-img">
+          <span class="is-family-code is-size-7"><%= @featured_project.name %></span>
+        </div>
+      <% end %>
+    </div>
+
+    <%# About teaser %>
+    <div class="home-bento-cell">
+      <p class="is-family-code is-size-7 mb-3">About Me</p>
+      <p class="is-size-7 home-bento-body">Dutch engineer, decade of Rails, currently open to opportunities. I build systems that handle real money for real users — and they haven't caught fire yet.</p>
     </div>
 
   </div>
 </section>
 
+<hr class="home-divider">
 
+<%# ── About ── %>
+<section class="section is-medium container is-max-widescreen">
+  <div class="home-about-grid">
+
+    <div>
+      <p class="is-family-code is-size-7 has-text-primary mb-2">About Me</p>
+      <h2 class="title is-3 has-text-primary mb-4">The Person</h2>
+      <p class="is-size-5 mb-4"><%= t 'pages.home.intro' %></p>
+    </div>
+
+    <div>
+      <p class="is-family-code is-size-7 has-text-primary mb-2">About This Site</p>
+      <h2 class="title is-3 has-text-primary mb-4">The Stack</h2>
+      <p class="is-size-5 mb-4">A Rails 8 application deployed via Docker and Kamal. Email-gated CV download with PDF generation. Bold design — the kind of portfolio that stands out in a recruiter's inbox.</p>
+      <div class="tags mb-4">
+        <span class="tag">Rails 8.1</span>
+        <span class="tag">Ruby 3.4</span>
+        <span class="tag">Hotwire</span>
+        <span class="tag">Bulma CSS</span>
+        <span class="tag">Kamal</span>
+        <span class="tag">Docker</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<%# ── Footer CTA ── %>
+<div class="home-footer-cta container is-max-widescreen">
+  <h2 class="title is-2">Open to work.<br><span class="has-text-primary">Let's talk.</span></h2>
+  <div class="is-flex home-hero-actions">
+    <%= link_to "Get My CV →", new_cv_download_path, class: "button is-primary" %>
+    <%= link_to "Get in Touch", contact_path, class: "button is-primary is-outlined" %>
+  </div>
+</div>
