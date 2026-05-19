@@ -1,0 +1,30 @@
+backend_rails:       { experience: backend,   skill: ruby_on_rails }
+backend_ruby:        { experience: backend,   skill: ruby }
+backend_postgresql:  { experience: backend,   skill: postgresql }
+backend_docker:      { experience: backend,   skill: docker }
+backend_adyen:       { experience: backend,   skill: adyen }
+backend_chargebee:   { experience: backend,   skill: chargebee }
+backend_stripe:      { experience: backend,   skill: stripe }
+backend_nodejs:      { experience: backend,   skill: nodejs }
+backend_typescript:  { experience: backend,   skill: typescript }
+backend_go:          { experience: backend,   skill: go }
+
+fullstack_rails:      { experience: fullstack, skill: ruby_on_rails }
+fullstack_javascript: { experience: fullstack, skill: javascript }
+fullstack_vuejs:      { experience: fullstack, skill: vuejs }
+fullstack_typescript: { experience: fullstack, skill: typescript }
+fullstack_nodejs:     { experience: fullstack, skill: nodejs }
+fullstack_postgresql: { experience: fullstack, skill: postgresql }
+
+devops_docker:          { experience: devops, skill: docker }
+devops_github_actions:  { experience: devops, skill: github_actions }
+devops_kubernetes:      { experience: devops, skill: kubernetes }
+devops_ansible:         { experience: devops, skill: ansible }
+
+cloud_aws:        { experience: cloud, skill: aws }
+cloud_terraform:  { experience: cloud, skill: terraform }
+cloud_ansible:    { experience: cloud, skill: ansible }
+cloud_docker:     { experience: cloud, skill: docker }
+cloud_kubernetes: { experience: cloud, skill: kubernetes }
+
+apps_swift: { experience: apps, skill: swift }

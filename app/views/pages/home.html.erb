@@ -63,8 +63,8 @@
     <%# Top skills %>
     <div class="home-bento-cell">
       <p class="is-family-code is-size-7 mb-3">Top Skills</p>
-      <% max_yoe = @top_expertises.first&.years_of_experience.to_f.nonzero? || 1 %>
-      <% @top_expertises.each do |exp| %>
+      <% max_yoe = @top_experiences.first&.years_of_experience.to_f.nonzero? || 1 %>
+      <% @top_experiences.each do |exp| %>
         <div class="home-mbar">
           <span class="home-mbar-name is-size-7"><%= exp.name %></span>
           <div class="home-mbar-track">

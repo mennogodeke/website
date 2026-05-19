@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
   def home
     @jobs = Job.includes(:skills).order(start_date: :desc).limit(2)
-    @top_expertises = Expertise.limit(6)
+    @top_experiences = Experience.limit(6)
     @featured_project = Project.includes(:skills).order(year: :desc).first
   end
 
@@ -9,9 +9,9 @@ class PagesController < ApplicationController
   end
 
   def design_preview
-    @expertises = Expertise.includes(:skills).all
+    @experiences = Experience.includes(:skills).all
     @jobs = Job.includes(:skills).order(start_date: :desc).limit(2)
-    @top_expertises = Expertise.limit(6)
+    @top_experiences = Experience.limit(6)
     @featured_project = Project.includes(:skills).order(year: :desc).first
   end
 
@@ -28,7 +28,7 @@ class PagesController < ApplicationController
 
   def load_cv_data
     @jobs = Job.includes(:skills).order(start_date: :desc)
-    @expertises = Expertise.includes(:skills).all
+    @experiences = Experience.includes(:skills).all
     @skills = Skill.all
   end
 end
