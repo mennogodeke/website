@@ -1,0 +1,210 @@
+/* ============================================================
+   Home page
+   ============================================================ */
+
+/* ── Hero ── */
+.home-hero {
+  min-height: calc(100vh - 56px);
+  display: flex;
+  align-items: center;
+}
+
+.home-hero-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 80px;
+  align-items: center;
+  width: 100%;
+}
+
+.home-site-title {
+  font-size: 5.5rem !important;
+  line-height: 0.9 !important;
+  white-space: nowrap;
+}
+
+.home-hero-sub {
+  max-width: 480px;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.65;
+}
+
+.home-hero-right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.home-headshot {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  flex-shrink: 0;
+}
+
+.home-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(74, 222, 128, 0.12);
+  border: 1px solid rgba(74, 222, 128, 0.35);
+  border-radius: 20px;
+  padding: 5px 14px;
+  font-family: var(--bulma-family-secondary);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #4ade80;
+}
+
+.home-badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #4ade80;
+  flex-shrink: 0;
+  animation: badge-blink 2s infinite;
+}
+
+@keyframes badge-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.home-hero-bio {
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.65;
+}
+
+.home-hero-actions {
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.home-divider {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ── Bento ── */
+.home-bento {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr;
+  gap: 14px;
+}
+
+.home-bento-cell {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 26px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.home-bento-stat {
+  align-items: center;
+  text-align: center;
+}
+
+.home-bento-wide {
+  grid-column: span 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: center;
+  flex-direction: unset;
+}
+
+.home-bento-big {
+  font-family: var(--bulma-family-secondary);
+  font-weight: 900;
+  font-size: 5rem;
+  line-height: 1;
+}
+
+.home-bento-body {
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.55;
+  flex: 1;
+}
+
+.home-bento-link {
+  margin-top: auto;
+  padding-top: 12px;
+
+  &:hover { text-decoration: underline; }
+}
+
+.home-bento-img {
+  aspect-ratio: 16 / 10;
+  width: 100%;
+}
+
+/* ── Mini skill bars ── */
+.home-mbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.home-mbar-name {
+  width: 90px;
+  flex-shrink: 0;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.home-mbar-track {
+  flex: 1;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.home-mbar-fill {
+  height: 100%;
+  background: var(--bulma-primary);
+}
+
+/* ── About ── */
+.home-about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+}
+
+/* ── Footer CTA ── */
+.home-footer-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 3rem 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .home-hero-grid,
+  .home-about-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .home-bento {
+    grid-template-columns: 1fr;
+  }
+
+  .home-bento-wide {
+    grid-column: span 1;
+    grid-template-columns: 1fr;
+  }
+
+  .home-site-title {
+    font-size: 3.5rem !important;
+    white-space: normal;
+  }
+}

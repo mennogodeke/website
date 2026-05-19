@@ -28,6 +28,7 @@ data["expertises"].each do |attrs|
   expertise = Expertise.find_or_initialize_by(name: en["name"])
   expertise.assign_attributes(
     years_of_experience: attrs["years_of_experience"],
+    category:            attrs["category"],
     icon:                attrs["icon"],
     description_en:      en["description"],
     description_nl:      nl["description"],

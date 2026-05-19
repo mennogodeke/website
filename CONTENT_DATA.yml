@@ -467,7 +467,7 @@ expertises:
 
   - key: backend
     years_of_experience: 8
-    accent: ~
+    category: backend
     icon: fa-solid fa-server
     image: ~
     skills:
@@ -504,7 +504,7 @@ expertises:
 
   - key: fullstack
     years_of_experience: 10
-    accent: ~
+    category: fullstack
     icon: fa-solid fa-layer-group
     image: ~
     skills:
@@ -537,7 +537,7 @@ expertises:
 
   - key: devops
     years_of_experience: 5
-    accent: ~
+    category: devops
     icon: fa-solid fa-gears
     image: ~
     skills:
@@ -567,7 +567,7 @@ expertises:
 
   - key: cloud
     years_of_experience: 3
-    accent: ~
+    category: platform
     icon: fa-solid fa-cloud
     image: ~
     skills:
@@ -600,7 +600,7 @@ expertises:
 
   - key: apps
     years_of_experience: 2
-    accent: ~
+    category: apps
     icon: fa-brands fa-apple
     image: ~
     skills:

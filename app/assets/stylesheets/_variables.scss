@@ -1,0 +1,106 @@
+/* ============================================================
+   Button overrides
+   (font-family, padding, border-width handled via Sass variables)
+   ============================================================ */
+.button {
+  border-radius: 0;
+  text-transform: uppercase;
+  gap: 0.5rem;
+}
+
+.title.is-1{
+  font-size: clamp(5.5rem, 8vw, 6.5rem);
+}
+
+@each $color in primary, link, info, success, warning, danger, legendary, epic, rare, uncommon, common {
+  .button.is-#{$color} {
+    background: var(--bulma-#{$color});
+    color: var(--bulma-#{$color}-invert);
+    border: 2px solid var(--bulma-#{$color});
+    transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+
+    &:hover,
+    &:focus {
+      background: transparent;
+      color: var(--bulma-#{$color});
+      border-color: var(--bulma-#{$color});
+    }
+
+    &.is-outlined {
+      background: transparent;
+      color: var(--bulma-#{$color});
+      border: 2px solid var(--bulma-#{$color});
+
+      &:hover,
+      &:focus {
+        background: var(--bulma-#{$color});
+        color: var(--bulma-#{$color}-invert);
+      }
+    }
+  }
+}
+
+/* ============================================================
+   Form overrides
+   ============================================================ */
+.input,
+.textarea {
+  background: #ffffff;
+  color: #0b1729;
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: none;
+  font-family: var(--bulma-family-primary);
+}
+
+.input:focus,
+.textarea:focus {
+  border-color: var(--bulma-primary);
+  box-shadow: 0 0 0 2px rgba(var(--bulma-primary-rgb), 0.25);
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: rgba(11, 23, 41, 0.35);
+}
+
+.label {
+  font-family: var(--bulma-family-secondary);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* ============================================================
+   Global reset / dark base
+   ============================================================ */
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+.main-content {
+  flex: 1;
+}
+
+body {
+  background-color: white;
+  background-image: url("hero-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: var(--bulma-text);
+  font-family: var(--bulma-family-primary);
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  --bulma-body-background-color: white;
+  --bulma-text: #ffffff;
+  --bulma-border: rgba(255, 255, 255, 0.1);
+  --bulma-scheme-main-l: 95%;
+  --bulma-scheme-h: 221;
+  --bulma-scheme-s: 50%;
+}

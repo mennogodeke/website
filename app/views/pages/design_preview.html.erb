@@ -4,274 +4,198 @@
 
 
 <%# ============================================================ %>
-<%# 1. TITLES                                                    %>
+<%# 1. COLORS                                                    %>
 <%# ============================================================ %>
-<section class="section is-medium preview-section">
-  <div class="title-row">
-    <h1 class="title is-1">Titles</h1>
-    <div class="subtitle">Typography</div>
-  </div>
+<section class="section is-medium">
+  <h1 class="title is-1">Design Preview</h1>
+  <div class="columns">
+    <div class="column">
+      <h2 class="title is-2">Colors</h2>
+      <%# ============================================================ %>
+      <%# 1. COLORS                                                    %>
+      <%# ============================================================ %>
+      <% theme_colors = %w[primary link info success warning danger legendary epic rare uncommon common] %>
+      <% shades = %w[00 05 10 15 20 25 30 35 40 45 50 55 60 65 70 75 80 85 90 95 100] %>
+      <% semantic = [nil, "light", "dark", "soft", "bold", "on-scheme"] %>
 
-  <div class="preview-label">Title sizes (is-1 → is-6)</div>
-  <h2 class="title is-1">Is-1 — Page Hero</h2>
-  <h2 class="title is-2">Is-2 — Section Heading</h2>
-  <h2 class="title is-3">Is-3 — Subsection</h2>
-  <h2 class="title is-4">Is-4 — Card Heading</h2>
-  <h2 class="title is-5">Is-5 — Minor Heading</h2>
-  <h2 class="title is-6">Is-6 — Label Heading</h2>
+      <% theme_colors.each do |color| %>
+        <div class="mb-6">
+          <h2 class="title is-5 mb-2"><%= color.capitalize %></h2>
 
-  <div class="preview-label">Subtitle sizes (is-1 → is-6)</div>
-  <div class="preview-row is-centered">
-    <div class="subtitle is-1">Is-1</div>
-    <div class="subtitle is-2">Is-2</div>
-    <div class="subtitle is-3">Is-3 (default)</div>
-    <div class="subtitle is-4">Is-4</div>
-    <div class="subtitle is-5">Is-5</div>
-    <div class="subtitle is-6">Is-6</div>
-  </div>
+          <%# Numbered shades %>
+          <div class="is-flex mb-2">
+            <% shades.each do |shade| %>
+              <div class="is-flex-grow-1 has-background-<%= color %>-<%= shade %> has-text-centered py-5">
+                <span class="is-size-7 has-text-<%= color %>-<%= shade %>-invert"><%= shade %></span>
+              </div>
+            <% end %>
+          </div>
 
-  <div class="preview-label">Title + subtitle paired</div>
-  <div class="title-row">
-    <h2 class="title is-1">Career</h2>
-    <div class="subtitle is-3">Where I've been</div>
-  </div>
-  <div class="title-row">
-    <h2 class="title is-2">Experience</h2>
-    <div class="subtitle is-4">What I've been doing</div>
-  </div>
-  <div class="title-row">
-    <h2 class="title is-3">Skills</h2>
-    <div class="subtitle is-5">What I'm working with</div>
-  </div>
-</section>
-
-<%# ============================================================ %>
-<%# 2. BUTTONS                                                   %>
-<%# ============================================================ %>
-<section class="section preview-section">
-  <div class="title-row">
-    <h2 class="title is-2">Buttons</h2>
-    <div class="subtitle">Actions</div>
-  </div>
-
-  <div class="preview-label">Variants</div>
-  <div class="preview-row">
-    <a class="button is-primary">Primary</a>
-    <a class="button is-primary">
-      View Work <i class="fa-solid fa-arrow-right"></i>
-    </a>
-    <a class="button is-outlined">Outlined</a>
-    <a class="button is-outlined">Download CV</a>
-  </div>
-
-  <div class="preview-label">Sizes</div>
-  <div class="preview-row">
-    <a class="button is-primary is-small">Small</a>
-    <a class="button is-primary">Default</a>
-    <a class="button is-primary is-medium">Medium</a>
-    <a class="button is-primary is-large">Large</a>
-  </div>
-</section>
-
-<%# ============================================================ %>
-<%# 3. JOBS                                                      %>
-<%# ============================================================ %>
-<section class="section preview-section">
-  <div class="title-row">
-    <h2 class="title is-2">Jobs</h2>
-    <div class="subtitle">Career entries</div>
-  </div>
-
-  <div class="career-list">
-    <div class="box job-box">
-      <div>
-        <p class="job-title">Senior Backend Engineer</p>
-        <span class="job-company">Acme Corporation</span>
-      </div>
-      <span class="job-dates">Jan 2022 – Present</span>
-    </div>
-    <div class="box job-box">
-      <div>
-        <p class="job-title">Backend Engineer</p>
-        <span class="job-company">Globex Industries</span>
-      </div>
-      <span class="job-dates">Mar 2019 – Dec 2021</span>
-    </div>
-    <div class="box job-box">
-      <div>
-        <p class="job-title">Junior Developer</p>
-        <span class="job-company">Initech Bureau</span>
-      </div>
-      <span class="job-dates">Jun 2016 – Feb 2019</span>
-    </div>
-  </div>
-</section>
-
-<%# ============================================================ %>
-<%# 4. EXPERTISES                                                %>
-<%# ============================================================ %>
-<section class="section preview-section">
-  <div class="title-row">
-    <h2 class="title is-2">Expertises</h2>
-    <div class="subtitle">Skill areas</div>
-  </div>
-
-  <%
-    expertise_sample = [
-      { years: "10+", name: "Back-end Development",  desc: "Building robust, scalable server-side systems with a focus on reliability and developer experience. API design, background job processing, database architecture, and performance tuning at scale.", tags: ["Ruby on Rails","PostgreSQL","Redis","Sidekiq"], css: "is-backend" },
-      { years: "6+",  name: "Cloud & DevOps",        desc: "Infrastructure as code, container orchestration, and CI/CD pipelines. Designing cloud-native systems that scale without surprises, with a strong emphasis on observability and cost efficiency.", tags: ["AWS","Docker","Terraform","GitHub Actions"], css: "is-cloud" },
-      { years: "4+",  name: "iOS & macOS",            desc: "Native Apple platform applications built with Swift and modern frameworks. From App Store shipping to enterprise tooling, with attention to platform conventions and smooth animations.", tags: ["Swift","SwiftUI","Xcode","Combine"], css: "is-ios" },
-      { years: "5+",  name: "Front-end Development", desc: "Interactive, fast user interfaces built with modern JavaScript and Hotwire. Bridging the gap between server-rendered views and reactive experiences without a full SPA overhead.", tags: ["Hotwire","React","TypeScript","CSS"], css: "is-frontend" },
-    ]
-  %>
-
-  <div class="preview-label">Variant A — Number dominant (hover)</div>
-  <div class="expertise-grid is-stat preview-spaced">
-    <% expertise_sample.each do |e| %>
-      <div class="expertise-card <%= e[:css] %>">
-        <span class="expertise-card-years"><%= e[:years] %></span>
-        <h3 class="expertise-card-name"><%= e[:name] %></h3>
-        <p class="expertise-card-description"><%= e[:desc] %></p>
-        <div class="expertise-card-tags">
-          <% e[:tags].each do |t| %><span class="tag skill-tag"><%= t %></span><% end %>
-        </div>
-      </div>
-    <% end %>
-  </div>
-
-  <div class="preview-label">Variant B — Image + centered years, rounded (hover)</div>
-  <div class="expertise-grid is-band preview-spaced">
-    <% expertise_sample.each do |e| %>
-      <div class="expertise-card <%= e[:css] %>">
-        <div class="expertise-card-image-wrap">
-          <img src="https://placehold.co/600x338/ffffff/cccccc" alt="">
-          <span class="expertise-card-years"><%= e[:years] %></span>
-        </div>
-        <div class="expertise-card-body">
-          <h3 class="expertise-card-name"><%= e[:name] %></h3>
-          <p class="expertise-card-description"><%= e[:desc] %></p>
-          <div class="expertise-card-tags">
-            <% e[:tags].each do |t| %><span class="tag skill-tag"><%= t %></span><% end %>
+          <%# Semantic variants %>
+          <div class="is-flex">
+            <% semantic.each do |variant| %>
+              <% bg = variant ? "has-background-#{color}-#{variant}" : "has-background-#{color}" %>
+              <div class="is-flex-grow-1 <%= bg %> has-text-centered py-3">
+                <span class="is-size-7"><%= variant || "base" %></span>
+              </div>
+            <% end %>
           </div>
         </div>
-      </div>
-    <% end %>
-  </div>
+      <% end %>
 
-  <div class="preview-label">Variant C — Image + years badge top-right, top border (hover)</div>
-  <div class="expertise-grid is-top preview-spaced">
-    <% expertise_sample.each do |e| %>
-      <div class="expertise-card <%= e[:css] %>">
-        <div class="expertise-card-image-wrap">
-          <img src="https://placehold.co/600x338/ffffff/cccccc" alt="">
+      <%# Greys & neutrals %>
+      <div class="mb-6">
+        <h2 class="title is-5 mb-2">Greys &amp; Neutrals</h2>
+        <div class="is-flex">
+          <% %w[white light grey-light grey grey-dark dark black].each do |name| %>
+            <div class="is-flex-grow-1 has-background-<%= name %> has-text-centered py-5">
+              <span class="is-size-7"><%= name %></span>
+            </div>
+          <% end %>
         </div>
-        <div class="expertise-card-body">
-          <div class="expertise-card-header">
-            <h3 class="expertise-card-name"><%= e[:name] %></h3>
-            <span class="expertise-card-years"><%= e[:years] %></span>
+      </div>
+    </div>
+    <div class="column">
+      <%# ============================================================ %>
+      <%# 2. TYPOGRAPHY                                                %>
+      <%# ============================================================ %>
+      <h2 class="title is-2">Typography</h2>
+
+      <%# Titles %>
+      <h2 class="title is-2">Titles</h2>
+      <div class="mb-6">
+        <% [1,2,3,4,5,6].each do |n| %>
+          <h<%= n %> class="title is-<%= n %>">Title is-<%= n %></h<%= n %>>
+        <% end %>
+      </div>
+
+      <%# Subtitles %>
+      <h2 class="title is-2">Subtitles</h2>
+      <div class="mb-6">
+        <% [1,2,3,4,5,6].each do |n| %>
+          <p class="subtitle is-<%= n %>">Subtitle is-<%= n %></p>
+        <% end %>
+      </div>
+
+      <%# Size helpers %>
+      <h2 class="title is-2">Size helpers</h2>
+      <div class="mb-6">
+        <% [1,2,3,4,5,6,7].each do |n| %>
+          <p class="is-size-<%= n %> mb-2">is-size-<%= n %> — The quick brown fox jumps over the lazy dog</p>
+        <% end %>
+      </div>
+
+      <%# Weight helpers %>
+      <h2 class="title is-2">Weight helpers</h2>
+      <div class="mb-6">
+        <% { light: 300, normal: 400, medium: 500, semibold: 600, bold: 700 }.each do |name, val| %>
+          <p class="has-text-weight-<%= name %> mb-2">has-text-weight-<%= name %> (<%= val %>) — The quick brown fox jumps over the lazy dog</p>
+        <% end %>
+      </div>
+
+      <%# Font families %>
+      <h2 class="title is-2">Font families</h2>
+      <div class="mb-6">
+        <p class="is-size-4 mb-2" style="font-family: var(--bulma-family-primary)">family-primary (Barlow) — The quick brown fox jumps over the lazy dog</p>
+        <p class="is-size-4 mb-2" style="font-family: var(--bulma-family-secondary)">family-secondary — The quick brown fox jumps over the lazy dog</p>
+        <p class="is-size-4" style="font-family: var(--bulma-family-code)">family-code — The quick brown fox jumps over the lazy dog</p>
+      </div>
+    </div>
+  </div>
+  <div class="columns">
+    <div class="column is-three-fifths">
+      <h2 class="title is-2">Components</h2>
+
+      <h3 class="title is-3">Job</h3>
+      <div class="career-list">
+        <div class="box">
+          <div>
+            <p class="job-title">Senior Software Engineer</p>
+            <span class="job-company">Acme Corp</span>
+            <p>Led development of core platform features and improved system reliability.</p>
           </div>
-          <p class="expertise-card-description"><%= e[:desc] %></p>
-          <div class="expertise-card-tags">
-            <% e[:tags].each do |t| %><span class="tag skill-tag"><%= t %></span><% end %>
+          <span class="job-dates">Jan 2022 – Present</span>
+        </div>
+      </div>
+
+      <h3 class="title is-3 mt-6">Jobs</h3>
+      <div class="career-list">
+        <div class="box">
+          <div>
+            <p class="job-title">Senior Software Engineer</p>
+            <span class="job-company">Acme Corp</span>
+            <p>Led development of core platform features and improved system reliability.</p>
           </div>
+          <span class="job-dates">Jan 2022 – Present</span>
         </div>
-      </div>
-    <% end %>
-  </div>
-
-  <div class="preview-label">Variant D — Horizontal rows (hover)</div>
-  <div class="expertise-grid is-list preview-spaced">
-    <% expertise_sample.each do |e| %>
-      <div class="expertise-card <%= e[:css] %>">
-        <span class="expertise-card-years"><%= e[:years] %></span>
-        <h3 class="expertise-card-name"><%= e[:name] %></h3>
-        <p class="expertise-card-description"><%= e[:desc] %></p>
-        <div class="expertise-card-tags">
-          <% e[:tags].each do |t| %><span class="tag skill-tag"><%= t %></span><% end %>
+        <div class="box">
+          <div>
+            <p class="job-title">Software Engineer</p>
+            <span class="job-company">Example Ltd</span>
+            <p>Built and maintained customer-facing APIs and internal tooling.</p>
+          </div>
+          <span class="job-dates">Mar 2019 – Dec 2021</span>
         </div>
-      </div>
-    <% end %>
-  </div>
-
-  <div class="preview-label">Default (current)</div>
-  <div class="expertise-grid">
-    <div class="expertise-card is-featured is-backend">
-      <span class="expertise-card-years">10+</span>
-      <h3 class="expertise-card-name">Back-end Development</h3>
-      <p class="expertise-card-description">Building robust, scalable server-side systems. API design, background jobs, and database architecture.</p>
-      <div class="expertise-card-tags">
-        <span class="tag skill-tag">Ruby on Rails</span>
-        <span class="tag skill-tag">PostgreSQL</span>
-        <span class="tag skill-tag">Redis</span>
-        <span class="tag skill-tag">Sidekiq</span>
-      </div>
+        <div class="box">
+          <div>
+            <p class="job-title">Junior Developer</p>
+            <span class="job-company">Startup Inc</span>
+            <p>Contributed to frontend and backend features across a SaaS product.</p>
+          </div>
+          <span class="job-dates">Jun 2017 – Feb 2019</span>
+        </div>
+        <div class="box">
+          <div>
+            <p class="job-title">Intern</p>
+            <span class="job-company">Agency BV</span>
+            <p>Assisted with web development projects for various clients.</p>
+          </div>
+          <span class="job-dates">Sep 2016 – May 2017</span>
+        </div>
+      </div> 
+      <h3 class="title is-3 mt-6">Expertise (TBD)</h3>
+      <%# Add Eperience here %>
     </div>
-    <div class="expertise-card is-cloud">
-      <span class="expertise-card-years">6+</span>
-      <h3 class="expertise-card-name">Cloud & DevOps</h3>
-      <p class="expertise-card-description">Infrastructure as code, container orchestration, and CI/CD pipelines.</p>
-      <div class="expertise-card-tags">
-        <span class="tag skill-tag">AWS</span>
-        <span class="tag skill-tag">Docker</span>
-        <span class="tag skill-tag">Terraform</span>
+    <div class="column">
+      <h2 class="title is-2">Elements</h2>
+      <%# ============================================================ %>
+      <%# 3. BUTTONS                                                   %>
+      <%# ============================================================ %>
+      <h3 class="title is-3">Buttons</h3>
+      <h4 class="title is-4">Colors</h4>
+      <div class="buttons mb-6">
+        <% %w[primary link info success warning danger].each do |color| %>
+          <a class="button is-<%= color %>"><%= color.capitalize %></a>
+        <% end %>
+        <a class="button">Default</a>
+        <a class="button is-ghost">Ghost</a>
+        <a class="button is-text">Text</a>
       </div>
-    </div>
-    <div class="expertise-card is-ios">
-      <span class="expertise-card-years">4+</span>
-      <h3 class="expertise-card-name">iOS & macOS Development</h3>
-      <p class="expertise-card-description">Native Apple platform apps with Swift and modern frameworks.</p>
-      <div class="expertise-card-tags">
-        <span class="tag skill-tag">Swift</span>
-        <span class="tag skill-tag">SwiftUI</span>
-        <span class="tag skill-tag">Xcode</span>
+
+      <h4 class="title is-4">Outlined</h4>
+      <div class="buttons mb-6">
+        <% %w[primary link info success warning danger].each do |color| %>
+          <a class="button is-<%= color %> is-outlined"><%= color.capitalize %></a>
+        <% end %>
       </div>
-    </div>
-    <div class="expertise-card is-frontend">
-      <span class="expertise-card-years">5+</span>
-      <h3 class="expertise-card-name">Front-end Development</h3>
-      <p class="expertise-card-description">Interactive UIs with modern JavaScript and Hotwire.</p>
-      <div class="expertise-card-tags">
-        <span class="tag skill-tag">Hotwire</span>
-        <span class="tag skill-tag">React</span>
-        <span class="tag skill-tag">TypeScript</span>
+
+      <h4 class="title is-4">Sizes</h4>
+      <div class="buttons is-vcentered mb-6">
+        <a class="button is-primary is-small">Small</a>
+        <a class="button is-primary">Normal</a>
+        <a class="button is-primary is-medium">Medium</a>
+        <a class="button is-primary is-large">Large</a>
       </div>
+
+      <h4 class="title is-4">States</h4>
+      <div class="buttons mb-6">
+        <a class="button is-primary">Normal</a>
+        <a class="button is-primary is-hovered">Hovered</a>
+        <a class="button is-primary is-focused">Focused</a>
+        <a class="button is-primary is-active">Active</a>
+        <a class="button is-primary is-loading">Loading</a>
+        <a class="button is-primary" disabled>Disabled</a>
+      </div>      
     </div>
-  </div>
-</section>
-
-<%# ============================================================ %>
-<%# 5. SKILLS                                                    %>
-<%# ============================================================ %>
-<section class="section preview-section">
-  <div class="title-row">
-    <h2 class="title is-2">Skills</h2>
-    <div class="subtitle">Individual tools</div>
-  </div>
-
-  <div class="preview-label">Circular badges (hover)</div>
-  <%
-    preview_skills = [
-      "Ruby on Rails", "PostgreSQL", "Sidekiq", "RSpec",
-      "Docker", "AWS", "Redis", "GraphQL",
-      "React", "Swift", "Kubernetes", "Terraform",
-    ]
-  %>
-  <div class="skills-grid">
-    <% preview_skills.each do |name| %>
-      <figure class="image is-128x128 skill-badge">
-        <img src="https://placehold.co/256x256/ffffff/cccccc" alt="<%= name %>">
-        <span class="skill-badge-name"><%= name %></span>
-      </figure>
-    <% end %>
-  </div>
-</section>
-
-<%# ============================================================ %>
-<%# 6. PROJECTS                                                  %>
-<%# ============================================================ %>
-<section class="section preview-section">
-  <div class="title-row">
-    <h2 class="title is-2">Projects</h2>
-    <div class="subtitle">Work</div>
   </div>
 </section>

@@ -1,61 +1,76 @@
-<%# ============================================================ %>
-<%# 1. EXPERTISE — feature cards grid %>
-<%# ============================================================ %>
-<section class="section is-medium container is-max-widescreen">
+<section class="section is-medium container is-max-widescreen" data-controller="experience">
+
   <h1 class="title is-1"><%= t 'pages.experience.title' %></h1>
   <h2 class="title is-2"><%= t 'pages.experience.subtitle' %></h2>
 
-  <div class="expertise-grid is-top">
-    <%= render partial: "experience/expertise_card", collection: @expertises, as: :expertise_card %>
-  </div>
-</section>
+  <%# Two-column layout: 320px rail + flexible panel %>
+  <div class="exp-row">
 
-<%# ============================================================ %>
-<%# 2. SKILLS — 6-column card grid %>
-<%# ============================================================ %>
-<section class="section container is-max-widescreen">
-  <h2 class="title is-2"><%= t("pages.experience.skills_title") %></h2>
+    <%# Rail %>
+    <div class="exp-rail" role="tablist">
+      <% @expertises.each do |expertise| %>
+        <button
+          class="row"
+          role="tab"
+          aria-selected="false"
+          data-experience-target="row"
+          data-experience-key="<%= expertise.category %>"
+          data-action="click->experience#select"
+          style="--row-color: var(--bulma-<%= expertise.accent %>)"
+        >
+          <span><%= expertise.name %></span>
+          <span class="yr"><%= expertise.years_of_experience %>YR</span>
+          <span class="chevron">›</span>
+        </button>
+      <% end %>
+    </div>
 
-  <div class="skills-grid">
-    <% skills_to_show = [
-      { name: "Ruby on Rails", level: "expert" },
-      { name: "PostgreSQL",    level: "expert" },
-      { name: "Docker",        level: "proficient" },
-      { name: "AWS",           level: "proficient" },
-      { name: "React",         level: "familiar" },
-      { name: "Swift",         level: "familiar" },
-      { name: "Kubernetes",    level: "familiar" },
-      { name: "Redis",         level: "proficient" },
-      { name: "GraphQL",       level: "proficient" },
-      { name: "Terraform",     level: "familiar" },
-      { name: "Sidekiq",       level: "expert" },
-      { name: "RSpec",         level: "expert" },
-      { name: "Linux",         level: "expert" },
-      { name: "Git",           level: "expert" },
-      { name: "JavaScript",    level: "proficient" },
-      { name: "TypeScript",    level: "proficient" },
-      { name: "Python",        level: "proficient" },
-      { name: "Nginx",         level: "proficient" },
-      { name: "Kamal",         level: "proficient" },
-      { name: "Hotwire",       level: "proficient" },
-      { name: "Stimulus",      level: "proficient" },
-      { name: "Ansible",       level: "familiar" },
-      { name: "Elasticsearch", level: "familiar" },
-      { name: "Kafka",         level: "familiar" },
-      { name: "MySQL",         level: "familiar" },
-      { name: "Vue.js",        level: "familiar" },
-      { name: "iOS",           level: "proficient" },
-      { name: "CI/CD",         level: "proficient" },
-      { name: "macOS",         level: "familiar" },
-      { name: "Turbo",         level: "proficient" }
-    ] %>
+    <%# Panels %>
+    <div>
+      <% @expertises.each do |expertise| %>
+        <% sorted_skills = expertise.skills.sort_by { |s| -Skill.levels[s.level] } %>
+        <div
+          class="exp-panel"
+          data-experience-target="panel"
+          data-experience-key="<%= expertise.category %>"
+          style="--panel-color: var(--bulma-<%= expertise.accent %>)"
+          hidden
+        >
+          <%# Header: area name + years count %>
+          <div class="is-flex is-align-items-baseline is-justify-content-space-between is-flex-wrap-wrap mb-4">
+            <h2 class="title is-2 mb-0"><%= expertise.name.upcase %></h2>
+            <div class="is-flex is-align-items-baseline">
+              <span class="exp-years-num mr-2"><%= expertise.years_of_experience %></span>
+              <span class="is-family-code is-size-7">YEARS</span>
+            </div>
+          </div>
 
-    <% skills_to_show.each do |skill| %>
-      <% name = skill.respond_to?(:name) ? skill.name : skill[:name] %>
-      <figure class="image is-128x128 skill-badge">
-        <img src="https://placehold.co/256x256/ffffff/cccccc" alt="<%= name %>">
-        <span class="skill-badge-name"><%= name %></span>
-      </figure>
-    <% end %>
+          <%# Description %>
+          <p class="is-size-5 mb-5"><%= expertise.description %></p>
+
+          <%# Skills header %>
+          <div class="is-flex is-align-items-baseline is-justify-content-space-between mb-3">
+            <span class="is-family-code is-size-7">Skills · ordered by proficiency</span>
+            <span class="is-family-code is-size-7"><%= expertise.skills.count %> total</span>
+          </div>
+
+          <%# Skill rows %>
+          <div>
+            <% sorted_skills.each_with_index do |skill, i| %>
+              <% pct = skill.expert? ? 100 : skill.proficient? ? 66 : 33 %>
+              <div class="sk-row">
+                <span class="is-size-7 has-text-weight-bold is-uppercase"><%= skill.name %></span>
+                <div class="bar">
+                  <i data-width="<%= pct %>" style="transition-delay: <%= i * 30 %>ms"></i>
+                </div>
+                <span class="is-family-code is-size-7 has-text-right"><%= skill.level.capitalize %></span>
+              </div>
+            <% end %>
+          </div>
+
+        </div>
+      <% end %>
+    </div>
+
   </div>
 </section>
