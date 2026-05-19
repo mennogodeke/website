@@ -26,6 +26,5 @@ module Website
 
     config.i18n.available_locales = [ :en, :nl, :de ]
     config.i18n.default_locale = :en
-
   end
 end
