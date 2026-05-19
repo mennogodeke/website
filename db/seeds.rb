@@ -19,14 +19,14 @@ data["skills"].each do |attrs|
   skill.save!
 end
 
-# Expertises
-data["expertises"].each do |attrs|
+# Experiences
+data["experiences"].each do |attrs|
   en = attrs["translations"]["en"]
   nl = attrs["translations"]["nl"]
   de = attrs["translations"]["de"]
 
-  expertise = Expertise.find_or_initialize_by(name: en["name"])
-  expertise.assign_attributes(
+  experience = Experience.find_or_initialize_by(name: en["name"])
+  experience.assign_attributes(
     years_of_experience: attrs["years_of_experience"],
     category:            attrs["category"],
     icon:                attrs["icon"],
@@ -34,12 +34,12 @@ data["expertises"].each do |attrs|
     description_nl:      nl["description"],
     description_de:      de["description"]
   )
-  expertise.save!
+  experience.save!
 
   attrs["skills"].each do |skill_key|
     skill_data = data["skills"].find { |s| s["key"] == skill_key }
     skill = Skill.find_by!(name: skill_data["translations"]["en"]["name"])
-    ExpertiseSkill.find_or_create_by!(expertise: expertise, skill: skill)
+    ExperienceSkill.find_or_create_by!(experience: experience, skill: skill)
   end
 end
 

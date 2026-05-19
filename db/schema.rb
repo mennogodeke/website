@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_05_19_134424) do
+ActiveRecord::Schema[8.1].define(version: 2026_05_19_134650) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -29,16 +29,16 @@ ActiveRecord::Schema[8.1].define(version: 2026_05_19_134424) do
     t.index ["token"], name: "index_cv_downloads_on_token", unique: true
   end
 
-  create_table "expertise_skills", force: :cascade do |t|
+  create_table "experience_skills", force: :cascade do |t|
     t.datetime "created_at", null: false
-    t.bigint "expertise_id", null: false
+    t.bigint "experience_id", null: false
     t.bigint "skill_id", null: false
     t.datetime "updated_at", null: false
-    t.index ["expertise_id"], name: "index_expertise_skills_on_expertise_id"
-    t.index ["skill_id"], name: "index_expertise_skills_on_skill_id"
+    t.index ["experience_id"], name: "index_experience_skills_on_experience_id"
+    t.index ["skill_id"], name: "index_experience_skills_on_skill_id"
   end
 
-  create_table "expertises", force: :cascade do |t|
+  create_table "experiences", force: :cascade do |t|
     t.integer "category"
     t.datetime "created_at", null: false
     t.text "description_de"
@@ -112,8 +112,8 @@ ActiveRecord::Schema[8.1].define(version: 2026_05_19_134424) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "expertise_skills", "expertises"
-  add_foreign_key "expertise_skills", "skills"
+  add_foreign_key "experience_skills", "experiences"
+  add_foreign_key "experience_skills", "skills"
   add_foreign_key "job_skills", "jobs"
   add_foreign_key "job_skills", "skills"
   add_foreign_key "project_skills", "projects"

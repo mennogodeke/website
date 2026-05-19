@@ -1,6 +1,6 @@
 require "test_helper"
 
-class ExpertiseSkillTest < ActiveSupport::TestCase
+class ExperienceSkillTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
