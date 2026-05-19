@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_05_19_134650) do
+ActiveRecord::Schema[8.1].define(version: 2026_05_19_143222) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -32,6 +32,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_05_19_134650) do
   create_table "experience_skills", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.bigint "experience_id", null: false
+    t.text "info"
     t.bigint "skill_id", null: false
     t.datetime "updated_at", null: false
     t.index ["experience_id"], name: "index_experience_skills_on_experience_id"
@@ -53,6 +54,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_05_19_134650) do
   create_table "job_skills", force: :cascade do |t|
     t.integer "category"
     t.datetime "created_at", null: false
+    t.text "info"
     t.bigint "job_id", null: false
     t.bigint "skill_id", null: false
     t.datetime "updated_at", null: false
@@ -78,6 +80,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_05_19_134650) do
 
   create_table "project_skills", force: :cascade do |t|
     t.datetime "created_at", null: false
+    t.text "info"
     t.bigint "project_id", null: false
     t.bigint "skill_id", null: false
     t.datetime "updated_at", null: false
