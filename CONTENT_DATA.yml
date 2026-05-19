@@ -533,7 +533,7 @@ skills:
 
 # ============================================================
 # Experiences
-# 9 entries
+# 10 entries
 # ============================================================
 experiences:
 
@@ -693,6 +693,39 @@ experiences:
         description: >
           Native App-Entwicklung für Apple-Plattformen mit Swift und Xcode,
           plus serverseitiges Swift mit dem Vapor-Framework.
+
+  - key: microservices
+    years_of_experience: 3
+    category: backend
+    icon: fa-solid fa-cubes
+    image: ~
+    skills:
+      - go
+      - typescript
+      - nodejs
+      - kubernetes
+      - terraform
+      - github_actions
+    translations:
+      en:
+        name: Microservices
+        description: >
+          Three years designing and operating distributed systems — decomposing
+          monoliths into services, wiring them together with Kubernetes and
+          Terraform, and keeping the whole thing honest with GitHub Actions
+          pipelines.
+      nl:
+        name: Microservices
+        description: >
+          Drie jaar gedistribueerde systemen ontwerpen en beheren — monolithische
+          applicaties opsplitsen in services, verbinden via Kubernetes en
+          Terraform, en de boel op orde houden met GitHub Actions pipelines.
+      de:
+        name: Microservices
+        description: >
+          Drei Jahre verteilte Systeme entworfen und betrieben — Monolithen in
+          Services zerlegt, mit Kubernetes und Terraform verbunden und das
+          Ganze mit GitHub Actions Pipelines zuverlässig gehalten.
 
   - key: ruby_lang
     years_of_experience: 8

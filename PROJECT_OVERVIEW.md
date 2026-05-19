@@ -1,7 +1,5 @@
 # Project Overview
 
-See also: [DESIGN.md](DESIGN.md) · [CONTENT.md](CONTENT.md)
-
 ---
 
 ## Controllers and Routes
@@ -81,7 +79,7 @@ Enum: `language` — `en`, `nl`, `de`.
 
 ---
 
-## CV
+## CV(To Be Reviewed/Reimplemented)
 
 ### Generation
 `PagesController#cv` renders the CV as an HTML page using Job, Skill, and Experience data. `PagesController#cv_preview` renders the same view with the dedicated CV layout (intended for development/print preview).
@@ -98,7 +96,6 @@ Visitors request the CV via an email confirmation flow through `CvDownloadsContr
 
 ---
 
-
 ## Pages
 
 ### Home
@@ -111,14 +108,6 @@ The landing page, also serving as the traditional "About" page.
 
 ### Experience ✓
 Showcases broad areas of technical knowledge (`Experience` model) alongside individual skills (`Skill` model).
-
-#### Experience panels ✓
-Each experience entry renders as a selectable row in a two-column layout (rail + panel). Clicking a row reveals the associated skills as proficiency bars (familiar / proficient / expert). Ordered by `years_of_experience DESC`. Entries are category-tagged (backend, devops, etc.) and colour-coded by `accent`.
-
-#### Skills ✓
-Skills are rendered per-experience in the panel view as inline proficiency bars, sorted by level descending. Skills grid/standalone view: TBD.
-
-Open question: Should non-engineering skills also be listed here? (e.g. spoken languages, SCRUM/Agile, JIRA)
 
 ### Career ✓
 A chronological list of jobs and positions, ordered from most recent to oldest. Rendered dynamically from the `Job` model via `JobsController`. Each entry displays role, company, dates, and description. Seeded with 5 real entries.
