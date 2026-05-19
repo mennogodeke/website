@@ -8,6 +8,10 @@
   gap: 0.5rem;
 }
 
+.title.is-1{
+  font-size: clamp(5.5rem, 8vw, 6.5rem);
+}
+
 @each $color in primary, link, info, success, warning, danger, legendary, epic, rare, uncommon, common {
   .button.is-#{$color} {
     background: var(--bulma-#{$color});

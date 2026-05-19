@@ -1,11 +1,18 @@
 class PagesController < ApplicationController
   def home
+    @jobs = Job.includes(:skills).order(start_date: :desc).limit(2)
+    @top_expertises = Expertise.limit(6)
+    @featured_project = Project.includes(:skills).order(year: :desc).first
   end
 
   def contact
   end
 
   def design_preview
+    @expertises = Expertise.includes(:skills).all
+    @jobs = Job.includes(:skills).order(start_date: :desc).limit(2)
+    @top_expertises = Expertise.limit(6)
+    @featured_project = Project.includes(:skills).order(year: :desc).first
   end
 
   def cv

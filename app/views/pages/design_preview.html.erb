@@ -54,91 +54,56 @@
           <% end %>
         </div>
       </div>
-    <%# ============================================================ %>
-    <%# 2. TYPOGRAPHY                                                %>
-    <%# ============================================================ %>
-    <h1 class="title is-1">Typography</h1>
-
-    <%# Titles %>
-    <h2 class="title is-2">Titles</h2>
-    <div class="mb-6">
-      <% [1,2,3,4,5,6].each do |n| %>
-        <h<%= n %> class="title is-<%= n %>">Title is-<%= n %></h<%= n %>>
-      <% end %>
-    </div>
-
-    <%# Subtitles %>
-    <h2 class="title is-2">Subtitles</h2>
-    <div class="mb-6">
-      <% [1,2,3,4,5,6].each do |n| %>
-        <p class="subtitle is-<%= n %>">Subtitle is-<%= n %></p>
-      <% end %>
-    </div>
-
-    <%# Size helpers %>
-    <h2 class="title is-2">Size helpers</h2>
-    <div class="mb-6">
-      <% [1,2,3,4,5,6,7].each do |n| %>
-        <p class="is-size-<%= n %> mb-2">is-size-<%= n %> — The quick brown fox jumps over the lazy dog</p>
-      <% end %>
-    </div>
-
-    <%# Weight helpers %>
-    <h2 class="title is-2">Weight helpers</h2>
-    <div class="mb-6">
-      <% { light: 300, normal: 400, medium: 500, semibold: 600, bold: 700 }.each do |name, val| %>
-        <p class="has-text-weight-<%= name %> mb-2">has-text-weight-<%= name %> (<%= val %>) — The quick brown fox jumps over the lazy dog</p>
-      <% end %>
-    </div>
-
-    <%# Font families %>
-    <h2 class="title is-2">Font families</h2>
-    <div class="mb-6">
-      <p class="is-size-4 mb-2" style="font-family: var(--bulma-family-primary)">family-primary (Barlow) — The quick brown fox jumps over the lazy dog</p>
-      <p class="is-size-4 mb-2" style="font-family: var(--bulma-family-secondary)">family-secondary — The quick brown fox jumps over the lazy dog</p>
-      <p class="is-size-4" style="font-family: var(--bulma-family-code)">family-code — The quick brown fox jumps over the lazy dog</p>
-    </div>
-    <h2 class="title is-2">Elements</h2>
-    <%# ============================================================ %>
-    <%# 3. BUTTONS                                                   %>
-    <%# ============================================================ %>
-    <h3 class="title is-3">Buttons</h3>
-      <h4 class="title is-4">Colors</h4>
-      <div class="buttons mb-6">
-        <% %w[primary link info success warning danger].each do |color| %>
-          <a class="button is-<%= color %>"><%= color.capitalize %></a>
-        <% end %>
-        <a class="button">Default</a>
-        <a class="button is-ghost">Ghost</a>
-        <a class="button is-text">Text</a>
-      </div>
-
-      <h4 class="title is-4">Outlined</h4>
-      <div class="buttons mb-6">
-        <% %w[primary link info success warning danger].each do |color| %>
-          <a class="button is-<%= color %> is-outlined"><%= color.capitalize %></a>
-        <% end %>
-      </div>
-
-      <h4 class="title is-4">Sizes</h4>
-      <div class="buttons is-vcentered mb-6">
-        <a class="button is-primary is-small">Small</a>
-        <a class="button is-primary">Normal</a>
-        <a class="button is-primary is-medium">Medium</a>
-        <a class="button is-primary is-large">Large</a>
-      </div>
-
-      <h4 class="title is-4">States</h4>
-      <div class="buttons mb-6">
-        <a class="button is-primary">Normal</a>
-        <a class="button is-primary is-hovered">Hovered</a>
-        <a class="button is-primary is-focused">Focused</a>
-        <a class="button is-primary is-active">Active</a>
-        <a class="button is-primary is-loading">Loading</a>
-        <a class="button is-primary" disabled>Disabled</a>
-      </div>
     </div>
     <div class="column">
+      <%# ============================================================ %>
+      <%# 2. TYPOGRAPHY                                                %>
+      <%# ============================================================ %>
+      <h2 class="title is-2">Typography</h2>
+
+      <%# Titles %>
+      <h2 class="title is-2">Titles</h2>
+      <div class="mb-6">
+        <% [1,2,3,4,5,6].each do |n| %>
+          <h<%= n %> class="title is-<%= n %>">Title is-<%= n %></h<%= n %>>
+        <% end %>
+      </div>
+
+      <%# Subtitles %>
+      <h2 class="title is-2">Subtitles</h2>
+      <div class="mb-6">
+        <% [1,2,3,4,5,6].each do |n| %>
+          <p class="subtitle is-<%= n %>">Subtitle is-<%= n %></p>
+        <% end %>
+      </div>
+
+      <%# Size helpers %>
+      <h2 class="title is-2">Size helpers</h2>
+      <div class="mb-6">
+        <% [1,2,3,4,5,6,7].each do |n| %>
+          <p class="is-size-<%= n %> mb-2">is-size-<%= n %> — The quick brown fox jumps over the lazy dog</p>
+        <% end %>
+      </div>
+
+      <%# Weight helpers %>
+      <h2 class="title is-2">Weight helpers</h2>
+      <div class="mb-6">
+        <% { light: 300, normal: 400, medium: 500, semibold: 600, bold: 700 }.each do |name, val| %>
+          <p class="has-text-weight-<%= name %> mb-2">has-text-weight-<%= name %> (<%= val %>) — The quick brown fox jumps over the lazy dog</p>
+        <% end %>
+      </div>
+
+      <%# Font families %>
+      <h2 class="title is-2">Font families</h2>
+      <div class="mb-6">
+        <p class="is-size-4 mb-2" style="font-family: var(--bulma-family-primary)">family-primary (Barlow) — The quick brown fox jumps over the lazy dog</p>
+        <p class="is-size-4 mb-2" style="font-family: var(--bulma-family-secondary)">family-secondary — The quick brown fox jumps over the lazy dog</p>
+        <p class="is-size-4" style="font-family: var(--bulma-family-code)">family-code — The quick brown fox jumps over the lazy dog</p>
+      </div>
+    </div>
+  </div>
+  <div class="columns">
+    <div class="column is-three-fifths">
       <h2 class="title is-2">Components</h2>
 
       <h3 class="title is-3">Job</h3>
@@ -187,8 +152,50 @@
           </div>
           <span class="job-dates">Sep 2016 – May 2017</span>
         </div>
+      </div> 
+      <h3 class="title is-3 mt-6">Expertise (TBD)</h3>
+      <%# Add Eperience here %>
+    </div>
+    <div class="column">
+      <h2 class="title is-2">Elements</h2>
+      <%# ============================================================ %>
+      <%# 3. BUTTONS                                                   %>
+      <%# ============================================================ %>
+      <h3 class="title is-3">Buttons</h3>
+      <h4 class="title is-4">Colors</h4>
+      <div class="buttons mb-6">
+        <% %w[primary link info success warning danger].each do |color| %>
+          <a class="button is-<%= color %>"><%= color.capitalize %></a>
+        <% end %>
+        <a class="button">Default</a>
+        <a class="button is-ghost">Ghost</a>
+        <a class="button is-text">Text</a>
       </div>
-    </div>    
+
+      <h4 class="title is-4">Outlined</h4>
+      <div class="buttons mb-6">
+        <% %w[primary link info success warning danger].each do |color| %>
+          <a class="button is-<%= color %> is-outlined"><%= color.capitalize %></a>
+        <% end %>
+      </div>
+
+      <h4 class="title is-4">Sizes</h4>
+      <div class="buttons is-vcentered mb-6">
+        <a class="button is-primary is-small">Small</a>
+        <a class="button is-primary">Normal</a>
+        <a class="button is-primary is-medium">Medium</a>
+        <a class="button is-primary is-large">Large</a>
+      </div>
+
+      <h4 class="title is-4">States</h4>
+      <div class="buttons mb-6">
+        <a class="button is-primary">Normal</a>
+        <a class="button is-primary is-hovered">Hovered</a>
+        <a class="button is-primary is-focused">Focused</a>
+        <a class="button is-primary is-active">Active</a>
+        <a class="button is-primary is-loading">Loading</a>
+        <a class="button is-primary" disabled>Disabled</a>
+      </div>      
     </div>
   </div>
 </section>
