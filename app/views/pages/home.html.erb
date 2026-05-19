@@ -18,7 +18,7 @@
       </div>
 
       <div>
-        <p class="title is-4 mb-2">Senior Software Engineer</p>
+        <p class="title is-4 mb-2">Fullstack Software Engineer</p>
         <span class="home-badge"><span class="home-badge-dot"></span>Open to work</span>
       </div>
 
@@ -87,7 +87,7 @@
               <span class="tag"><%= skill.name %></span>
             <% end %>
           </div>
-          <%= link_to "All projects →", projects_path, class: "is-family-code is-size-7 has-text-primary home-bento-link" %>
+          <%= link_to t('pages.home.view_work'), projects_path, class: "is-family-code is-size-7 has-text-primary home-bento-link" %>
         </div>
         <div class="img-stub home-bento-img">
           <span class="is-family-code is-size-7"><%= @featured_project.name %></span>

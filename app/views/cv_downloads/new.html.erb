@@ -7,4 +7,38 @@
   <% if alert %>
     <div class="notification is-danger"><%= alert %></div>
   <% end %>
+  <div class="cv-download-grid">
+
+    <%# Column 1 — email form %>
+    <div class="cv-col-form">
+      <div class="subtitle"><%= t("cv_download.get_link") %></div>
+
+      <%= form_with model: @cv_download, url: cv_downloads_path, class: "cv-download-form" do |f| %>
+        <div class="field">
+          <div class="control">
+            <%= f.email_field :email, class: "input #{'is-danger' if @cv_download.errors[:email].any?}", placeholder: "you@example.com", autofocus: true %>
+          </div>
+          <% @cv_download.errors[:email].each do |message| %>
+            <p class="help is-danger"><%= message %></p>
+          <% end %>
+        </div>
+        <%= f.submit t("cv_download.send").upcase, class: "button is-primary" %>
+      <% end %>
+    </div>
+
+    <%# Column 2 — divider %>
+    <div class="cv-col-divider">
+      <div class="cv-divider-line"></div>
+      <span class="cv-divider-or">OR</span>
+      <div class="cv-divider-line"></div>
+    </div>
+
+    <%# Column 3 — open in browser %>
+    <div class="cv-col-browser">
+      <%= link_to cv_path, class: "cv-browser-btn" do %>
+        <%= t("cv_download.open_in_browser").upcase %>
+      <% end %>
+    </div>
+
+  </div>  
 </section>
