@@ -1,31 +1,31 @@
-kape_senior_rails:          { job: kape_senior, skill: ruby_on_rails }
-kape_senior_ruby:           { job: kape_senior, skill: ruby }
-kape_senior_go:             { job: kape_senior, skill: go }
-kape_senior_docker:         { job: kape_senior, skill: docker }
-kape_senior_aws:            { job: kape_senior, skill: aws }
-kape_senior_terraform:      { job: kape_senior, skill: terraform }
-kape_senior_github_actions: { job: kape_senior, skill: github_actions }
-kape_senior_chargebee:      { job: kape_senior, skill: chargebee }
-kape_senior_kubernetes:     { job: kape_senior, skill: kubernetes }
+kape_senior_rails:          { job: kape_senior, skill: ruby_on_rails, category: 1 }
+kape_senior_ruby:           { job: kape_senior, skill: ruby,          category: 6 }
+kape_senior_go:             { job: kape_senior, skill: go,            category: 6 }
+kape_senior_docker:         { job: kape_senior, skill: docker,        category: 3 }
+kape_senior_aws:            { job: kape_senior, skill: aws,           category: 4 }
+kape_senior_terraform:      { job: kape_senior, skill: terraform,     category: 3 }
+kape_senior_github_actions: { job: kape_senior, skill: github_actions, category: 3 }
+kape_senior_chargebee:      { job: kape_senior, skill: chargebee,     category: 1 }
+kape_senior_kubernetes:     { job: kape_senior, skill: kubernetes,    category: 3 }
 
-kape_mid_rails:      { job: kape_mid, skill: ruby_on_rails }
-kape_mid_ruby:       { job: kape_mid, skill: ruby }
-kape_mid_postgresql: { job: kape_mid, skill: postgresql }
-kape_mid_docker:     { job: kape_mid, skill: docker }
-kape_mid_javascript: { job: kape_mid, skill: javascript }
-kape_mid_vuejs:      { job: kape_mid, skill: vuejs }
-kape_mid_adyen:      { job: kape_mid, skill: adyen }
+kape_mid_rails:      { job: kape_mid, skill: ruby_on_rails, category: 1 }
+kape_mid_ruby:       { job: kape_mid, skill: ruby,          category: 6 }
+kape_mid_postgresql: { job: kape_mid, skill: postgresql,    category: 1 }
+kape_mid_docker:     { job: kape_mid, skill: docker,        category: 3 }
+kape_mid_javascript: { job: kape_mid, skill: javascript,    category: 6 }
+kape_mid_vuejs:      { job: kape_mid, skill: vuejs,         category: 0 }
+kape_mid_adyen:      { job: kape_mid, skill: adyen,         category: 1 }
 
-zenguard_junior_rails:      { job: zenguard_junior, skill: ruby_on_rails }
-zenguard_junior_ruby:       { job: zenguard_junior, skill: ruby }
-zenguard_junior_vuejs:      { job: zenguard_junior, skill: vuejs }
-zenguard_junior_javascript: { job: zenguard_junior, skill: javascript }
-zenguard_junior_postgresql: { job: zenguard_junior, skill: postgresql }
+zenguard_junior_rails:      { job: zenguard_junior, skill: ruby_on_rails, category: 1 }
+zenguard_junior_ruby:       { job: zenguard_junior, skill: ruby,          category: 6 }
+zenguard_junior_vuejs:      { job: zenguard_junior, skill: vuejs,         category: 0 }
+zenguard_junior_javascript: { job: zenguard_junior, skill: javascript,    category: 6 }
+zenguard_junior_postgresql: { job: zenguard_junior, skill: postgresql,    category: 1 }
 
-zenguard_intern_rails:      { job: zenguard_intern, skill: ruby_on_rails }
-zenguard_intern_ruby:       { job: zenguard_intern, skill: ruby }
-zenguard_intern_vuejs:      { job: zenguard_intern, skill: vuejs }
-zenguard_intern_javascript: { job: zenguard_intern, skill: javascript }
+zenguard_intern_rails:      { job: zenguard_intern, skill: ruby_on_rails, category: 1 }
+zenguard_intern_ruby:       { job: zenguard_intern, skill: ruby,          category: 6 }
+zenguard_intern_vuejs:      { job: zenguard_intern, skill: vuejs,         category: 0 }
+zenguard_intern_javascript: { job: zenguard_intern, skill: javascript,    category: 6 }
 
-shopboostr_intern_rails:      { job: shopboostr_intern, skill: ruby_on_rails }
-shopboostr_intern_javascript: { job: shopboostr_intern, skill: javascript }
+shopboostr_intern_rails:      { job: shopboostr_intern, skill: ruby_on_rails, category: 1 }
+shopboostr_intern_javascript: { job: shopboostr_intern, skill: javascript,    category: 6 }

@@ -13,13 +13,15 @@
 
 # ============================================================
 # SKILLS
-# 20 entries
+# 23 entries
 # level enum: expert | proficient | familiar
+# category enum: frontend | backend | fullstack | devops | platform | apps | programming_language | other
 # ============================================================
 skills:
 
   - key: ruby_on_rails
     level: expert
+    category: backend
     accent: ~
     icon: devicon-rails-plain
     image: ~
@@ -42,6 +44,7 @@ skills:
 
   - key: ruby
     level: expert
+    category: programming_language
     accent: ~
     icon: devicon-ruby-plain
     image: ~
@@ -64,6 +67,7 @@ skills:
 
   - key: docker
     level: expert
+    category: devops
     accent: ~
     icon: devicon-docker-plain
     image: ~
@@ -86,6 +90,7 @@ skills:
 
   - key: git
     level: expert
+    category: devops
     accent: ~
     icon: devicon-git-plain
     image: ~
@@ -108,6 +113,7 @@ skills:
 
   - key: github_actions
     level: proficient
+    category: devops
     accent: ~
     icon: devicon-github-plain
     image: ~
@@ -130,6 +136,7 @@ skills:
 
   - key: postgresql
     level: proficient
+    category: backend
     accent: ~
     icon: devicon-postgresql-plain
     image: ~
@@ -152,6 +159,7 @@ skills:
 
   - key: go
     level: proficient
+    category: programming_language
     accent: ~
     icon: devicon-go-plain
     image: ~
@@ -174,6 +182,7 @@ skills:
 
   - key: javascript
     level: proficient
+    category: programming_language
     accent: ~
     icon: devicon-javascript-plain
     image: ~
@@ -196,6 +205,7 @@ skills:
 
   - key: kubernetes
     level: proficient
+    category: devops
     accent: ~
     icon: devicon-kubernetes-plain
     image: ~
@@ -218,6 +228,7 @@ skills:
 
   - key: aws
     level: proficient
+    category: platform
     accent: ~
     icon: devicon-amazonwebservices-plain-wordmark
     image: ~
@@ -240,6 +251,7 @@ skills:
 
   - key: typescript
     level: proficient
+    category: programming_language
     accent: ~
     icon: devicon-typescript-plain
     image: ~
@@ -262,6 +274,7 @@ skills:
 
   - key: nodejs
     level: proficient
+    category: backend
     accent: ~
     icon: devicon-nodejs-plain
     image: ~
@@ -284,6 +297,7 @@ skills:
 
   - key: vuejs
     level: proficient
+    category: frontend
     accent: ~
     icon: devicon-vuejs-plain
     image: ~
@@ -306,6 +320,7 @@ skills:
 
   - key: swift
     level: proficient
+    category: programming_language
     accent: ~
     icon: devicon-swift-plain
     image: ~
@@ -328,6 +343,7 @@ skills:
 
   - key: adyen
     level: proficient
+    category: backend
     accent: ~
     icon: fa-solid fa-credit-card   # no Devicon available
     image: ~
@@ -350,6 +366,7 @@ skills:
 
   - key: chargebee
     level: proficient
+    category: backend
     accent: ~
     icon: fa-solid fa-file-invoice-dollar   # no Devicon available
     image: ~
@@ -372,6 +389,7 @@ skills:
 
   - key: terraform
     level: familiar
+    category: devops
     accent: ~
     icon: devicon-terraform-plain
     image: ~
@@ -394,6 +412,7 @@ skills:
 
   - key: ansible
     level: familiar
+    category: devops
     accent: ~
     icon: devicon-ansible-plain
     image: ~
@@ -416,6 +435,7 @@ skills:
 
   - key: python
     level: familiar
+    category: programming_language
     accent: ~
     icon: devicon-python-plain
     image: ~
@@ -438,6 +458,7 @@ skills:
 
   - key: stripe
     level: familiar
+    category: backend
     accent: ~
     icon: devicon-stripe-plain
     image: ~
@@ -457,6 +478,57 @@ skills:
         description: >
           Zahlungsverarbeitungsintegration — Checkout-Flows
           und Abonnementverwaltung.
+
+  - key: dutch
+    level: expert
+    category: other
+    accent: ~
+    icon: fa-solid fa-language
+    image: ~
+    translations:
+      en:
+        name: Dutch
+        description: Native language.
+      nl:
+        name: Nederlands
+        description: Moedertaal.
+      de:
+        name: Niederländisch
+        description: Muttersprache.
+
+  - key: english
+    level: expert
+    category: other
+    accent: ~
+    icon: fa-solid fa-language
+    image: ~
+    translations:
+      en:
+        name: English
+        description: Fluent.
+      nl:
+        name: Engels
+        description: Vloeiend.
+      de:
+        name: Englisch
+        description: Fließend.
+
+  - key: german
+    level: proficient
+    category: other
+    accent: ~
+    icon: fa-solid fa-language
+    image: ~
+    translations:
+      en:
+        name: German
+        description: Fluent.
+      nl:
+        name: Duits
+        description: Vloeiend.
+      de:
+        name: Deutsch
+        description: Fließend.
 
 
 # ============================================================
@@ -621,6 +693,107 @@ experiences:
         description: >
           Native App-Entwicklung für Apple-Plattformen mit Swift und Xcode,
           plus serverseitiges Swift mit dem Vapor-Framework.
+
+  - key: ruby_lang
+    years_of_experience: 8
+    category: programming_language
+    icon: devicon-ruby-plain
+    image: ~
+    skills:
+      - ruby
+      - ruby_on_rails
+    translations:
+      en:
+        name: Ruby
+        description: >
+          Eight years writing Ruby professionally — from bare-metal scripts
+          to full Rails applications. The language that started everything.
+      nl:
+        name: Ruby
+        description: >
+          Acht jaar professioneel Ruby schrijven — van eenvoudige scripts
+          tot volledige Rails-applicaties. De taal die het allemaal begon.
+      de:
+        name: Ruby
+        description: >
+          Acht Jahre professionell Ruby schreiben — von einfachen Scripts
+          bis zu vollständigen Rails-Anwendungen. Die Sprache, mit der
+          alles begann.
+
+  - key: golang
+    years_of_experience: 2
+    category: programming_language
+    icon: devicon-go-plain
+    image: ~
+    skills:
+      - go
+    translations:
+      en:
+        name: Go
+        description: >
+          Two years building microservices and developer tooling in Go —
+          fast, explicit, and a welcome change of pace from Ruby.
+      nl:
+        name: Go
+        description: >
+          Twee jaar microservices en developer-tooling bouwen in Go —
+          snel, expliciet en een welkome afwisseling van Ruby.
+      de:
+        name: Go
+        description: >
+          Zwei Jahre Microservices und Developer-Tooling in Go —
+          schnell, explizit und eine willkommene Abwechslung zu Ruby.
+
+  - key: swift_lang
+    years_of_experience: 4
+    category: programming_language
+    icon: devicon-swift-plain
+    image: ~
+    skills:
+      - swift
+    translations:
+      en:
+        name: Swift
+        description: >
+          Four years with Swift across iOS, macOS, and server-side
+          development with the Vapor framework.
+      nl:
+        name: Swift
+        description: >
+          Vier jaar Swift voor iOS, macOS en server-side
+          ontwikkeling met het Vapor-framework.
+      de:
+        name: Swift
+        description: >
+          Vier Jahre Swift für iOS, macOS und serverseitige
+          Entwicklung mit dem Vapor-Framework.
+
+  - key: javascript_lang
+    years_of_experience: 2
+    category: programming_language
+    icon: devicon-javascript-plain
+    image: ~
+    skills:
+      - javascript
+      - typescript
+      - nodejs
+      - vuejs
+    translations:
+      en:
+        name: JavaScript
+        description: >
+          Two years of dedicated JavaScript work — Vue.js front-ends,
+          Node.js APIs, and TypeScript where the codebase demanded it.
+      nl:
+        name: JavaScript
+        description: >
+          Twee jaar gericht aan JavaScript — Vue.js-frontends,
+          Node.js-API's en TypeScript waar de codebase dat vroeg.
+      de:
+        name: JavaScript
+        description: >
+          Zwei Jahre gezielt JavaScript — Vue.js-Frontends,
+          Node.js-APIs und TypeScript, wo die Codebasis es verlangte.
 
 
 # ============================================================
