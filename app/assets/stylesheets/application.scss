@@ -8,7 +8,7 @@ $common:       #bdbfbe;
 $font-display: '"Barlow Condensed", sans-serif';
 $font-body:    '"Barlow", -apple-system, sans-serif';
 
-@use "bulma/sass" with (
+@use "bulma_sass" with (
   $primary:                   $yellow,
   $family-primary:            $font-body,
   $family-secondary:          $font-display,

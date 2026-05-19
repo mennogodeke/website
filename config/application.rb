@@ -27,6 +27,5 @@ module Website
     config.i18n.available_locales = [ :en, :nl, :de ]
     config.i18n.default_locale = :en
 
-    config.dartsass.build_options += [ "--load-path=#{Rails.root.join('node_modules')}" ]
   end
 end
