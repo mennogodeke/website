@@ -1,6 +1,6 @@
 <a href="<%= project_path(project) %>" class="proj-row <%= index.odd? ? 'flipped' : '' %>">
   <div class="proj-content">
-    <p class="font-mono text-xs mb-2"><%= project.year %></p>
+    <p class="text-xs mb-2"><%= project.year %></p>
     <h3 class="mb-2"><%= project.name %></h3>
     <p class="mb-4"><%= project.description %></p>
     <div class="tags mb-4">
@@ -11,14 +11,14 @@
     <div class="proj-cta-row">
       <span class="proj-cta">View case study →</span>
       <% if project.url.present? %>
-        <span class="font-mono text-xs">↗ <%= project.url %></span>
+        <span class="text-xs">↗ <%= project.url %></span>
       <% end %>
       <% if project.repo_url.present? %>
-        <span class="font-mono text-xs">↗ repo</span>
+        <span class="text-xs">↗ repo</span>
       <% end %>
     </div>
   </div>
   <div class="proj-img img-stub">
-    <span class="font-mono text-xs"><%= project.name %> screenshot</span>
+    <span class="text-xs"><%= project.name %> screenshot</span>
   </div>
 </a>

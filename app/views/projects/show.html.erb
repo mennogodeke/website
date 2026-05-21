@@ -5,7 +5,7 @@
   </div>
 
   <div class="img-stub proj-hero mb-6">
-    <span class="font-mono text-xs"><%= @project.name %> hero shot</span>
+    <span class="text-xs"><%= @project.name %> hero shot</span>
   </div>
 
   <div class="proj-detail-row">
@@ -27,13 +27,13 @@
         <p class="text-xs text-faint mb-2">Links</p>
         <div class="proj-links">
           <% if @project.url.present? %>
-            <%= link_to "↗ #{@project.url}", safe_url(@project.url), class: "font-mono text-xs", target: "_blank", rel: "noopener" %>
+            <%= link_to "↗ #{@project.url}", safe_url(@project.url), class: "text-xs", target: "_blank", rel: "noopener" %>
           <% end %>
           <% if @project.repo_url.present? %>
-            <%= link_to "↗ repo", safe_url(@project.repo_url), class: "font-mono text-xs", target: "_blank", rel: "noopener" %>
+            <%= link_to "↗ repo", safe_url(@project.repo_url), class: "text-xs", target: "_blank", rel: "noopener" %>
           <% end %>
           <% if @project.url.blank? && @project.repo_url.blank? %>
-            <span class="font-mono text-xs">No public links</span>
+            <span class="text-xs">No public links</span>
           <% end %>
         </div>
       </div>

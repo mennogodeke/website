@@ -39,15 +39,15 @@
             <h2><%= experience.name.upcase %></h2>
             <div class="exp-panel-years">
               <span class="exp-years-num"><%= experience.years_of_experience %></span>
-              <span class="font-mono text-xs">YEARS</span>
+              <span class="text-xs">YEARS</span>
             </div>
           </div>
 
           <p class="mb-5"><%= experience.description %></p>
 
           <div class="exp-skills-header mb-3">
-            <span class="font-mono text-xs">Skills · ordered by proficiency</span>
-            <span class="font-mono text-xs"><%= experience.skills.count %> total</span>
+            <span class="text-xs">Skills · ordered by proficiency</span>
+            <span class="text-xs"><%= experience.skills.count %> total</span>
           </div>
 
           <div>
@@ -58,7 +58,7 @@
                 <div class="bar">
                   <i data-width="<%= pct %>" style="transition-delay: <%= i * 30 %>ms"></i>
                 </div>
-                <span class="font-mono text-xs sk-level"><%= skill.level.capitalize %></span>
+                <span class="text-xs sk-level"><%= skill.level.capitalize %></span>
               </div>
             <% end %>
           </div>
