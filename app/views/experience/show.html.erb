@@ -1,9 +1,8 @@
-<section class="section is-medium container is-max-widescreen" data-controller="experience">
+<section class="section container" data-controller="experience">
 
-  <h1 class="title is-1"><%= t 'pages.experience.title' %></h1>
-  <h2 class="title is-2"><%= t 'pages.experience.subtitle' %></h2>
+  <h1><%= t 'pages.experience.title' %></h1>
+  <h2><%= t 'pages.experience.subtitle' %></h2>
 
-  <%# Two-column layout: 320px rail + flexible panel %>
   <div class="exp-row">
 
     <%# Rail %>
@@ -16,7 +15,7 @@
           data-experience-target="row"
           data-experience-key="<%= experience.category %>"
           data-action="click->experience#select"
-          style="--row-color: var(--bulma-<%= experience.accent %>)"
+          style="--row-color: var(--color-<%= experience.accent %>)"
         >
           <span><%= experience.name %></span>
           <span class="yr"><%= experience.years_of_experience %>YR</span>
@@ -33,37 +32,33 @@
           class="exp-panel"
           data-experience-target="panel"
           data-experience-key="<%= experience.category %>"
-          style="--panel-color: var(--bulma-<%= experience.accent %>)"
+          style="--panel-color: var(--color-<%= experience.accent %>)"
           hidden
         >
-          <%# Header: area name + years count %>
-          <div class="is-flex is-align-items-baseline is-justify-content-space-between is-flex-wrap-wrap mb-4">
-            <h2 class="title is-2 mb-0"><%= experience.name.upcase %></h2>
-            <div class="is-flex is-align-items-baseline">
-              <span class="exp-years-num mr-2"><%= experience.years_of_experience %></span>
-              <span class="is-family-code is-size-7">YEARS</span>
+          <div class="exp-panel-header mb-4">
+            <h2><%= experience.name.upcase %></h2>
+            <div class="exp-panel-years">
+              <span class="exp-years-num"><%= experience.years_of_experience %></span>
+              <span class="font-mono text-xs">YEARS</span>
             </div>
           </div>
 
-          <%# Description %>
-          <p class="is-size-5 mb-5"><%= experience.description %></p>
+          <p class="mb-5"><%= experience.description %></p>
 
-          <%# Skills header %>
-          <div class="is-flex is-align-items-baseline is-justify-content-space-between mb-3">
-            <span class="is-family-code is-size-7">Skills · ordered by proficiency</span>
-            <span class="is-family-code is-size-7"><%= experience.skills.count %> total</span>
+          <div class="exp-skills-header mb-3">
+            <span class="font-mono text-xs">Skills · ordered by proficiency</span>
+            <span class="font-mono text-xs"><%= experience.skills.count %> total</span>
           </div>
 
-          <%# Skill rows %>
           <div>
             <% sorted_skills.each_with_index do |skill, i| %>
               <% pct = skill.expert? ? 100 : skill.proficient? ? 66 : 33 %>
               <div class="sk-row">
-                <span class="is-size-7 has-text-weight-bold is-uppercase"><%= skill.name %></span>
+                <span class="sk-name"><%= skill.name %></span>
                 <div class="bar">
                   <i data-width="<%= pct %>" style="transition-delay: <%= i * 30 %>ms"></i>
                 </div>
-                <span class="is-family-code is-size-7 has-text-right"><%= skill.level.capitalize %></span>
+                <span class="font-mono text-xs sk-level"><%= skill.level.capitalize %></span>
               </div>
             <% end %>
           </div>

@@ -150,6 +150,39 @@
   padding: 1.5rem;
 }
 
+/* ── Notifications ── */
+.notification {
+  padding: 0.85rem 1.1rem;
+  margin-bottom: 1.25rem;
+  font-size: 0.9rem;
+  border-left: 3px solid;
+}
+
+.notification-success {
+  border-color: var(--color-uncommon);
+  background: rgba(25, 168, 40, 0.1);
+  color: var(--color-uncommon);
+}
+
+.notification-danger {
+  border-color: #e05555;
+  background: rgba(224, 85, 85, 0.1);
+  color: #e05555;
+}
+
+/* ── Form validation ── */
+.input-error {
+  border-color: #e05555;
+
+  &:focus { box-shadow: 0 0 0 2px rgba(224, 85, 85, 0.25); }
+}
+
+.field-error {
+  font-size: 0.75rem;
+  color: #e05555;
+  margin-top: 0.25rem;
+}
+
 /* ── Menu (sidebar navigation) ── */
 .menu-label {
   font-family: var(--font-mono);

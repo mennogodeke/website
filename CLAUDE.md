@@ -20,7 +20,7 @@ bin/ci             # Full pipeline: setup → style → security → tests
 
 ## Architecture
 
-**Stack:** Rails 8.1.3 · Ruby 3.4.7 · Hotwire (Turbo + Stimulus) · Importmap · Propshaft · Bulma CSS
+**Stack:** Rails 8.1.3 · Ruby 3.4.7 · Hotwire (Turbo + Stimulus) · Importmap · Propshaft · Custom CSS
 
 No Node.js build step — JavaScript is managed via importmap (`config/importmap.rb`). Assets go through Propshaft.
 
@@ -31,7 +31,7 @@ No Node.js build step — JavaScript is managed via importmap (`config/importmap
 - Ruby style follows `rubocop-rails-omakase` (inherited in `.rubocop.yml`)
 - Stimulus controllers live in `app/javascript/controllers/`
 - CSS lives in `app/assets/stylesheets/` via manifest
-- **Bulma customisation** — extend via CSS cascade order (our stylesheet loads after `bulma.min.css`), scoped selectors (e.g. `.career-list .box`), and `:root` custom properties. Avoid `!important`; rely on specificity or load order instead. See `DESIGN.md` for the full design system.
+- **CSS architecture** — custom design system with no framework dependency. Tokens in `_tokens.scss` (CSS custom properties for colours, fonts, spacing). Base reset in `_base.scss`. Layout utilities in `_layout.scss`. Typography (h1–h6, p styled directly) in `_typography.scss`. Shared components in `_components.scss`. Page-specific styles in their own partials. Avoid `!important`; rely on specificity.
 
 ## Content
 

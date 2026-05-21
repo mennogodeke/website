@@ -8,7 +8,7 @@ See [PROJECT_OVERVIEW.md](PROJECT_OVERVIEW.md) for the full product spec.
 - Ruby on Rails 8.1.3
 - Ruby 3.4.7
 - Hotwire (Turbo + Stimulus) · Importmap · Propshaft
-- Bulma CSS (vendored as `bulma.min.css`)
+- Custom CSS/SCSS design system (`dartsass-rails`, no external framework)
 - PostgreSQL (via `pg` gem)
 - Docker · Kamal (deployment)
 

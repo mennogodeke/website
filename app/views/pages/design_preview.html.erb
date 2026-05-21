@@ -7,7 +7,7 @@
 
   <%# ── Colors ── %>
   <h2 class="mb-4">Colors</h2>
-  <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(140px,1fr)); gap:0.5rem; margin-bottom:3rem;">
+  <div class="dp-color-grid mb-6">
     <% {
       "Primary"   => "var(--color-primary)",
       "Legendary" => "var(--color-legendary)",
@@ -16,83 +16,129 @@
       "Uncommon"  => "var(--color-uncommon)",
       "Common"    => "var(--color-common)",
     }.each do |name, value| %>
-      <div style="background:<%= value %>; padding:1rem; color:#0b1729;">
+      <div class="dp-swatch" style="background:<%= value %>">
         <span class="font-mono text-xs"><%= name %></span>
       </div>
     <% end %>
     <% {
-      "BG"       => "var(--color-bg)",
-      "BG-2"     => "var(--color-bg-2)",
-      "BG-Card"  => "var(--color-bg-card)",
-      "Border"   => "var(--color-border-2)",
+      "BG"      => "var(--color-bg)",
+      "BG-2"    => "var(--color-bg-2)",
+      "BG-Card" => "var(--color-bg-card)",
+      "Border"  => "var(--color-border-2)",
     }.each do |name, value| %>
-      <div style="background:<%= value %>; border:1px solid var(--color-border-2); padding:1rem;">
-        <span class="font-mono text-xs text-faint"><%= name %></span>
+      <div class="dp-swatch dp-swatch-dark" style="background:<%= value %>">
+        <span class="font-mono text-xs"><%= name %></span>
       </div>
     <% end %>
   </div>
 
   <%# ── Typography ── %>
   <h2 class="mb-4">Typography</h2>
-  <div style="display:flex; flex-direction:column; gap:1.5rem; margin-bottom:3rem; border-top:1px solid var(--color-border); padding-top:1.5rem;">
-    <div style="display:grid; grid-template-columns:40px 1fr; gap:1rem; align-items:baseline; border-bottom:1px solid var(--color-border); padding-bottom:1.5rem;">
+  <h3 class="mb-3">Headings</h3>
+  <div class="dp-type-scale mb-6">
+    <div class="dp-type-row">
       <span class="font-mono text-xs text-faint">H1</span>
       <h1>Senior Software Engineer</h1>
     </div>
-    <div style="display:grid; grid-template-columns:40px 1fr; gap:1rem; align-items:baseline; border-bottom:1px solid var(--color-border); padding-bottom:1.5rem;">
+    <div class="dp-type-row">
       <span class="font-mono text-xs text-faint">H2</span>
       <h2>A decade of building things that work</h2>
     </div>
-    <div style="display:grid; grid-template-columns:40px 1fr; gap:1rem; align-items:baseline; border-bottom:1px solid var(--color-border); padding-bottom:1.5rem;">
+    <div class="dp-type-row">
       <span class="font-mono text-xs text-faint">H3</span>
       <h3>Back-end systems & full-stack web apps</h3>
     </div>
-    <div style="display:grid; grid-template-columns:40px 1fr; gap:1rem; align-items:baseline; border-bottom:1px solid var(--color-border); padding-bottom:1.5rem;">
+    <div class="dp-type-row">
       <span class="font-mono text-xs text-faint">H4</span>
       <h4>Ruby on Rails · Go · PostgreSQL · Docker</h4>
     </div>
-    <div style="display:grid; grid-template-columns:40px 1fr; gap:1rem; align-items:baseline; border-bottom:1px solid var(--color-border); padding-bottom:1.5rem;">
+    <div class="dp-type-row">
       <span class="font-mono text-xs text-faint">H5</span>
       <h5>Open to permanent roles and freelance contracts</h5>
     </div>
-    <div style="display:grid; grid-template-columns:40px 1fr; gap:1rem; align-items:baseline;">
+    <div class="dp-type-row">
       <span class="font-mono text-xs text-faint">H6</span>
       <h6>Based in Germany · Remote & hybrid · Senior level</h6>
     </div>
   </div>
 
-  <div style="margin-bottom:3rem;">
+  <div class="dp-type-scale mb-6">
+    <div class="dp-type-row">
+      <span class="font-mono text-xs text-faint">H1</span>
+      <h1 class="subtitle">Senior Software Engineer</h1>
+    </div>
+    <div class="dp-type-row">
+      <span class="font-mono text-xs text-faint">H2</span>
+      <h2 class="subtitle">A decade of building things that work</h2>
+    </div>
+    <div class="dp-type-row">
+      <span class="font-mono text-xs text-faint">H3</span>
+      <h3 class="subtitle">Back-end systems & full-stack web apps</h3>
+    </div>
+    <div class="dp-type-row">
+      <span class="font-mono text-xs text-faint">H4</span>
+      <h4 class="subtitle">Ruby on Rails · Go · PostgreSQL · Docker</h4>
+    </div>
+    <div class="dp-type-row">
+      <span class="font-mono text-xs text-faint">H5</span>
+      <h5 class="subtitle">Open to permanent roles and freelance contracts</h5>
+    </div>
+    <div class="dp-type-row">
+      <span class="font-mono text-xs text-faint">H6</span>
+      <h6 class="subtitle">Based in Germany · Remote & hybrid · Senior level</h6>
+    </div>
+  </div>
+
+  <div class="mb-6">
     <h3 class="mb-3">Body text</h3>
-    <p class="mb-2">Default paragraph — The quick brown fox jumps over the lazy dog. A decade of Rails, currently open to opportunities.</p>
+    <p class="mb-2">Default paragraph — The quick brown fox jumps over the lazy dog.</p>
     <p class="text-sm mb-2">text-sm — The quick brown fox jumps over the lazy dog.</p>
     <p class="text-xs mb-2">text-xs — The quick brown fox jumps over the lazy dog.</p>
     <p class="font-mono text-xs">font-mono text-xs — 8yr Back-End · 5yr DevOps · 3yr Cloud</p>
+  </div>
+
+  <div class="mb-6">
+    <h3 class="mb-3">Font weights</h3>
+    <p class="font-light mb-2">font-light (300) — The quick brown fox jumps over the lazy dog.</p>
+    <p class="font-regular mb-2">font-regular (400) — The quick brown fox jumps over the lazy dog.</p>
+    <p class="font-medium mb-2">font-medium (500) — The quick brown fox jumps over the lazy dog.</p>
+    <p class="font-semibold mb-2">font-semibold (600) — The quick brown fox jumps over the lazy dog.</p>
+    <p class="font-bold mb-2">font-bold (700) — The quick brown fox jumps over the lazy dog.</p>
+    <p class="font-extrabold mb-2">font-extrabold (800) — The quick brown fox jumps over the lazy dog.</p>
+    <p class="font-black">font-black (900) — The quick brown fox jumps over the lazy dog.</p>
   </div>
 
   <%# ── Buttons ── %>
   <h2 class="mb-4">Buttons</h2>
 
   <h3 class="mb-3">Variants</h3>
-  <div style="display:flex; flex-wrap:wrap; gap:0.75rem; margin-bottom:2rem;">
+  <div class="dp-btn-group mb-4">
     <a class="btn">Default</a>
     <a class="btn btn-primary">Primary</a>
     <a class="btn btn-secondary">Secondary</a>
   </div>
 
   <h3 class="mb-3">Sizes</h3>
-  <div style="display:flex; flex-wrap:wrap; align-items:center; gap:0.75rem; margin-bottom:2rem;">
+  <div class="dp-btn-group mb-4">
     <a class="btn btn-primary btn-sm">Small</a>
     <a class="btn btn-primary">Normal</a>
     <a class="btn btn-primary btn-lg">Large</a>
   </div>
 
   <h3 class="mb-3">States</h3>
-  <div style="display:flex; flex-wrap:wrap; gap:0.75rem; margin-bottom:3rem;">
+  <div class="dp-btn-group mb-6">
     <a class="btn btn-primary">Normal</a>
     <a class="btn btn-primary is-loading">Loading</a>
     <a class="btn btn-primary" disabled>Disabled</a>
     <a class="btn btn-secondary">Secondary</a>
     <a class="btn btn-secondary" disabled>Secondary Disabled</a>
+  </div>
+
+  <%# ── Notifications ── %>
+  <h2 class="mb-4">Notifications</h2>
+  <div class="mb-6">
+    <div class="notification notification-success">Your CV link has been sent — check your inbox.</div>
+    <div class="notification notification-danger">That email address doesn't look right. Please try again.</div>
   </div>
 
   <%# ── Tags ── %>
@@ -106,9 +152,9 @@
     <span class="tag">AWS</span>
   </div>
 
-  <%# ── Form ── %>
+  <%# ── Form elements ── %>
   <h2 class="mb-4">Form Elements</h2>
-  <div style="max-width:480px; margin-bottom:3rem;">
+  <div class="mb-6">
     <div class="field">
       <label class="label">Name</label>
       <div class="control">
@@ -128,13 +174,31 @@
     </div>
   </div>
 
+  <%# ── Form validation ── %>
+  <h2 class="mb-4">Form Validation</h2>
+  <div class="mb-6">
+    <div class="field">
+      <label class="label">Email (error state)</label>
+      <div class="control">
+        <input class="input input-error" type="email" value="not-an-email" placeholder="you@example.com">
+      </div>
+      <p class="field-error">Please enter a valid email address.</p>
+    </div>
+    <div class="field">
+      <label class="label">Name (valid state)</label>
+      <div class="control">
+        <input class="input" type="text" placeholder="Your name">
+      </div>
+    </div>
+  </div>
+
   <%# ── Career card ── %>
   <h2 class="mb-4">Career card</h2>
   <div class="career-list mb-6">
     <% [
-      { title: "Senior Software Engineer", company: "Kape Technologies",   dates: "Feb 2022 – Jan 2026" },
-      { title: "Software Engineer",        company: "Kape Technologies",   dates: "Feb 2019 – Jan 2022" },
-      { title: "Junior Software Engineer", company: "ZenGuard",            dates: "Aug 2017 – Jan 2019" },
+      { title: "Senior Software Engineer", company: "Kape Technologies", dates: "Feb 2022 – Jan 2026" },
+      { title: "Software Engineer",        company: "Kape Technologies", dates: "Feb 2019 – Jan 2022" },
+      { title: "Junior Software Engineer", company: "ZenGuard",          dates: "Aug 2017 – Jan 2019" },
     ].each do |job| %>
       <div class="box">
         <div>

@@ -25,7 +25,7 @@
       </div>
       <div class="proj-meta-row">
         <p class="text-xs text-faint mb-2">Links</p>
-        <div style="display:flex; flex-direction:column; gap:0.35rem;">
+        <div class="proj-links">
           <% if @project.url.present? %>
             <%= link_to "↗ #{@project.url}", safe_url(@project.url), class: "font-mono text-xs", target: "_blank", rel: "noopener" %>
           <% end %>
@@ -41,7 +41,7 @@
 
     <div class="proj-detail-content">
       <p class="text-md mb-6"><%= @project.description %></p>
-      <div style="display:flex; gap:1rem;">
+      <div class="proj-actions">
         <% if @project.url.present? %>
           <%= link_to "↗ Live", safe_url(@project.url), class: "btn btn-primary", target: "_blank", rel: "noopener" %>
         <% end %>

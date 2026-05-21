@@ -52,6 +52,13 @@
   transition: color 0.2s ease;
 }
 
+/* ── Row CTA line ── */
+.proj-cta-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 /* ── Project show ── */
 .proj-hero {
   aspect-ratio: 21 / 7;
@@ -74,6 +81,18 @@
 .proj-meta-row {
   padding: 16px 0;
   border-bottom: 1px solid var(--color-border);
+}
+
+/* ── Show page helpers ── */
+.proj-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.proj-actions {
+  display: flex;
+  gap: 1rem;
 }
 
 /* ── Responsive ── */

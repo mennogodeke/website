@@ -95,7 +95,40 @@
   color: var(--panel-color);
 }
 
+/* ── Panel header ── */
+.exp-panel-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.exp-panel-years {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.exp-skills-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
 /* ── Skill rows ── */
+.sk-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.sk-level {
+  text-align: right;
+}
+
 .sk-row {
   display: grid;
   grid-template-columns: 180px 1fr 100px;
