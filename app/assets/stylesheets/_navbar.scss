@@ -1,22 +1,15 @@
 /* ============================================================
-   Navbar — Bulma overrides via CSS variables + custom styling
+   Navbar
    ============================================================ */
 .navbar {
-  /* Override Bulma's light-scheme navbar vars */
-  --bulma-navbar-background-color: transparent;
-  --bulma-navbar-item-color: rgba(255, 255, 255, 0.65);
-  --bulma-navbar-item-hover-color: #ffffff;
-  --bulma-navbar-item-hover-background-color: transparent;
-  --bulma-navbar-item-active-color: #ffffff;
-  --bulma-navbar-item-active-background-color: transparent;
-  --bulma-navbar-burger-color: var(--bulma-text);
-
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 200;
-  border-bottom: none;
+  height: var(--nav-h);
+  display: flex;
+  align-items: center;
   background: transparent;
   transition: background 0.4s ease, box-shadow 0.4s ease, backdrop-filter 0.4s ease;
 }
@@ -28,117 +21,139 @@
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06), 0 4px 24px rgba(0, 0, 0, 0.4);
 }
 
+/* ── Inner layout ── */
+.navbar-inner {
+  width: 100%;
+  max-width: var(--max-w);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
 /* ── Logo ── */
-.navbar .navbar-logo {
-  font-family: var(--bulma-family-secondary);
+.navbar-logo {
+  font-family: var(--font-display);
   font-weight: 800;
   font-size: 1.35rem;
   text-transform: uppercase;
-  color: var(--bulma-text);
+  color: var(--color-text);
+  text-decoration: none;
+  flex-shrink: 0;
+
+  &:hover { color: var(--color-text); }
 }
 
-.navbar .navbar-logo:hover,
-.navbar .navbar-logo:focus {
-  color: var(--bulma-text);
-  background-color: transparent;
-}
-
-/* ── Center nav links ── */
-.navbar .navbar-start {
+/* ── Nav links (center) ── */
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
   flex: 1;
   justify-content: center;
-  margin-right: 0;
-  gap: 1.25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-/* ── Nav links ── */
-.navbar-item {
-  font-family: var(--bulma-family-secondary);
+.navbar-link {
+  font-family: var(--font-display);
   font-weight: 700;
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  position: relative;
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
-  padding-left: 0.6rem;
-  padding-right: 0.6rem;
-}
-
-.navbar .navbar-item:hover,
-.navbar .navbar-item:focus,
-.navbar .navbar-item.is-active {
-  background-color: transparent;
-}
-
-.navbar .navbar-item.is-active {
-  color: #ffffff;
-}
-
-.navbar-start .navbar-item {
-  position: relative;
-}
-
-.navbar-start .navbar-item::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: var(--bulma-primary);
-  transform: scaleX(0);
-  transition: transform 0.2s ease;
-}
-
-.navbar-start .navbar-item:hover::after,
-.navbar-start .navbar-item.is-active::after {
-  transform: scaleX(1);
-}
-
-/* ── CTA button ── */
-.navbar-cta {
-  font-family: var(--bulma-family-secondary);
-  font-weight: 800;
-  font-size: 1.25rem;
-  text-transform: uppercase;
-  color: var(--bulma-primary);
+  color: var(--color-text-muted);
   text-decoration: none;
-  border: 1.5px solid var(--bulma-primary);
+  padding: 0.25rem 0.6rem;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--color-primary);
+    transform: scaleX(0);
+    transition: transform 0.2s ease;
+  }
+
+  &:hover       { color: var(--color-text); }
+  &:hover::after,
+  &.is-active::after { transform: scaleX(1); }
+  &.is-active   { color: var(--color-text); }
+}
+
+/* ── CTAs (right) ── */
+.navbar-ctas {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.navbar-cta {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  text-decoration: none;
+  border: 1.5px solid var(--color-primary);
   padding: 0.45rem 1rem;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   transition: background 0.15s ease, color 0.15s ease;
   white-space: nowrap;
+
+  &:hover { background: var(--color-primary); color: var(--color-primary-invert); }
 }
 
-.navbar-cta:hover {
-  background: var(--bulma-primary);
-  color: #0b1729;
-}
+.navbar-cta-secondary {
+  color: var(--color-text-muted);
+  border-color: var(--color-border-2);
 
-.navbar .navbar-cta-secondary {
-  color: rgba(255, 255, 255, 0.7);
-  border-color: rgba(255, 255, 255, 0.35);
-}
-
-.navbar .navbar-cta-secondary:hover {
-  background: rgba(255, 255, 255, 0.1);
-  color: #ffffff;
-  border-color: rgba(255, 255, 255, 0.7);
+  &:hover { background: rgba(255, 255, 255, 0.08); color: var(--color-text); border-color: var(--color-text-muted); }
 }
 
 .navbar-cta-divider {
-  display: flex;
-  align-items: center;
-  font-family: var(--bulma-family-secondary);
+  font-family: var(--font-display);
   font-weight: 700;
   font-size: 0.65rem;
   letter-spacing: 0.14em;
-  color: rgba(255, 255, 255, 0.25);
-  padding: 0 0.25rem;
+  color: var(--color-text-faint);
   user-select: none;
+}
+
+/* ── Mobile menu (hidden on desktop) ── */
+.navbar-menu {
+  display: none;
+}
+
+/* ── Burger (mobile) ── */
+.navbar-burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 2rem;
+  height: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-left: auto;
+
+  span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: var(--color-text);
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
 }
 
 /* ── Locale dropdown ── */
@@ -157,10 +172,8 @@
   opacity: 0.7;
   transition: opacity 0.15s ease;
   line-height: 1;
-}
 
-.locale-dropdown-trigger:hover {
-  opacity: 1;
+  &:hover { opacity: 1; }
 }
 
 .locale-dropdown-menu {
@@ -170,16 +183,14 @@
   right: 0;
   min-width: 7rem;
   background: rgba(11, 23, 41, 0.97);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--color-border-2);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
   z-index: 300;
   padding: 0.35rem 0;
-}
 
-.locale-dropdown-menu.is-open {
-  display: block;
+  &.is-open { display: block; }
 }
 
 .locale-dropdown-item {
@@ -187,22 +198,16 @@
   align-items: center;
   justify-content: space-between;
   padding: 0.5rem 1rem;
-  font-family: var(--bulma-family-secondary);
+  font-family: var(--font-display);
   font-weight: 700;
   font-size: 0.8rem;
   letter-spacing: 0.1em;
-  color: rgba(255, 255, 255, 0.55);
+  color: var(--color-text-muted);
   text-decoration: none;
   transition: color 0.15s ease, background 0.15s ease;
-}
 
-.locale-dropdown-item:hover {
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.06);
-}
-
-.locale-dropdown-item.is-active {
-  color: #ffffff;
+  &:hover    { color: var(--color-text); background: rgba(255, 255, 255, 0.06); }
+  &.is-active { color: var(--color-text); }
 }
 
 .locale-flag {
@@ -219,21 +224,39 @@
   margin-right: 0.5rem;
 }
 
-/* ── Mobile: keep Bulma's burger/menu behaviour, re-skin ── */
+/* ── Mobile ── */
 @media (max-width: 1023px) {
-  .navbar-menu.is-active {
+  .navbar-burger { display: flex; }
+  .navbar-links,
+  .navbar-ctas { display: none; }
+
+  .navbar-menu {
+    position: fixed;
+    top: var(--nav-h);
+    left: 0;
+    right: 0;
     background: rgba(11, 23, 41, 0.98);
-    border-top: 1px solid var(--bulma-border);
-    box-shadow: none;
+    border-top: 1px solid var(--color-border);
     backdrop-filter: blur(10px);
     padding: 1rem 0 1.5rem;
-  }
-
-  .navbar-item::after {
     display: none;
+
+    &.is-active {
+      display: block;
+
+      .navbar-links,
+      .navbar-ctas {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0 var(--gutter);
+        gap: 0.25rem;
+      }
+
+      .navbar-ctas { margin-top: 1rem; flex-direction: row; flex-wrap: wrap; }
+    }
   }
 
-  .navbar-item {
-    padding: 0.75rem 1.5rem;
-  }
+  .navbar-link { padding: 0.65rem 0; font-size: 1.25rem; }
+  .navbar-link::after { display: none; }
 }

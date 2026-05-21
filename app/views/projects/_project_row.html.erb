@@ -1,24 +1,24 @@
 <a href="<%= project_path(project) %>" class="proj-row <%= index.odd? ? 'flipped' : '' %>">
   <div class="proj-content">
-    <p class="is-family-code is-size-7 mb-2"><%= project.year %></p>
-    <h3 class="title is-3"><%= project.name %></h3>
-    <p class="is-size-6 mb-4"><%= project.description %></p>
+    <p class="font-mono text-xs mb-2"><%= project.year %></p>
+    <h3 class="mb-2"><%= project.name %></h3>
+    <p class="mb-4"><%= project.description %></p>
     <div class="tags mb-4">
       <% project.skills.each do |skill| %>
         <span class="tag"><%= skill.name %></span>
       <% end %>
     </div>
-    <div class="is-flex is-align-items-center">
-      <span class="proj-cta mr-4">View case study →</span>
+    <div style="display:flex; align-items:center; gap:1rem;">
+      <span class="proj-cta">View case study →</span>
       <% if project.url.present? %>
-        <span class="is-family-code is-size-7 mr-3">↗ <%= project.url %></span>
+        <span class="font-mono text-xs">↗ <%= project.url %></span>
       <% end %>
       <% if project.repo_url.present? %>
-        <span class="is-family-code is-size-7">↗ repo</span>
+        <span class="font-mono text-xs">↗ repo</span>
       <% end %>
     </div>
   </div>
   <div class="proj-img img-stub">
-    <span class="is-family-code is-size-7"><%= project.name %> screenshot</span>
+    <span class="font-mono text-xs"><%= project.name %> screenshot</span>
   </div>
 </a>

@@ -1,9 +1,7 @@
-<section class="section is-medium container is-max-desktop">
-  <div class="subtitle"><%= t("contact.subtitle") %></div>
-  <h1 class="title is-1"><%= t("contact.title") %></h1>
-  <p class="contact-intro">
-    <%= t("contact.intro") %>
-  </p>
+<section class="section container">
+  <p class="subtitle mb-2"><%= t("contact.subtitle") %></p>
+  <h1 class="mb-4"><%= t("contact.title") %></h1>
+  <p class="contact-intro"><%= t("contact.intro") %></p>
 
   <div class="contact-layout">
     <div class="contact-form-wrapper">
@@ -31,7 +29,7 @@
 
         <div class="field">
           <div class="control">
-            <%= f.submit t("contact.form.submit"), class: "button is-primary" %>
+            <%= f.submit t("contact.form.submit"), class: "btn btn-primary" %>
           </div>
         </div>
       <% end %>
@@ -44,6 +42,5 @@
       <a href="#" class="social-icon" title="Slack"><i class="fa-brands fa-slack"></i></a>
       <a href="mailto:#" class="social-icon" title="Email"><i class="fa-solid fa-envelope"></i></a>
     </div>
-
   </div>
 </section>

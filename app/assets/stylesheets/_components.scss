@@ -1,0 +1,180 @@
+/* ============================================================
+   Components — button, tag, form fields, box, menu
+   ============================================================ */
+
+/* ── Buttons ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.6em 1.4em;
+  border: 2px solid var(--color-border-2);
+  border-radius: 0;
+  background: transparent;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  text-decoration: none;
+  line-height: 1;
+  white-space: nowrap;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+
+  &:hover  { border-color: var(--color-text); color: var(--color-text); }
+  &:focus  { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+  &:active { opacity: 0.8; }
+
+  &:disabled,
+  &[disabled] {
+    opacity: 0.35;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: var(--color-primary-invert);
+  border-color: var(--color-primary);
+
+  &:hover { background: transparent; color: var(--color-primary); }
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+
+  &:hover { background: var(--color-primary); color: var(--color-primary-invert); }
+}
+
+/* Sizes */
+.btn-sm { font-size: 0.8rem; padding: 0.45em 1em; }
+.btn-lg { font-size: 1.2rem; padding: 0.75em 1.75em; }
+
+/* Loading state — hides label, shows spinner */
+.btn.is-loading {
+  color: transparent !important;
+  pointer-events: none;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 1em;
+    height: 1em;
+    border: 2px solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    animation: btn-spin 0.6s linear infinite;
+  }
+}
+
+@keyframes btn-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Tags ── */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2em 0.65em;
+  font-size: 0.7rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--color-border-2);
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+/* ── Form elements ── */
+.label {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 0.35rem;
+}
+
+.field   { margin-bottom: 1.25rem; }
+.control { position: relative; }
+
+.input,
+.textarea {
+  display: block;
+  width: 100%;
+  padding: 0.65em 0.9em;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: #0b1729;
+  background: #ffffff;
+  border: 1.5px solid rgba(0, 0, 0, 0.15);
+  border-radius: 0;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+
+  &::placeholder { color: rgba(11, 23, 41, 0.35); }
+
+  &:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 2px rgba(245, 233, 12, 0.25);
+  }
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 7rem;
+}
+
+/* ── Box ── */
+.box {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  padding: 1.5rem;
+}
+
+/* ── Menu (sidebar navigation) ── */
+.menu-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-faint);
+  margin-bottom: 0.5rem;
+
+  & + .menu-label { margin-top: 1rem; }
+}
+
+.menu-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  a {
+    display: block;
+    padding: 0.4em 0.75em;
+    color: var(--color-text-muted);
+    transition: color 0.15s ease, background 0.15s ease;
+
+    &:hover     { color: var(--color-text); background: rgba(255, 255, 255, 0.05); }
+    &.is-active { color: var(--color-primary); background: rgba(245, 233, 12, 0.08); }
+  }
+}

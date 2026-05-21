@@ -1,0 +1,63 @@
+/* ============================================================
+   Typography — heading scale, text size & colour utilities
+   ============================================================ */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 900;
+  color: var(--color-text);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+h1 {
+  font-size: clamp(3.5rem, 8vw, 6.5rem);
+  line-height: 0.88;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 0.9;
+  letter-spacing: -0.015em;
+}
+
+h3 {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  line-height: 0.95;
+}
+
+h4 { font-size: clamp(1.25rem, 2vw, 1.75rem); line-height: 1.1; }
+h5 { font-size: clamp(1rem, 1.5vw, 1.25rem);  line-height: 1.2; }
+h6 { font-size: 1rem; line-height: 1.3; font-weight: 700; }
+
+.subtitle {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--color-text-muted);
+  line-height: 1.2;
+  margin: 0;
+}
+
+p {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* ── Text size utilities ── */
+.text-xs  { font-size: 0.75rem; }
+.text-sm  { font-size: 0.875rem; }
+.text-md  { font-size: 1.125rem; }
+.text-lg  { font-size: 1.25rem; }
+
+/* ── Font family utilities ── */
+.font-display { font-family: var(--font-display); }
+.font-mono    { font-family: var(--font-mono); }
+
+/* ── Colour utilities ── */
+.text-primary { color: var(--color-primary); }
+.text-muted   { color: var(--color-text-muted); }
+.text-faint   { color: var(--color-text-faint); }

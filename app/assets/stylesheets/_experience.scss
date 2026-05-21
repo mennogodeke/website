@@ -23,10 +23,10 @@
   padding: 18px 14px 18px 16px;
   background: transparent;
   border: none;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid var(--color-border);
   border-left: 3px solid transparent;
-  color: var(--bulma-text);
-  font-family: var(--bulma-family-secondary);
+  color: var(--color-text);
+  font-family: var(--font-display);
   font-weight: 800;
   font-size: 1.25rem;
   text-transform: uppercase;
@@ -36,9 +36,7 @@
   position: relative;
   transition: padding-left 0.2s ease, background 0.2s ease;
 
-  &:last-child {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  }
+  &:last-child { border-bottom: 1px solid var(--color-border); }
 
   &::before {
     content: '';
@@ -61,26 +59,24 @@
   }
 
   &.active .yr,
-  &.active .chevron {
-    color: var(--bulma-primary);
-  }
+  &.active .chevron { color: var(--color-primary); }
 }
 
 .exp-rail .row .yr {
-  font-family: var(--bulma-family-code);
+  font-family: var(--font-mono);
   font-size: 0.688rem;
   font-weight: 400;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.35);
+  color: var(--color-text-faint);
   align-self: center;
 }
 
 .exp-rail .row .chevron {
-  font-family: var(--bulma-family-secondary);
+  font-family: var(--font-display);
   font-weight: 900;
   font-size: 1rem;
-  color: rgba(255, 255, 255, 0.35);
+  color: var(--color-text-faint);
   align-self: center;
 }
 
@@ -92,7 +88,7 @@
 }
 
 .exp-years-num {
-  font-family: var(--bulma-family-secondary);
+  font-family: var(--font-display);
   font-weight: 900;
   font-size: 5.5rem;
   line-height: 0.8;
@@ -126,7 +122,5 @@
 
 /* ── Responsive ── */
 @media (max-width: 900px) {
-  .exp-row {
-    grid-template-columns: 1fr;
-  }
+  .exp-row { grid-template-columns: 1fr; }
 }

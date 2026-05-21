@@ -1,65 +1,52 @@
 .career-list {
   display: flex;
   flex-direction: column;
-  gap: 0;
-}
-
-.career-list > .box:not(:last-child) {
-  margin-bottom: 0;
 }
 
 .career-list .box {
   background: transparent;
   border: none;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid var(--color-border);
   border-left: 3px solid transparent;
-  box-shadow: none;
-  border-radius: 0;
   padding: 1.5rem 1rem 1.5rem 1.75rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
-  color: var(--bulma-text-weak);
+  color: var(--color-text-muted);
   transition: border-left-color 0.2s ease, padding-left 0.2s ease, color 0.2s ease;
-}
 
-.career-list .box:last-child {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
+  &:last-child { border-bottom: 1px solid var(--color-border); }
 
-.career-list .box:hover {
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  border-left: 3px solid var(--bulma-primary);
-  padding-left: 2.5rem;
-  color: #ffffff;
-}
-
-.career-list .box:last-child:hover {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  &:hover {
+    border-left-color: var(--color-primary);
+    padding-left: 2.5rem;
+    color: var(--color-text);
+  }
 }
 
 .job-title {
-  font-family: var(--bulma-family-secondary);
+  font-family: var(--font-display);
   font-weight: 700;
   font-size: clamp(1.25rem, 2vw, 1.75rem);
   text-transform: uppercase;
   letter-spacing: -0.01em;
-  color: #ffffff;
+  color: var(--color-text);
   margin-bottom: 0.1rem;
 }
 
 .job-company {
   font-size: 0.9rem;
+  color: var(--color-text-muted);
 }
 
 .job-dates {
-  font-family: var(--bulma-family-secondary);
+  font-family: var(--font-display);
   font-weight: 700;
   font-size: 0.85rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #ffffff;
+  color: var(--color-text);
   flex-shrink: 0;
   white-space: nowrap;
 }

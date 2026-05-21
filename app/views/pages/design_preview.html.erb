@@ -2,200 +2,148 @@
 <%# DESIGN PREVIEW — component showcase for the design system   %>
 <%# ============================================================ %>
 
+<section class="section container">
+  <h1 class="mb-6">Design Preview</h1>
 
-<%# ============================================================ %>
-<%# 1. COLORS                                                    %>
-<%# ============================================================ %>
-<section class="section is-medium">
-  <h1 class="title is-1">Design Preview</h1>
-  <div class="columns">
-    <div class="column">
-      <h2 class="title is-2">Colors</h2>
-      <%# ============================================================ %>
-      <%# 1. COLORS                                                    %>
-      <%# ============================================================ %>
-      <% theme_colors = %w[primary link info success warning danger legendary epic rare uncommon common] %>
-      <% shades = %w[00 05 10 15 20 25 30 35 40 45 50 55 60 65 70 75 80 85 90 95 100] %>
-      <% semantic = [nil, "light", "dark", "soft", "bold", "on-scheme"] %>
+  <%# ── Colors ── %>
+  <h2 class="mb-4">Colors</h2>
+  <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(140px,1fr)); gap:0.5rem; margin-bottom:3rem;">
+    <% {
+      "Primary"   => "var(--color-primary)",
+      "Legendary" => "var(--color-legendary)",
+      "Epic"      => "var(--color-epic)",
+      "Rare"      => "var(--color-rare)",
+      "Uncommon"  => "var(--color-uncommon)",
+      "Common"    => "var(--color-common)",
+    }.each do |name, value| %>
+      <div style="background:<%= value %>; padding:1rem; color:#0b1729;">
+        <span class="font-mono text-xs"><%= name %></span>
+      </div>
+    <% end %>
+    <% {
+      "BG"       => "var(--color-bg)",
+      "BG-2"     => "var(--color-bg-2)",
+      "BG-Card"  => "var(--color-bg-card)",
+      "Border"   => "var(--color-border-2)",
+    }.each do |name, value| %>
+      <div style="background:<%= value %>; border:1px solid var(--color-border-2); padding:1rem;">
+        <span class="font-mono text-xs text-faint"><%= name %></span>
+      </div>
+    <% end %>
+  </div>
 
-      <% theme_colors.each do |color| %>
-        <div class="mb-6">
-          <h2 class="title is-5 mb-2"><%= color.capitalize %></h2>
+  <%# ── Typography ── %>
+  <h2 class="mb-4">Typography</h2>
+  <div style="display:flex; flex-direction:column; gap:1.5rem; margin-bottom:3rem; border-top:1px solid var(--color-border); padding-top:1.5rem;">
+    <div style="display:grid; grid-template-columns:40px 1fr; gap:1rem; align-items:baseline; border-bottom:1px solid var(--color-border); padding-bottom:1.5rem;">
+      <span class="font-mono text-xs text-faint">H1</span>
+      <h1>Senior Software Engineer</h1>
+    </div>
+    <div style="display:grid; grid-template-columns:40px 1fr; gap:1rem; align-items:baseline; border-bottom:1px solid var(--color-border); padding-bottom:1.5rem;">
+      <span class="font-mono text-xs text-faint">H2</span>
+      <h2>A decade of building things that work</h2>
+    </div>
+    <div style="display:grid; grid-template-columns:40px 1fr; gap:1rem; align-items:baseline; border-bottom:1px solid var(--color-border); padding-bottom:1.5rem;">
+      <span class="font-mono text-xs text-faint">H3</span>
+      <h3>Back-end systems & full-stack web apps</h3>
+    </div>
+    <div style="display:grid; grid-template-columns:40px 1fr; gap:1rem; align-items:baseline; border-bottom:1px solid var(--color-border); padding-bottom:1.5rem;">
+      <span class="font-mono text-xs text-faint">H4</span>
+      <h4>Ruby on Rails · Go · PostgreSQL · Docker</h4>
+    </div>
+    <div style="display:grid; grid-template-columns:40px 1fr; gap:1rem; align-items:baseline; border-bottom:1px solid var(--color-border); padding-bottom:1.5rem;">
+      <span class="font-mono text-xs text-faint">H5</span>
+      <h5>Open to permanent roles and freelance contracts</h5>
+    </div>
+    <div style="display:grid; grid-template-columns:40px 1fr; gap:1rem; align-items:baseline;">
+      <span class="font-mono text-xs text-faint">H6</span>
+      <h6>Based in Germany · Remote & hybrid · Senior level</h6>
+    </div>
+  </div>
 
-          <%# Numbered shades %>
-          <div class="is-flex mb-2">
-            <% shades.each do |shade| %>
-              <div class="is-flex-grow-1 has-background-<%= color %>-<%= shade %> has-text-centered py-5">
-                <span class="is-size-7 has-text-<%= color %>-<%= shade %>-invert"><%= shade %></span>
-              </div>
-            <% end %>
-          </div>
+  <div style="margin-bottom:3rem;">
+    <h3 class="mb-3">Body text</h3>
+    <p class="mb-2">Default paragraph — The quick brown fox jumps over the lazy dog. A decade of Rails, currently open to opportunities.</p>
+    <p class="text-sm mb-2">text-sm — The quick brown fox jumps over the lazy dog.</p>
+    <p class="text-xs mb-2">text-xs — The quick brown fox jumps over the lazy dog.</p>
+    <p class="font-mono text-xs">font-mono text-xs — 8yr Back-End · 5yr DevOps · 3yr Cloud</p>
+  </div>
 
-          <%# Semantic variants %>
-          <div class="is-flex">
-            <% semantic.each do |variant| %>
-              <% bg = variant ? "has-background-#{color}-#{variant}" : "has-background-#{color}" %>
-              <div class="is-flex-grow-1 <%= bg %> has-text-centered py-3">
-                <span class="is-size-7"><%= variant || "base" %></span>
-              </div>
-            <% end %>
-          </div>
-        </div>
-      <% end %>
+  <%# ── Buttons ── %>
+  <h2 class="mb-4">Buttons</h2>
 
-      <%# Greys & neutrals %>
-      <div class="mb-6">
-        <h2 class="title is-5 mb-2">Greys &amp; Neutrals</h2>
-        <div class="is-flex">
-          <% %w[white light grey-light grey grey-dark dark black].each do |name| %>
-            <div class="is-flex-grow-1 has-background-<%= name %> has-text-centered py-5">
-              <span class="is-size-7"><%= name %></span>
-            </div>
-          <% end %>
-        </div>
+  <h3 class="mb-3">Variants</h3>
+  <div style="display:flex; flex-wrap:wrap; gap:0.75rem; margin-bottom:2rem;">
+    <a class="btn">Default</a>
+    <a class="btn btn-primary">Primary</a>
+    <a class="btn btn-secondary">Secondary</a>
+  </div>
+
+  <h3 class="mb-3">Sizes</h3>
+  <div style="display:flex; flex-wrap:wrap; align-items:center; gap:0.75rem; margin-bottom:2rem;">
+    <a class="btn btn-primary btn-sm">Small</a>
+    <a class="btn btn-primary">Normal</a>
+    <a class="btn btn-primary btn-lg">Large</a>
+  </div>
+
+  <h3 class="mb-3">States</h3>
+  <div style="display:flex; flex-wrap:wrap; gap:0.75rem; margin-bottom:3rem;">
+    <a class="btn btn-primary">Normal</a>
+    <a class="btn btn-primary is-loading">Loading</a>
+    <a class="btn btn-primary" disabled>Disabled</a>
+    <a class="btn btn-secondary">Secondary</a>
+    <a class="btn btn-secondary" disabled>Secondary Disabled</a>
+  </div>
+
+  <%# ── Tags ── %>
+  <h2 class="mb-4">Tags</h2>
+  <div class="tags mb-6">
+    <span class="tag">Ruby on Rails</span>
+    <span class="tag">Go</span>
+    <span class="tag">PostgreSQL</span>
+    <span class="tag">Docker</span>
+    <span class="tag">Terraform</span>
+    <span class="tag">AWS</span>
+  </div>
+
+  <%# ── Form ── %>
+  <h2 class="mb-4">Form Elements</h2>
+  <div style="max-width:480px; margin-bottom:3rem;">
+    <div class="field">
+      <label class="label">Name</label>
+      <div class="control">
+        <input class="input" type="text" placeholder="Your name">
       </div>
     </div>
-    <div class="column">
-      <%# ============================================================ %>
-      <%# 2. TYPOGRAPHY                                                %>
-      <%# ============================================================ %>
-      <h2 class="title is-2">Typography</h2>
-
-      <%# Titles %>
-      <h2 class="title is-2">Titles</h2>
-      <div class="mb-6">
-        <% [1,2,3,4,5,6].each do |n| %>
-          <h<%= n %> class="title is-<%= n %>">Title is-<%= n %></h<%= n %>>
-        <% end %>
+    <div class="field">
+      <label class="label">Message</label>
+      <div class="control">
+        <textarea class="textarea" placeholder="Your message" rows="4"></textarea>
       </div>
-
-      <%# Subtitles %>
-      <h2 class="title is-2">Subtitles</h2>
-      <div class="mb-6">
-        <% [1,2,3,4,5,6].each do |n| %>
-          <p class="subtitle is-<%= n %>">Subtitle is-<%= n %></p>
-        <% end %>
-      </div>
-
-      <%# Size helpers %>
-      <h2 class="title is-2">Size helpers</h2>
-      <div class="mb-6">
-        <% [1,2,3,4,5,6,7].each do |n| %>
-          <p class="is-size-<%= n %> mb-2">is-size-<%= n %> — The quick brown fox jumps over the lazy dog</p>
-        <% end %>
-      </div>
-
-      <%# Weight helpers %>
-      <h2 class="title is-2">Weight helpers</h2>
-      <div class="mb-6">
-        <% { light: 300, normal: 400, medium: 500, semibold: 600, bold: 700 }.each do |name, val| %>
-          <p class="has-text-weight-<%= name %> mb-2">has-text-weight-<%= name %> (<%= val %>) — The quick brown fox jumps over the lazy dog</p>
-        <% end %>
-      </div>
-
-      <%# Font families %>
-      <h2 class="title is-2">Font families</h2>
-      <div class="mb-6">
-        <p class="is-size-4 mb-2" style="font-family: var(--bulma-family-primary)">family-primary (Barlow) — The quick brown fox jumps over the lazy dog</p>
-        <p class="is-size-4 mb-2" style="font-family: var(--bulma-family-secondary)">family-secondary — The quick brown fox jumps over the lazy dog</p>
-        <p class="is-size-4" style="font-family: var(--bulma-family-code)">family-code — The quick brown fox jumps over the lazy dog</p>
+    </div>
+    <div class="field">
+      <div class="control">
+        <button class="btn btn-primary">Submit</button>
       </div>
     </div>
   </div>
-  <div class="columns">
-    <div class="column is-three-fifths">
-      <h2 class="title is-2">Components</h2>
 
-      <h3 class="title is-3">Job</h3>
-      <div class="career-list">
-        <div class="box">
-          <div>
-            <p class="job-title">Senior Software Engineer</p>
-            <span class="job-company">Acme Corp</span>
-            <p>Led development of core platform features and improved system reliability.</p>
-          </div>
-          <span class="job-dates">Jan 2022 – Present</span>
+  <%# ── Career card ── %>
+  <h2 class="mb-4">Career card</h2>
+  <div class="career-list mb-6">
+    <% [
+      { title: "Senior Software Engineer", company: "Kape Technologies",   dates: "Feb 2022 – Jan 2026" },
+      { title: "Software Engineer",        company: "Kape Technologies",   dates: "Feb 2019 – Jan 2022" },
+      { title: "Junior Software Engineer", company: "ZenGuard",            dates: "Aug 2017 – Jan 2019" },
+    ].each do |job| %>
+      <div class="box">
+        <div>
+          <p class="job-title"><%= job[:title] %></p>
+          <span class="job-company"><%= job[:company] %></span>
         </div>
+        <span class="job-dates"><%= job[:dates] %></span>
       </div>
-
-      <h3 class="title is-3 mt-6">Jobs</h3>
-      <div class="career-list">
-        <div class="box">
-          <div>
-            <p class="job-title">Senior Software Engineer</p>
-            <span class="job-company">Acme Corp</span>
-            <p>Led development of core platform features and improved system reliability.</p>
-          </div>
-          <span class="job-dates">Jan 2022 – Present</span>
-        </div>
-        <div class="box">
-          <div>
-            <p class="job-title">Software Engineer</p>
-            <span class="job-company">Example Ltd</span>
-            <p>Built and maintained customer-facing APIs and internal tooling.</p>
-          </div>
-          <span class="job-dates">Mar 2019 – Dec 2021</span>
-        </div>
-        <div class="box">
-          <div>
-            <p class="job-title">Junior Developer</p>
-            <span class="job-company">Startup Inc</span>
-            <p>Contributed to frontend and backend features across a SaaS product.</p>
-          </div>
-          <span class="job-dates">Jun 2017 – Feb 2019</span>
-        </div>
-        <div class="box">
-          <div>
-            <p class="job-title">Intern</p>
-            <span class="job-company">Agency BV</span>
-            <p>Assisted with web development projects for various clients.</p>
-          </div>
-          <span class="job-dates">Sep 2016 – May 2017</span>
-        </div>
-      </div> 
-      <h3 class="title is-3 mt-6">Expertise (TBD)</h3>
-      <%# Add Eperience here %>
-    </div>
-    <div class="column">
-      <h2 class="title is-2">Elements</h2>
-      <%# ============================================================ %>
-      <%# 3. BUTTONS                                                   %>
-      <%# ============================================================ %>
-      <h3 class="title is-3">Buttons</h3>
-      <h4 class="title is-4">Colors</h4>
-      <div class="buttons mb-6">
-        <% %w[primary link info success warning danger].each do |color| %>
-          <a class="button is-<%= color %>"><%= color.capitalize %></a>
-        <% end %>
-        <a class="button">Default</a>
-        <a class="button is-ghost">Ghost</a>
-        <a class="button is-text">Text</a>
-      </div>
-
-      <h4 class="title is-4">Outlined</h4>
-      <div class="buttons mb-6">
-        <% %w[primary link info success warning danger].each do |color| %>
-          <a class="button is-<%= color %> is-outlined"><%= color.capitalize %></a>
-        <% end %>
-      </div>
-
-      <h4 class="title is-4">Sizes</h4>
-      <div class="buttons is-vcentered mb-6">
-        <a class="button is-primary is-small">Small</a>
-        <a class="button is-primary">Normal</a>
-        <a class="button is-primary is-medium">Medium</a>
-        <a class="button is-primary is-large">Large</a>
-      </div>
-
-      <h4 class="title is-4">States</h4>
-      <div class="buttons mb-6">
-        <a class="button is-primary">Normal</a>
-        <a class="button is-primary is-hovered">Hovered</a>
-        <a class="button is-primary is-focused">Focused</a>
-        <a class="button is-primary is-active">Active</a>
-        <a class="button is-primary is-loading">Loading</a>
-        <a class="button is-primary" disabled>Disabled</a>
-      </div>      
-    </div>
+    <% end %>
   </div>
+
 </section>
