@@ -1,20 +1,19 @@
 <% initials = job.company.split.map { |w| w[0] }.join.upcase.first(2) %>
-<div class="tl-entry<%= " open" if first %>"
-     style="--entry-accent: var(--color-<%= rarity %>)"
-     data-controller="career-entry"
-     data-career-target="entry">
-
+<% rarity_class = highlight_class.sub("highlight-", "tl-entry--") %>
+<div class="tl-entry <%= rarity_class %>" data-controller="career-entry" data-career-target="entry">
+  <div class="tl-dot"></div>
   <div class="tl-header" data-action="click->career-entry#toggle">
-    <div class="tl-company-logo"><%= initials %></div>
+    <div class="tl-logo"><%= initials %></div>
     <div class="tl-header-main">
-      <div class="tl-role-row">
-        <div class="tl-role"><span class="<%= highlight_class %>"><%= job.title %></span></div>
-        <span class="tl-at-company">@ <%= job.company %></span>
+      <div class="tl-role">
+        <span class="<%= highlight_class %>"><%= job.title %></span><span class="tl-company"> @ <%= job.company %></span>
       </div>
+      <div class="tl-meta tl-dates"><%= job.start_date.strftime("%b %Y").upcase %> · <%= job.end_date ? job.end_date.strftime("%b %Y").upcase : "Present" %></div>
     </div>
-    <div class="tl-chevron"><i class="fa-solid fa-chevron-down"></i></div>
+    <div class="tl-header-right">
+      <div class="tl-chevron"><i class="fa-solid fa-chevron-down"></i></div>
+    </div>
   </div>
-
   <div class="tl-body">
     <div class="tl-body-inner">
       <div class="tl-body-content">
@@ -31,11 +30,5 @@
         <% end %>
       </div>
     </div>
-  </div>
-
-  <div class="tl-rail" aria-hidden="true">
-    <span class="yr"><%= job.start_date.year %></span>
-    <div class="tl-rail-dot"></div>
-    <span class="yr"><%= job.end_date ? job.end_date.year : "NOW" %></span>
   </div>
 </div>

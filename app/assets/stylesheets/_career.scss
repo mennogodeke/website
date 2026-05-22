@@ -1,35 +1,51 @@
+/* ============================================================
+   Career page
+   ============================================================ */
+
 .career-list {
   display: flex;
   flex-direction: column;
 }
 
-.job-title {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: clamp(1.25rem, 2vw, 1.75rem);
-  text-transform: uppercase;
-  letter-spacing: -0.01em;
-  color: var(--color-text);
-  margin-bottom: 0.1rem;
+/* ── Status banner ── */
+.career-status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 0.875rem 1rem 0.875rem 1.25rem;
+  background: color-mix(in srgb, var(--color-uncommon) 8%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-uncommon) 25%, transparent);
+  border-left: 3px solid var(--color-uncommon);
+  margin-bottom: 1.25rem;
 }
 
-.job-company {
-  font-size: 0.9rem;
-  color: var(--color-text-muted);
+.career-status-main {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
-.job-dates {
-  font-family: var(--font-display);
-  font-weight: 700;
+.career-status-copy {
+  font-family: var(--font-body);
   font-size: 0.85rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--color-text);
-  flex-shrink: 0;
-  white-space: nowrap;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  max-width: 540px;
+  margin: 0;
+
+  strong { color: var(--color-text); font-weight: 600; }
 }
 
-/* ── Timeline ──────────────────────────────────────────────── */
+.career-status-actions { display: flex; gap: 0.5rem; }
+
+/* ── Timeline track ── */
+:root {
+  --tl-rail-w: 140px;
+  --tl-rail-center: 70px;
+}
 
 .tl-track {
   position: relative;
@@ -37,7 +53,7 @@
   &::before {
     content: '';
     position: absolute;
-    left: 19px;
+    right: calc(var(--tl-rail-center) - 1px);
     top: 0;
     bottom: 0;
     width: 2px;
@@ -46,9 +62,11 @@
   }
 }
 
+/* ── Entry ── */
 .tl-entry {
   position: relative;
-  padding-left: 56px;
+  padding-left: 0;
+  padding-right: var(--tl-rail-w);
   border-top: 1px solid var(--color-border);
   transition: background 0.15s;
 
@@ -57,128 +75,175 @@
   &::after {
     content: '';
     position: absolute;
-    left: 0;
+    right: var(--tl-rail-w);
     top: 0;
     bottom: 0;
     width: 3px;
-    background: var(--color-primary);
-    z-index: 2;
-    transform: scaleX(0);
-    transform-origin: left;
+    background: var(--entry-accent, var(--color-primary));
+    transform: scaleY(0);
+    transform-origin: top;
     transition: transform 0.2s ease;
+    z-index: 2;
   }
 
   &.open {
     background: var(--color-bg-card);
 
-    &::after { transform: scaleX(1); }
+    &::after { transform: scaleY(1); }
   }
 }
 
-.tl-dot {
+/* ── Right-side rail ── */
+.tl-rail {
   position: absolute;
-  left: 14px;
-  top: 26px;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: var(--tl-rail-w);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.tl-rail .yr {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  color: var(--color-text-faint);
+  line-height: 1;
+  padding: 4px 8px;
+  background: var(--color-bg);
+  position: relative;
+  z-index: 2;
+  transition: color 0.2s;
+}
+
+.tl-entry:hover .tl-rail .yr,
+.tl-entry.open  .tl-rail .yr { color: var(--color-text-muted); }
+
+.tl-rail-dot {
   width: 12px;
   height: 12px;
   border-radius: 50%;
   background: var(--color-bg);
   border: 2px solid var(--color-border-2);
-  z-index: 1;
-  transition: background 0.2s, border-color 0.2s;
-
-  .tl-entry:hover &,
-  .tl-entry.open & { border-color: var(--color-primary); }
-
-  .tl-entry.open & { background: var(--color-primary); }
+  position: relative;
+  z-index: 2;
+  transition: border-color 0.2s, background 0.2s;
 }
 
+.tl-entry:hover .tl-rail-dot { border-color: var(--entry-accent, var(--color-text-faint)); }
+.tl-entry.open  .tl-rail-dot {
+  background: var(--entry-accent, var(--color-primary));
+  border-color: var(--entry-accent, var(--color-primary));
+}
+
+/* ── Company logo monogram ── */
+.tl-company-logo {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  color: var(--color-text-faint);
+  text-transform: uppercase;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.tl-entry:hover .tl-company-logo {
+  border-color: var(--entry-accent, var(--color-text-faint));
+  color: var(--color-text-muted);
+}
+
+.tl-entry.open .tl-company-logo {
+  border-color: var(--entry-accent, var(--color-primary));
+  color: var(--color-text);
+}
+
+/* ── Entry header ── */
 .tl-header {
   display: flex;
   align-items: center;
   gap: 1rem;
-  padding: 1.375rem 1.75rem 1.375rem 0;
+  padding: 1.5rem 1.5rem 1.5rem 0;
   cursor: pointer;
   user-select: none;
 }
 
 .tl-header-main { flex: 1; min-width: 0; }
 
-.tl-company {
-  font-size: 0.65em;
-  color: var(--color-text-faint);
-  font-weight: 400;
-}
-
-.tl-dates {
-  margin-top: 0.5rem;
-}
-
-.tl-meta {
-  font-family: var(--font-mono);
-  font-size: 0.65rem;
-  text-transform: uppercase;
-  letter-spacing: 0.09em;
-  color: var(--color-text-faint);
-  margin-bottom: 0.3rem;
+/* ── Role row ── */
+.tl-role-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.625rem;
+  flex-wrap: wrap;
+  min-width: 0;
 }
 
 .tl-role {
   font-family: var(--font-display);
   font-size: clamp(1.25rem, 2.2vw, 1.75rem);
-  line-height: 0.9;
+  line-height: 1;
   text-transform: uppercase;
   letter-spacing: -0.01em;
+  min-width: 0;
 
-  span {
-    transition: background 0.2s, color 0.2s, padding 0.2s;
-  }
+  span { transition: background 0.2s, color 0.2s, padding 0.2s; }
 }
 
-.tl-entry:not(.open) .tl-role span:not(.tl-company) {
+.tl-entry:not(.open) .tl-role span {
   background: none;
   color: var(--color-text);
   padding: 0;
 }
 
-.tl-header-right {
-  display: flex;
+.tl-at-company {
+  display: inline-flex;
   align-items: center;
-  gap: 0.625rem;
-  flex-shrink: 0;
-}
-
-.tl-logo {
-  width: 38px;
-  height: 38px;
-  background: var(--color-bg-card);
-  border: 1px solid var(--color-border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-mono);
-  font-size: 0.5rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 400;
   color: var(--color-text-faint);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+  transition: color 0.2s;
 }
 
+.tl-entry:hover .tl-at-company,
+.tl-entry.open  .tl-at-company { color: var(--color-text-muted); }
+
+/* ── Chevron ── */
 .tl-chevron {
   width: 26px;
   height: 26px;
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--color-text-faint);
   font-size: 0.625rem;
   transition: transform 0.28s ease, color 0.15s;
-
-  .tl-entry.open & {
-    transform: rotate(180deg);
-    color: var(--color-text-muted);
-  }
 }
 
+.tl-entry.open .tl-chevron {
+  transform: rotate(180deg);
+  color: var(--color-text-muted);
+}
+
+/* ── Accordion body ── */
 .tl-body {
   display: grid;
   grid-template-rows: 0fr;
@@ -189,13 +254,13 @@
 
 .tl-body-inner { overflow: hidden; }
 
-.tl-body-content { padding: 0 1.75rem 1.5rem 0; }
+.tl-body-content { padding: 0 1.5rem 1.5rem 0; }
 
 .tl-desc {
   font-size: 0.875rem;
   color: var(--color-text-muted);
   line-height: 1.75;
-  margin-bottom: 1rem;
+  margin: 0 0 1rem;
 }
 
 .tl-skills {
@@ -204,22 +269,13 @@
   gap: 0.375rem;
 }
 
-/* ── Colour variants — rarity tiers ── */
-/* Placed last so they win the cascade over .tl-dot and .tl-role rules above */
+/* ── Responsive ── */
+@media (max-width: 700px) {
+  :root {
+    --tl-rail-w: 96px;
+    --tl-rail-center: 48px;
+  }
 
-@mixin tl-rarity($color-var) {
-  &::after                        { background: var(#{$color-var}); }
-  &.open                          { background: color-mix(in srgb, var(#{$color-var}) 5%, var(--color-bg-card)); }
-  .tl-dot                         { border-color: var(#{$color-var}); }
-  &:hover .tl-dot,
-  &.open .tl-dot                  { border-color: var(#{$color-var}); }
-  &.open .tl-dot                  { background: var(#{$color-var}); }
-  &.open .btn-primary             { background: var(#{$color-var}); border-color: var(#{$color-var}); color: var(--color-primary-invert); }
-  &.open .btn-primary:hover       { background: transparent; color: var(#{$color-var}); }
+  .tl-rail .yr { font-size: 0.7rem; }
+  .tl-company-logo { width: 40px; height: 40px; font-size: 0.7rem; }
 }
-
-.tl-entry--legendary { @include tl-rarity("--color-legendary"); }
-.tl-entry--epic      { @include tl-rarity("--color-epic"); }
-.tl-entry--rare      { @include tl-rarity("--color-rare"); }
-.tl-entry--uncommon  { @include tl-rarity("--color-uncommon"); }
-.tl-entry--common    { @include tl-rarity("--color-common"); }

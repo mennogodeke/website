@@ -7,19 +7,21 @@
 
     <%# Rail %>
     <div class="exp-rail" role="tablist">
-      <% @experiences.each do |experience| %>
+      <% @experiences.each_with_index do |experience, i| %>
         <button
-          class="row"
+          class="row<%= i == 0 ? " active" : "" %>"
           role="tab"
-          aria-selected="false"
+          aria-selected="<%= i == 0 %>"
           data-experience-target="row"
           data-experience-key="<%= experience.category %>"
           data-action="click->experience#select"
           style="--row-color: var(--color-<%= experience.accent %>)"
         >
-          <i class="<%= experience_rail_icon(experience.category) %> row-icon"></i>
-          <span><%= experience.name %></span>
-          <span class="yr"><%= experience.years_of_experience %>YR</span>
+          <span class="rank"><%= "%02d" % (i + 1) %></span>
+          <div class="label-col">
+            <span class="name"><%= experience.name %></span>
+            <div class="year-bar"><i style="width: <%= (experience.years_of_experience.to_f / @max_years * 100).round %>%"></i></div>
+          </div>
           <span class="chevron">›</span>
         </button>
       <% end %>
@@ -27,42 +29,53 @@
 
     <%# Panels %>
     <div>
-      <% @experiences.each do |experience| %>
-        <% sorted_skills = experience.skills.sort_by { |s| -Skill.levels[s.level] } %>
+      <% @experiences.each_with_index do |experience, i| %>
+        <% primary = experience.skills.to_a.first(3) %>
+        <% secondary = experience.skills.to_a.drop(3) %>
+        <% panel_grad = "linear-gradient(160deg, var(--highlight-#{experience.accent}-from) 0%, var(--highlight-#{experience.accent}-mid) 50%, var(--highlight-#{experience.accent}-to) 100%)" %>
         <div
           class="exp-panel"
           data-experience-target="panel"
           data-experience-key="<%= experience.category %>"
-          style="--panel-color: var(--color-<%= experience.accent %>)"
-          hidden
+          style="--panel-color: var(--color-<%= experience.accent %>); --panel-grad: <%= panel_grad %>"
+          <%= i == 0 ? "" : "hidden" %>
         >
-          <div class="exp-panel-header mb-4">
-            <h2><%= experience.name.upcase %></h2>
-            <div class="exp-panel-years">
-              <span class="exp-years-num"><%= experience.years_of_experience %></span>
-              <span class="text-xs">YEARS</span>
+          <div class="exp-panel-header">
+            <h2><span class="exp-title-stroke"><%= experience.name.upcase %></span></h2>
+          </div>
+
+          <p class="exp-panel-desc">
+            <strong><%= experience.years_of_experience %> years of experience</strong> — <%= experience.description %>
+          </p>
+
+          <% if primary.any? %>
+            <div class="exp-skills-header">
+              <span>Top <%= primary.count %> · primary</span>
             </div>
-          </div>
-
-          <p class="mb-5"><%= experience.description %></p>
-
-          <div class="exp-skills-header mb-3">
-            <span class="text-xs">Skills · ordered by proficiency</span>
-            <span class="text-xs"><%= experience.skills.count %> total</span>
-          </div>
-
-          <div>
-            <% sorted_skills.each_with_index do |skill, i| %>
-              <% pct = skill.expert? ? 100 : skill.proficient? ? 66 : 33 %>
-              <div class="sk-row">
-                <span class="sk-name"><%= skill.name %></span>
-                <div class="bar">
-                  <i data-width="<%= pct %>" style="transition-delay: <%= i * 30 %>ms"></i>
+            <div class="sk-primary">
+              <% primary.each do |skill| %>
+                <div class="sk-card" style="--chip-c: <%= skill.accent.present? ? skill.accent : "var(--color-text-faint)" %>">
+                  <i class="<%= skill.icon %> icon"></i>
+                  <span class="name"><%= skill.name %></span>
+                  <p class="desc"><%= skill.description.strip %></p>
                 </div>
-                <span class="text-xs sk-level"><%= skill.level.capitalize %></span>
-              </div>
-            <% end %>
-          </div>
+              <% end %>
+            </div>
+          <% end %>
+
+          <% if secondary.any? %>
+            <div class="exp-skills-header">
+              <span>Also used</span>
+            </div>
+            <div class="sk-secondary">
+              <% secondary.each do |skill| %>
+                <% chip_c = skill.accent.present? ? skill.accent : "var(--color-text-faint)" %>
+                <span class="sk-chip" style="--chip-c: <%= chip_c %>" title="<%= skill.description.strip %>">
+                  <i class="<%= skill.icon %>"></i><%= skill.name %>
+                </span>
+              <% end %>
+            </div>
+          <% end %>
 
         </div>
       <% end %>
