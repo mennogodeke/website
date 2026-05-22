@@ -1,22 +1,21 @@
 <%# ── Hero ── %>
 <div class="home-hero container section">
+  <%
+    chip_positions = [
+      ["5%","12%"],["88%","8%"],["72%","72%"],["18%","82%"],
+      ["92%","38%"],["3%","55%"],["55%","88%"],["80%","22%"],
+      ["40%","5%"],["65%","55%"],["25%","35%"],["10%","68%"],
+      ["48%","78%"],["82%","88%"],["32%","18%"],["92%","62%"],
+      ["58%","15%"],["15%","45%"],["70%","40%"],["45%","92%"]
+    ]
+  %>
   <div class="chip-field">
-    <span class="floating-chip floating-chip--orange" style="--cx:5%;--cy:12%"><i class="devicon-ruby-plain"></i></span>
-    <span class="floating-chip floating-chip--orange" style="--cx:88%;--cy:8%"><i class="devicon-rails-plain"></i></span>
-    <span class="floating-chip floating-chip--orange" style="--cx:72%;--cy:72%"><i class="devicon-redis-plain"></i></span>
-    <span class="floating-chip floating-chip--orange" style="--cx:18%;--cy:82%"><i class="devicon-swift-plain"></i></span>
-    <span class="floating-chip floating-chip--blue"   style="--cx:92%;--cy:38%"><i class="devicon-go-original-wordmark"></i></span>
-    <span class="floating-chip floating-chip--blue"   style="--cx:3%;--cy:55%"><i class="devicon-docker-plain"></i></span>
-    <span class="floating-chip floating-chip--blue"   style="--cx:55%;--cy:88%"><i class="devicon-terraform-plain"></i></span>
-    <span class="floating-chip floating-chip--blue"   style="--cx:80%;--cy:22%"><i class="devicon-amazonwebservices-plain-wordmark"></i></span>
-    <span class="floating-chip floating-chip--blue"   style="--cx:40%;--cy:5%"><i class="devicon-kubernetes-plain"></i></span>
-    <span class="floating-chip floating-chip--blue"   style="--cx:65%;--cy:55%"><i class="devicon-grafana-original"></i></span>
-    <span class="floating-chip floating-chip--purple" style="--cx:25%;--cy:35%"><i class="devicon-postgresql-plain"></i></span>
-    <span class="floating-chip floating-chip--green"  style="--cx:10%;--cy:68%"><i class="devicon-vuejs-plain"></i></span>
-    <span class="floating-chip floating-chip--green"  style="--cx:48%;--cy:78%"><i class="devicon-typescript-plain"></i></span>
-    <span class="floating-chip floating-chip--green"  style="--cx:82%;--cy:88%"><i class="devicon-nodejs-plain"></i></span>
-    <span class="floating-chip floating-chip--yellow" style="--cx:32%;--cy:18%"><i class="devicon-linux-plain"></i></span>
-    <span class="floating-chip floating-chip--yellow" style="--cx:92%;--cy:62%"><i class="devicon-python-plain"></i></span>
+    <% @chip_skills.each_with_index do |skill, i| %>
+      <% cx, cy = chip_positions[i % chip_positions.length] %>
+      <span class="floating-chip" style="--cx:<%= cx %>;--cy:<%= cy %>;--chip-c:<%= skill.accent %>">
+        <i class="<%= skill.icon %>"></i>
+      </span>
+    <% end %>
   </div>
 
   <div class="home-hero-grid">

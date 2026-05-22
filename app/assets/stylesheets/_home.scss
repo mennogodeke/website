@@ -59,11 +59,11 @@
   &:nth-child(16) { animation-name: chip-drift-d; animation-duration: 8s;  animation-delay: -4s; }
 }
 
-.floating-chip--orange { border: 1px solid rgba(224,107,0,.3);  color: rgba(224,107,0,.7);  background: rgba(224,107,0,.05);  }
-.floating-chip--blue   { border: 1px solid rgba(26,108,255,.3); color: rgba(26,108,255,.7); background: rgba(26,108,255,.05); }
-.floating-chip--purple { border: 1px solid rgba(139,28,245,.3); color: rgba(139,28,245,.7); background: rgba(139,28,245,.05); }
-.floating-chip--green  { border: 1px solid rgba(0,217,126,.3);  color: rgba(0,217,126,.7);  background: rgba(0,217,126,.05);  }
-.floating-chip--yellow { border: 1px solid rgba(245,233,12,.3); color: rgba(245,233,12,.7);  background: rgba(245,233,12,.05); }
+.floating-chip {
+  border:     1px solid color-mix(in srgb, var(--chip-c) 35%, transparent);
+  color:      color-mix(in srgb, var(--chip-c) 80%, transparent);
+  background: color-mix(in srgb, var(--chip-c) 8%, transparent);
+}
 
 @keyframes chip-drift-a {
   from { opacity: .35; transform: translate(0, 0); }
