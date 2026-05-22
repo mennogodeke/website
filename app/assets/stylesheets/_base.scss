@@ -21,8 +21,10 @@ body {
   font-family: var(--font-body);
   color: var(--color-text);
   background:
+    radial-gradient(ellipse at 90% 0%, var(--body-shine) 0%, transparent 45%),
+    radial-gradient(ellipse at 15% 100%, var(--body-shine) 0%, transparent 35%),
     radial-gradient(ellipse at 65% 10%, var(--body-glow) 0%, transparent 55%),
-    linear-gradient(180deg, var(--body-grad-from) 0%, var(--body-grad-mid) 45%, var(--body-grad-from) 100%);
+    linear-gradient(180deg, var(--body-grad-from) 0%, var(--body-grad-mid) 100%);
   background-attachment: fixed;
 }
 

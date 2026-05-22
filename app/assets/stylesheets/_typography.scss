@@ -7,14 +7,50 @@ h2, h3, h4, h5, h6 {
   color: var(--color-text);
 }
 
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
+h5 { font-size: 1.1rem; }
+h6 { font-size: 0.95rem; }
+
 h1 {
   font-family: var(--font-display);
+  font-size: clamp(3rem, 7vw, 5rem);
   text-transform: uppercase;
+  color: var(--color-h1-text);
+  background: linear-gradient(160deg, var(--color-h1-bg-from) 0%, var(--color-h1-bg-mid) 50%, var(--color-h1-bg-to) 100%);
+  display: inline;
+  padding: 0 0.15em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
 }
 
 p {
   font-family: var(--font-body);
   color: var(--color-text-muted);
+}
+
+/* ── Rarity highlight classes ── */
+.highlight-uncommon,
+.highlight-rare,
+.highlight-epic {
+  display: inline;
+  color: #ffffff;
+  padding: 0 0.15em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.highlight-uncommon {
+  background: linear-gradient(160deg, var(--highlight-uncommon-from) 0%, var(--highlight-uncommon-mid) 50%, var(--highlight-uncommon-to) 100%);
+}
+
+.highlight-rare {
+  background: linear-gradient(160deg, var(--highlight-rare-from) 0%, var(--highlight-rare-mid) 50%, var(--highlight-rare-to) 100%);
+}
+
+.highlight-epic {
+  background: linear-gradient(160deg, var(--highlight-epic-from) 0%, var(--highlight-epic-mid) 50%, var(--highlight-epic-to) 100%);
 }
 
 /* ── Text size utilities ── */

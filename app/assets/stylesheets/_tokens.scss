@@ -25,7 +25,11 @@
   --color-primary-invert: #0b1729;
 
   /* Semantic */
-  --color-danger: #e05555;
+  --color-danger:   #e05555;
+  --color-h1-bg-from: light-dark(#ffac55, #fff176);
+  --color-h1-bg-mid:  light-dark(#f97316, #f5e90c);
+  --color-h1-bg-to:   light-dark(#df5c00, #c9bc00);
+  --color-h1-text:  light-dark(#ffffff, #000000);
 
   /* Rarity palette */
   --color-legendary: #f0840a;
@@ -34,8 +38,20 @@
   --color-uncommon:  #19a828;
   --color-common:    #bdbfbe;
 
+  /* Rarity highlight gradients */
+  --highlight-uncommon-from: #4dd463;
+  --highlight-uncommon-mid:  #19a828;
+  --highlight-uncommon-to:   #0f7a1c;
+  --highlight-rare-from:     #3a8ff5;
+  --highlight-rare-mid:      #0464d1;
+  --highlight-rare-to:       #0348a0;
+  --highlight-epic-from:     #9b7af0;
+  --highlight-epic-mid:      #6a45e6;
+  --highlight-epic-to:       #4a28c0;
+
   /* Body gradient */
   --body-glow:      light-dark(rgba(0, 0, 0, 0.04), rgba(100, 60, 255, 0.30));
+  --body-shine:     light-dark(rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.06));
   --body-grad-from: light-dark(#ffffff, #00020f);
   --body-grad-mid:  light-dark(#f9f9f9, #010c2a);
 
