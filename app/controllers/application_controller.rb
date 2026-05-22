@@ -1,5 +1,10 @@
 class ApplicationController < ActionController::Base
   around_action :switch_locale
+  helper_method :current_theme
+
+  def current_theme
+    cookies[:theme].presence_in(%w[light dark]) || "dark"
+  end
 
   # Only allow modern browsers supporting webp images, web push, badges, import maps, CSS nesting, and CSS :has.
   allow_browser versions: :modern

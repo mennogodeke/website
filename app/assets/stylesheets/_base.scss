@@ -20,10 +20,9 @@ body {
   flex-direction: column;
   font-family: var(--font-body);
   color: var(--color-text);
-  /* CSS gradient replaces hero-bg.jpg — same dark-navy palette */
   background:
-    radial-gradient(ellipse at 65% 10%, rgba(56, 132, 220, 0.35) 0%, transparent 55%),
-    linear-gradient(180deg, #0e2f63 0%, #143568 45%, #0e2f63 100%);
+    radial-gradient(ellipse at 65% 10%, var(--body-glow) 0%, transparent 55%),
+    linear-gradient(180deg, var(--body-grad-from) 0%, var(--body-grad-mid) 45%, var(--body-grad-from) 100%);
   background-attachment: fixed;
 }
 
@@ -49,8 +48,8 @@ svg {
   align-items: center;
   justify-content: center;
   background:
-    repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0 1px, transparent 1px 10px),
-    rgba(255, 255, 255, 0.04);
+    repeating-linear-gradient(135deg, var(--color-stripe) 0 1px, transparent 1px 10px),
+    var(--color-bg-card);
   border: 1px solid var(--color-border-2);
   color: var(--color-text-faint);
   text-transform: uppercase;

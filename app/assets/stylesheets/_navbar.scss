@@ -15,10 +15,10 @@
 }
 
 .navbar.is-scrolled {
-  background: rgba(43, 68, 125, 0.5);
+  background: var(--color-navbar-scrolled);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06), 0 4px 24px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 1px 0 var(--color-navbar-highlight), 0 4px 24px rgba(0, 0, 0, 0.4);
 }
 
 /* ── Inner layout ── */
@@ -156,6 +156,22 @@
   }
 }
 
+/* ── Theme toggle ── */
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem 0.4rem;
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  transition: color 0.15s ease;
+
+  &:hover { color: var(--color-text); }
+}
+
 /* ── Locale dropdown ── */
 .locale-dropdown {
   position: relative;
@@ -182,7 +198,7 @@
   top: calc(100% + 0.5rem);
   right: 0;
   min-width: 7rem;
-  background: rgba(11, 23, 41, 0.97);
+  background: var(--color-surface-float);
   border: 1px solid var(--color-border-2);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -235,7 +251,7 @@
     top: var(--nav-h);
     left: 0;
     right: 0;
-    background: rgba(11, 23, 41, 0.98);
+    background: var(--color-surface-overlay);
     border-top: 1px solid var(--color-border);
     backdrop-filter: blur(10px);
     padding: 1rem 0 1.5rem;

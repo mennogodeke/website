@@ -4,23 +4,28 @@
    ============================================================ */
 
 :root {
+  color-scheme: dark;
+
   /* Backgrounds */
-  --color-bg:      #0b1729;
-  --color-bg-2:    #0d1e38;
-  --color-bg-card: rgba(255, 255, 255, 0.04);
+  --color-bg:      light-dark(#f4f3ef, #0b1729);
+  --color-bg-2:    light-dark(#eceae5, #0d1e38);
+  --color-bg-card: light-dark(rgba(11, 23, 41, 0.04), rgba(255, 255, 255, 0.04));
 
   /* Text */
-  --color-text:       #ffffff;
-  --color-text-muted: rgba(255, 255, 255, 0.65);
-  --color-text-faint: rgba(255, 255, 255, 0.35);
+  --color-text:       light-dark(#000000, #ffffff);
+  --color-text-muted: light-dark(rgba(0, 0, 0, 0.65), rgba(255, 255, 255, 0.65));
+  --color-text-faint: light-dark(rgba(0, 0, 0, 0.35), rgba(255, 255, 255, 0.35));
 
   /* Borders */
-  --color-border:   rgba(255, 255, 255, 0.08);
-  --color-border-2: rgba(255, 255, 255, 0.16);
+  --color-border:   light-dark(rgba(11, 23, 41, 0.09), rgba(255, 255, 255, 0.08));
+  --color-border-2: light-dark(rgba(11, 23, 41, 0.18), rgba(255, 255, 255, 0.16));
 
   /* Brand accent */
   --color-primary:        #f5e90c;
   --color-primary-invert: #0b1729;
+
+  /* Semantic */
+  --color-danger: #e05555;
 
   /* Rarity palette */
   --color-legendary: #f0840a;
@@ -28,6 +33,18 @@
   --color-rare:      #0464d1;
   --color-uncommon:  #19a828;
   --color-common:    #bdbfbe;
+
+  /* Body gradient */
+  --body-glow:      light-dark(rgba(0, 0, 0, 0.04), rgba(100, 60, 255, 0.30));
+  --body-grad-from: light-dark(#ffffff, #00020f);
+  --body-grad-mid:  light-dark(#f9f9f9, #010c2a);
+
+  /* Surfaces */
+  --color-stripe:           light-dark(rgba(11, 23, 41, 0.04), rgba(255, 255, 255, 0.05));
+  --color-surface-float:    light-dark(rgba(244, 243, 239, 0.97), rgba(11, 23, 41, 0.97));
+  --color-surface-overlay:  light-dark(rgba(244, 243, 239, 0.98), rgba(11, 23, 41, 0.98));
+  --color-navbar-scrolled:  light-dark(rgba(180, 175, 160, 0.5), rgba(43, 68, 125, 0.5));
+  --color-navbar-highlight: light-dark(rgba(0, 0, 0, 0.06), rgba(255, 255, 255, 0.06));
 
   /* Fonts */
   --font-display: "Anton", sans-serif;
@@ -41,16 +58,5 @@
   --gutter: 1.5rem;
 }
 
-/* ── Light theme (future toggle) ── */
-[data-theme="light"] {
-  --color-bg:      #f4f3ef;
-  --color-bg-2:    #eceae5;
-  --color-bg-card: rgba(11, 23, 41, 0.04);
-
-  --color-text:       #0b1729;
-  --color-text-muted: rgba(11, 23, 41, 0.65);
-  --color-text-faint: rgba(11, 23, 41, 0.35);
-
-  --color-border:   rgba(11, 23, 41, 0.09);
-  --color-border-2: rgba(11, 23, 41, 0.18);
-}
+[data-theme="light"] { color-scheme: light; }
+[data-theme="dark"]  { color-scheme: dark; }

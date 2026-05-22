@@ -21,6 +21,15 @@
           <%= t("nav.get_my_cv").upcase %> <i class="fa-solid fa-arrow-right"></i>
         <% end %>
         <span class="navbar-cta-divider">|</span>
+        <%= button_to theme_path,
+              method: :post,
+              params: { theme: current_theme == "dark" ? "light" : "dark" },
+              class: "theme-toggle",
+              form: { data: { turbo: false } },
+              aria: { label: "Switch to #{current_theme == 'dark' ? 'light' : 'dark'} theme" } do %>
+          <i class="fa-solid <%= current_theme == 'dark' ? 'fa-sun' : 'fa-moon' %>"></i>
+        <% end %>
+        <span class="navbar-cta-divider">|</span>
         <%= render "layouts/locale_switcher" %>
       </div>
 
