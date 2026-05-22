@@ -21,8 +21,10 @@
   --color-border-2: light-dark(rgba(11, 23, 41, 0.18), rgba(255, 255, 255, 0.16));
 
   /* Brand accent */
-  --color-primary:        #f0840a;
-  --color-primary-invert: #ffffff;
+  --color-primary:          #f0840a;
+  --color-primary-invert:   #ffffff;
+  --color-secondary:        #f0840a;
+  --color-secondary-invert: #ffffff;
 
   /* Semantic */
   --color-danger:   #e05555;
@@ -39,6 +41,12 @@
   --color-common:    #bdbfbe;
 
   /* Rarity highlight gradients */
+  --highlight-common-from:    #d8d9d8;
+  --highlight-common-mid:     #bdbfbe;
+  --highlight-common-to:      #9a9c9b;
+  --highlight-legendary-from: #ffac55;
+  --highlight-legendary-mid:  #f0840a;
+  --highlight-legendary-to:   #c45c00;
   --highlight-uncommon-from: #4dd463;
   --highlight-uncommon-mid:  #19a828;
   --highlight-uncommon-to:   #0f7a1c;

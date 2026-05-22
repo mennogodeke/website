@@ -38,6 +38,9 @@ h1.hero {
 }
 
 /* ── Rarity highlight classes ── */
+.highlight-primary,
+.highlight-common,
+.highlight-legendary,
 .highlight-uncommon,
 .highlight-rare,
 .highlight-epic {
@@ -46,6 +49,21 @@ h1.hero {
   padding: 0 0.15em;
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
+}
+
+.highlight-primary {
+  background: var(--color-primary);
+  color: var(--color-primary-invert);
+}
+
+.highlight-common {
+  background: none;
+  color: var(--color-common);
+  padding: 0;
+}
+
+.highlight-legendary {
+  background: linear-gradient(160deg, var(--highlight-legendary-from) 0%, var(--highlight-legendary-mid) 50%, var(--highlight-legendary-to) 100%);
 }
 
 .highlight-uncommon {

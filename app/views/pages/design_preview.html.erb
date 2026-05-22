@@ -35,18 +35,18 @@
   <%# ── Typography ── %>
   <h2>Typography</h2>
   <h1>H1 Title Anton H1</h1>
-  <h2>H2 Heading Anton SC H2</h2>
-  <h3>H3 Heading Anton SC H3</h3>
-  <h4>H4 Heading Anton SC H4</h4>
+  <h2><span class="highlight-rare">H2 Heading Anton SC H2</span></h2>
+  <h3><span class="highlight-epic">H3 Heading Anton SC H3</span></h3>
+  <h4><span class="highlight-uncommon">H4 Heading Anton SC H4</span></h4>
   <h5>H5 Heading Anton SC H5</h5>
   <h6>H6 Heading Anton SC H6</h6>
 
-  <h1>H1 Title Anton H1</h1>
-  <h2><span class="highlight-epic">Zines cold plunge tote bag</span></h2>
-  <h3><span class="highlight-rare">Hoodie taxidermy single-origin coffee</span></h3>
-  <h4><span class="highlight-uncommon">Artisan fixie kombucha small batch</span></h4>
-  <h5><span class="highlight-epic">Vibe coded straight-to-podcast</span></h5>
-  <h6><span class="highlight-rare">Thrifted nduja solarpunk shaman</span></h6>
+  <h1><span class="highlight-primary">Zines cold plunge tote bag</span></h1>
+  <h2><span class="highlight-legendary">Hoodie taxidermy single-origin coffee</span></h2>
+  <h3><span class="highlight-epic">Artisan fixie kombucha small batch</span></h3>
+  <h4><span class="highlight-rare">Vibe coded straight-to-podcast</span></h4>
+  <h5><span class="highlight-uncommon">Thrifted nduja solarpunk shaman</span></h5>
+  <h6><span class="highlight-common">Mullet small batch kale chips raclette</span></h6>
   <p>Iykyk twee disrupt, issey miyake organic yo la tengo freire chia pinterest needle felting birkenstocks cassavetes. Gawker jawn new balance four loko letterboxd ascot. Cliche nepo baby DIY, manifesting in this economy offill cardigan mezcal car seat headrest nervous system super 8 schlitz keffiyeh. Bluesky meh bitters helvetica, mushroom coffee roaster flannel selvage ketamine therapy tinned fish dream pop solarpunk black trumpet. Kickstarter wide-leg stussy forage caviar bump. Mullet small batch thrifted nduja, kale chips raclette chicharrones ramps issey miyake meh subway tile solarpunk shaman.</p>
   <div class="mb-6">
     <h3 class="mb-3">Body text</h3>
@@ -170,3 +170,29 @@
   </div>
 
 </section>
+
+<div class="dp-palette-switcher" data-controller="palette">
+  <span class="dp-palette-label">Palette</span>
+  <% [
+    { name: "yellow",        label: "Yellow",             primary: "#f5e90c", secondary: nil       },
+    { name: "yellow-purple", label: "Yellow + Purple",    primary: "#f5e90c", secondary: "#6a45e6" },
+    { name: "orange-blue",   label: "Orange + Dark Blue", primary: "#f0840a", secondary: "#0464d1" },
+    { name: "orange-sky",    label: "Orange + Sky Blue",  primary: "#f0840a", secondary: "#38bdf8" },
+  ].each do |p| %>
+    <button class="dp-palette-swatch"
+            style="<%= p[:secondary] ? "--swatch-a: #{p[:primary]}; --swatch-b: #{p[:secondary]}" : "--swatch-a: #{p[:primary]}; --swatch-b: #{p[:primary]}" %>"
+            title="<%= p[:label] %>"
+            data-palette-name="<%= p[:name] %>"
+            data-palette-target="swatch"
+            data-action="click->palette#switch">
+    </button>
+  <% end %>
+  <div class="dp-switcher-divider"></div>
+  <span class="dp-palette-label">RPG</span>
+  <% [{ mode: "a", label: "A" }, { mode: "b", label: "B" }, { mode: "off", label: "Off" }].each do |r| %>
+    <button class="dp-rpg-btn"
+            data-rpg-mode="<%= r[:mode] %>"
+            data-palette-target="rpgBtn"
+            data-action="click->palette#switchRpg"><%= r[:label] %></button>
+  <% end %>
+</div>

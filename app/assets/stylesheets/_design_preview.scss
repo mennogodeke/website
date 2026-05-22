@@ -46,3 +46,158 @@
   align-items: center;
   gap: 0.75rem;
 }
+
+/* ── Palette overrides ── */
+
+/* Option 1: Yellow primary, no secondary */
+[data-palette="yellow"] {
+  --color-primary:          #f5e90c;
+  --color-primary-invert:   #0b1729;
+  --color-secondary:        #f5e90c;
+  --color-secondary-invert: #0b1729;
+  --color-h1-bg-from:       #fdf7a0;
+  --color-h1-bg-mid:        #f5e90c;
+  --color-h1-bg-to:         #c8bc00;
+  --color-h1-text:          #0b1729;
+}
+
+/* Option 2: Yellow primary, purple secondary */
+[data-palette="yellow-purple"] {
+  --color-primary:          #f5e90c;
+  --color-primary-invert:   #0b1729;
+  --color-secondary:        #6a45e6;
+  --color-secondary-invert: #ffffff;
+  --color-h1-bg-from:       #fdf7a0;
+  --color-h1-bg-mid:        #f5e90c;
+  --color-h1-bg-to:         #c8bc00;
+  --color-h1-text:          #0b1729;
+}
+
+/* Option 3: Orange primary, dark blue secondary */
+[data-palette="orange-blue"] {
+  --color-primary:          #f0840a;
+  --color-primary-invert:   #ffffff;
+  --color-secondary:        #0464d1;
+  --color-secondary-invert: #ffffff;
+  --color-h1-bg-from:       #ffac55;
+  --color-h1-bg-mid:        #f97316;
+  --color-h1-bg-to:         #df5c00;
+  --color-h1-text:          #ffffff;
+}
+
+/* Option 4: Orange primary, light blue secondary */
+[data-palette="orange-sky"] {
+  --color-primary:          #f0840a;
+  --color-primary-invert:   #ffffff;
+  --color-secondary:        #38bdf8;
+  --color-secondary-invert: #0b1729;
+  --color-h1-bg-from:       #ffac55;
+  --color-h1-bg-mid:        #f97316;
+  --color-h1-bg-to:         #df5c00;
+  --color-h1-text:          #ffffff;
+}
+
+/* ── Palette switcher panel ── */
+.dp-palette-switcher {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--color-surface-float);
+  border: 1px solid var(--color-border-2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 0.5rem 0.75rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.dp-palette-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-faint);
+  margin-right: 0.25rem;
+}
+
+.dp-palette-swatch {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: linear-gradient(to right, var(--swatch-a) 50%, var(--swatch-b) 50%);
+  border: 2px solid transparent;
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+
+  &:hover { transform: scale(1.2); }
+  &.is-active { border-color: var(--color-text); transform: scale(1.15); }
+}
+
+.dp-switcher-divider {
+  width: 1px;
+  height: 22px;
+  background: var(--color-border-2);
+  margin: 0 0.25rem;
+}
+
+.dp-rpg-btn {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.5rem;
+  border: 1px solid var(--color-border-2);
+  border-radius: 3px;
+  background: transparent;
+  color: var(--color-text-faint);
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
+
+  &:hover { color: var(--color-text); border-color: var(--color-text-muted); }
+  &.is-active { color: var(--color-primary); border-color: var(--color-primary); }
+}
+
+/* ── RPG mode overrides ── */
+
+/* Variation B — reversed colour order (span classes stay the same, visuals flip) */
+[data-rpg="b"] h2 span[class*="highlight-"] {
+  background: none;
+  color: var(--color-common);
+  padding: 0;
+}
+[data-rpg="b"] h3 span[class*="highlight-"] {
+  background: linear-gradient(160deg, var(--highlight-uncommon-from) 0%, var(--highlight-uncommon-mid) 50%, var(--highlight-uncommon-to) 100%);
+  color: #ffffff;
+}
+/* h4 (rare) is the midpoint — unchanged in both variations */
+[data-rpg="b"] h5 span[class*="highlight-"] {
+  background: linear-gradient(160deg, var(--highlight-epic-from) 0%, var(--highlight-epic-mid) 50%, var(--highlight-epic-to) 100%);
+  color: #ffffff;
+}
+[data-rpg="b"] h6 span[class*="highlight-"] {
+  background: linear-gradient(160deg, var(--highlight-legendary-from) 0%, var(--highlight-legendary-mid) 50%, var(--highlight-legendary-to) 100%);
+  color: #ffffff;
+}
+
+/* Off — strip rarity highlights; h1 highlight-primary is intentionally excluded */
+[data-rpg="off"] .highlight-legendary,
+[data-rpg="off"] .highlight-epic,
+[data-rpg="off"] .highlight-rare,
+[data-rpg="off"] .highlight-uncommon,
+[data-rpg="off"] .highlight-common {
+  background: none;
+  color: inherit;
+  padding: 0;
+}
+
+/* h2 and h3 get a secondary accent highlight when RPG is off */
+[data-rpg="off"] h2 span[class*="highlight-"],
+[data-rpg="off"] h3 span[class*="highlight-"] {
+  background: var(--color-secondary);
+  color: var(--color-secondary-invert);
+  padding: 0 0.15em;
+}
