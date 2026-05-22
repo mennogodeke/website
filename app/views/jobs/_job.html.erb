@@ -1,10 +1,28 @@
-<div class="box">
-  <div>
-    <h3><%= job.title %></h3>
-    <span class="job-company"><%= job.company %></span>
-    <p><%= job.description %></p>
+<% initials = job.company.split.map { |w| w[0] }.join.upcase.first(2) %>
+<div class="tl-entry" data-controller="career-entry">
+  <div class="tl-dot"></div>
+  <div class="tl-header" data-action="click->career-entry#toggle">
+    <div class="tl-header-main">
+      <div class="tl-meta"><%= job.company %> · <%= job.start_date.strftime("%b %Y") %> – <%= job_end_date(job.end_date) %></div>
+      <div class="tl-role"><%= job.title %></div>
+    </div>
+    <div class="tl-header-right">
+      <div class="tl-logo"><%= initials %></div>
+      <div class="tl-chevron"><i class="fa-solid fa-chevron-down"></i></div>
+    </div>
   </div>
-  <span class="job-dates">
-    <%= job.start_date.strftime("%b %Y") %> – <%= job_end_date(job.end_date) %>
-  </span>
+  <div class="tl-body">
+    <div class="tl-body-inner">
+      <div class="tl-body-content">
+        <p class="tl-desc"><%= job.description.strip %></p>
+        <% if job.skills.any? %>
+          <div class="tl-skills">
+            <% job.skills.each do |skill| %>
+              <span class="tag"><i class="<%= skill.icon %>"></i>&nbsp;<%= skill.name %></span>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>

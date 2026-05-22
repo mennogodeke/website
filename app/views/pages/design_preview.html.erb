@@ -151,20 +151,53 @@
     </div>
   </div>
 
+  <%# ── Language Cards ── %>
+  <h2 class="mb-4">Language Cards</h2>
+  <div class="lang-card-grid mb-6">
+    <% @lang_experiences.each do |exp| %>
+      <% primary = exp.skills.find { |s| s.icon&.start_with?("devicon") && s.accent.present? } %>
+      <% next unless primary %>
+      <div class="lang-card" style="--card-accent: <%= primary.accent %>">
+        <i class="lang-card-icon <%= primary.icon %>"></i>
+        <div class="lang-card-name"><%= exp.name %></div>
+        <div class="lang-card-meta"><%= primary.level.capitalize %> · <%= exp.years_of_experience %> yr</div>
+        <p class="lang-card-desc"><%= exp.description.strip %></p>
+        <div class="lang-card-tags">
+          <% exp.skills.each do |s| %>
+            <span class="lang-card-tag"><%= s.name %></span>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
   <%# ── Career card ── %>
   <h2 class="mb-4">Career card</h2>
-  <div class="career-list mb-6">
+  <div class="tl-track mb-6">
     <% [
-      { title: "Senior Software Engineer", company: "Kape Technologies", dates: "Feb 2022 – Jan 2026" },
-      { title: "Software Engineer",        company: "Kape Technologies", dates: "Feb 2019 – Jan 2022" },
-      { title: "Junior Software Engineer", company: "ZenGuard",          dates: "Aug 2017 – Jan 2019" },
+      { title: "Senior Software Engineer", company: "Kape Technologies", initials: "KT", dates: "Feb 2022 – Jan 2026", desc: "Led payment and subscription engineering across PIA and ExpressVPN. Built an in-house product catalog on top of ChargeBee and pivoted into DevOps." },
+      { title: "Software Engineer",        company: "Kape Technologies", initials: "KT", dates: "Feb 2019 – Jan 2022", desc: "Worked across ZenMate, CyberGhost, and PIA. Led the migration of all paying ZenMate customers to CyberGhost — zero room for billing errors." },
+      { title: "Junior Software Engineer", company: "ZenGuard",          initials: "ZG", dates: "Aug 2017 – Jan 2019", desc: "Feature development on the ZenMate VPN product in a Rails and Vue.js stack. Deepened TDD practices and shipped from ticket to production." },
     ].each do |job| %>
-      <div class="box">
-        <div>
-          <p class="job-title"><%= job[:title] %></p>
-          <span class="job-company"><%= job[:company] %></span>
+      <div class="tl-entry" data-controller="career-entry">
+        <div class="tl-dot"></div>
+        <div class="tl-header" data-action="click->career-entry#toggle">
+          <div class="tl-header-main">
+            <div class="tl-meta"><%= job[:company] %> · <%= job[:dates] %></div>
+            <div class="tl-role"><%= job[:title] %></div>
+          </div>
+          <div class="tl-header-right">
+            <div class="tl-logo"><%= job[:initials] %></div>
+            <div class="tl-chevron"><i class="fa-solid fa-chevron-down"></i></div>
+          </div>
         </div>
-        <span class="job-dates"><%= job[:dates] %></span>
+        <div class="tl-body">
+          <div class="tl-body-inner">
+            <div class="tl-body-content">
+              <p class="tl-desc"><%= job[:desc] %></p>
+            </div>
+          </div>
+        </div>
       </div>
     <% end %>
   </div>
