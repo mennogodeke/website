@@ -34,8 +34,8 @@
   </div>
 
   <div class="tl-rail" aria-hidden="true">
-    <span class="yr"><%= job.start_date.year %></span>
-    <div class="tl-rail-dot"></div>
     <span class="yr"><%= job.end_date ? job.end_date.year : "NOW" %></span>
+    <div class="tl-rail-dot"></div>
+    <span class="yr"><%= job.start_date.year %></span>
   </div>
 </div>
