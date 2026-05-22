@@ -2,7 +2,42 @@
   <h1><%= t 'pages.career.title' %></h1>
   <h2><%= t 'pages.career.subtitle' %></h2>
 
-  <div class="tl-track mt-5">
-    <%= render @jobs %>
+  <div class="tl-track mt-5"
+       data-controller="career"
+       data-action="career-entry:opened->career#closeOthers">
+
+    <div class="tl-entry tl-entry--uncommon open"
+         data-controller="career-entry"
+         data-career-target="entry">
+      <div class="tl-dot"></div>
+      <div class="tl-header" data-action="click->career-entry#toggle">
+        <div class="tl-header-main">
+          <div class="tl-meta">Status · Available now</div>
+          <div class="tl-role"><span class="highlight-uncommon">Looking for opportunities</span></div>
+        </div>
+        <div class="tl-header-right">
+          <div class="tl-logo" style="border-color: color-mix(in srgb, var(--color-uncommon) 40%, transparent)">
+            <span style="width:7px;height:7px;border-radius:50%;background:var(--color-uncommon);animation:badge-blink 2.2s ease-in-out infinite;display:block"></span>
+          </div>
+          <div class="tl-chevron"><i class="fa-solid fa-chevron-down"></i></div>
+        </div>
+      </div>
+      <div class="tl-body">
+        <div class="tl-body-inner">
+          <div class="tl-body-content">
+            <p class="tl-desc">Looking for a permanent senior engineering role — back-end focused or full-stack. Based in Germany, open to remote and hybrid. No specific industry preference, good problems and good people are enough.</p>
+            <div style="display:flex;gap:0.625rem;flex-wrap:wrap">
+              <a class="btn btn-primary btn-sm" href="/cv">Get My CV →</a>
+              <a class="btn btn-sm" href="/contact">Get In Touch</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <% highlights = %w[highlight-legendary highlight-epic highlight-rare highlight-uncommon highlight-common] %>
+    <% @jobs.each_with_index do |job, i| %>
+      <%= render partial: "jobs/job", locals: { job: job, highlight_class: highlights[i % highlights.length] } %>
+    <% end %>
   </div>
 </section>

@@ -97,6 +97,23 @@
   }
 }
 
+.tl-date {
+  position: absolute;
+  left: 1px;
+  top: 42px;
+  width: 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.5rem;
+  color: var(--color-text-faint);
+  letter-spacing: 0.03em;
+  line-height: 1.8;
+  pointer-events: none;
+  z-index: 1;
+}
+
 .tl-dot {
   position: absolute;
   left: 14px;
@@ -126,6 +143,11 @@
 
 .tl-header-main { flex: 1; min-width: 0; }
 
+.tl-company {
+  margin-top: 0.25rem;
+  font-size: 0.85rem;
+}
+
 .tl-meta {
   font-family: var(--font-mono);
   font-size: 0.65rem;
@@ -141,9 +163,16 @@
   line-height: 0.9;
   text-transform: uppercase;
   letter-spacing: -0.01em;
-  transition: color 0.15s;
 
-  .tl-entry.open & { color: var(--color-primary); }
+  span {
+    transition: background 0.2s, color 0.2s, padding 0.2s;
+  }
+}
+
+.tl-entry:not(.open):not(.tl-entry--uncommon) .tl-role span {
+  background: none;
+  color: inherit;
+  padding: 0;
 }
 
 .tl-header-right {
@@ -207,4 +236,16 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.375rem;
+}
+
+/* ── Colour variant — uncommon (green) ── */
+/* Placed last so it wins the cascade over .tl-dot and .tl-role rules above */
+.tl-entry--uncommon {
+  &::after                 { background: var(--color-uncommon); }
+  &.open                   { background: color-mix(in srgb, var(--color-uncommon) 5%, var(--color-bg-card)); }
+  .tl-dot                  { border-color: var(--color-uncommon); }
+  &.open .tl-dot           { background: var(--color-uncommon); }
+  .tl-role                 { color: var(--color-uncommon); }
+  &.open .btn-primary      { background: var(--color-uncommon); border-color: var(--color-uncommon); color: var(--color-primary-invert); }
+  &.open .btn-primary:hover{ background: transparent; color: var(--color-uncommon); }
 }

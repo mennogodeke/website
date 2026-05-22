@@ -100,6 +100,48 @@
     <div class="notification notification-danger">That email address doesn't look right. Please try again.</div>
   </div>
 
+  <%# ── Skill chips ── %>
+  <h2 class="mb-4">Skill Chips</h2>
+  <div class="dp-chip-row mb-6">
+    <% [
+      { icon: "devicon-ruby-plain",           accent: "#CC342D", name: "Ruby"       },
+      { icon: "devicon-rails-plain",          accent: "#CC0000", name: "Rails"      },
+      { icon: "devicon-docker-plain",         accent: "#2496ED", name: "Docker"     },
+      { icon: "devicon-javascript-plain",     accent: "#F7DF1E", name: "JavaScript" },
+      { icon: "devicon-go-plain",             accent: "#00ADD8", name: "Go"         },
+      { icon: "devicon-kubernetes-plain",     accent: "#326CE5", name: "Kubernetes" },
+      { icon: "devicon-swift-plain",          accent: "#F05138", name: "Swift"      },
+      { icon: "devicon-postgresql-plain",     accent: "#336791", name: "PostgreSQL" },
+    ].each do |chip| %>
+      <div class="dp-chip-wrap">
+        <div class="dp-skill-chip" style="--chip-c: <%= chip[:accent] %>" data-tip="<%= chip[:name] %>">
+          <i class="<%= chip[:icon] %>"></i>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <%# ── Skill tags ── %>
+  <h2 class="mb-4">Skill Tags</h2>
+  <div class="tags mb-6">
+    <% [
+      { icon: "devicon-ruby-plain",                        accent: "#CC342D", name: "Ruby",        tip: "The language behind the Rails magic — clean, expressive, and still a joy to write."              },
+      { icon: "devicon-rails-plain",                       accent: "#CC0000", name: "Rails",       tip: "Primary back-end framework — APIs, payment integrations, and full-stack web applications."       },
+      { icon: "devicon-javascript-plain",                  accent: "#F7DF1E", name: "JavaScript",  tip: "Front-end scripting alongside back-end Rails projects — from vanilla JS to component-based work." },
+      { icon: "devicon-go-plain",                          accent: "#00ADD8", name: "Go",          tip: "Systems programming and microservices — fast, explicit, and refreshingly boring."                 },
+      { icon: "devicon-docker-plain",                      accent: "#2496ED", name: "Docker",      tip: "Containerising apps for consistent local development and reliable production deployments."        },
+      { icon: "devicon-kubernetes-plain",                  accent: "#326CE5", name: "Kubernetes",  tip: "Container orchestration for production workloads — deployments, scaling, and the odd YAML."      },
+      { icon: "devicon-swift-plain",                       accent: "#F05138", name: "Swift",       tip: "Native app development for iOS and macOS, plus server-side Swift with Vapor."                    },
+      { icon: "devicon-postgresql-plain",                  accent: "#336791", name: "PostgreSQL",  tip: "Go-to relational database for production Rails apps — rock solid and well understood."           },
+      { icon: "devicon-amazonwebservices-plain-wordmark",  accent: "#FF9900", name: "AWS",         tip: "Cloud infrastructure — EC2, RDS, SSM, and enough IAM policies to fill a small novel."            },
+      { icon: "devicon-terraform-plain",                   accent: "#844FBA", name: "Terraform",   tip: "Infrastructure-as-code for cloud provisioning — clicking through the AWS console is not a plan." },
+    ].each do |t| %>
+      <span class="skill-tag" style="--chip-c: <%= t[:accent] %>" data-tip="<%= t[:tip] %>">
+        <i class="<%= t[:icon] %>"></i><%= t[:name] %>
+      </span>
+    <% end %>
+  </div>
+
   <%# ── Tags ── %>
   <h2 class="mb-4">Tags</h2>
   <div class="tags mb-6">
@@ -169,63 +211,17 @@
         </div>
       </div>
     <% end %>
+    <div class="lang-card" style="--card-accent: #3776AB">
+      <i class="lang-card-icon devicon-python-plain"></i>
+      <div class="lang-card-name">Python</div>
+      <div class="lang-card-meta">Familiar</div>
+      <p class="lang-card-desc">Scripting, automation, and the occasional data wrangling task.</p>
+      <div class="lang-card-tags">
+        <span class="lang-card-tag">Scripting</span>
+        <span class="lang-card-tag">Automation</span>
+      </div>
+    </div>
   </div>
 
-  <%# ── Career card ── %>
-  <h2 class="mb-4">Career card</h2>
-  <div class="tl-track mb-6">
-    <% [
-      { title: "Senior Software Engineer", company: "Kape Technologies", initials: "KT", dates: "Feb 2022 – Jan 2026", desc: "Led payment and subscription engineering across PIA and ExpressVPN. Built an in-house product catalog on top of ChargeBee and pivoted into DevOps." },
-      { title: "Software Engineer",        company: "Kape Technologies", initials: "KT", dates: "Feb 2019 – Jan 2022", desc: "Worked across ZenMate, CyberGhost, and PIA. Led the migration of all paying ZenMate customers to CyberGhost — zero room for billing errors." },
-      { title: "Junior Software Engineer", company: "ZenGuard",          initials: "ZG", dates: "Aug 2017 – Jan 2019", desc: "Feature development on the ZenMate VPN product in a Rails and Vue.js stack. Deepened TDD practices and shipped from ticket to production." },
-    ].each do |job| %>
-      <div class="tl-entry" data-controller="career-entry">
-        <div class="tl-dot"></div>
-        <div class="tl-header" data-action="click->career-entry#toggle">
-          <div class="tl-header-main">
-            <div class="tl-meta"><%= job[:company] %> · <%= job[:dates] %></div>
-            <div class="tl-role"><%= job[:title] %></div>
-          </div>
-          <div class="tl-header-right">
-            <div class="tl-logo"><%= job[:initials] %></div>
-            <div class="tl-chevron"><i class="fa-solid fa-chevron-down"></i></div>
-          </div>
-        </div>
-        <div class="tl-body">
-          <div class="tl-body-inner">
-            <div class="tl-body-content">
-              <p class="tl-desc"><%= job[:desc] %></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    <% end %>
-  </div>
 
 </section>
-
-<div class="dp-palette-switcher" data-controller="palette">
-  <span class="dp-palette-label">Palette</span>
-  <% [
-    { name: "yellow",        label: "Yellow",             primary: "#f5e90c", secondary: nil       },
-    { name: "yellow-purple", label: "Yellow + Purple",    primary: "#f5e90c", secondary: "#6a45e6" },
-    { name: "orange-blue",   label: "Orange + Dark Blue", primary: "#f0840a", secondary: "#0464d1" },
-    { name: "orange-sky",    label: "Orange + Sky Blue",  primary: "#f0840a", secondary: "#38bdf8" },
-  ].each do |p| %>
-    <button class="dp-palette-swatch"
-            style="<%= p[:secondary] ? "--swatch-a: #{p[:primary]}; --swatch-b: #{p[:secondary]}" : "--swatch-a: #{p[:primary]}; --swatch-b: #{p[:primary]}" %>"
-            title="<%= p[:label] %>"
-            data-palette-name="<%= p[:name] %>"
-            data-palette-target="swatch"
-            data-action="click->palette#switch">
-    </button>
-  <% end %>
-  <div class="dp-switcher-divider"></div>
-  <span class="dp-palette-label">RPG</span>
-  <% [{ mode: "a", label: "A" }, { mode: "b", label: "B" }, { mode: "off", label: "Off" }].each do |r| %>
-    <button class="dp-rpg-btn"
-            data-rpg-mode="<%= r[:mode] %>"
-            data-palette-target="rpgBtn"
-            data-action="click->palette#switchRpg"><%= r[:label] %></button>
-  <% end %>
-</div>

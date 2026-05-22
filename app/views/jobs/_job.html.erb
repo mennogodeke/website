@@ -1,10 +1,14 @@
 <% initials = job.company.split.map { |w| w[0] }.join.upcase.first(2) %>
-<div class="tl-entry" data-controller="career-entry">
+<div class="tl-entry" data-controller="career-entry" data-career-target="entry">
   <div class="tl-dot"></div>
+  <div class="tl-date">
+    <span><%= job.start_date.year %></span>
+    <span><%= job.end_date ? job.end_date.year : "Now" %></span>
+  </div>
   <div class="tl-header" data-action="click->career-entry#toggle">
     <div class="tl-header-main">
-      <div class="tl-meta"><%= job.company %> · <%= job.start_date.strftime("%b %Y") %> – <%= job_end_date(job.end_date) %></div>
-      <div class="tl-role"><%= job.title %></div>
+      <div class="tl-role"><span class="<%= highlight_class %>"><%= job.title %></span></div>
+      <div class="tl-company"><span class="highlight-common"><%= job.company %></span></div>
     </div>
     <div class="tl-header-right">
       <div class="tl-logo"><%= initials %></div>
@@ -18,7 +22,10 @@
         <% if job.skills.any? %>
           <div class="tl-skills">
             <% job.skills.each do |skill| %>
-              <span class="tag"><i class="<%= skill.icon %>"></i>&nbsp;<%= skill.name %></span>
+              <% chip_color = skill.accent.present? ? skill.accent : "var(--color-text-faint)" %>
+              <span class="skill-tag" style="--chip-c: <%= chip_color %>" data-tip="<%= skill.description.strip %>">
+                <i class="<%= skill.icon %>"></i><%= skill.name %>
+              </span>
             <% end %>
           </div>
         <% end %>
