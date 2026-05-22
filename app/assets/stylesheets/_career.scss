@@ -3,28 +3,6 @@
   flex-direction: column;
 }
 
-.career-list .box {
-  background: transparent;
-  border: none;
-  border-top: 1px solid var(--color-border);
-  border-left: 3px solid transparent;
-  padding: 1.5rem 1rem 1.5rem 1.75rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-  color: var(--color-text-muted);
-  transition: border-left-color 0.2s ease, padding-left 0.2s ease, color 0.2s ease;
-
-  &:last-child { border-bottom: 1px solid var(--color-border); }
-
-  &:hover {
-    border-left-color: var(--color-primary);
-    padding-left: 2.5rem;
-    color: var(--color-text);
-  }
-}
-
 .job-title {
   font-family: var(--font-display);
   font-weight: 700;
@@ -97,23 +75,6 @@
   }
 }
 
-.tl-date {
-  position: absolute;
-  left: 1px;
-  top: 42px;
-  width: 36px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-family: var(--font-mono);
-  font-size: 0.5rem;
-  color: var(--color-text-faint);
-  letter-spacing: 0.03em;
-  line-height: 1.8;
-  pointer-events: none;
-  z-index: 1;
-}
-
 .tl-dot {
   position: absolute;
   left: 14px;
@@ -144,8 +105,13 @@
 .tl-header-main { flex: 1; min-width: 0; }
 
 .tl-company {
-  margin-top: 0.25rem;
-  font-size: 0.85rem;
+  font-size: 0.65em;
+  color: var(--color-text-faint);
+  font-weight: 400;
+}
+
+.tl-dates {
+  margin-top: 0.5rem;
 }
 
 .tl-meta {
@@ -169,9 +135,9 @@
   }
 }
 
-.tl-entry:not(.open):not(.tl-entry--uncommon) .tl-role span {
+.tl-entry:not(.open) .tl-role span:not(.tl-company) {
   background: none;
-  color: inherit;
+  color: var(--color-text);
   padding: 0;
 }
 
@@ -238,14 +204,22 @@
   gap: 0.375rem;
 }
 
-/* ── Colour variant — uncommon (green) ── */
-/* Placed last so it wins the cascade over .tl-dot and .tl-role rules above */
-.tl-entry--uncommon {
-  &::after                 { background: var(--color-uncommon); }
-  &.open                   { background: color-mix(in srgb, var(--color-uncommon) 5%, var(--color-bg-card)); }
-  .tl-dot                  { border-color: var(--color-uncommon); }
-  &.open .tl-dot           { background: var(--color-uncommon); }
-  .tl-role                 { color: var(--color-uncommon); }
-  &.open .btn-primary      { background: var(--color-uncommon); border-color: var(--color-uncommon); color: var(--color-primary-invert); }
-  &.open .btn-primary:hover{ background: transparent; color: var(--color-uncommon); }
+/* ── Colour variants — rarity tiers ── */
+/* Placed last so they win the cascade over .tl-dot and .tl-role rules above */
+
+@mixin tl-rarity($color-var) {
+  &::after                        { background: var(#{$color-var}); }
+  &.open                          { background: color-mix(in srgb, var(#{$color-var}) 5%, var(--color-bg-card)); }
+  .tl-dot                         { border-color: var(#{$color-var}); }
+  &:hover .tl-dot,
+  &.open .tl-dot                  { border-color: var(#{$color-var}); }
+  &.open .tl-dot                  { background: var(#{$color-var}); }
+  &.open .btn-primary             { background: var(#{$color-var}); border-color: var(#{$color-var}); color: var(--color-primary-invert); }
+  &.open .btn-primary:hover       { background: transparent; color: var(#{$color-var}); }
 }
+
+.tl-entry--legendary { @include tl-rarity("--color-legendary"); }
+.tl-entry--epic      { @include tl-rarity("--color-epic"); }
+.tl-entry--rare      { @include tl-rarity("--color-rare"); }
+.tl-entry--uncommon  { @include tl-rarity("--color-uncommon"); }
+.tl-entry--common    { @include tl-rarity("--color-common"); }

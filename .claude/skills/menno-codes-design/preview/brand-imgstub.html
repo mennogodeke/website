@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html data-theme="dark"><head><meta charset="utf-8"><link rel="stylesheet" href="card-base.css">
+<style>
+  .card { display: grid; grid-template-columns: 1.4fr 1fr; gap: 22px; padding: 22px 28px; align-items: center; }
+  .stub {
+    width: 100%; aspect-ratio: 16/10;
+    display: flex; align-items: center; justify-content: center;
+    background:
+      repeating-linear-gradient(135deg, rgba(255,255,255,0.05) 0 1px, transparent 1px 10px),
+      var(--color-bg-card);
+    border: 1px solid var(--color-border-2);
+    color: var(--color-text-faint);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.7rem;
+    font-family: var(--font-mono);
+  }
+  .stub.headshot { width: 110px; aspect-ratio: 1/1; border-radius: 50%; }
+  .col { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+  .lbl { font-family: var(--font-mono); font-size: 0.55rem; color: var(--color-text-faint); letter-spacing: 0.06em; text-transform: uppercase; }
+</style></head><body><div class="card">
+  <div class="col">
+    <div class="stub">screenshot</div>
+    <span class="lbl">.img-stub · default placeholder</span>
+  </div>
+  <div class="col">
+    <div class="stub headshot"><span style="font-size:0.55rem">headshot</span></div>
+    <span class="lbl">round variant · headshot</span>
+  </div>
+</div></body></html>

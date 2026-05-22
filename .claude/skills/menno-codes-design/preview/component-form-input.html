@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html data-theme="dark"><head><meta charset="utf-8"><link rel="stylesheet" href="card-base.css">
+<style>
+  .card { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; padding: 22px 28px; }
+  .field { display: flex; flex-direction: column; gap: 6px; }
+  .label {
+    font-family: var(--font-display); font-weight: 700; font-size: 0.78rem;
+    letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-text-muted);
+  }
+  .input, .textarea {
+    width: 100%; padding: 0.65em 0.9em; font-family: var(--font-body); font-size: 0.95rem;
+    color: var(--color-text); background: var(--color-bg);
+    border: 1.5px solid var(--color-border-2); border-radius: 0; box-sizing: border-box;
+  }
+  .input::placeholder, .textarea::placeholder { color: var(--color-text-faint); }
+  .input:focus, .focus { outline: none; border-color: var(--color-primary); box-shadow: 0 0 0 2px rgba(245,233,12,0.25); }
+  .err { border-color: var(--color-danger) !important; }
+  .err-msg { font-size: 0.72rem; color: var(--color-danger); }
+  .textarea { resize: none; min-height: 80px; font-family: var(--font-body); }
+</style></head><body><div class="card">
+  <div class="field">
+    <div class="label">Name</div>
+    <input class="input focus" type="text" placeholder="Your name" value="Menno">
+  </div>
+  <div class="field">
+    <div class="label">Email · error</div>
+    <input class="input err" type="email" value="not-an-email">
+    <span class="err-msg">Please enter a valid email address.</span>
+  </div>
+  <div class="field" style="grid-column: 1/-1;">
+    <div class="label">Message</div>
+    <textarea class="textarea" placeholder="What's on your mind?"></textarea>
+  </div>
+</div></body></html>

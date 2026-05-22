@@ -21,7 +21,6 @@ Rails.application.routes.draw do
     post "cv/download",         to: "cv_downloads#create", as: :cv_downloads
     get  "cv/download/:token",  to: "cv_downloads#show",   as: :cv_download
 
-    get "design-preview", to: "pages#design_preview"
     get "home", to: "pages#home"
     get "experience", to: "experience#show"
     get "contact", to: "pages#contact"

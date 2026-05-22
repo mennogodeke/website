@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html data-theme="dark"><head><meta charset="utf-8">
+<link rel="stylesheet" href="card-base.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css">
+<style>
+  .card { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; padding: 22px 28px; }
+  .lang-card {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-bottom: 3px solid var(--c);
+    padding: 18px 18px;
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .icon { font-size: 2.4rem; color: color-mix(in srgb, var(--c) 90%, transparent); }
+  .name { font-family: var(--font-display); font-size: 1.6rem; line-height: 0.9; text-transform: uppercase; color: var(--color-text); }
+  .meta { font-family: var(--font-mono); font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-text-faint); }
+  .desc { font-size: 0.75rem; color: var(--color-text-muted); line-height: 1.6; }
+</style></head><body><div class="card">
+  <div class="lang-card" style="--c:#CC342D">
+    <i class="icon devicon-ruby-plain"></i>
+    <div class="name">Ruby</div>
+    <div class="meta">Expert · 8 yr</div>
+    <p class="desc">The language behind the Rails magic — clean, expressive, and still a joy to write.</p>
+  </div>
+  <div class="lang-card" style="--c:#00ADD8">
+    <i class="icon devicon-go-plain"></i>
+    <div class="name">Go</div>
+    <div class="meta">Proficient · 2 yr</div>
+    <p class="desc">Systems programming and microservices — fast, explicit, and refreshingly boring.</p>
+  </div>
+</div></body></html>

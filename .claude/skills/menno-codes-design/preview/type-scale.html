@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html data-theme="dark"><head><meta charset="utf-8"><link rel="stylesheet" href="card-base.css">
+<style>
+  .card { padding: 18px 28px; }
+  .row { display: grid; grid-template-columns: 36px 1fr; align-items: baseline; gap: 18px; padding: 6px 0; }
+  .row + .row { border-top: 1px solid var(--color-border); }
+  .lbl { font-family: var(--font-mono); font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.07em; color: var(--color-text-faint); }
+  .sample.h1 { font-family: var(--font-display); font-size: 36px; line-height: 1; text-transform: uppercase; color: var(--color-h1-text); background: linear-gradient(160deg, var(--color-h1-bg-from) 0%, var(--color-h1-bg-mid) 50%, var(--color-h1-bg-to) 100%); padding: 0 0.15em; display: inline; }
+  .sample.h2 { font-family: var(--font-heading); font-size: 28px; color: var(--color-text); }
+  .sample.h3 { font-family: var(--font-heading); font-size: 22px; color: var(--color-text); }
+  .sample.h4 { font-family: var(--font-heading); font-size: 18px; color: var(--color-text); }
+  .sample.h5 { font-family: var(--font-heading); font-size: 16px; color: var(--color-text); }
+  .sample.h6 { font-family: var(--font-heading); font-size: 14px; color: var(--color-text); }
+  .sample.p  { font-family: var(--font-body); font-size: 14px; color: var(--color-text-muted); }
+</style></head><body><div class="card">
+  <div class="row"><span class="lbl">H1</span><span class="sample h1">Title Anton</span></div>
+  <div class="row"><span class="lbl">H2</span><span class="sample h2">Heading Anton SC</span></div>
+  <div class="row"><span class="lbl">H3</span><span class="sample h3">Heading Anton SC</span></div>
+  <div class="row"><span class="lbl">H4</span><span class="sample h4">Heading Anton SC</span></div>
+  <div class="row"><span class="lbl">H5</span><span class="sample h5">Heading Anton SC</span></div>
+  <div class="row"><span class="lbl">H6</span><span class="sample h6">Heading Anton SC</span></div>
+  <div class="row"><span class="lbl">P</span><span class="sample p">Body — The quick brown fox jumps over the lazy dog.</span></div>
+</div></body></html>

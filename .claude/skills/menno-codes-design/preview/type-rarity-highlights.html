@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html data-theme="dark"><head><meta charset="utf-8"><link rel="stylesheet" href="card-base.css">
+<style>
+  .card { display: flex; flex-direction: column; gap: 14px; }
+  .hl-row { display: flex; align-items: center; gap: 14px; font-family: var(--font-heading); font-size: 22px; line-height: 1; }
+  .hl-row .tag { font-family: var(--font-mono); font-size: 0.6rem; color: var(--color-text-faint); text-transform: uppercase; letter-spacing: 0.08em; width: 76px; flex-shrink: 0; }
+  .hl { display: inline; color: #fff; padding: 0 0.15em; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+  .hl-primary { background: var(--color-primary); color: var(--color-primary-invert); }
+  .hl-common { background: none; color: var(--color-common); padding: 0; }
+  .hl-uncommon { background: linear-gradient(160deg, var(--highlight-uncommon-from) 0%, var(--highlight-uncommon-mid) 50%, var(--highlight-uncommon-to) 100%); }
+  .hl-rare { background: linear-gradient(160deg, var(--highlight-rare-from) 0%, var(--highlight-rare-mid) 50%, var(--highlight-rare-to) 100%); }
+  .hl-epic { background: linear-gradient(160deg, var(--highlight-epic-from) 0%, var(--highlight-epic-mid) 50%, var(--highlight-epic-to) 100%); }
+  .hl-legendary { background: linear-gradient(160deg, var(--highlight-legendary-from) 0%, var(--highlight-legendary-mid) 50%, var(--highlight-legendary-to) 100%); }
+</style></head><body><div class="card">
+  <div class="hl-row"><span class="tag">Primary</span><span class="hl hl-primary">Senior Engineer</span></div>
+  <div class="hl-row"><span class="tag">Legendary</span><span class="hl hl-legendary">Senior Engineer</span></div>
+  <div class="hl-row"><span class="tag">Epic</span><span class="hl hl-epic">Senior Engineer</span></div>
+  <div class="hl-row"><span class="tag">Rare</span><span class="hl hl-rare">Senior Engineer</span></div>
+  <div class="hl-row"><span class="tag">Uncommon</span><span class="hl hl-uncommon">Senior Engineer</span></div>
+  <div class="hl-row"><span class="tag">Common</span><span class="hl hl-common">Senior Engineer</span></div>
+</div></body></html>

@@ -17,6 +17,7 @@
           data-action="click->experience#select"
           style="--row-color: var(--color-<%= experience.accent %>)"
         >
+          <i class="<%= experience_rail_icon(experience.category) %> row-icon"></i>
           <span><%= experience.name %></span>
           <span class="yr"><%= experience.years_of_experience %>YR</span>
           <span class="chevron">›</span>

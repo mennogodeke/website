@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html data-theme="dark"><head><meta charset="utf-8"><link rel="stylesheet" href="card-base.css">
+<style>
+  .card { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
+  .swatch { display: flex; flex-direction: column; gap: 6px; padding: 14px; min-height: 86px; border: 1px solid var(--color-border-2); }
+  .name { font-family: var(--font-display); font-size: 0.85rem; text-transform: uppercase; }
+  .hex  { font-family: var(--font-mono); font-size: 0.58rem; letter-spacing: 0.04em; margin-top: auto; opacity: 0.8; }
+  .text { color: var(--color-text); }
+  .muted { color: var(--color-text-muted); }
+  .faint { color: var(--color-text-faint); }
+  .danger { background: rgba(224,85,85,0.1); border-color: var(--color-danger); color: var(--color-danger); }
+  .success { background: rgba(25,168,40,0.1); border-color: var(--color-uncommon); color: var(--color-uncommon); }
+</style></head><body><div class="card">
+  <div class="swatch text"><div class="name">FG-1</div><div class="hex">#FFFFFF · text</div></div>
+  <div class="swatch muted"><div class="name">FG-2</div><div class="hex">65% · muted</div></div>
+  <div class="swatch faint"><div class="name">FG-3</div><div class="hex">35% · faint</div></div>
+  <div class="swatch danger"><div class="name">Danger</div><div class="hex">#E05555</div></div>
+  <div class="swatch success"><div class="name">Success</div><div class="hex">#19A828</div></div>
+</div></body></html>

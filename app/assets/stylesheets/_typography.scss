@@ -18,24 +18,12 @@ h1 {
   font-family: var(--font-display);
   font-size: clamp(3rem, 7vw, 5rem);
   text-transform: uppercase;
-  color: var(--color-h1-text);
-  background: linear-gradient(160deg, var(--color-h1-bg-from) 0%, var(--color-h1-bg-mid) 50%, var(--color-h1-bg-to) 100%);
-  display: inline;
-  padding: 0 0.15em;
-  box-decoration-break: clone;
-  -webkit-box-decoration-break: clone;
+  color: var(--color-text);
 }
 
 p {
   font-family: var(--font-body);
   color: var(--color-text-muted);
-}
-
-/* ── Hero heading — overrides h1 background ── */
-h1.hero {
-  background: none;
-  color: var(--color-text);
-  padding: 0;
 }
 
 /* ── Rarity highlight classes ── */

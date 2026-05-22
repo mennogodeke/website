@@ -1,0 +1,232 @@
+/* ============================================================
+   MENNO.CODES — Design tokens
+   Colors, type, spacing, semantic styles.
+   Mirrors app/assets/stylesheets/_tokens.scss from the source codebase.
+
+   The whole system is built around a "loot rarity" metaphor —
+   skill levels and accents are tiered Common → Legendary like
+   a video-game character sheet.
+   ============================================================ */
+
+/* ── Local brand fonts ──
+   Files live in /fonts at the project root. The same fonts ship via Google
+   Fonts in the source codebase, but bundling locally keeps the system
+   self-contained and offline-friendly.
+*/
+@font-face {
+  font-family: "Anton";
+  src: url("fonts/Anton-Regular.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Anton SC";
+  src: url("fonts/AntonSC-Regular.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "DM Sans";
+  src: url("fonts/DMSans-VariableFont_opsz_wght.ttf") format("truetype-variations");
+  font-weight: 100 1000;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "DM Sans";
+  src: url("fonts/DMSans-Italic-VariableFont_opsz_wght.ttf") format("truetype-variations");
+  font-weight: 100 1000;
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+  color-scheme: dark;
+
+  /* ── Surfaces ── */
+  --color-bg:           light-dark(#f4f3ef, #0b1729);   /* page base */
+  --color-bg-2:         light-dark(#eceae5, #0d1e38);   /* alt surface */
+  --color-bg-card:      light-dark(rgba(11, 23, 41, 0.04), rgba(255, 255, 255, 0.04));
+  --color-stripe:       light-dark(rgba(11, 23, 41, 0.04), rgba(255, 255, 255, 0.05));
+  --color-surface-float:   light-dark(rgba(244, 243, 239, 0.97), rgba(11, 23, 41, 0.97));
+  --color-surface-overlay: light-dark(rgba(244, 243, 239, 0.98), rgba(11, 23, 41, 0.98));
+  --color-navbar-scrolled:  light-dark(rgba(180, 175, 160, 0.5), rgba(43, 68, 125, 0.5));
+  --color-navbar-highlight: light-dark(rgba(0, 0, 0, 0.06), rgba(255, 255, 255, 0.06));
+
+  /* ── Text (fg) ── */
+  --color-text:       light-dark(#000000, #ffffff);             /* fg1 */
+  --color-text-muted: light-dark(rgba(0,0,0,0.65), rgba(255,255,255,0.65));   /* fg2 */
+  --color-text-faint: light-dark(rgba(0,0,0,0.35), rgba(255,255,255,0.35));   /* fg3 */
+
+  /* ── Borders ── */
+  --color-border:   light-dark(rgba(11,23,41,0.09), rgba(255,255,255,0.08));
+  --color-border-2: light-dark(rgba(11,23,41,0.18), rgba(255,255,255,0.16));
+
+  /* ── Brand accent — electric yellow ── */
+  --color-primary:          #f5e90c;
+  --color-primary-invert:   #0b1729;
+  --color-secondary:        #f5e90c;
+  --color-secondary-invert: #0b1729;
+
+  /* ── Semantic ── */
+  --color-danger:    #e05555;
+  --color-success:   #19a828;   /* same hue as Uncommon */
+  --color-h1-bg-from: #fdf7a0;
+  --color-h1-bg-mid:  #f5e90c;
+  --color-h1-bg-to:   #c8bc00;
+  --color-h1-text:    #0b1729;
+
+  /* ── Rarity palette (the core brand motif) ── */
+  --color-common:    #bdbfbe;   /* gray */
+  --color-uncommon:  #19a828;   /* green */
+  --color-rare:      #0464d1;   /* blue */
+  --color-epic:      #6a45e6;   /* purple */
+  --color-legendary: #f0840a;   /* orange */
+
+  /* Rarity highlight gradients (160deg from→mid→to) */
+  --highlight-common-from:    #d8d9d8;
+  --highlight-common-mid:     #bdbfbe;
+  --highlight-common-to:      #9a9c9b;
+  --highlight-uncommon-from:  #4dd463;
+  --highlight-uncommon-mid:   #19a828;
+  --highlight-uncommon-to:    #0f7a1c;
+  --highlight-rare-from:      #3a8ff5;
+  --highlight-rare-mid:       #0464d1;
+  --highlight-rare-to:        #0348a0;
+  --highlight-epic-from:      #9b7af0;
+  --highlight-epic-mid:       #6a45e6;
+  --highlight-epic-to:        #4a28c0;
+  --highlight-legendary-from: #ffac55;
+  --highlight-legendary-mid:  #f0840a;
+  --highlight-legendary-to:   #c45c00;
+
+  /* ── Ambient body gradient (the soft "shine" behind everything) ── */
+  --body-glow:      light-dark(rgba(0,0,0,0.04), rgba(100, 60, 255, 0.30));
+  --body-shine:     light-dark(rgba(255,255,255,0.55), rgba(255,255,255,0.06));
+  --body-grad-from: light-dark(#ffffff, #00020f);
+  --body-grad-mid:  light-dark(#f9f9f9, #010c2a);
+
+  /* ── Type families ── */
+  --font-display: "Anton", sans-serif;                              /* big numbers, titles, buttons */
+  --font-heading: "Anton SC", sans-serif;                           /* small-caps headings (h2–h6) */
+  --font-body:    "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono:    ui-monospace, "Cascadia Code", "Fira Mono", monospace;
+
+  /* ── Type sizes (rem) ── */
+  --fs-xs:   0.75rem;
+  --fs-sm:   0.875rem;
+  --fs-md:   1.125rem;
+  --fs-lg:   1.25rem;
+  --fs-h6:   0.95rem;
+  --fs-h5:   1.1rem;
+  --fs-h4:   1.25rem;
+  --fs-h3:   1.5rem;
+  --fs-h2:   2rem;
+  --fs-h1-min: 3rem;
+  --fs-h1-max: 5rem;
+
+  /* ── Layout ── */
+  --nav-h:  56px;
+  --max-w:  1280px;
+  --gutter: 1.5rem;
+
+  /* ── Spacing scale — steps of 0.5rem starting at 0.25rem ── */
+  --space-0: 0;
+  --space-1: 0.25rem;
+  --space-2: 0.75rem;
+  --space-3: 1.25rem;
+  --space-4: 1.75rem;
+  --space-5: 2.25rem;
+  --space-6: 2.75rem;
+
+  /* ── Radii — the system is mostly square ── */
+  --radius-none: 0;
+  --radius-pill: 999px;     /* used only for skill chips and the "open to work" badge */
+  --radius-circle: 50%;     /* avatars, dot indicators */
+
+  /* ── Motion ── */
+  --ease-out: cubic-bezier(.2, .7, .2, 1);
+  --t-fast: 0.15s;
+  --t-base: 0.2s;
+  --t-slow: 0.32s;
+}
+
+[data-theme="light"] { color-scheme: light; }
+[data-theme="dark"]  { color-scheme: dark; }
+
+/* ============================================================
+   Semantic type — element-default styles for h1–h6, p.
+   Mirrors _typography.scss.
+   ============================================================ */
+
+h1 {
+  font-family: var(--font-display);
+  font-size: clamp(var(--fs-h1-min), 7vw, var(--fs-h1-max));
+  text-transform: uppercase;
+  color: var(--color-h1-text);
+  background: linear-gradient(160deg,
+    var(--color-h1-bg-from) 0%,
+    var(--color-h1-bg-mid) 50%,
+    var(--color-h1-bg-to) 100%);
+  display: inline;
+  padding: 0 0.15em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+/* Hero override — no yellow paintstroke behind site title */
+h1.hero {
+  background: none;
+  color: var(--color-text);
+  padding: 0;
+}
+
+h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--color-text);
+  margin-top: 2rem;
+}
+
+h2 { font-size: var(--fs-h2); }
+h3 { font-size: var(--fs-h3); }
+h4 { font-size: var(--fs-h4); }
+h5 { font-size: var(--fs-h5); }
+h6 { font-size: var(--fs-h6); }
+
+p {
+  font-family: var(--font-body);
+  color: var(--color-text-muted);
+  line-height: 1.65;
+}
+
+/* ── Rarity highlight classes — used inline inside headings ── */
+.highlight-primary,
+.highlight-common,
+.highlight-uncommon,
+.highlight-rare,
+.highlight-epic,
+.highlight-legendary {
+  display: inline;
+  color: #ffffff;
+  padding: 0 0.15em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.highlight-primary {
+  background: var(--color-primary);
+  color: var(--color-primary-invert);
+}
+
+.highlight-common {
+  background: none;
+  color: var(--color-common);
+  padding: 0;
+}
+
+.highlight-uncommon  { background: linear-gradient(160deg, var(--highlight-uncommon-from) 0%,  var(--highlight-uncommon-mid) 50%,  var(--highlight-uncommon-to) 100%); }
+.highlight-rare      { background: linear-gradient(160deg, var(--highlight-rare-from) 0%,      var(--highlight-rare-mid) 50%,      var(--highlight-rare-to) 100%); }
+.highlight-epic      { background: linear-gradient(160deg, var(--highlight-epic-from) 0%,      var(--highlight-epic-mid) 50%,      var(--highlight-epic-to) 100%); }
+.highlight-legendary { background: linear-gradient(160deg, var(--highlight-legendary-from) 0%, var(--highlight-legendary-mid) 50%, var(--highlight-legendary-to) 100%); }

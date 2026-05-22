@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html data-theme="dark"><head><meta charset="utf-8"><link rel="stylesheet" href="card-base.css">
+<style>
+  .card { display: flex; flex-direction: column; gap: 12px; padding: 22px 28px; }
+  .notif {
+    padding: 0.85rem 1.1rem; font-size: 0.9rem;
+    font-family: var(--font-body); border-left: 3px solid;
+  }
+  .ok { border-color: var(--color-uncommon); background: rgba(25,168,40,0.1); color: var(--color-uncommon); }
+  .err { border-color: var(--color-danger); background: rgba(224,85,85,0.1); color: var(--color-danger); }
+</style></head><body><div class="card">
+  <div class="notif ok">Your CV link has been sent — check your inbox.</div>
+  <div class="notif err">That email address doesn't look right. Please try again.</div>
+</div></body></html>

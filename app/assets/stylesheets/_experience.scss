@@ -18,7 +18,7 @@
 
 .exp-rail .row {
   display: grid;
-  grid-template-columns: 1fr auto auto;
+  grid-template-columns: auto 1fr auto auto;
   gap: 12px;
   padding: 18px 14px 18px 16px;
   background: transparent;
@@ -60,6 +60,18 @@
 
   &.active .yr,
   &.active .chevron { color: var(--color-primary); }
+}
+
+.exp-rail .row .row-icon {
+  font-size: 0.875rem;
+  color: var(--color-text-faint);
+  align-self: center;
+  width: 1rem;
+  text-align: center;
+  transition: color 0.2s ease;
+
+  .row:hover &,
+  .row.active & { color: var(--row-color, var(--color-primary)); }
 }
 
 .exp-rail .row .yr {

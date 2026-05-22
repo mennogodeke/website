@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html data-theme="dark"><head><meta charset="utf-8"><link rel="stylesheet" href="card-base.css">
+<style>
+  .card { display: flex; flex-direction: column; gap: 10px; }
+  .row { display: grid; grid-template-columns: 90px 1fr; align-items: center; gap: 14px; }
+  .lbl { font-family: var(--font-mono); font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.07em; color: var(--color-text-faint); }
+  .bar { height: 26px; }
+  .uncommon  { background: linear-gradient(160deg, var(--highlight-uncommon-from) 0%, var(--highlight-uncommon-mid) 50%, var(--highlight-uncommon-to) 100%); }
+  .rare      { background: linear-gradient(160deg, var(--highlight-rare-from) 0%, var(--highlight-rare-mid) 50%, var(--highlight-rare-to) 100%); }
+  .epic      { background: linear-gradient(160deg, var(--highlight-epic-from) 0%, var(--highlight-epic-mid) 50%, var(--highlight-epic-to) 100%); }
+  .legendary { background: linear-gradient(160deg, var(--highlight-legendary-from) 0%, var(--highlight-legendary-mid) 50%, var(--highlight-legendary-to) 100%); }
+  .common    { background: linear-gradient(160deg, var(--highlight-common-from) 0%, var(--highlight-common-mid) 50%, var(--highlight-common-to) 100%); }
+</style></head><body><div class="card">
+  <div class="row"><span class="lbl">Legendary</span><div class="bar legendary"></div></div>
+  <div class="row"><span class="lbl">Epic</span><div class="bar epic"></div></div>
+  <div class="row"><span class="lbl">Rare</span><div class="bar rare"></div></div>
+  <div class="row"><span class="lbl">Uncommon</span><div class="bar uncommon"></div></div>
+  <div class="row"><span class="lbl">Common</span><div class="bar common"></div></div>
+</div></body></html>

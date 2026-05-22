@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html data-theme="dark"><head><meta charset="utf-8"><link rel="stylesheet" href="card-base.css">
+<style>
+  .card { display: flex; flex-direction: column; gap: 10px; padding-top: 18px; padding-bottom: 18px; }
+  .row { display: grid; grid-template-columns: 88px 1fr 180px; align-items: center; gap: 14px; padding: 4px 0; }
+  .key { font-family: var(--font-mono); font-size: 0.65rem; text-transform: uppercase; color: var(--color-text-faint); letter-spacing: 0.06em; }
+  .demo { height: 24px; background: var(--color-bg-card); border-color: var(--color-text); }
+  .note { font-family: var(--font-body); font-size: 0.75rem; color: var(--color-text-muted); }
+</style></head><body><div class="card">
+  <div class="row"><span class="key">1px</span><div class="demo" style="border:1px solid var(--color-border-2)"></div><span class="note">hairline · cards</span></div>
+  <div class="row"><span class="key">1.5px</span><div class="demo" style="border:1.5px solid var(--color-border-2)"></div><span class="note">form inputs</span></div>
+  <div class="row"><span class="key">2px</span><div class="demo" style="border:2px solid var(--color-text)"></div><span class="note">buttons</span></div>
+  <div class="row"><span class="key">4px</span><div class="demo" style="border:none;border-top:4px solid var(--color-epic)"></div><span class="note">experience panel top accent</span></div>
+</div></body></html>
