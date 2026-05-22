@@ -30,6 +30,13 @@ p {
   color: var(--color-text-muted);
 }
 
+/* ── Hero heading — overrides h1 background ── */
+h1.hero {
+  background: none;
+  color: var(--color-text);
+  padding: 0;
+}
+
 /* ── Rarity highlight classes ── */
 .highlight-uncommon,
 .highlight-rare,
