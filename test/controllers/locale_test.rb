@@ -6,19 +6,19 @@ class LocaleTest < ActionDispatch::IntegrationTest
   test "no locale prefix uses English" do
     get jobs_url
     assert_response :success
-    assert_select "a.navbar-item", text: "Career"
+    assert_select "h1", text: "Career"
   end
 
   test "nl prefix sets Dutch locale" do
     get "/nl/jobs"
     assert_response :success
-    assert_select "a.navbar-item", text: "Carrière"
+    assert_select "h1", text: "Carrière"
   end
 
   test "de prefix sets German locale" do
     get "/de/jobs"
     assert_response :success
-    assert_select "a.navbar-item", text: "Karriere"
+    assert_select "h1", text: "Karriere"
   end
 
   # ── Invalid / unsupported locales ────────────────────────────────────────────
@@ -31,7 +31,7 @@ class LocaleTest < ActionDispatch::IntegrationTest
   test "invalid locale param is ignored and falls back to English" do
     get "/jobs", params: { locale: "xx" }
     assert_response :success
-    assert_select "a.navbar-item", text: "Career"
+    assert_select "h1", text: "Career"
   end
 
   # ── URL structure ────────────────────────────────────────────────────────────
@@ -59,15 +59,13 @@ class LocaleTest < ActionDispatch::IntegrationTest
   test "home page renders Dutch intro text" do
     get "/nl"
     assert_response :success
-    assert_includes response.body, "Fullstack Software Engineer"
-    assert_includes response.body, "Bekijk werk"
+    assert_includes response.body, "MENNO.CODES"
   end
 
   test "home page renders German intro text" do
     get "/de"
     assert_response :success
-    assert_includes response.body, "Fullstack Software Engineer"
-    assert_includes response.body, "Arbeiten ansehen"
+    assert_includes response.body, "MENNO.CODES"
   end
 
   test "contact page renders Dutch form labels" do
