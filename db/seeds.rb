@@ -41,9 +41,18 @@ data["experiences"].each do |attrs|
   )
   experience.save!
 
-  attrs["skills"].each do |skill_key|
+  (attrs["primary_skills"] || []).each do |skill_key|
     skill = skill_index.fetch(skill_key)
-    ExperienceSkill.find_or_create_by!(experience: experience, skill: skill)
+    es = ExperienceSkill.find_or_initialize_by(experience: experience, skill: skill)
+    es.primary = true
+    es.save!
+  end
+
+  (attrs["skills"] || []).each do |skill_key|
+    skill = skill_index.fetch(skill_key)
+    es = ExperienceSkill.find_or_initialize_by(experience: experience, skill: skill)
+    es.primary = false
+    es.save!
   end
 end
 
@@ -57,6 +66,7 @@ data["jobs"].each do |attrs|
   job.assign_attributes(
     company:        attrs["company"],
     logo:           attrs["logo"],
+    accent:         attrs["accent"],
     start_date:     attrs["start_date"],
     end_date:       attrs["end_date"],
     title_en:       en["title"],

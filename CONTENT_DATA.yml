@@ -13,7 +13,7 @@
 
 # ============================================================
 # SKILLS
-# 23 entries
+# 26 entries
 # level enum: expert | proficient | familiar
 # category enum: frontend | backend | fullstack | devops | platform | apps | programming_language | other
 # ============================================================
@@ -25,6 +25,7 @@ skills:
     accent: "#CC0000"
     icon: devicon-rails-plain
     image: ~
+
     translations:
       en:
         name: Ruby on Rails
@@ -48,6 +49,7 @@ skills:
     accent: "#CC342D"
     icon: devicon-ruby-plain
     image: ~
+
     translations:
       en:
         name: Ruby
@@ -71,6 +73,7 @@ skills:
     accent: "#2496ED"
     icon: devicon-docker-plain
     image: ~
+
     translations:
       en:
         name: Docker
@@ -94,6 +97,7 @@ skills:
     accent: "#F05032"
     icon: devicon-git-plain
     image: ~
+
     translations:
       en:
         name: Git
@@ -114,9 +118,10 @@ skills:
   - key: github_actions
     level: proficient
     category: devops
-    accent: "#2088FF"
+    accent: "#6a788f"
     icon: devicon-github-plain
     image: ~
+
     translations:
       en:
         name: GitHub Actions
@@ -140,6 +145,7 @@ skills:
     accent: "#336791"
     icon: devicon-postgresql-plain
     image: ~
+
     translations:
       en:
         name: PostgreSQL
@@ -163,6 +169,7 @@ skills:
     accent: "#00ADD8"
     icon: devicon-go-plain
     image: ~
+
     translations:
       en:
         name: Go
@@ -186,6 +193,7 @@ skills:
     accent: "#F7DF1E"
     icon: devicon-javascript-plain
     image: ~
+
     translations:
       en:
         name: JavaScript
@@ -209,6 +217,7 @@ skills:
     accent: "#326CE5"
     icon: devicon-kubernetes-plain
     image: ~
+
     translations:
       en:
         name: Kubernetes
@@ -232,6 +241,7 @@ skills:
     accent: "#FF9900"
     icon: devicon-amazonwebservices-plain-wordmark
     image: ~
+
     translations:
       en:
         name: AWS
@@ -255,6 +265,7 @@ skills:
     accent: "#3178C6"
     icon: devicon-typescript-plain
     image: ~
+
     translations:
       en:
         name: TypeScript
@@ -278,6 +289,7 @@ skills:
     accent: "#339933"
     icon: devicon-nodejs-plain
     image: ~
+
     translations:
       en:
         name: Node.js
@@ -301,6 +313,7 @@ skills:
     accent: "#42B883"
     icon: devicon-vuejs-plain
     image: ~
+
     translations:
       en:
         name: Vue.js
@@ -324,6 +337,7 @@ skills:
     accent: "#F05138"
     icon: devicon-swift-plain
     image: ~
+
     translations:
       en:
         name: Swift
@@ -341,12 +355,37 @@ skills:
           Native App-Entwicklung für iOS und macOS, plus
           serverseitiges Swift mit dem Vapor-Framework.
 
+  - key: vapor
+    level: proficient
+    category: backend
+    accent: "#5AC8FA"
+    icon: fa-solid fa-droplet   # no Devicon available
+    image: ~
+
+    translations:
+      en:
+        name: Vapor
+        description: >
+          Server-side Swift web framework — building APIs and
+          backends with the same language as the client apps.
+      nl:
+        name: Vapor
+        description: >
+          Server-side Swift webframework — API's en backends bouwen
+          met dezelfde taal als de client-apps.
+      de:
+        name: Vapor
+        description: >
+          Serverseitiges Swift-Webframework — APIs und Backends mit
+          derselben Sprache wie die Client-Apps entwickeln.
+
   - key: adyen
     level: proficient
     category: backend
     accent: ~
     icon: fa-solid fa-credit-card   # no Devicon available
     image: ~
+
     translations:
       en:
         name: Adyen
@@ -370,6 +409,7 @@ skills:
     accent: ~
     icon: fa-solid fa-file-invoice-dollar   # no Devicon available
     image: ~
+
     translations:
       en:
         name: ChargeBee
@@ -393,6 +433,7 @@ skills:
     accent: "#844FBA"
     icon: devicon-terraform-plain
     image: ~
+
     translations:
       en:
         name: Terraform
@@ -416,6 +457,7 @@ skills:
     accent: "#EE0000"
     icon: devicon-ansible-plain
     image: ~
+
     translations:
       en:
         name: Ansible
@@ -439,6 +481,7 @@ skills:
     accent: "#3776AB"
     icon: devicon-python-plain
     image: ~
+
     translations:
       en:
         name: Python
@@ -462,6 +505,7 @@ skills:
     accent: "#635BFF"
     icon: devicon-stripe-plain
     image: ~
+
     translations:
       en:
         name: Stripe
@@ -479,12 +523,67 @@ skills:
           Zahlungsverarbeitungsintegration — Checkout-Flows
           und Abonnementverwaltung.
 
+  - key: microservices
+    level: proficient
+    category: backend
+    accent: ~
+    icon: fa-solid fa-cubes
+    image: ~
+
+    translations:
+      en:
+        name: Microservices
+        description: >
+          Designing and operating distributed systems — decomposing monoliths,
+          wiring services together, and keeping inter-service communication
+          from becoming a distributed monolith with extra steps.
+      nl:
+        name: Microservices
+        description: >
+          Gedistribueerde systemen ontwerpen en beheren — monolithische
+          applicaties opsplitsen, services aan elkaar koppelen en voorkomen
+          dat inter-service communicatie een gedistribueerde monoliet wordt.
+      de:
+        name: Microservices
+        description: >
+          Verteilte Systeme entwerfen und betreiben — Monolithen aufteilen,
+          Services verbinden und verhindern, dass die Inter-Service-Kommunikation
+          zu einem verteilten Monolithen wird.
+
+  - key: ai_tooling
+    level: proficient
+    category: other
+    accent: ~
+    icon: fa-solid fa-robot
+    image: ~
+
+    translations:
+      en:
+        name: AI Tooling
+        description: >
+          Integrating LLMs and AI tools into the development workflow —
+          Claude, GitHub Copilot, and the Anthropic API for code generation,
+          review automation, and building AI-assisted features.
+      nl:
+        name: AI-tooling
+        description: >
+          LLM's en AI-tools integreren in de ontwikkelworkflow —
+          Claude, GitHub Copilot en de Anthropic API voor codegeneratie,
+          reviewautomatisering en het bouwen van AI-ondersteunde functies.
+      de:
+        name: AI-Tooling
+        description: >
+          LLMs und KI-Tools in den Entwicklungs-Workflow integrieren —
+          Claude, GitHub Copilot und die Anthropic API für Code-Generierung,
+          Review-Automatisierung und KI-gestützte Features.
+
   - key: dutch
     level: expert
     category: other
     accent: ~
     icon: fa-solid fa-language
     image: ~
+
     translations:
       en:
         name: Dutch
@@ -502,6 +601,7 @@ skills:
     accent: ~
     icon: fa-solid fa-language
     image: ~
+
     translations:
       en:
         name: English
@@ -519,6 +619,7 @@ skills:
     accent: ~
     icon: fa-solid fa-language
     image: ~
+
     translations:
       en:
         name: German
@@ -533,7 +634,7 @@ skills:
 
 # ============================================================
 # Experiences
-# 10 entries
+# 8 entries
 # ============================================================
 experiences:
 
@@ -542,17 +643,21 @@ experiences:
     category: backend
     icon: fa-solid fa-server
     image: ~
-    skills:
+    primary_skills:
       - ruby_on_rails
+      - go
+      - nodejs
+    skills:
       - ruby
       - postgresql
       - docker
       - adyen
       - chargebee
       - stripe
-      - nodejs
       - typescript
-      - go
+      - microservices
+      - swift
+      - vapor
     translations:
       en:
         name: Back-end Development
@@ -574,48 +679,16 @@ experiences:
           entworfen, die echtes Geld für echte Nutzer verarbeiten —
           bisher ohne Zwischenfall.
 
-  - key: fullstack
-    years_of_experience: 10
-    category: fullstack
-    icon: fa-solid fa-layer-group
-    image: ~
-    skills:
-      - ruby_on_rails
-      - javascript
-      - vuejs
-      - typescript
-      - nodejs
-      - postgresql
-    translations:
-      en:
-        name: Full-Stack Development
-        description: >
-          Front to back, from database schema to the button that triggers
-          it all. Ten years of making the whole thing work together —
-          including the parts that weren't supposed to talk to each other.
-      nl:
-        name: Full-Stack Ontwikkeling
-        description: >
-          Van voor tot achter, van databaseschema tot de knop die alles
-          in gang zet. Tien jaar lang de hele boel laten samenwerken —
-          inclusief de onderdelen die dat eigenlijk niet zouden moeten doen.
-      de:
-        name: Full-Stack-Entwicklung
-        description: >
-          Von vorne bis hinten, vom Datenbankschema bis zum Button, der
-          alles auslöst. Zehn Jahre lang das Gesamtsystem zum Laufen
-          gebracht — einschließlich der Teile, die eigentlich nicht
-          miteinander reden sollten.
-
   - key: devops
     years_of_experience: 5
     category: devops
     icon: fa-solid fa-gears
     image: ~
-    skills:
+    primary_skills:
       - docker
       - github_actions
       - kubernetes
+    skills:
       - ansible
     translations:
       en:
@@ -639,15 +712,16 @@ experiences:
 
   - key: cloud
     years_of_experience: 3
-    category: platform
+    category: infra
     icon: fa-solid fa-cloud
     image: ~
-    skills:
+    primary_skills:
       - aws
       - terraform
+      - kubernetes
+    skills:
       - ansible
       - docker
-      - kubernetes
     translations:
       en:
         name: Cloud & Infrastructure
@@ -670,71 +744,47 @@ experiences:
           dass die Datenbank erreichbar ist, ohne sie dem gesamten
           Internet zu öffnen.
 
-  - key: apps
-    years_of_experience: 2
-    category: apps
-    icon: fa-brands fa-apple
+  - key: ai_ready
+    years_of_experience: 1
+    category: ai
+    icon: fa-solid fa-robot
     image: ~
-    skills:
-      - swift
+    primary_skills:
+      - ai_tooling
+    skills: []
     translations:
       en:
-        name: iOS & macOS Development
+        name: AI-Ready Development
         description: >
-          Native app development for Apple platforms using Swift and Xcode,
-          plus server-side Swift with the Vapor framework.
+          Working with LLMs and AI tools as a force multiplier in the daily
+          engineering workflow — from code generation and automated review to
+          building features that integrate AI APIs directly. Comfortable
+          collaborating with the machine; still writing the tests myself.
       nl:
-        name: iOS & macOS Ontwikkeling
+        name: AI-Ready Ontwikkeling
         description: >
-          Native app-ontwikkeling voor Apple-platforms met Swift en Xcode,
-          plus server-side Swift met het Vapor-framework.
+          AI-tools en LLM's inzetten als versneller in de dagelijkse
+          ontwikkelworkflow — van codegeneratie en geautomatiseerde review
+          tot het bouwen van features die AI-API's direct integreren.
+          Comfortabel samenwerken met de machine; de tests schrijf ik zelf nog.
       de:
-        name: iOS & macOS Entwicklung
+        name: KI-Ready-Entwicklung
         description: >
-          Native App-Entwicklung für Apple-Plattformen mit Swift und Xcode,
-          plus serverseitiges Swift mit dem Vapor-Framework.
-
-  - key: microservices
-    years_of_experience: 3
-    category: backend
-    icon: fa-solid fa-cubes
-    image: ~
-    skills:
-      - go
-      - typescript
-      - nodejs
-      - kubernetes
-      - terraform
-      - github_actions
-    translations:
-      en:
-        name: Microservices
-        description: >
-          Three years designing and operating distributed systems — decomposing
-          monoliths into services, wiring them together with Kubernetes and
-          Terraform, and keeping the whole thing honest with GitHub Actions
-          pipelines.
-      nl:
-        name: Microservices
-        description: >
-          Drie jaar gedistribueerde systemen ontwerpen en beheren — monolithische
-          applicaties opsplitsen in services, verbinden via Kubernetes en
-          Terraform, en de boel op orde houden met GitHub Actions pipelines.
-      de:
-        name: Microservices
-        description: >
-          Drei Jahre verteilte Systeme entworfen und betrieben — Monolithen in
-          Services zerlegt, mit Kubernetes und Terraform verbunden und das
-          Ganze mit GitHub Actions Pipelines zuverlässig gehalten.
+          LLMs und KI-Tools als Kraftmultiplikator im täglichen
+          Engineering-Workflow einsetzen — von Code-Generierung und
+          automatisiertem Review bis hin zu Features mit direkter
+          KI-API-Integration. Komfortabel in der Zusammenarbeit mit
+          der Maschine; die Tests schreibe ich noch selbst.
 
   - key: ruby_lang
     years_of_experience: 8
     category: programming_language
     icon: devicon-ruby-plain
     image: ~
-    skills:
+    primary_skills:
       - ruby
       - ruby_on_rails
+    skills: []
     translations:
       en:
         name: Ruby
@@ -758,8 +808,9 @@ experiences:
     category: programming_language
     icon: devicon-go-plain
     image: ~
-    skills:
+    primary_skills:
       - go
+    skills: []
     translations:
       en:
         name: Go
@@ -782,8 +833,10 @@ experiences:
     category: programming_language
     icon: devicon-swift-plain
     image: ~
-    skills:
+    primary_skills:
       - swift
+    skills:
+      - vapor
     translations:
       en:
         name: Swift
@@ -806,11 +859,12 @@ experiences:
     category: programming_language
     icon: devicon-javascript-plain
     image: ~
-    skills:
+    primary_skills:
       - javascript
       - typescript
       - nodejs
       - vuejs
+    skills: []
     translations:
       en:
         name: JavaScript
@@ -842,7 +896,7 @@ jobs:
     logo: kape_technologies.png   # to be provided
     start_date: "2022-02-01"
     end_date: "2026-01-01"
-    accent: ~
+    accent: epic
     skills:
       - ruby_on_rails
       - ruby
@@ -888,7 +942,7 @@ jobs:
     logo: kape_technologies.png   # same logo as above
     start_date: "2019-02-01"
     end_date: "2022-01-01"
-    accent: ~
+    accent: rare
     skills:
       - ruby_on_rails
       - ruby
@@ -930,7 +984,7 @@ jobs:
     logo: zenguard.png   # to be provided
     start_date: "2017-08-01"
     end_date: "2019-01-01"
-    accent: ~
+    accent: uncommon
     skills:
       - ruby_on_rails
       - ruby
@@ -966,7 +1020,7 @@ jobs:
     logo: zenguard.png
     start_date: "2017-02-01"
     end_date: "2017-07-01"
-    accent: ~
+    accent: common
     skills:
       - ruby_on_rails
       - ruby
@@ -1000,7 +1054,7 @@ jobs:
     logo: shopboostr.png   # to be provided
     start_date: "2016-06-01"
     end_date: "2016-12-01"
-    accent: ~
+    accent: common
     skills:
       - ruby_on_rails
       - javascript
@@ -1136,30 +1190,6 @@ projects:
           für Kampagnenkonfiguration, Code-Generierung und Reporting.
           Kampagnen liefen in Kooperation mit Thalia und Eurowings.
           Das Unternehmen wurde 2022 liquidiert.
-
-  - key: poolbar
-    position: 4
-    year: 2025
-    url: ~                                        # TBD — awaiting client details
-    repo_url: ~
-    image: ~
-    skills: []
-    translations:
-      en:
-        name: Pool Bar Website
-        description: >
-          A WordPress website for a local pool bar — custom theme, contact
-          form, and event listings.
-      nl:
-        name: Poolbar Website
-        description: >
-          Een WordPress-website voor een lokale poolbar — eigen thema,
-          contactformulier en evenementenoverzicht.
-      de:
-        name: Poolbar-Website
-        description: >
-          Eine WordPress-Website für eine lokale Poolbar — eigenes Theme,
-          Kontaktformular und Veranstaltungsübersicht.
 
 # ============================================================
 # PAGES

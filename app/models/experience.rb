@@ -5,11 +5,11 @@ class Experience < ApplicationRecord
   translates :description
 
   enum :category, {
-    frontend:             0,
+    ai:                   0,
     backend:              1,
     fullstack:            2,
     devops:               3,
-    platform:             4,
+    infra:                4,
     apps:                 5,
     programming_language: 6,
     other:                7
@@ -21,7 +21,7 @@ class Experience < ApplicationRecord
 
   def accent
     case years_of_experience
-    when 0..1 then "common"
+    # when 0..1 then "common"
     when 2..3 then "uncommon"
     when 4..5 then "rare"
     when 6..8 then "epic"

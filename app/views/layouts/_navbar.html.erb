@@ -10,17 +10,10 @@
         <li><%= link_to t("nav.career"),     jobs_path,       class: "navbar-link #{'is-active' if current_page?(jobs_path)}" %></li>
         <li><%= link_to t("nav.experience"), experience_path, class: "navbar-link #{'is-active' if current_page?(experience_path)}" %></li>
         <li><%= link_to t("nav.projects"),   projects_path,   class: "navbar-link #{'is-active' if current_page?(projects_path)}" %></li>
+        <li><%= link_to t("nav.contact"),    contact_path,    class: "navbar-link #{'is-active' if current_page?(contact_path)}" %></li>
       </ul>
 
       <div class="navbar-ctas">
-        <%= link_to contact_path, class: "navbar-cta navbar-cta-secondary #{'is-active' if current_page?(contact_path)}" do %>
-          <%= t("nav.get_in_touch").upcase %>
-        <% end %>
-        <span class="navbar-cta-divider">or</span>
-        <%= link_to new_cv_download_path, class: "navbar-cta" do %>
-          <%= t("nav.get_my_cv").upcase %> <i class="fa-solid fa-arrow-right"></i>
-        <% end %>
-        <span class="navbar-cta-divider">|</span>
         <%= button_to theme_path,
               method: :post,
               params: { theme: current_theme == "dark" ? "light" : "dark" },
@@ -49,12 +42,7 @@
       <li><%= link_to t("nav.career"),     jobs_path,       class: "navbar-link #{'is-active' if current_page?(jobs_path)}" %></li>
       <li><%= link_to t("nav.experience"), experience_path, class: "navbar-link #{'is-active' if current_page?(experience_path)}" %></li>
       <li><%= link_to t("nav.projects"),   projects_path,   class: "navbar-link #{'is-active' if current_page?(projects_path)}" %></li>
+      <li><%= link_to t("nav.contact"),    contact_path,    class: "navbar-link #{'is-active' if current_page?(contact_path)}" %></li>
     </ul>
-    <div class="navbar-ctas">
-      <%= link_to t("nav.get_in_touch").upcase, contact_path, class: "navbar-cta navbar-cta-secondary" %>
-      <%= link_to new_cv_download_path, class: "navbar-cta" do %>
-        <%= t("nav.get_my_cv").upcase %> <i class="fa-solid fa-arrow-right"></i>
-      <% end %>
-    </div>
   </div>
 </div>

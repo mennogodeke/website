@@ -1,10 +1,7 @@
 <section class="section container" data-controller="experience">
 
   <h1><%= t 'pages.experience.title' %></h1>
-  <h2><%= t 'pages.experience.subtitle' %></h2>
-
   <div class="exp-row">
-
     <%# Rail %>
     <div class="exp-rail" role="tablist">
       <% @experiences.each_with_index do |experience, i| %>
@@ -20,7 +17,6 @@
           <span class="rank"><%= "%02d" % (i + 1) %></span>
           <div class="label-col">
             <span class="name"><%= experience.name %></span>
-            <div class="year-bar"><i style="width: <%= (experience.years_of_experience.to_f / @max_years * 100).round %>%"></i></div>
           </div>
           <span class="chevron">›</span>
         </button>
@@ -30,8 +26,8 @@
     <%# Panels %>
     <div>
       <% @experiences.each_with_index do |experience, i| %>
-        <% primary = experience.skills.to_a.first(3) %>
-        <% secondary = experience.skills.to_a.drop(3) %>
+        <% primary = experience.experience_skills.select(&:primary?).map(&:skill) %>
+        <% secondary = experience.experience_skills.reject(&:primary?).map(&:skill) %>
         <% panel_grad = "linear-gradient(160deg, var(--highlight-#{experience.accent}-from) 0%, var(--highlight-#{experience.accent}-mid) 50%, var(--highlight-#{experience.accent}-to) 100%)" %>
         <div
           class="exp-panel"
@@ -70,7 +66,7 @@
             <div class="sk-secondary">
               <% secondary.each do |skill| %>
                 <% chip_c = skill.accent.present? ? skill.accent : "var(--color-text-faint)" %>
-                <span class="sk-chip" style="--chip-c: <%= chip_c %>" title="<%= skill.description.strip %>">
+                <span class="sk-chip" style="--chip-c: <%= chip_c %>" data-tooltip="<%= skill.description.strip %>">
                   <i class="<%= skill.icon %>"></i><%= skill.name %>
                 </span>
               <% end %>
