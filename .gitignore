@@ -35,6 +35,8 @@
 
 # Claude
 /CLAUDE.local.md
+/.claude/settings.local.json
+/.claude/skills/
 node_modules/
 
 **/.DS_Store
