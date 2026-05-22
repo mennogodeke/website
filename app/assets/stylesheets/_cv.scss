@@ -5,21 +5,17 @@
 }
 
 .no-background-image {
-  background-image: none;
-  background-image: linear-gradient(to bottom, rgba(60, 135, 183), rgba(40, 55, 112));
-  /* background-color: rgba(60, 135, 183); */
+  background: linear-gradient(to bottom, rgba(60, 135, 183, 0.9), rgba(40, 55, 112, 0.9));
 }
 
-/* ============================================================
-   Header
-   ============================================================ */
+/* ── Header ── */
 .cv-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   margin-bottom: 3rem;
   padding-bottom: 2rem;
-  border-bottom: 1px solid var(--bulma-border);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .cv-name {
@@ -38,7 +34,7 @@
   width: 96px;
   height: 96px;
   border-radius: 0.75rem;
-  background-color: var(--bulma-border);
+  background: var(--color-border);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -47,9 +43,7 @@
   flex-shrink: 0;
 }
 
-/* ============================================================
-   Two-column body
-   ============================================================ */
+/* ── Two-column body ── */
 .cv-body {
   display: grid;
   grid-template-columns: 1fr 3fr;
@@ -57,12 +51,8 @@
   align-items: start;
 }
 
-/* ============================================================
-   Sections
-   ============================================================ */
-.cv-section {
-  margin-bottom: 2.5rem;
-}
+/* ── Sections ── */
+.cv-section { margin-bottom: 2.5rem; }
 
 .cv-section-title {
   font-size: 0.8rem;
@@ -71,22 +61,18 @@
   text-transform: uppercase;
   margin-bottom: 1rem;
   padding-bottom: 0.4rem;
-  border-bottom: 1px solid var(--bulma-border);
+  border-bottom: 1px solid var(--color-border);
   opacity: 0.5;
 }
 
-/* ============================================================
-   About
-   ============================================================ */
+/* ── About ── */
 .cv-about {
   font-size: 0.9rem;
   line-height: 1.7;
   opacity: 0.85;
 }
 
-/* ============================================================
-   Skills
-   ============================================================ */
+/* ── Skills ── */
 .cv-skills {
   display: flex;
   flex-direction: column;
@@ -113,11 +99,11 @@
   gap: 0.4rem;
 }
 
-/* ============================================================
-   Languages
-   ============================================================ */
+/* ── Languages ── */
 .cv-languages {
   list-style: none;
+  padding: 0;
+  margin: 0;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -130,28 +116,18 @@
   font-size: 0.9rem;
 }
 
-.cv-language-name {
-  font-weight: 500;
-}
+.cv-language-name  { font-weight: 500; }
+.cv-language-level { font-size: 0.75rem; opacity: 0.5; }
 
-.cv-language-level {
-  font-size: 0.75rem;
-  opacity: 0.5;
-}
-
-/* ============================================================
-   Entries (jobs)
-   ============================================================ */
+/* ── Entries ── */
 .cv-entry {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   padding: 1.25rem 0;
-  border-bottom: 1px solid var(--bulma-border);
-}
+  border-bottom: 1px solid var(--color-border);
 
-.cv-entry:last-child {
-  border-bottom: none;
+  &:last-child { border-bottom: none; }
 }
 
 .cv-entry-header {
@@ -161,23 +137,9 @@
   gap: 1rem;
 }
 
-.cv-entry-title {
-  font-size: 1.05rem;
-  font-weight: 600;
-  margin-right: 0.5rem;
-}
-
-.cv-entry-company {
-  font-size: 0.9rem;
-  opacity: 0.7;
-}
-
-.cv-entry-dates {
-  font-size: 0.85rem;
-  opacity: 0.6;
-  white-space: nowrap;
-  flex-shrink: 0;
-}
+.cv-entry-title   { font-size: 1.05rem; font-weight: 600; }
+.cv-entry-company { font-size: 0.9rem; opacity: 0.7; }
+.cv-entry-dates   { font-size: 0.85rem; opacity: 0.6; white-space: nowrap; flex-shrink: 0; }
 
 .cv-entry-description {
   font-size: 0.95rem;
@@ -192,16 +154,8 @@
   margin-top: 0.25rem;
 }
 
-/* ============================================================
-   Responsive
-   ============================================================ */
+/* ── Responsive ── */
 @media (max-width: 640px) {
-  .cv-body {
-    grid-template-columns: 1fr;
-  }
-
-  .cv-headshot-placeholder {
-    width: 72px;
-    height: 72px;
-  }
+  .cv-body                  { grid-template-columns: 1fr; }
+  .cv-headshot-placeholder  { width: 72px; height: 72px; }
 }

@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   get "up" => "rails/health#show", as: :rails_health_check
 
+  post "theme", to: "themes#update", as: :theme
+
   # Render dynamic PWA files from app/views/pwa/* (remember to link manifest in application.html.erb)
   # get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
   # get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
@@ -19,7 +21,6 @@ Rails.application.routes.draw do
     post "cv/download",         to: "cv_downloads#create", as: :cv_downloads
     get  "cv/download/:token",  to: "cv_downloads#show",   as: :cv_download
 
-    get "design-preview", to: "pages#design_preview"
     get "home", to: "pages#home"
     get "experience", to: "experience#show"
     get "contact", to: "pages#contact"

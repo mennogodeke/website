@@ -22,7 +22,7 @@ skills:
   - key: ruby_on_rails
     level: expert
     category: backend
-    accent: ~
+    accent: "#CC0000"
     icon: devicon-rails-plain
     image: ~
     translations:
@@ -45,7 +45,7 @@ skills:
   - key: ruby
     level: expert
     category: programming_language
-    accent: ~
+    accent: "#CC342D"
     icon: devicon-ruby-plain
     image: ~
     translations:
@@ -68,7 +68,7 @@ skills:
   - key: docker
     level: expert
     category: devops
-    accent: ~
+    accent: "#2496ED"
     icon: devicon-docker-plain
     image: ~
     translations:
@@ -91,7 +91,7 @@ skills:
   - key: git
     level: expert
     category: devops
-    accent: ~
+    accent: "#F05032"
     icon: devicon-git-plain
     image: ~
     translations:
@@ -114,7 +114,7 @@ skills:
   - key: github_actions
     level: proficient
     category: devops
-    accent: ~
+    accent: "#2088FF"
     icon: devicon-github-plain
     image: ~
     translations:
@@ -137,7 +137,7 @@ skills:
   - key: postgresql
     level: proficient
     category: backend
-    accent: ~
+    accent: "#336791"
     icon: devicon-postgresql-plain
     image: ~
     translations:
@@ -160,7 +160,7 @@ skills:
   - key: go
     level: proficient
     category: programming_language
-    accent: ~
+    accent: "#00ADD8"
     icon: devicon-go-plain
     image: ~
     translations:
@@ -183,7 +183,7 @@ skills:
   - key: javascript
     level: proficient
     category: programming_language
-    accent: ~
+    accent: "#F7DF1E"
     icon: devicon-javascript-plain
     image: ~
     translations:
@@ -206,7 +206,7 @@ skills:
   - key: kubernetes
     level: proficient
     category: devops
-    accent: ~
+    accent: "#326CE5"
     icon: devicon-kubernetes-plain
     image: ~
     translations:
@@ -229,7 +229,7 @@ skills:
   - key: aws
     level: proficient
     category: platform
-    accent: ~
+    accent: "#FF9900"
     icon: devicon-amazonwebservices-plain-wordmark
     image: ~
     translations:
@@ -252,7 +252,7 @@ skills:
   - key: typescript
     level: proficient
     category: programming_language
-    accent: ~
+    accent: "#3178C6"
     icon: devicon-typescript-plain
     image: ~
     translations:
@@ -275,7 +275,7 @@ skills:
   - key: nodejs
     level: proficient
     category: backend
-    accent: ~
+    accent: "#339933"
     icon: devicon-nodejs-plain
     image: ~
     translations:
@@ -298,7 +298,7 @@ skills:
   - key: vuejs
     level: proficient
     category: frontend
-    accent: ~
+    accent: "#42B883"
     icon: devicon-vuejs-plain
     image: ~
     translations:
@@ -321,7 +321,7 @@ skills:
   - key: swift
     level: proficient
     category: programming_language
-    accent: ~
+    accent: "#F05138"
     icon: devicon-swift-plain
     image: ~
     translations:
@@ -390,7 +390,7 @@ skills:
   - key: terraform
     level: familiar
     category: devops
-    accent: ~
+    accent: "#844FBA"
     icon: devicon-terraform-plain
     image: ~
     translations:
@@ -413,7 +413,7 @@ skills:
   - key: ansible
     level: familiar
     category: devops
-    accent: ~
+    accent: "#EE0000"
     icon: devicon-ansible-plain
     image: ~
     translations:
@@ -436,7 +436,7 @@ skills:
   - key: python
     level: familiar
     category: programming_language
-    accent: ~
+    accent: "#3776AB"
     icon: devicon-python-plain
     image: ~
     translations:
@@ -459,7 +459,7 @@ skills:
   - key: stripe
     level: familiar
     category: backend
-    accent: ~
+    accent: "#635BFF"
     icon: devicon-stripe-plain
     image: ~
     translations:

@@ -15,6 +15,7 @@ data["skills"].each do |attrs|
   skill.assign_attributes(
     level:           attrs["level"],
     icon:            attrs["icon"],
+    accent:          attrs["accent"],
     description_en:  en["description"],
     description_nl:  nl["description"],
     description_de:  de["description"]

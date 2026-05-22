@@ -1,59 +1,52 @@
-<section class="section is-medium container is-max-widescreen">
+<section class="section container">
 
-  <%# Page header %>
   <div class="mb-5">
-    <h1 class="title is-1"><%= @project.name %></h1>
+    <h1><%= @project.name %></h1>
   </div>
 
-  <%# Hero image stub %>
   <div class="img-stub proj-hero mb-6">
-    <span class="is-family-code is-size-7"><%= @project.name %> hero shot</span>
+    <span class="text-xs"><%= @project.name %> hero shot</span>
   </div>
 
-  <%# Two-column: aside + content %>
   <div class="proj-detail-row">
 
-    <%# Left: meta aside %>
     <aside class="proj-detail-meta">
       <div class="proj-meta-row">
-        <dt class="is-size-7 has-text-weight-light">Year</dt>
-        <dd class="is-size-6"><%= @project.year %></dd>
+        <p class="text-xs text-faint">Year</p>
+        <p><%= @project.year %></p>
       </div>
       <div class="proj-meta-row">
-        <dt class="is-size-7 has-text-weight-light">Stack</dt>
-        <dd>
-          <div class="tags mt-1">
-            <% @project.skills.each do |skill| %>
-              <span class="tag"><%= skill.name %></span>
-            <% end %>
-          </div>
-        </dd>
+        <p class="text-xs text-faint">Stack</p>
+        <div class="tags mt-1">
+          <% @project.skills.each do |skill| %>
+            <span class="tag"><%= skill.name %></span>
+          <% end %>
+        </div>
       </div>
       <div class="proj-meta-row">
-        <dt class="is-size-7 has-text-weight-light mb-2">Links</dt>
-        <dd class="is-flex is-flex-direction-column">
+        <p class="text-xs text-faint mb-2">Links</p>
+        <div class="proj-links">
           <% if @project.url.present? %>
-            <%= link_to "↗ #{@project.url}", safe_url(@project.url), class: "is-family-code is-size-7 mb-1", target: "_blank", rel: "noopener" %>
+            <%= link_to "↗ #{@project.url}", safe_url(@project.url), class: "text-xs", target: "_blank", rel: "noopener" %>
           <% end %>
           <% if @project.repo_url.present? %>
-            <%= link_to "↗ repo", safe_url(@project.repo_url), class: "is-family-code is-size-7", target: "_blank", rel: "noopener" %>
+            <%= link_to "↗ repo", safe_url(@project.repo_url), class: "text-xs", target: "_blank", rel: "noopener" %>
           <% end %>
           <% if @project.url.blank? && @project.repo_url.blank? %>
-            <span class="is-family-code is-size-7">No public links</span>
+            <span class="text-xs">No public links</span>
           <% end %>
-        </dd>
+        </div>
       </div>
     </aside>
 
-    <%# Right: content sections (placeholder until section fields are added to model) %>
     <div class="proj-detail-content">
-      <p class="is-size-5 mb-6"><%= @project.description %></p>
-      <div class="is-flex" style="gap: 1rem;">
+      <p class="text-md mb-6"><%= @project.description %></p>
+      <div class="proj-actions">
         <% if @project.url.present? %>
-          <%= link_to "↗ Live", safe_url(@project.url), class: "button is-primary", target: "_blank", rel: "noopener" %>
+          <%= link_to "↗ Live", safe_url(@project.url), class: "btn btn-primary", target: "_blank", rel: "noopener" %>
         <% end %>
         <% if @project.repo_url.present? %>
-          <%= link_to "↗ Repo", safe_url(@project.repo_url), class: "button is-primary is-outlined", target: "_blank", rel: "noopener" %>
+          <%= link_to "↗ Repo", safe_url(@project.repo_url), class: "btn btn-secondary", target: "_blank", rel: "noopener" %>
         <% end %>
       </div>
     </div>

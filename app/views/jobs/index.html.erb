@@ -1,8 +1,35 @@
-<section class="section is-medium container is-max-widescreen">
-  <h1 class="title is-1"><%= t 'pages.career.title' %></h1>
-  <h2 class="title is-2"><%= t 'pages.career.subtitle' %></h2>
+<section class="section container">
+  <h1><%= t 'pages.career.title' %></h1>
 
-  <div class="career-list">
-    <%= render @jobs %>
+  <div class="career-status">
+    <div class="career-status-main">
+      <div class="home-badge">
+        <span class="home-badge-dot"></span>
+        Open to work
+      </div>
+      <p class="career-status-copy"><strong>Permanent senior engineering, back-end focused or full-stack.</strong> Based in Germany, open to remote and hybrid. Good problems and good people are enough.</p>
+    </div>
+    <div class="career-status-actions">
+      <%= link_to "Get My CV →", cv_path, class: "btn btn-primary btn-sm" %>
+      <%= link_to "Get In Touch", contact_path, class: "btn btn-sm" %>
+    </div>
+  </div>
+
+  <h2><%= t 'pages.career.subtitle' %></h2>
+
+  <div class="tl-track"
+       data-controller="career"
+       data-action="career-entry:opened->career#closeOthers">
+
+    <% rarities = %w[legendary epic rare uncommon common] %>
+    <% highlights = rarities.map { |r| "highlight-#{r}" } %>
+    <% @jobs.each_with_index do |job, i| %>
+      <%= render partial: "jobs/job", locals: {
+        job: job,
+        highlight_class: highlights[i % highlights.length],
+        rarity: rarities[i % rarities.length],
+        first: i == 0
+      } %>
+    <% end %>
   </div>
 </section>

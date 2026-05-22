@@ -3,16 +3,10 @@ class PagesController < ApplicationController
     @jobs = Job.includes(:skills).order(start_date: :desc).limit(2)
     @top_experiences = Experience.limit(6)
     @featured_project = Project.includes(:skills).order(year: :desc).first
+    @chip_skills = Skill.where("icon LIKE 'devicon%'").where.not(accent: nil).order(:name)
   end
 
   def contact
-  end
-
-  def design_preview
-    @experiences = Experience.includes(:skills).all
-    @jobs = Job.includes(:skills).order(start_date: :desc).limit(2)
-    @top_experiences = Experience.limit(6)
-    @featured_project = Project.includes(:skills).order(year: :desc).first
   end
 
   def cv

@@ -1,0 +1,86 @@
+/* ============================================================
+   Design tokens — all colours, fonts and spacing live here.
+   Page/component files reference these vars only.
+   ============================================================ */
+
+:root {
+  color-scheme: dark;
+
+  /* Backgrounds */
+  --color-bg:      light-dark(#f4f3ef, #0b1729);
+  --color-bg-2:    light-dark(#eceae5, #0d1e38);
+  --color-bg-card: light-dark(rgba(11, 23, 41, 0.04), rgba(255, 255, 255, 0.04));
+
+  /* Text */
+  --color-text:       light-dark(#000000, #ffffff);
+  --color-text-muted: light-dark(rgba(0, 0, 0, 0.65), rgba(255, 255, 255, 0.65));
+  --color-text-faint: light-dark(rgba(0, 0, 0, 0.35), rgba(255, 255, 255, 0.35));
+
+  /* Borders */
+  --color-border:   light-dark(rgba(11, 23, 41, 0.09), rgba(255, 255, 255, 0.08));
+  --color-border-2: light-dark(rgba(11, 23, 41, 0.18), rgba(255, 255, 255, 0.16));
+
+  /* Brand accent */
+  --color-primary:          #f5e90c;
+  --color-primary-invert:   #0b1729;
+  --color-secondary:        #f5e90c;
+  --color-secondary-invert: #0b1729;
+
+  /* Semantic */
+  --color-danger:   #e05555;
+  --color-h1-bg-from: light-dark(#fdf7a0, #fdf7a0);
+  --color-h1-bg-mid:  light-dark(#f5e90c, #f5e90c);
+  --color-h1-bg-to:   light-dark(#c8bc00, #c8bc00);
+  --color-h1-text:  #0b1729;
+
+  /* Rarity palette */
+  --color-legendary: #f0840a;
+  --color-epic:      #6a45e6;
+  --color-rare:      #0464d1;
+  --color-uncommon:  #19a828;
+  --color-common:    #bdbfbe;
+
+  /* Rarity highlight gradients */
+  --highlight-common-from:    #d8d9d8;
+  --highlight-common-mid:     #bdbfbe;
+  --highlight-common-to:      #9a9c9b;
+  --highlight-legendary-from: #ffac55;
+  --highlight-legendary-mid:  #f0840a;
+  --highlight-legendary-to:   #c45c00;
+  --highlight-uncommon-from: #4dd463;
+  --highlight-uncommon-mid:  #19a828;
+  --highlight-uncommon-to:   #0f7a1c;
+  --highlight-rare-from:     #3a8ff5;
+  --highlight-rare-mid:      #0464d1;
+  --highlight-rare-to:       #0348a0;
+  --highlight-epic-from:     #9b7af0;
+  --highlight-epic-mid:      #6a45e6;
+  --highlight-epic-to:       #4a28c0;
+
+  /* Body gradient */
+  --body-glow:      light-dark(rgba(0, 0, 0, 0.04), rgba(100, 60, 255, 0.30));
+  --body-shine:     light-dark(rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.06));
+  --body-grad-from: light-dark(#ffffff, #00020f);
+  --body-grad-mid:  light-dark(#f9f9f9, #010c2a);
+
+  /* Surfaces */
+  --color-stripe:           light-dark(rgba(11, 23, 41, 0.04), rgba(255, 255, 255, 0.05));
+  --color-surface-float:    light-dark(rgba(244, 243, 239, 0.97), rgba(11, 23, 41, 0.97));
+  --color-surface-overlay:  light-dark(rgba(244, 243, 239, 0.98), rgba(11, 23, 41, 0.98));
+  --color-navbar-scrolled:  light-dark(rgba(180, 175, 160, 0.5), rgba(43, 68, 125, 0.5));
+  --color-navbar-highlight: light-dark(rgba(0, 0, 0, 0.06), rgba(255, 255, 255, 0.06));
+
+  /* Fonts */
+  --font-display: "Anton", sans-serif;
+  --font-heading: "Anton SC", sans-serif;
+  --font-body:    "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono:    ui-monospace, "Cascadia Code", "Fira Mono", monospace;
+
+  /* Layout */
+  --nav-h:  56px;
+  --max-w:  1280px;
+  --gutter: 1.5rem;
+}
+
+[data-theme="light"] { color-scheme: light; }
+[data-theme="dark"]  { color-scheme: dark; }

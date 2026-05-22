@@ -23,9 +23,7 @@
   width: 100%;
 }
 
-.cv-download-form .field {
-  width: 100%;
-}
+.cv-download-form .field { width: 100%; }
 
 /* ── Column 2: divider ── */
 .cv-col-divider {
@@ -40,15 +38,15 @@
 .cv-divider-line {
   flex: 1;
   width: 1px;
-  background: rgba(255, 255, 255, 0.15);
+  background: var(--color-border-2);
 }
 
 .cv-divider-or {
-  font-family: var(--app-font-display);
+  font-family: var(--font-display);
   font-weight: 700;
   font-size: 0.85rem;
   letter-spacing: 0.15em;
-  color: rgba(255, 255, 255, 0.35);
+  color: var(--color-text-faint);
   text-transform: uppercase;
   flex-shrink: 0;
 }
@@ -65,22 +63,19 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--app-font-display);
+  font-family: var(--font-display);
   font-weight: 900;
   font-size: 1.5rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.8);
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  color: var(--color-text-muted);
+  border: 2px solid var(--color-border-2);
   text-decoration: none;
   transition: border-color 0.2s ease, color 0.2s ease;
   text-align: center;
   padding: 1.5rem 2rem;
-}
 
-.cv-browser-btn:hover {
-  border-color: var(--app-accent);
-  color: var(--app-accent);
+  &:hover { border-color: var(--color-primary); color: var(--color-primary); }
 }
 
 /* ── Responsive ── */
@@ -100,9 +95,5 @@
     padding: 0;
   }
 
-  .cv-divider-line {
-    flex: 1;
-    width: auto;
-    height: 1px;
-  }
+  .cv-divider-line { flex: 1; width: auto; height: 1px; }
 }

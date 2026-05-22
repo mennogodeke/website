@@ -22,17 +22,7 @@ export default class extends Controller {
 
     this.panelTargets.forEach(panel => {
       const active = panel.dataset.experienceKey === key
-      if (!active) {
-        panel.querySelectorAll(".bar i").forEach(bar => bar.style.width = "0")
-        panel.hidden = true
-      } else {
-        panel.hidden = false
-        requestAnimationFrame(() => {
-          panel.querySelectorAll(".bar i").forEach(bar => {
-            bar.style.width = (bar.dataset.width || "0") + "%"
-          })
-        })
-      }
+      panel.hidden = !active
     })
 
     if (updateUrl) {
