@@ -52,11 +52,106 @@
   </div>
 </div>
 
+<%# ── Open to work banner ── %>
+<div class="container">
+  <div class="career-status">
+    <div class="career-status-main">
+      <div class="home-badge">
+        <span class="home-badge-dot"></span>
+        Open to work
+      </div>
+      <p class="career-status-copy"><strong>Permanent senior engineering, back-end focused or full-stack.</strong> Based in Germany, open to remote and hybrid. Good problems and good people are enough.</p>
+    </div>
+    <div class="career-status-actions">
+      <%= link_to "Get My CV →", cv_path, class: "btn btn-primary btn-sm" %>
+      <%= link_to "Get In Touch", contact_path, class: "btn btn-sm" %>
+    </div>
+  </div>
+</div>
+
+<%# ── Language cards ── %>
+<div class="home-langs container">
+  <h2>What I Work With</h2>
+  <div class="exp-skills-header">
+    <span>LANGUAGES · AT A GLANCE</span>
+  </div>
+  <div class="sk-primary">
+    <% @lang_cards.each do |exp| %>
+      <% brand_color = exp.experience_skills.select(&:primary?).first&.skill&.accent || "var(--color-text-faint)" %>
+      <div class="sk-card" style="--chip-c: <%= brand_color %>">
+        <i class="<%= exp.icon %> icon"></i>
+        <span class="name"><%= exp.name %></span>
+        <p class="desc"><%= exp.description %></p>
+      </div>
+    <% end %>
+  </div>
+  <%= link_to "See all →", experience_path, class: "btn btn-secondary" %>
+</div>
+
+<%# ── Career timeline (mini) ── %>
+<div class="home-career container">
+  <h2>Where I've Worked</h2>
+  <div class="exp-skills-header">
+    <span>CAREER · RECENT</span>
+  </div>
+  <div class="tl-track">
+    <% @jobs.each_with_index do |job, i| %>
+      <% initials = job.company.split.map { |w| w[0] }.join.upcase.first(2) %>
+      <div class="tl-entry" style="--entry-accent: var(--color-<%= job.accent %>)">
+        <div class="tl-header">
+          <div class="tl-company-logo"><%= initials %></div>
+          <div class="tl-header-main">
+            <div class="tl-role-row">
+              <div class="tl-role"><span class="highlight-<%= job.accent %>"><%= job.title %></span></div>
+              <span class="tl-at-company">@ <%= job.company %></span>
+            </div>
+          </div>
+        </div>
+        <div class="tl-rail" aria-hidden="true">
+          <span class="yr"><%= job.end_date ? job.end_date.year : "NOW" %></span>
+          <div class="tl-rail-dot"></div>
+          <span class="yr"><%= job.start_date.year %></span>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <%= link_to "See full career →", jobs_path, class: "btn btn-secondary" %>
+</div>
+
+<%# ── Featured project ── %>
+<div class="home-featured container">
+  <h2>Featured Project</h2>
+  <div class="exp-skills-header">
+    <span>PROJECTS · HIGHLIGHTED</span>
+  </div>
+  <a href="<%= project_path(@featured_project) %>" class="proj-row">
+    <div class="proj-content">
+      <p class="text-xs mb-2"><%= @featured_project.year %></p>
+      <h3 class="mb-2"><%= @featured_project.name %></h3>
+      <p class="mb-4"><%= @featured_project.description %></p>
+      <% if @featured_project.skills.any? %>
+        <div class="tags mb-4">
+          <% @featured_project.skills.each do |skill| %>
+            <span class="tag"><%= skill.name %></span>
+          <% end %>
+        </div>
+      <% end %>
+      <div class="proj-cta-row">
+        <span class="proj-cta">View case study →</span>
+        <% if @featured_project.repo_url.present? %>
+          <span class="text-xs">↗ repo</span>
+        <% end %>
+      </div>
+    </div>
+    <div class="proj-img img-stub">
+      <span class="text-xs"><%= @featured_project.name %> screenshot</span>
+    </div>
+  </a>
+  <%= link_to "See all projects →", projects_path, class: "btn btn-secondary" %>
+</div>
+
 <%# ── Footer CTA ── %>
 <div class="home-footer-cta container">
-  <h2>Open to work.<br><span class="text-primary">Let's talk.</span></h2>
-  <div class="home-hero-actions">
-    <%= link_to "Get My CV →", new_cv_download_path, class: "btn btn-primary" %>
-    <%= link_to "Get in Touch", contact_path, class: "btn btn-secondary" %>
-  </div>
+  <h2>Good problems, good people —<br><span class="text-primary">that's all I'm looking for.</span></h2>
+  <%= link_to "Get in Touch →", contact_path, class: "btn btn-primary" %>
 </div>

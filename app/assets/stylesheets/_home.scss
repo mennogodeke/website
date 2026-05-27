@@ -173,6 +173,45 @@
   flex-wrap: wrap;
 }
 
+/* ── Language cards ── */
+.home-langs {
+  padding-bottom: 3rem;
+
+  .sk-primary {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .btn { margin-top: 1.25rem; }
+}
+
+@media (max-width: 900px) {
+  .home-langs .sk-primary {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .home-langs .sk-primary {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Career timeline (mini) ── */
+.home-career {
+  padding-bottom: 3rem;
+
+  .tl-header { cursor: default; }
+
+  .btn { margin-top: 1.25rem; }
+}
+
+/* ── Featured project ── */
+.home-featured {
+  padding-bottom: 3rem;
+
+  .btn { margin-top: 1.25rem; }
+}
+
 /* ── Footer CTA ── */
 .home-footer-cta {
   display: flex;
