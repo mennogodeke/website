@@ -26,15 +26,10 @@ p {
   color: var(--color-text-muted);
 }
 
-/* ── Rarity highlight classes ── */
+/* ── Highlight classes ── */
 .highlight-primary,
-.highlight-common,
-.highlight-legendary,
-.highlight-uncommon,
-.highlight-rare,
-.highlight-epic {
+.highlight-secondary {
   display: inline;
-  color: #ffffff;
   padding: 0 0.15em;
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
@@ -45,26 +40,9 @@ p {
   color: var(--color-primary-invert);
 }
 
-.highlight-common {
-  background: none;
-  color: var(--color-common);
-  padding: 0;
-}
-
-.highlight-legendary {
-  background: linear-gradient(160deg, var(--highlight-legendary-from) 0%, var(--highlight-legendary-mid) 50%, var(--highlight-legendary-to) 100%);
-}
-
-.highlight-uncommon {
-  background: linear-gradient(160deg, var(--highlight-uncommon-from) 0%, var(--highlight-uncommon-mid) 50%, var(--highlight-uncommon-to) 100%);
-}
-
-.highlight-rare {
-  background: linear-gradient(160deg, var(--highlight-rare-from) 0%, var(--highlight-rare-mid) 50%, var(--highlight-rare-to) 100%);
-}
-
-.highlight-epic {
-  background: linear-gradient(160deg, var(--highlight-epic-from) 0%, var(--highlight-epic-mid) 50%, var(--highlight-epic-to) 100%);
+.highlight-secondary {
+  background: var(--color-secondary);
+  color: var(--color-secondary-invert);
 }
 
 /* ── Text size utilities ── */

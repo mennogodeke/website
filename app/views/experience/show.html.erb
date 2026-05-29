@@ -12,7 +12,7 @@
           data-experience-target="row"
           data-experience-key="<%= experience.category %>"
           data-action="click->experience#select"
-          style="--row-color: var(--color-<%= experience.accent %>)"
+          style="--row-color: var(--color-text)"
         >
           <span class="rank"><%= "%02d" % (i + 1) %></span>
           <div class="label-col">
@@ -28,12 +28,11 @@
       <% @experiences.each_with_index do |experience, i| %>
         <% primary = experience.experience_skills.select(&:primary?).map(&:skill) %>
         <% secondary = experience.experience_skills.reject(&:primary?).map(&:skill) %>
-        <% panel_grad = "linear-gradient(160deg, var(--highlight-#{experience.accent}-from) 0%, var(--highlight-#{experience.accent}-mid) 50%, var(--highlight-#{experience.accent}-to) 100%)" %>
         <div
           class="exp-panel"
           data-experience-target="panel"
           data-experience-key="<%= experience.category %>"
-          style="--panel-color: var(--color-<%= experience.accent %>); --panel-grad: <%= panel_grad %>"
+          style="--panel-color: var(--color-primary); --panel-grad: linear-gradient(160deg, var(--color-h1-bg-from) 0%, var(--color-h1-bg-mid) 50%, var(--color-h1-bg-to) 100%)"
           <%= i == 0 ? "" : "hidden" %>
         >
           <div class="exp-panel-header">

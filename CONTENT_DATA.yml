@@ -896,7 +896,7 @@ jobs:
     logo: kape_technologies.png   # to be provided
     start_date: "2022-02-01"
     end_date: "2026-01-01"
-    accent: epic
+    accent: ~
     skills:
       - ruby_on_rails
       - ruby
@@ -942,7 +942,7 @@ jobs:
     logo: kape_technologies.png   # same logo as above
     start_date: "2019-02-01"
     end_date: "2022-01-01"
-    accent: rare
+    accent: ~
     skills:
       - ruby_on_rails
       - ruby
@@ -984,7 +984,7 @@ jobs:
     logo: zenguard.png   # to be provided
     start_date: "2017-08-01"
     end_date: "2019-01-01"
-    accent: uncommon
+    accent: ~
     skills:
       - ruby_on_rails
       - ruby
@@ -1020,7 +1020,7 @@ jobs:
     logo: zenguard.png
     start_date: "2017-02-01"
     end_date: "2017-07-01"
-    accent: common
+    accent: ~
     skills:
       - ruby_on_rails
       - ruby
@@ -1054,7 +1054,7 @@ jobs:
     logo: shopboostr.png   # to be provided
     start_date: "2016-06-01"
     end_date: "2016-12-01"
-    accent: common
+    accent: ~
     skills:
       - ruby_on_rails
       - javascript

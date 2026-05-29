@@ -154,7 +154,7 @@
 
   &:focus {
     border-color: var(--color-primary);
-    box-shadow: 0 0 0 2px rgba(245, 233, 12, 0.25);
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--color-primary) 25%, transparent);
   }
 }
 
@@ -178,11 +178,6 @@
   border-left: 3px solid;
 }
 
-.notification-success {
-  border-color: var(--color-uncommon);
-  background: rgba(25, 168, 40, 0.1);
-  color: var(--color-uncommon);
-}
 
 .notification-danger {
   border-color: var(--color-danger);

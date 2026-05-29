@@ -15,9 +15,9 @@
   flex-wrap: wrap;
   gap: 1rem;
   padding: 0.875rem 1rem 0.875rem 1.25rem;
-  background: color-mix(in srgb, var(--color-uncommon) 8%, transparent);
-  border: 1px solid color-mix(in srgb, var(--color-uncommon) 25%, transparent);
-  border-left: 3px solid var(--color-uncommon);
+  background: color-mix(in srgb, var(--color-accent) 8%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-accent) 25%, transparent);
+  border-left: 3px solid var(--color-accent);
 }
 
 .career-status-main {
@@ -78,7 +78,7 @@
     top: 0;
     bottom: 0;
     width: 3px;
-    background: var(--entry-accent, var(--color-primary));
+    background: var(--entry-accent, var(--color-text));
     transform: scaleY(0);
     transform-origin: top;
     transition: transform 0.2s ease;
@@ -137,8 +137,8 @@
 
 .tl-entry:hover .tl-rail-dot { border-color: var(--entry-accent, var(--color-text-faint)); }
 .tl-entry.open  .tl-rail-dot {
-  background: var(--entry-accent, var(--color-primary));
-  border-color: var(--entry-accent, var(--color-primary));
+  background: var(--entry-accent, var(--color-text));
+  border-color: var(--entry-accent, var(--color-text));
 }
 
 /* ── Company logo monogram ── */
@@ -166,7 +166,7 @@
 }
 
 .tl-entry.open .tl-company-logo {
-  border-color: var(--entry-accent, var(--color-primary));
+  border-color: var(--entry-accent, var(--color-text));
   color: var(--color-text);
 }
 

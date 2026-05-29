@@ -21,44 +21,20 @@
   --color-border-2: light-dark(rgba(11, 23, 41, 0.18), rgba(255, 255, 255, 0.16));
 
   /* Brand accent */
-  --color-primary:          #f5e90c;
+  --color-primary:          light-dark(#f07a0a, #f5e90c);
   --color-primary-invert:   #0b1729;
-  --color-secondary:        #f5e90c;
-  --color-secondary-invert: #0b1729;
+  --color-secondary:        light-dark(#2558d4, #9b74f5);
+  --color-secondary-invert: #ffffff;
+  --color-accent:           light-dark(#16a34a, #4ade80);
 
   /* Semantic */
   --color-danger:   #e05555;
-  --color-h1-bg-from: light-dark(#fdf7a0, #fdf7a0);
-  --color-h1-bg-mid:  light-dark(#f5e90c, #f5e90c);
-  --color-h1-bg-to:   light-dark(#c8bc00, #c8bc00);
-  --color-h1-text:  #0b1729;
-
-  /* Rarity palette */
-  --color-legendary: #f0840a;
-  --color-epic:      #6a45e6;
-  --color-rare:      #0464d1;
-  --color-uncommon:  #19a828;
-  --color-common:    #bdbfbe;
-
-  /* Rarity highlight gradients */
-  --highlight-common-from:    #d8d9d8;
-  --highlight-common-mid:     #bdbfbe;
-  --highlight-common-to:      #9a9c9b;
-  --highlight-legendary-from: #ffac55;
-  --highlight-legendary-mid:  #f0840a;
-  --highlight-legendary-to:   #c45c00;
-  --highlight-uncommon-from: #4dd463;
-  --highlight-uncommon-mid:  #19a828;
-  --highlight-uncommon-to:   #0f7a1c;
-  --highlight-rare-from:     #3a8ff5;
-  --highlight-rare-mid:      #0464d1;
-  --highlight-rare-to:       #0348a0;
-  --highlight-epic-from:     #9b7af0;
-  --highlight-epic-mid:      #6a45e6;
-  --highlight-epic-to:       #4a28c0;
+  --color-h1-bg-from: light-dark(#ffcb8a, #fdf7a0);
+  --color-h1-bg-mid:  light-dark(#f07a0a, #f5e90c);
+  --color-h1-bg-to:   light-dark(#c45c00, #c8bc00);
 
   /* Body gradient */
-  --body-glow:      light-dark(rgba(0, 0, 0, 0.04), rgba(100, 60, 255, 0.30));
+  --body-glow:      light-dark(rgba(0, 0, 0, 0.04), rgba(155, 116, 245, 0.25));
   --body-shine:     light-dark(rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.06));
   --body-grad-from: light-dark(#ffffff, #00020f);
   --body-grad-mid:  light-dark(#f9f9f9, #010c2a);

@@ -5,12 +5,7 @@
        data-action="career-entry:opened->career#closeOthers">
 
     <% @jobs.each_with_index do |job, i| %>
-      <%= render partial: "jobs/job", locals: {
-        job: job,
-        highlight_class: "highlight-#{job.accent}",
-        rarity: job.accent,
-        first: i == 0
-      } %>
+      <%= render partial: "jobs/job", locals: { job: job, first: i == 0 } %>
     <% end %>
   </div>
 </section>

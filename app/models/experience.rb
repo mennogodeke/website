@@ -18,14 +18,4 @@ class Experience < ApplicationRecord
   validates :name, :years_of_experience, presence: true
 
   default_scope { order(years_of_experience: :desc) }
-
-  def accent
-    case years_of_experience
-    # when 0..1 then "common"
-    when 2..3 then "uncommon"
-    when 4..5 then "rare"
-    when 6..8 then "epic"
-    else           "legendary"
-    end
-  end
 end

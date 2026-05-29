@@ -69,6 +69,18 @@
   </div>
 </div>
 
+
+<%# ── Preview Section ── %>
+<section class="section container">
+  <h1> This is an H1 </h1>
+  <h2> This is an H2 </h2>
+  <h3> This is an H3 </h3>
+  <h4> This is an H4 </h4>
+  <h5> This is an H5 </h5>
+  <h6> This is an H6 </h6>
+</section>
+
+
 <%# ── Language cards ── %>
 <div class="home-langs container">
   <h2>What I Work With</h2>
@@ -97,12 +109,12 @@
   <div class="tl-track">
     <% @jobs.each_with_index do |job, i| %>
       <% initials = job.company.split.map { |w| w[0] }.join.upcase.first(2) %>
-      <div class="tl-entry" style="--entry-accent: var(--color-<%= job.accent %>)">
+      <div class="tl-entry" style="--entry-accent: var(--color-text)">
         <div class="tl-header">
           <div class="tl-company-logo"><%= initials %></div>
           <div class="tl-header-main">
             <div class="tl-role-row">
-              <div class="tl-role"><span class="highlight-<%= job.accent %>"><%= job.title %></span></div>
+              <div class="tl-role"><span class="highlight-primary"><%= job.title %></span></div>
               <span class="tl-at-company">@ <%= job.company %></span>
             </div>
           </div>
