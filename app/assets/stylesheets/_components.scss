@@ -44,11 +44,11 @@
 }
 
 .btn-secondary {
-  background: transparent;
-  color: var(--color-primary);
-  border-color: var(--color-primary);
+  background: var(--color-secondary);
+  color: var(--color-secondary-invert);
+  border-color: var(--color-secondary);
 
-  &:hover { background: var(--color-primary); color: var(--color-primary-invert); }
+  &:hover { background: transparent; color: var(--color-secondary); }
 }
 
 /* Sizes */
