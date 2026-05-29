@@ -1,0 +1,8 @@
+<div class="floating-chips">
+  <% skills.each_with_index do |skill, i| %>
+    <% cx, cy = chip_positions[i % chip_positions.length] %>
+    <span class="floating-chip" aria-hidden="true" style="<%= chip_style(cx, cy, skill.accent) %>">
+      <i class="<%= skill.icon %>"></i>
+    </span>
+  <% end %>
+</div>

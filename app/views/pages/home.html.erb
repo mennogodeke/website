@@ -1,54 +1,10 @@
 <%# ── Hero ── %>
 <div class="home-hero container section">
-  <%
-    chip_positions = [
-      ["5%","12%"],["88%","8%"],["72%","72%"],["18%","82%"],
-      ["92%","38%"],["3%","55%"],["55%","88%"],["80%","22%"],
-      ["40%","5%"],["65%","55%"],["25%","35%"],["10%","68%"],
-      ["48%","78%"],["82%","88%"],["32%","18%"],["92%","62%"],
-      ["58%","15%"],["15%","45%"],["70%","40%"],["45%","92%"]
-    ]
-  %>
-  <div class="chip-field">
-    <% @chip_skills.each_with_index do |skill, i| %>
-      <% cx, cy = chip_positions[i % chip_positions.length] %>
-      <span class="floating-chip" style="--cx:<%= cx %>;--cy:<%= cy %>;--chip-c:<%= skill.accent %>">
-        <i class="<%= skill.icon %>"></i>
-      </span>
-    <% end %>
-  </div>
+  <%= render "floating_chips", skills: @chip_skills %>
 
-  <div class="home-hero-grid">
-
-    <%# Left: site identity %>
-    <div>
-      <h1 class="home-site-title hero">MENNO.CODES</h1>
-      <p class="home-hero-sub">My little corner of the internet — a personal portfolio and interactive CV where you can explore my work, browse my experience, and grab my CV if you like what you see.</p>
-    </div>
-
-    <%# Right: personal intro %>
-    <div class="home-hero-right">
-
-      <div class="home-headshot img-stub">
-        <span class="text-xs">headshot</span>
-      </div>
-
-      <div class="home-id">
-        <h2 class="home-id-name">Menno Godeke</h2>
-        <div class="home-id-meta">
-          <span class="home-id-title">Senior Software Engineer</span>
-          <span class="home-badge"><span class="home-badge-dot"></span>Open to work</span>
-        </div>
-      </div>
-
-      <p class="home-hero-bio">10 years building back-end systems, full-stack web apps, and developer tooling. Ruby on Rails at the core. Everything else as needed.</p>
-
-      <div class="home-hero-actions">
-        <%= link_to "Get My CV →", new_cv_download_path, class: "btn btn-primary" %>
-        <%= link_to "Get in Touch", contact_path, class: "btn btn-secondary" %>
-      </div>
-
-    </div>
+  <div class="home-hero-content">
+    <h1 class="home-site-title hero">MENNO.CODES</h1>
+    <p class="home-hero-sub">My little corner of the internet — a personal portfolio and interactive CV where you can explore my work, browse my experience, and grab my CV if you like what you see.</p>
   </div>
 </div>
 

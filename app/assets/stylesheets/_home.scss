@@ -11,18 +11,8 @@
   overflow: hidden;
 }
 
-.home-hero-grid {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr;
-  gap: 80px;
-  align-items: center;
-  width: 100%;
-  position: relative;
-  z-index: 1;
-}
-
 /* ── Floating tech chips ── */
-.chip-field {
+.floating-chips {
   position: absolute;
   inset: 0;
   pointer-events: none;
@@ -66,24 +56,24 @@
 }
 
 @keyframes chip-drift-a {
-  from { opacity: .35; transform: translate(0, 0); }
-  to   { opacity: .65; transform: translate(14px, -18px); }
+  from { opacity: .35; transform: translate(0, 0) rotate(0deg); }
+  to   { opacity: .65; transform: translate(28px, -36px) rotate(8deg); }
 }
 @keyframes chip-drift-b {
-  from { opacity: .3;  transform: translate(0, 0); }
-  to   { opacity: .6;  transform: translate(-18px, 12px); }
+  from { opacity: .3;  transform: translate(0, 0) rotate(0deg); }
+  to   { opacity: .6;  transform: translate(-34px, 24px) rotate(-6deg); }
 }
 @keyframes chip-drift-c {
-  from { opacity: .4;  transform: translate(0, 0); }
-  to   { opacity: .55; transform: translate(10px, 16px); }
+  from { opacity: .4;  transform: translate(0, 0) rotate(0deg); }
+  to   { opacity: .55; transform: translate(22px, 32px) rotate(10deg); }
 }
 @keyframes chip-drift-d {
-  from { opacity: .25; transform: translate(0, 0); }
-  to   { opacity: .7;  transform: translate(-12px, -14px); }
+  from { opacity: .25; transform: translate(0, 0) rotate(0deg); }
+  to   { opacity: .7;  transform: translate(-26px, -30px) rotate(-9deg); }
 }
 
 @media (max-width: 900px) {
-  .chip-field { display: none; }
+  .floating-chips { display: none; }
 }
 
 .home-site-title {
@@ -98,44 +88,6 @@
   line-height: 1.65;
 }
 
-.home-hero-right {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.home-headshot {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  border: 3px solid var(--color-border-2);
-  flex-shrink: 0;
-}
-
-.home-id {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.home-id-name {
-  font-family: var(--font-heading);
-  font-size: 1.6rem;
-  line-height: 1.1;
-  margin: 0;
-}
-
-.home-id-meta {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-.home-id-title {
-  color: var(--color-text-muted);
-  font-size: 0.9rem;
-}
 
 .home-badge {
   display: inline-flex;
@@ -162,16 +114,6 @@
   animation: badge-blink 2s infinite;
 }
 
-.home-hero-bio {
-  color: var(--color-text-muted);
-  line-height: 1.65;
-}
-
-.home-hero-actions {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
 
 /* ── Language cards ── */
 .home-langs {
@@ -225,11 +167,6 @@
 
 /* ── Responsive ── */
 @media (max-width: 900px) {
-  .home-hero-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
   .home-site-title {
     white-space: normal;
   }

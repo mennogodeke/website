@@ -4,6 +4,32 @@ My personal portfolio / CV website to showcase the skills and knowledge i've gai
 
 See [PROJECT_OVERVIEW.md](PROJECT_OVERVIEW.md) for the full product spec.
 
+## Getting Started
+
+**Prerequisites:** Ruby 3.4.7, Docker
+
+```bash
+# 1. Start the database
+docker compose up -d
+
+# 2. Install dependencies, create and seed the database, then start the server
+bin/setup
+```
+
+The app will be available at `http://localhost:3000`.
+
+To start the server on its own after the initial setup:
+```bash
+bin/dev
+```
+
+To reset the database (drops, recreates, and re-seeds):
+```bash
+bin/setup --reset
+```
+
+---
+
 ## Stack
 - Ruby on Rails 8.1.3
 - Ruby 3.4.7
