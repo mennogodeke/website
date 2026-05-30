@@ -5,13 +5,10 @@
     <h1 class="home-site-title hero">MENNO.CODES</h1>
     <div class="home-marquee" aria-hidden="true">
       <div class="home-marquee-track">
-        <span>RUBY</span><span>RAILS</span><span>GO</span><span>POSTGRESQL</span>
-        <span>DOCKER</span><span>GITHUB ACTIONS</span><span>KUBERNETES</span>
-        <span>SWIFT</span><span>VAPOR</span><span>BERLIN</span>
-        <span>RUBY</span><span>RAILS</span><span>GO</span><span>POSTGRESQL</span>
-        <span>DOCKER</span><span>GITHUB ACTIONS</span><span>KUBERNETES</span>
-        <span>SWIFT</span><span>VAPOR</span><span>BERLIN</span>
-      </div>
+        <% primary_skills.each do |skill| %>
+          <span><%= skill.upcase %></span>
+        <% end %>
+     </div>
     </div>
     <div class="home-hero-actions">
       <%= link_to "Get My CV →", new_cv_download_path, class: "btn btn-primary" %>
@@ -98,6 +95,6 @@
 
 <%# ── Footer CTA ── %>
 <div class="home-footer-cta container">
-  <h2>Good problems, good people —<br><span class="text-primary">that's all I'm looking for.</span></h2>
+  <h3>Looking for good problems & good people.</h3>
   <%= link_to "Get in Touch →", contact_path, class: "btn btn-primary" %>
 </div>
