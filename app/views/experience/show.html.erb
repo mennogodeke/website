@@ -49,11 +49,7 @@
             </div>
             <div class="sk-primary">
               <% primary.each do |skill| %>
-                <div class="sk-card" style="--chip-c: <%= skill.accent.present? ? skill.accent : "var(--color-text-faint)" %>">
-                  <i class="<%= skill.icon %> icon"></i>
-                  <span class="name"><%= skill.name %></span>
-                  <p class="desc"><%= skill.description.strip %></p>
-                </div>
+                <%= render "skills/skill_card", item: skill, chip_color: skill.accent %>
               <% end %>
             </div>
           <% end %>
@@ -64,8 +60,7 @@
             </div>
             <div class="sk-secondary">
               <% secondary.each do |skill| %>
-                <% chip_c = skill.accent.present? ? skill.accent : "var(--color-text-faint)" %>
-                <span class="sk-chip" style="--chip-c: <%= chip_c %>" data-tooltip="<%= skill.description.strip %>">
+                <span class="sk-chip" style="--chip-c: <%= skill.accent %>" data-tooltip="<%= skill.description.strip %>">
                   <i class="<%= skill.icon %>"></i><%= skill.name %>
                 </span>
               <% end %>

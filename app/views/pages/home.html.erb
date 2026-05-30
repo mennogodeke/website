@@ -28,12 +28,7 @@
   </div>
   <div class="sk-primary">
     <% @lang_cards.each do |exp| %>
-      <% brand_color = exp.experience_skills.select(&:primary?).first&.skill&.accent || "var(--color-text-faint)" %>
-      <div class="sk-card" style="--chip-c: <%= brand_color %>">
-        <i class="<%= exp.icon %> icon"></i>
-        <span class="name"><%= exp.name %></span>
-        <p class="desc"><%= exp.description %></p>
-      </div>
+      <%= render "skills/skill_card", item: exp, chip_color: exp.experience_skills.select(&:primary?).first&.skill&.accent || "var(--color-text-faint)" %>
     <% end %>
   </div>
   <%= link_to "See all →", experience_path, class: "btn btn-secondary" %>
@@ -47,7 +42,7 @@
   </div>
   <div class="tl-track">
     <% @jobs.each_with_index do |job, i| %>
-      <% initials = job.company.split.map { |w| w[0] }.join.upcase.first(2) %>
+      <% initials = job.company.first.upcase %>
       <div class="tl-entry" style="--entry-accent: var(--color-text)">
         <div class="tl-header">
           <div class="tl-company-logo"><%= initials %></div>

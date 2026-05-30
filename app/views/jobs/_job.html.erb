@@ -1,4 +1,4 @@
-<% initials = job.company.split.map { |w| w[0] }.join.upcase.first(2) %>
+<% initials = job.company.first.upcase %>
 <div class="tl-entry<%= " open" if first %>"
      style="--entry-accent: var(--color-text)"
      data-controller="career-entry"
@@ -22,8 +22,7 @@
         <% if job.skills.any? %>
           <div class="tl-skills">
             <% job.skills.each do |skill| %>
-              <% chip_color = skill.accent.present? ? skill.accent : "var(--color-text-faint)" %>
-              <span class="skill-tag" style="--chip-c: <%= chip_color %>" data-tip="<%= skill.description.strip %>">
+              <span class="skill-tag" style="--chip-c: <%= skill.accent %>" data-tip="<%= skill.description.strip %>">
                 <i class="<%= skill.icon %>"></i><%= skill.name %>
               </span>
             <% end %>
