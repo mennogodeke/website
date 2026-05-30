@@ -14,7 +14,7 @@ module HomeHelper
   def chip_style(cx, cy, color)
     "--cx:#{cx};--cy:#{cy};--chip-c:#{color}"
   end
-  
+
   def primary_skills
     Skill.find(ExperienceSkill.where(primary: true).pluck(:skill_id)).pluck(:name)
   end# encoding:d
