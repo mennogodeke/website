@@ -1,41 +1,6 @@
-<%# ── Hero comparison ── %>
-
-<%# Option A: terminal block %>
+<%# ── Hero ── %>
 <div class="home-hero container section">
   <%= render "floating_chips", skills: @chip_skills %>
-  <span class="hero-option-label">Option A</span>
-  <div class="home-hero-content">
-    <div>
-      <h1 class="home-site-title hero">MENNO.CODES</h1>
-      <div class="home-hero-actions">
-        <%= link_to "Get My CV →", new_cv_download_path, class: "btn btn-primary" %>
-        <%= link_to "Get in Touch", contact_path, class: "btn btn-secondary" %>
-      </div>
-    </div>
-    <div class="home-terminal">
-      <div class="home-terminal-line">
-        <span class="home-terminal-prompt">$</span>
-        <span class="home-terminal-cmd">whoami</span>
-      </div>
-      <div class="home-terminal-line home-terminal-output">
-        → senior engineer · ruby/rails · berlin · open to work
-      </div>
-      <div class="home-terminal-spacer"></div>
-      <div class="home-terminal-line">
-        <span class="home-terminal-prompt">$</span>
-        <span class="home-terminal-cmd">ls ./expertise</span>
-      </div>
-      <div class="home-terminal-line home-terminal-output">
-        backend/&nbsp;&nbsp;&nbsp;devops/&nbsp;&nbsp;&nbsp;apis/&nbsp;&nbsp;&nbsp;tooling/
-      </div>
-    </div>
-  </div>
-</div>
-
-<%# Option C: marquee ticker %>
-<div class="home-hero container section">
-  <%= render "floating_chips", skills: @chip_skills %>
-  <span class="hero-option-label">Option C</span>
   <div class="home-hero-content-c">
     <h1 class="home-site-title hero">MENNO.CODES</h1>
     <div class="home-marquee" aria-hidden="true">
@@ -54,49 +19,6 @@
     </div>
   </div>
 </div>
-
-<%# Option D: pure typographic %>
-<div class="home-hero container section">
-  <%= render "floating_chips", skills: @chip_skills %>
-  <span class="hero-option-label">Option D</span>
-  <div class="home-hero-content-d">
-    <h1 class="home-site-title hero">MENNO.CODES</h1>
-    <p class="home-hero-tagline">Senior Engineer. Berlin. Available.</p>
-    <div class="home-hero-actions">
-      <%= link_to "Get My CV →", new_cv_download_path, class: "btn btn-primary" %>
-      <%= link_to "Get in Touch", contact_path, class: "btn btn-secondary" %>
-    </div>
-  </div>
-</div>
-
-<%# ── Open to work banner ── %>
-<div class="container">
-  <div class="career-status">
-    <div class="career-status-main">
-      <div class="home-badge">
-        <span class="home-badge-dot"></span>
-        Open to work
-      </div>
-      <p class="career-status-copy"><strong>Permanent senior engineering, back-end focused or full-stack.</strong> Based in Germany, open to remote and hybrid. Good problems and good people are enough.</p>
-    </div>
-    <div class="career-status-actions">
-      <%= link_to "Get My CV →", cv_path, class: "btn btn-primary btn-sm" %>
-      <%= link_to "Get In Touch", contact_path, class: "btn btn-sm" %>
-    </div>
-  </div>
-</div>
-
-
-<%# ── Preview Section ── %>
-<section class="section container">
-  <h1> This is an H1 </h1>
-  <h2> This is an H2 </h2>
-  <h3> This is an H3 </h3>
-  <h4> This is an H4 </h4>
-  <h5> This is an H5 </h5>
-  <h6> This is an H6 </h6>
-</section>
-
 
 <%# ── Language cards ── %>
 <div class="home-langs container">
