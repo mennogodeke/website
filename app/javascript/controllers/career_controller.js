@@ -6,7 +6,7 @@ export default class extends Controller {
   closeOthers({ target }) {
     const opened = target.closest(".tl-entry")
     this.entryTargets.forEach(entry => {
-      if (entry !== opened) entry.classList.remove("open")
+      if (entry !== opened) entry.classList.remove("is-open")
     })
   }
 }

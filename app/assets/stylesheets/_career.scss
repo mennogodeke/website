@@ -85,7 +85,7 @@
     z-index: 2;
   }
 
-  &.open {
+  &.is-open {
     background: var(--color-bg-card);
 
     &::after { transform: scaleY(1); }
@@ -122,7 +122,7 @@
 }
 
 .tl-entry:hover .tl-rail .yr,
-.tl-entry.open  .tl-rail .yr { color: var(--color-text-muted); }
+.tl-entry.is-open  .tl-rail .yr { color: var(--color-text-muted); }
 
 .tl-rail-dot {
   width: 12px;
@@ -136,7 +136,7 @@
 }
 
 .tl-entry:hover .tl-rail-dot { border-color: var(--entry-accent, var(--color-text-faint)); }
-.tl-entry.open  .tl-rail-dot {
+.tl-entry.is-open  .tl-rail-dot {
   background: var(--entry-accent, var(--color-text));
   border-color: var(--entry-accent, var(--color-text));
 }
@@ -165,7 +165,7 @@
   color: var(--color-text-muted);
 }
 
-.tl-entry.open .tl-company-logo {
+.tl-entry.is-open .tl-company-logo {
   border-color: var(--entry-accent, var(--color-text));
   color: var(--color-text);
 }
@@ -202,7 +202,7 @@
   span { transition: background 0.2s, color 0.2s, padding 0.2s; }
 }
 
-.tl-entry:not(.open) .tl-role span {
+.tl-entry:not(.is-open) .tl-role span {
   background: none;
   color: var(--color-text);
   padding: 0;
@@ -222,7 +222,7 @@
 }
 
 .tl-entry:hover .tl-at-company,
-.tl-entry.open  .tl-at-company { color: var(--color-text-muted); }
+.tl-entry.is-open  .tl-at-company { color: var(--color-text-muted); }
 
 /* ── Chevron ── */
 .tl-chevron {
@@ -237,7 +237,7 @@
   transition: transform 0.28s ease, color 0.15s;
 }
 
-.tl-entry.open .tl-chevron {
+.tl-entry.is-open .tl-chevron {
   transform: rotate(180deg);
   color: var(--color-text-muted);
 }
@@ -248,7 +248,7 @@
   grid-template-rows: 0fr;
   transition: grid-template-rows 0.32s ease;
 
-  .tl-entry.open & { grid-template-rows: 1fr; }
+  .tl-entry.is-open & { grid-template-rows: 1fr; }
 }
 
 .tl-body-inner { overflow: hidden; }
