@@ -1,10 +1,71 @@
-<%# ── Hero ── %>
+<%# ── Hero comparison ── %>
+
+<%# Option A: terminal block %>
 <div class="home-hero container section">
   <%= render "floating_chips", skills: @chip_skills %>
-
+  <span class="hero-option-label">Option A</span>
   <div class="home-hero-content">
+    <div>
+      <h1 class="home-site-title hero">MENNO.CODES</h1>
+      <div class="home-hero-actions">
+        <%= link_to "Get My CV →", new_cv_download_path, class: "btn btn-primary" %>
+        <%= link_to "Get in Touch", contact_path, class: "btn btn-secondary" %>
+      </div>
+    </div>
+    <div class="home-terminal">
+      <div class="home-terminal-line">
+        <span class="home-terminal-prompt">$</span>
+        <span class="home-terminal-cmd">whoami</span>
+      </div>
+      <div class="home-terminal-line home-terminal-output">
+        → senior engineer · ruby/rails · berlin · open to work
+      </div>
+      <div class="home-terminal-spacer"></div>
+      <div class="home-terminal-line">
+        <span class="home-terminal-prompt">$</span>
+        <span class="home-terminal-cmd">ls ./expertise</span>
+      </div>
+      <div class="home-terminal-line home-terminal-output">
+        backend/&nbsp;&nbsp;&nbsp;devops/&nbsp;&nbsp;&nbsp;apis/&nbsp;&nbsp;&nbsp;tooling/
+      </div>
+    </div>
+  </div>
+</div>
+
+<%# Option C: marquee ticker %>
+<div class="home-hero container section">
+  <%= render "floating_chips", skills: @chip_skills %>
+  <span class="hero-option-label">Option C</span>
+  <div class="home-hero-content-c">
     <h1 class="home-site-title hero">MENNO.CODES</h1>
-    <p class="home-hero-sub">My little corner of the internet — a personal portfolio and interactive CV where you can explore my work, browse my experience, and grab my CV if you like what you see.</p>
+    <div class="home-marquee" aria-hidden="true">
+      <div class="home-marquee-track">
+        <span>RUBY</span><span>RAILS</span><span>GO</span><span>POSTGRESQL</span>
+        <span>DOCKER</span><span>GITHUB ACTIONS</span><span>KUBERNETES</span>
+        <span>SWIFT</span><span>VAPOR</span><span>BERLIN</span>
+        <span>RUBY</span><span>RAILS</span><span>GO</span><span>POSTGRESQL</span>
+        <span>DOCKER</span><span>GITHUB ACTIONS</span><span>KUBERNETES</span>
+        <span>SWIFT</span><span>VAPOR</span><span>BERLIN</span>
+      </div>
+    </div>
+    <div class="home-hero-actions">
+      <%= link_to "Get My CV →", new_cv_download_path, class: "btn btn-primary" %>
+      <%= link_to "Get in Touch", contact_path, class: "btn btn-secondary" %>
+    </div>
+  </div>
+</div>
+
+<%# Option D: pure typographic %>
+<div class="home-hero container section">
+  <%= render "floating_chips", skills: @chip_skills %>
+  <span class="hero-option-label">Option D</span>
+  <div class="home-hero-content-d">
+    <h1 class="home-site-title hero">MENNO.CODES</h1>
+    <p class="home-hero-tagline">Senior Engineer. Berlin. Available.</p>
+    <div class="home-hero-actions">
+      <%= link_to "Get My CV →", new_cv_download_path, class: "btn btn-primary" %>
+      <%= link_to "Get in Touch", contact_path, class: "btn btn-secondary" %>
+    </div>
   </div>
 </div>
 

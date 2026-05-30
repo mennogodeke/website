@@ -66,7 +66,6 @@ data["jobs"].each do |attrs|
   job.assign_attributes(
     company:        attrs["company"],
     logo:           attrs["logo"],
-    accent:         attrs["accent"],
     start_date:     attrs["start_date"],
     end_date:       attrs["end_date"],
     title_en:       en["title"],
