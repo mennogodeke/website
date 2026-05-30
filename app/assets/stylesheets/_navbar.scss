@@ -34,14 +34,23 @@
 
 /* ── Logo ── */
 .navbar-logo {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 1.35rem;
-  color: var(--color-text);
-  text-decoration: none;
+  display: flex;
+  align-items: center;
   flex-shrink: 0;
+  text-decoration: none;
+  line-height: 0;
+}
 
-  &:hover { color: var(--color-text); }
+.navbar-logo-img {
+  height: 52px;
+  width: auto;
+}
+
+.navbar-logo-light { display: none; }
+
+[data-theme="light"] {
+  .navbar-logo-dark  { display: none; }
+  .navbar-logo-light { display: block; }
 }
 
 /* ── Nav links (center) ── */

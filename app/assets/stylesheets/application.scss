@@ -1,12 +1,13 @@
+// ── SCSS variables (must be first) ─────────────────────────
+@use "variables";
+
 // ── Design system ──────────────────────────────────────────
 @use "tokens";
 @use "base";
 @use "layout";
 @use "typography";
 @use "components";
-
-// ── Page & component styles ────────────────────────────────
-@use "variables";
+@use "skills";
 @use "navbar";
 @use "footer";
 @use "home";

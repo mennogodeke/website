@@ -2,19 +2,18 @@
 <div class="home-hero container section">
   <%= render "floating_chips", skills: @chip_skills %>
   <div class="home-hero-content-c">
-    <h1 class="home-site-title hero">MENNO.CODES</h1>
+    <h1 class="home-site-logo" aria-label="MENNO.CODES">
+      <%= image_tag "logo/menno-codes-inline-dark.svg",  class: "home-logo-dark",  alt: "" %>
+      <%= image_tag "logo/menno-codes-inline-light.svg", class: "home-logo-light", alt: "" %>
+    </h1>
     <div class="home-marquee" aria-hidden="true">
       <div class="home-marquee-track">
         <% primary_skills.each do |skill| %>
           <span><%= skill.upcase %></span>
         <% end %>
-     </div>
+      </div>
     </div>
-    <div class="home-hero-actions">
-      <%= link_to "Get My CV →", new_cv_download_path, class: "btn btn-primary" %>
-      <%= link_to "Get in Touch", contact_path, class: "btn btn-secondary" %>
-    </div>
-  </div>
+ </div>
 </div>
 
 <%# ── Language cards ── %>

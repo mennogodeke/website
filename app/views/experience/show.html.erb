@@ -59,7 +59,7 @@
             </div>
             <div class="sk-secondary">
               <% secondary.each do |skill| %>
-                <span class="sk-chip" style="--chip-c: <%= skill.accent %>" data-tooltip="<%= skill.description.strip %>">
+                <span class="sk-chip" style="--chip-c: <%= skill.accent %>" data-tip="<%= skill.description.strip %>">
                   <i class="<%= skill.icon %>"></i><%= skill.name %>
                 </span>
               <% end %>

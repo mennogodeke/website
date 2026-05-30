@@ -181,7 +181,7 @@
 
 .notification-danger {
   border-color: var(--color-danger);
-  background: rgba(224, 85, 85, 0.1);
+  background: color-mix(in srgb, var(--color-danger) 10%, transparent);
   color: var(--color-danger);
 }
 
@@ -189,7 +189,7 @@
 .input-error {
   border-color: var(--color-danger);
 
-  &:focus { box-shadow: 0 0 0 2px rgba(224, 85, 85, 0.25); }
+  &:focus { box-shadow: 0 0 0 2px color-mix(in srgb, var(--color-danger) 25%, transparent); }
 }
 
 .field-error {
@@ -216,9 +216,9 @@
 
   &::before {
     content: attr(data-tip);
-    background: #0d1117;
-    border: 1px solid #30363d;
-    color: #e6edf3;
+    background: var(--color-tooltip-bg);
+    border: 1px solid var(--color-tooltip-border);
+    color: var(--color-tooltip-text);
     font-family: var(--font-body);
     font-size: 0.75rem;
     font-weight: 400;
@@ -236,7 +236,7 @@
     content: '';
     bottom: calc(100% + 2px);
     border: 6px solid transparent;
-    border-top-color: #0d1117;
+    border-top-color: var(--color-tooltip-bg);
   }
 
   &:hover::before,
@@ -271,3 +271,84 @@
     &.is-active { color: var(--color-primary); background: var(--color-bg-card); }
   }
 }
+
+/* ── Image placeholder ── */
+.img-stub {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    repeating-linear-gradient(135deg, var(--color-stripe) 0 1px, transparent 1px 10px),
+    var(--color-bg-card);
+  border: 1px solid var(--color-border-2);
+  color: var(--color-text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+}
+
+/* ── Status badge (open-to-work indicator) ── */
+@keyframes badge-blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: color-mix(in srgb, var(--color-accent) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-accent) 35%, transparent);
+  border-radius: 20px;
+  padding: 5px 14px;
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.status-badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  flex-shrink: 0;
+  animation: badge-blink 2s infinite;
+}
+
+/* ── Career status banner ── */
+.career-status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding: 0.875rem 1rem 0.875rem 1.25rem;
+  background: color-mix(in srgb, var(--color-accent) 8%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-accent) 25%, transparent);
+  border-left: 3px solid var(--color-accent);
+}
+
+.career-status-main {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.career-status-copy {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  max-width: 540px;
+  margin: 0;
+
+  strong { color: var(--color-text); font-weight: 600; }
+}
+
+.career-status-actions { display: flex; gap: 0.5rem; }

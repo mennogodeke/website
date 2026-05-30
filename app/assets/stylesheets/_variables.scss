@@ -1,4 +1,10 @@
 /* ============================================================
-   Global overrides — anything that doesn't fit a specific
-   page or component file lives here.
+   SCSS variables — compile-time values (breakpoints, etc.)
+   Use in media queries via: @use "variables" as *
    ============================================================ */
+
+// Breakpoints
+$bp-sm:  640px;  // mobile → phablet
+$bp-md:  768px;  // phablet → tablet
+$bp-lg: 1024px;  // tablet → desktop
+$bp-xl: 1280px;  // desktop → wide

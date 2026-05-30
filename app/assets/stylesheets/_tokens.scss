@@ -29,6 +29,14 @@
 
   /* Semantic */
   --color-danger:   #e05555;
+
+  /* Tooltip */
+  --color-tooltip-bg:     #0d1117;
+  --color-tooltip-border: #30363d;
+  --color-tooltip-text:   #e6edf3;
+
+  /* Brand: third-party */
+  --color-claude: #cc785c;
   --color-h1-bg-from: light-dark(#ffcb8a, #fdf7a0);
   --color-h1-bg-mid:  light-dark(#f07a0a, #f5e90c);
   --color-h1-bg-to:   light-dark(#c45c00, #c8bc00);
@@ -53,7 +61,7 @@
   --font-mono:    ui-monospace, "Cascadia Code", "Fira Mono", monospace;
 
   /* Layout */
-  --nav-h:  56px;
+  --nav-h:  80px;
   --max-w:  1280px;
   --gutter: 1.5rem;
 }

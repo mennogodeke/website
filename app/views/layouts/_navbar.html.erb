@@ -1,8 +1,9 @@
 <div data-controller="navbar">
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-inner">
-      <%= link_to root_path, class: "navbar-logo" do %>
-        MENNO.CODES
+      <%= link_to root_path, class: "navbar-logo", aria: { label: "MENNO.CODES – home" } do %>
+        <%= image_tag "logo/menno-codes-stacked-dark.svg",  class: "navbar-logo-img navbar-logo-dark",  alt: "" %>
+        <%= image_tag "logo/menno-codes-stacked-light.svg", class: "navbar-logo-img navbar-logo-light", alt: "" %>
       <% end %>
 
       <ul class="navbar-links">

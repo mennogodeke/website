@@ -7,39 +7,6 @@
   flex-direction: column;
 }
 
-/* ── Status banner ── */
-.career-status {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 1rem;
-  padding: 0.875rem 1rem 0.875rem 1.25rem;
-  background: color-mix(in srgb, var(--color-accent) 8%, transparent);
-  border: 1px solid color-mix(in srgb, var(--color-accent) 25%, transparent);
-  border-left: 3px solid var(--color-accent);
-}
-
-.career-status-main {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.career-status-copy {
-  font-family: var(--font-body);
-  font-size: 0.85rem;
-  color: var(--color-text-muted);
-  line-height: 1.5;
-  max-width: 540px;
-  margin: 0;
-
-  strong { color: var(--color-text); font-weight: 600; }
-}
-
-.career-status-actions { display: flex; gap: 0.5rem; }
-
 /* ── Timeline track ── */
 :root {
   --tl-rail-w: 140px;
