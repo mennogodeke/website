@@ -2,6 +2,13 @@
    Base — reset, body background, shared primitives
    ============================================================ */
 
+/* ── Fonts ── */
+@font-face {
+  font-family: "UpheavalPro";
+  src: url("UpheavalPro.otf") format("opentype");
+  font-display: swap;
+}
+
 *,
 *::before,
 *::after {

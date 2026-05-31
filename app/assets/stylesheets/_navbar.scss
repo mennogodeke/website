@@ -66,29 +66,21 @@
 }
 
 .navbar-link {
-  font-family: var(--font-body);
-  letter-spacing: 0.05em;
+  position: relative;
+  font-family: var(--font-key);
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
   color: var(--color-text-muted);
   text-decoration: none;
-  padding: 0.25rem 0.6rem;
-  position: relative;
+  padding: 0.4rem 0.7rem;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  transition: color 0.12s ease, transform 0.12s ease;
 
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: var(--color-primary);
-    transform: scaleX(0);
-    transition: transform 0.2s ease;
-  }
-
-  &:hover       { color: var(--color-text); }
-  &:hover::after,
-  &.is-active::after { transform: scaleX(1); }
-  &.is-active   { color: var(--color-text); }
+  &:hover     { color: var(--color-text); transform: translateY(-2px); }
+  &.is-active { color: var(--color-primary); }
 }
 
 /* ── CTAs (right) ── */
@@ -274,6 +266,5 @@
     }
   }
 
-  .navbar-link { padding: 0.65rem 0; font-size: 1.25rem; }
-  .navbar-link::after { display: none; }
+  .navbar-link { padding: 0.65rem 0; font-size: 1.25rem; transform: none !important; }
 }

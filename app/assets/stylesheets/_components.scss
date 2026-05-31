@@ -2,64 +2,86 @@
    Components — button, tag, form fields, box, menu
    ============================================================ */
 
-/* ── Buttons ── */
+/* ── Keycap Buttons ── */
 .btn {
+  --cap:      var(--color-bg-2);
+  --cap-text: var(--color-text);
+  --skirt:    color-mix(in srgb, var(--cap) 56%, #000);
+  --travel:   5px;
+
+  position: relative;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  font-family: var(--font-display);
-  font-weight: 800;
+  font-family: var(--font-key);
   font-size: 1rem;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  padding: 0.6em 1.4em;
-  border: 2px solid var(--color-border-2);
-  border-radius: 0;
-  background: transparent;
-  color: var(--color-text-muted);
+  letter-spacing: 0.03em;
+  padding: 0.62em 1.35em;
+  border: 0;
+  border-radius: 3px;
+  background: var(--cap);
+  color: var(--cap-text);
   cursor: pointer;
-  text-decoration: none;
   line-height: 1;
   white-space: nowrap;
-  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  text-decoration: none;
+  box-shadow: 0 var(--travel) 0 0 var(--skirt),
+              inset 0 2px 0 rgba(255, 255, 255, 0.38);
+  transition: transform 0.09s ease, box-shadow 0.09s ease, filter 0.12s ease;
 
-  &:hover  { border-color: var(--color-text); color: var(--color-text); }
-  &:focus  { outline: 2px solid var(--color-primary); outline-offset: 2px; }
-  &:active { opacity: 0.8; }
+  &:hover { filter: brightness(1.06); }
+
+  &:active,
+  &.is-pressed {
+    transform: translateY(calc(var(--travel) - 1px));
+    box-shadow: 0 1px 0 0 var(--skirt),
+                inset 0 2px 0 rgba(255, 255, 255, 0.38);
+  }
+
+  &:focus-visible { outline: 2px solid var(--color-secondary); outline-offset: 3px; }
 
   &:disabled,
   &[disabled] {
-    opacity: 0.35;
+    opacity: 0.4;
     cursor: not-allowed;
-    pointer-events: none;
+    filter: none;
+
+    &:active {
+      transform: none;
+      box-shadow: 0 var(--travel) 0 0 var(--skirt),
+                  inset 0 2px 0 rgba(255, 255, 255, 0.38);
+    }
   }
 }
 
-.btn-primary {
-  background: var(--color-primary);
-  color: var(--color-primary-invert);
-  border-color: var(--color-primary);
+.btn-primary   { --cap: var(--color-primary);   --cap-text: var(--color-primary-invert); }
+.btn-secondary { --cap: var(--color-secondary); --cap-text: var(--color-secondary-invert); }
 
-  &:hover { background: transparent; color: var(--color-primary); }
+.btn-ghost {
+  --cap:   var(--color-bg-2);
+  --cap-text: var(--color-text-muted);
+  --skirt: color-mix(in srgb, var(--color-text) 24%, var(--color-bg-2));
+  box-shadow: 0 var(--travel) 0 0 var(--skirt),
+              inset 0 0 0 1px var(--color-border-2),
+              inset 0 2px 0 rgba(255, 255, 255, 0.06);
+
+  &:active,
+  &.is-pressed {
+    box-shadow: 0 1px 0 0 var(--skirt),
+                inset 0 0 0 1px var(--color-border-2),
+                inset 0 2px 0 rgba(255, 255, 255, 0.06);
+  }
 }
 
-.btn-secondary {
-  background: var(--color-secondary);
-  color: var(--color-secondary-invert);
-  border-color: var(--color-secondary);
+/* Sizes — travel scales with cap */
+.btn-sm { font-size: 0.8rem;  padding: 0.5em 1em;    --travel: 4px; }
+.btn-lg { font-size: 1.2rem;  padding: 0.72em 1.7em; --travel: 6px; }
 
-  &:hover { background: transparent; color: var(--color-secondary); }
-}
-
-/* Sizes */
-.btn-sm { font-size: 0.8rem; padding: 0.45em 1em; }
-.btn-lg { font-size: 1.2rem; padding: 0.75em 1.75em; }
-
-/* Loading state — hides label, shows spinner */
+/* Loading — spinner in the cap's own ink */
 .btn.is-loading {
   color: transparent !important;
   pointer-events: none;
-  position: relative;
 
   &::after {
     content: "";
@@ -68,7 +90,7 @@
     margin: auto;
     width: 1em;
     height: 1em;
-    border: 2px solid currentColor;
+    border: 2px solid var(--cap-text);
     border-right-color: transparent;
     border-radius: 50%;
     animation: btn-spin 0.6s linear infinite;
