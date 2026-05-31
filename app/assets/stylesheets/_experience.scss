@@ -1,3 +1,5 @@
+@use "variables" as *;
+
 /* ============================================================
    Experience page
    ============================================================ */
@@ -50,7 +52,7 @@
   &:hover,
   &.active {
     padding-left: 22px;
-    background: rgba(255, 255, 255, 0.02);
+    background: color-mix(in srgb, var(--color-text) 2%, transparent);
 
     &::before { transform: scaleY(1); }
   }
@@ -85,7 +87,7 @@
 .exp-rail .row .year-bar {
   height: 3px;
   width: 100%;
-  background: rgba(255, 255, 255, 0.06);
+  background: color-mix(in srgb, var(--color-text) 6%, transparent);
   overflow: hidden;
   position: relative;
 
@@ -111,7 +113,7 @@
 
 /* ── Panel ── */
 .exp-panel {
-  background: rgba(255, 255, 255, 0.02);
+  background: color-mix(in srgb, var(--color-text) 2%, transparent);
   padding: 28px 30px;
 }
 
@@ -150,10 +152,10 @@
 }
 
 /* ── Responsive ── */
-@media (max-width: 900px) {
+@media (max-width: $bp-lg) {
   .exp-row { grid-template-columns: 1fr; }
 }
 
-@media (max-width: 720px) {
+@media (max-width: $bp-md) {
   .sk-primary { grid-template-columns: 1fr; }
 }

@@ -1,3 +1,5 @@
+@use "variables" as *;
+
 /* ============================================================
    Home page
    ============================================================ */
@@ -73,7 +75,7 @@
   to   { opacity: .7;  transform: translate(-26px, -30px) rotate(-9deg); }
 }
 
-@media (max-width: 900px) {
+@media (max-width: $bp-lg) {
   .floating-chips { display: none; }
 }
 
@@ -149,13 +151,13 @@
   .btn { margin-top: 1.25rem; }
 }
 
-@media (max-width: 900px) {
+@media (max-width: $bp-lg) {
   .home-langs .sk-primary {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: $bp-sm) {
   .home-langs .sk-primary {
     grid-template-columns: 1fr;
   }

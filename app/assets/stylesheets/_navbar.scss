@@ -1,3 +1,5 @@
+@use "variables" as *;
+
 /* ============================================================
    Navbar
    ============================================================ */
@@ -18,7 +20,7 @@
   background: var(--color-navbar-scrolled);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  box-shadow: 0 1px 0 var(--color-navbar-highlight), 0 4px 24px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 1px 0 var(--color-navbar-highlight), 0 4px 24px var(--color-shadow-md);
 }
 
 /* ── Inner layout ── */
@@ -109,7 +111,7 @@
   color: var(--color-text-muted);
   border-color: var(--color-border-2);
 
-  &:hover { background: rgba(255, 255, 255, 0.08); color: var(--color-text); border-color: var(--color-text-muted); }
+  &:hover { background: color-mix(in srgb, var(--color-text) 8%, transparent); color: var(--color-text); border-color: var(--color-text-muted); }
 }
 
 .navbar-cta-divider {
@@ -195,7 +197,7 @@
   border: 1px solid var(--color-border-2);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 8px 24px var(--color-shadow-lg);
   z-index: 300;
   padding: 0.35rem 0;
 
@@ -215,7 +217,7 @@
   text-decoration: none;
   transition: color 0.15s ease, background 0.15s ease;
 
-  &:hover    { color: var(--color-text); background: rgba(255, 255, 255, 0.06); }
+  &:hover    { color: var(--color-text); background: color-mix(in srgb, var(--color-text) 6%, transparent); }
   &.is-active { color: var(--color-text); }
 }
 
@@ -234,7 +236,7 @@
 }
 
 /* ── Mobile ── */
-@media (max-width: 1023px) {
+@media (max-width: $bp-lg - 1px) {
   .navbar-burger { display: flex; }
   .navbar-links,
   .navbar-ctas { display: none; }

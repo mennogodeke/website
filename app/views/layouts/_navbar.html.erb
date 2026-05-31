@@ -21,7 +21,7 @@
               class: "theme-toggle",
               form: { data: { turbo: false } },
               aria: { label: "Switch to #{current_theme == 'dark' ? 'light' : 'dark'} theme" } do %>
-          <i class="fa-solid <%= current_theme == 'dark' ? 'fa-sun' : 'fa-moon' %>"></i>
+          <i class="fa-solid <%= current_theme == 'dark' ? 'fa-sun' : 'fa-moon' %>" aria-hidden="true"></i>
         <% end %>
         <span class="navbar-cta-divider">|</span>
         <%= render "layouts/locale_switcher" %>

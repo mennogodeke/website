@@ -54,6 +54,14 @@
   --color-navbar-scrolled:  light-dark(rgba(180, 175, 160, 0.5), rgba(43, 68, 125, 0.5));
   --color-navbar-highlight: light-dark(rgba(0, 0, 0, 0.06), rgba(255, 255, 255, 0.06));
 
+  /* Shadows — always dark regardless of theme */
+  --color-shadow-md: rgba(0, 0, 0, 0.4);
+  --color-shadow-lg: rgba(0, 0, 0, 0.5);
+
+  /* CV fallback gradient */
+  --cv-bg-grad-from: rgba(60, 135, 183, 0.9);
+  --cv-bg-grad-to:   rgba(40, 55, 112, 0.9);
+
   /* Fonts */
   --font-display: "Anton", sans-serif;
   --font-heading: "Anton SC", sans-serif;

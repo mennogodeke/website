@@ -8,7 +8,9 @@
         <button
           class="row<%= i == 0 ? " active" : "" %>"
           role="tab"
+          id="tab-<%= experience.category %>"
           aria-selected="<%= i == 0 %>"
+          aria-controls="panel-<%= experience.category %>"
           data-experience-target="row"
           data-experience-key="<%= experience.category %>"
           data-action="click->experience#select"
@@ -30,6 +32,9 @@
         <% secondary = experience.experience_skills.reject(&:primary?).map(&:skill) %>
         <div
           class="exp-panel"
+          role="tabpanel"
+          id="panel-<%= experience.category %>"
+          aria-labelledby="tab-<%= experience.category %>"
           data-experience-target="panel"
           data-experience-key="<%= experience.category %>"
           <%= i == 0 ? "" : "hidden" %>

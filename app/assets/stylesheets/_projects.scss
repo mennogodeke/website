@@ -1,3 +1,5 @@
+@use "variables" as *;
+
 /* ============================================================
    Projects
    ============================================================ */
@@ -96,7 +98,7 @@
 }
 
 /* ── Responsive ── */
-@media (max-width: 900px) {
+@media (max-width: $bp-lg) {
   .proj-row,
   .proj-row.flipped {
     grid-template-columns: 1fr;

@@ -1,3 +1,5 @@
+@use "variables" as *;
+
 /* ============================================================
    Career page
    ============================================================ */
@@ -236,7 +238,7 @@
 }
 
 /* ── Responsive ── */
-@media (max-width: 700px) {
+@media (max-width: $bp-md) {
   :root {
     --tl-rail-w: 96px;
     --tl-rail-center: 48px;

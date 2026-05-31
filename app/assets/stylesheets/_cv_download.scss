@@ -1,3 +1,5 @@
+@use "variables" as *;
+
 /* ── Three-column grid ── */
 .cv-download-grid {
   display: grid;
@@ -79,7 +81,7 @@
 }
 
 /* ── Responsive ── */
-@media (max-width: 720px) {
+@media (max-width: $bp-md) {
   .cv-download-grid {
     grid-template-columns: 1fr;
     min-height: unset;
