@@ -16,6 +16,13 @@ nl:
     get_link: "Ontvang een downloadlink"
     send: "Versturen"
     open_in_browser: "Openen in browser"
+    language_label: "Taal"
+    language_en: "Engels"
+    language_nl: "Nederlands"
+    language_de: "Duits"
+    notice_sent: "Controleer je e-mail — een downloadlink is onderweg."
+    alert_invalid: "Deze link is ongeldig of verlopen. Vraag een nieuwe aan."
+    alert_unavailable: "Het cv-pdf is nog niet beschikbaar — probeer het later opnieuw."
 
   contact:
     subtitle: "Wil je samenwerken?"

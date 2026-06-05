@@ -1,4 +1,7 @@
 class CvDownload < ApplicationRecord
+  TOKEN_TTL     = 24.hours
+  MAX_DOWNLOADS = 3
+
   has_secure_token :token
 
   enum :role, {
@@ -22,12 +25,19 @@ class CvDownload < ApplicationRecord
   before_create :set_timestamps
 
   def expired?
-    requested_at < 24.hours.ago
+    requested_at.nil? || requested_at < TOKEN_TTL.ago
+  end
+
+  def maxed_out?
+    download_count >= MAX_DOWNLOADS
+  end
+
+  def usable?
+    !expired? && !maxed_out?
   end
 
   def record_download!
-    increment!(:download_count)
-    update!(last_download_at: Time.current)
+    update!(download_count: download_count + 1, last_download_at: Time.current)
   end
 
   private
