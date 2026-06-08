@@ -45,6 +45,13 @@ en:
     get_link: "Get a download link"
     send: "Send"
     open_in_browser: "Open in browser"
+    language_label: "Language"
+    language_en: "English"
+    language_nl: "Dutch"
+    language_de: "German"
+    notice_sent: "Check your email — a download link is on its way."
+    alert_invalid: "This link is invalid or has expired. Please request a new one."
+    alert_unavailable: "The CV PDF isn't available yet — check back soon."
 
   contact:
     subtitle: "Wanna work together?"

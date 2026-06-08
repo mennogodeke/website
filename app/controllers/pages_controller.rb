@@ -5,7 +5,7 @@ class PagesController < ApplicationController
     @featured_project = Project.includes(:skills).order(year: :desc).first
     @chip_skills = Skill.where("icon LIKE 'devicon%'").where.not(accent: nil).order(:name)
     @lang_cards = Experience.includes(:experience_skills, :skills)
-                            .where(name: ["Ruby", "Go", "Swift", "AI-Ready Development"])
+                            .where(name: [ "Ruby", "Go", "Swift", "AI-Ready Development" ])
                             .index_by(&:name)
                             .values_at("Ruby", "Go", "Swift", "AI-Ready Development")
                             .compact

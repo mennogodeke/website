@@ -1,0 +1,73 @@
+#!/usr/bin/env bash
+set -u
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+NC='\033[0m'
+
+FAILED=false
+STAGED=$(git diff --cached --name-only --diff-filter=ACM 2>/dev/null)
+
+echo "=== Pre-commit ==="
+
+# ── Sensitive file check ───────────────────────────────────────────────────────
+# Blocks credential key files and unencrypted .env files.
+# Note: config/credentials.yml.enc is safe to commit (it's encrypted).
+BLOCKED=$(printf '%s\n' "$STAGED" | grep -E '(^|/)\.env$|\.key$' || true)
+
+if [ -n "$BLOCKED" ]; then
+  printf "${RED}[FAIL]${NC} Sensitive file(s) staged for commit:\n"
+  printf '%s\n' "$BLOCKED" | sed 's/^/  /'
+  FAILED=true
+else
+  printf "${GREEN}[OK]${NC}   No sensitive files staged\n"
+fi
+
+# ── Secret pattern scan ────────────────────────────────────────────────────────
+# Scans only added lines in the staged diff to minimise false positives.
+DIFF_ADDED=$(git diff --cached --unified=0 2>/dev/null | grep '^+[^+]' || true)
+
+secrets_check() {
+  local label="$1"
+  local pattern="$2"
+  local matches
+  matches=$(printf '%s\n' "$DIFF_ADDED" | grep -E -e "$pattern" || true)
+  if [ -n "$matches" ]; then
+    printf "${RED}[FAIL]${NC} Possible secret detected (%s):\n" "$label"
+    printf '%s\n' "$matches" | head -5 | sed 's/^/  /'
+    FAILED=true
+  fi
+}
+
+# PEM private key block header
+secrets_check "PEM private key" \
+  '-----BEGIN[[:space:]]*(RSA |EC |DSA |OPENSSH )?PRIVATE KEY'
+
+# Hardcoded credential assignments — value must be 20+ chars to reduce noise.
+# Pattern: secret_key = "long_value_here" (or with colons, single quotes)
+CRED_PATTERN='(password|secret_key|api_key|api_secret|access_token|auth_token|private_key)[[:space:]]*[:=][[:space:]]*["'"'"'][A-Za-z0-9/+_=\-]{20,}["'"'"']'
+secrets_check "hardcoded credential" "$CRED_PATTERN"
+
+if [ "$FAILED" = "false" ]; then
+  printf "${GREEN}[OK]${NC}   No secret patterns detected\n"
+fi
+
+# ── RuboCop (staged Ruby files only) ──────────────────────────────────────────
+STAGED_RUBY=$(printf '%s\n' "$STAGED" | grep '\.rb$' || true)
+
+if [ -n "$STAGED_RUBY" ]; then
+  printf "Running RuboCop on staged files...\n"
+  if printf '%s\n' "$STAGED_RUBY" | xargs bin/rubocop --no-color; then
+    printf "${GREEN}[OK]${NC}   RuboCop passed\n"
+  else
+    FAILED=true
+  fi
+fi
+
+echo "=================="
+
+if [ "$FAILED" = "true" ]; then
+  printf "${YELLOW}Tip:${NC} Use 'git commit --no-verify' to bypass (only for confirmed false positives)\n"
+  exit 1
+fi

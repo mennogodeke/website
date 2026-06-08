@@ -16,6 +16,13 @@ de:
     get_link: "Download-Link anfordern"
     send: "Senden"
     open_in_browser: "Im Browser öffnen"
+    language_label: "Sprache"
+    language_en: "Englisch"
+    language_nl: "Niederländisch"
+    language_de: "Deutsch"
+    notice_sent: "Prüfe deine E-Mail — ein Download-Link ist unterwegs."
+    alert_invalid: "Dieser Link ist ungültig oder abgelaufen. Bitte fordere einen neuen an."
+    alert_unavailable: "Das Lebenslauf-PDF ist noch nicht verfügbar — schau später nochmal vorbei."
 
   contact:
     subtitle: "Möchtest du zusammenarbeiten?"

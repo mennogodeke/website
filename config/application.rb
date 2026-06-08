@@ -26,5 +26,7 @@ module Website
 
     config.i18n.available_locales = [ :en, :nl, :de ]
     config.i18n.default_locale = :en
+
+    config.cv_downloads_disabled = ENV.key?("CV_DOWNLOADS_DISABLED")
   end
 end

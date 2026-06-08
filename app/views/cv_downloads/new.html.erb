@@ -16,6 +16,15 @@
 
       <%= form_with model: @cv_download, url: cv_downloads_path, class: "cv-download-form" do |f| %>
         <div class="field">
+          <p class="label"><%= t("cv_download.language_label") %></p>
+          <div class="cv-lang-picker">
+            <% CvDownload.languages.each_key do |lang| %>
+              <%= f.radio_button :language, lang, id: "lang_#{lang}", checked: (lang == @default_language) %>
+              <%= label_tag "lang_#{lang}", t("cv_download.language_#{lang}"), class: "cv-lang-label" %>
+            <% end %>
+          </div>
+        </div>
+        <div class="field">
           <div class="control">
             <%= f.email_field :email, class: "input #{'input-error' if @cv_download.errors[:email].any?}", placeholder: "you@example.com", autofocus: true %>
           </div>

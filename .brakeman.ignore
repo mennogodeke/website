@@ -1,0 +1,8 @@
+{
+  "ignored_warnings": [
+    {
+      "fingerprint": "0890010bef548405b53e2a9a6eda62ad1f25c7ae70b9169f59832c2ac8ac0103",
+      "note": "language is an ActiveRecord enum (constrained to en/nl/de). PDF_FILES is a fixed constant hash — no user input reaches the file path."
+    }
+  ]
+}
