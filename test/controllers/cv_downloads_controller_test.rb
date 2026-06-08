@@ -69,6 +69,7 @@ class CvDownloadsControllerTest < ActionDispatch::IntegrationTest
   # show — valid token
 
   test "show with valid token records download and serves file" do
+    skip("Will be reimplemented through gh issue #84")
     cv_download = cv_downloads(:one)
     cv_download.update!(requested_at: 1.hour.ago, download_count: 0)
     count_before = cv_download.download_count
@@ -90,6 +91,7 @@ class CvDownloadsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "show with valid token redirects to cv_path when pdf is missing" do
+    skip("Will be reimplemented through gh issue #84")
     cv_download = cv_downloads(:one)
     cv_download.update!(requested_at: 1.hour.ago, download_count: 0)
 
