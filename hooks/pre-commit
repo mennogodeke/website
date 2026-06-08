@@ -32,7 +32,7 @@ secrets_check() {
   local label="$1"
   local pattern="$2"
   local matches
-  matches=$(printf '%s\n' "$DIFF_ADDED" | grep -E "$pattern" || true)
+  matches=$(printf '%s\n' "$DIFF_ADDED" | grep -E -e "$pattern" || true)
   if [ -n "$matches" ]; then
     printf "${RED}[FAIL]${NC} Possible secret detected (%s):\n" "$label"
     printf '%s\n' "$matches" | head -5 | sed 's/^/  /'
